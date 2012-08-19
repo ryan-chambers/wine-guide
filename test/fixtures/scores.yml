@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reviewdate: 2012-08-19
+  score: 1.5
+  comments: MyText
+  wine: 
+  price: 1.5
+
+two:
+  reviewdate: 2012-08-19
+  score: 1.5
+  comments: MyText
+  wine: 
+  price: 1.5

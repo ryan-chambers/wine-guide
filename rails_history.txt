@@ -1,0 +1,4 @@
+# start
+
+rails generate model Score reviewdate:date score:float comments:text wine:references price:float
+
