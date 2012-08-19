@@ -72,20 +72,23 @@ def make_scores(score_info)
 
     # rating
     if /\d\/100/.match(part)
-      p "Found score #{part}"
+#      p "Found score #{part}"
       score.score = part.split('/')[0]
     # date
     elsif /\[.*\]/.match(part)
 #      p "Found date #{part}"
       score.date = part.sub('[', '').sub(']', '')
-      p "Found date #{score.date}"
+#      p "Found date #{score.date}"
       finished_score = true
     # price
     elsif /\$.*/.match(part)
 #       p "found price #{part}"
        score.price = part.sub('$', '')
-       p "Found price #{score.price}"
+#       p "Found price #{score.price}"
     # comments
+    else
+      p "found comment #{part}"
+      score.comments << part
     end
 
     prev = part
