@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819212156) do
+ActiveRecord::Schema.define(:version => 20120819220605) do
 
   create_table "scores", :force => true do |t|
     t.date     "reviewdate"
@@ -24,5 +24,26 @@ ActiveRecord::Schema.define(:version => 20120819212156) do
   end
 
   add_index "scores", ["wine_id"], :name => "index_scores_on_wine_id"
+
+  create_table "wineries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "wines", :force => true do |t|
+    t.string   "region"
+    t.string   "country"
+    t.string   "other"
+    t.integer  "year"
+    t.integer  "winery_id"
+    t.string   "lcbo_code"
+    t.boolean  "in_cellar"
+    t.date     "purchased_date"
+    t.date     "drink_from"
+    t.date     "drink_until"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
 end
