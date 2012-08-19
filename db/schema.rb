@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819220605) do
+ActiveRecord::Schema.define(:version => 20120819231327) do
 
   create_table "scores", :force => true do |t|
     t.date     "reviewdate"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120819220605) do
     t.date     "drink_until"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "grapes"
   end
 
 end
