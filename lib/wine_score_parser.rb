@@ -16,7 +16,7 @@ class Wine
   def to_s
     _other = @other.empty? ? '' : other.join(', ')
     _grapes = @grapes.empty? ? '' : @grapes.join(', ')
-    [@winery_name, _other, @region, @year, _grapes, @lcbo, @scores.to_s].join(',')
+    [@winery_name, _other, @region, @year, _grapes, @lcbo, @scores.to_s].join(', ')
   end
 end
 
@@ -26,7 +26,7 @@ class Score
   end
   attr_accessor :comments, :score, :date, :price
   def to_s
-    [@comments, @score, @date, @price].join(',')
+    [@comments, @score, @date, @price].join(', ')
   end
 end
 
@@ -61,12 +61,13 @@ end
 def make_scores(score_info)
   scores = []
   score = Score.new
+  scores << score
   finished_score = false
   last_was_price = false
 
   i = 0
   until i == score_info.length
-    part = score_info[i]
+    part = score_info[i].strip
  
     if finished_score
       # still more, so start a new score
