@@ -1,4 +1,6 @@
 class Score < ActiveRecord::Base
+  attr_accessible :reviewdate, :score, :comments, :price, :wine
+
   validate :score_between_0_and_100
 
   belongs_to :wine

@@ -1,26 +1,41 @@
 # coding: utf-8
 
-require './grape.rb'
-require './country.rb'
+require 'grape.rb'
+require 'country.rb'
+require 'wine.rb'
+# require
 
 # FIXME - use rails classes
-class Wine
+class WineVO
   def initialize
     @grapes = []
     @other = []
     @region = ''
     @lcbo = ''
-    @scores = []
+    @winery_name
   end
-  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :scores
+
+  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo
+
   def to_s
     _other = @other.empty? ? '' : other.join(', ')
     _grapes = @grapes.empty? ? '' : @grapes.join(', ')
-    [@winery_name, _other, @region, @year, _grapes, @lcbo, @scores.to_s].join(', ')
+    [@winery_name, _other, @region, @year, _grapes, @lcbo].join(', ')
+  end
+
+  def store
+    w = Winery.find_all_by_name @winery_name
+    if !w
+      w = Winery.new
+      w.name = @winery_name
+      w.save
+    else
+      p "Found existing winery #{@winery_name}"
+    end
   end
 end
 
-class Score
+class ScoreVO
   def initialize
     @comments = []
   end
@@ -31,7 +46,7 @@ class Score
 end
 
 def make_wine(wine_info)
-  wine = Wine.new
+  wine = WineVO.new
   wine_info_parts = wine_info.split(',')
   wine.winery_name = wine_info_parts.shift
 #  p "Found winery #{wine.winery_name}"
@@ -44,6 +59,7 @@ def make_wine(wine_info)
     elsif Grape.is_grape? part
 #      p "Found grape variety #{part}"
       wine.grapes << part
+      # FIXME - stop hard-coding
     elsif Region.is_region?('Argentina', part)
 #      p "Found region #{part}"
       wine.region = part
@@ -60,7 +76,7 @@ end
 
 def make_scores(score_info)
   scores = []
-  score = Score.new
+  score = ScoreVO.new
   scores << score
   finished_score = false
   last_was_price = false
@@ -72,7 +88,7 @@ def make_scores(score_info)
     if finished_score
       # still more, so start a new score
       scores << score
-      score = Score.new
+      score = ScoreVO.new
       finished_score = false
     end
 
@@ -83,16 +99,13 @@ def make_scores(score_info)
       last_was_price = false
     # date
     elsif /\[.*\]/.match(part)
-#      p "Found date #{part}"
       score.date = part.sub('[', '').sub(']', '')
-#      p "Found date #{score.date}"
       finished_score = true
       last_was_price = false
     # price
     elsif /\$.*/.match(part)
        score.price = part.sub('$', '')
        last_was_price = true
-#       p "Found price #{score.price}, #{last_was_price}"
     # comments
     else
       m = /\d{2}/.match(part)
@@ -118,12 +131,11 @@ def parse_wine_score_line(line)
 
   wine = make_wine wine_info
 
+  wine.store
+
   scores = make_scores parts
 
-  # FIXME implement
-  wine.scores = scores
-
-  p "#{wine}"
+  # store scores
 end
 
 lines = File.new(ARGV[0]).readlines
@@ -131,7 +143,6 @@ lines = File.new(ARGV[0]).readlines
 lines.each do |line|
   line = line.chomp
   next if line.empty?
-#  p "Processing #{line}"
 
   # FIXME - determine if this is a country line or not
   parse_wine_score_line(line)
