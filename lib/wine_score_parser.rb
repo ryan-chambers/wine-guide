@@ -16,7 +16,7 @@ class Wine
   def to_s
     _other = @other.empty? ? '' : other.join(', ')
     _grapes = @grapes.empty? ? '' : @grapes.join(', ')
-    @winery_name + ', ' + _other + ', ' + @region + ', ' + @year + ', ' + _grapes + ', ' + @lcbo
+    [@winery_name, _other, @region, @year, _grapes, @lcbo, @scores.to_s].join(',')
   end
 end
 
@@ -25,6 +25,9 @@ class Score
     @comments = []
   end
   attr_accessor :comments, :score, :date, :price
+  def to_s
+    [@comments, @score, @date, @price].join(',')
+  end
 end
 
 def make_wine(wine_info)
@@ -56,7 +59,6 @@ def make_wine(wine_info)
 end
 
 def make_scores(score_info)
-  p "Making scores for #{score_info}"
   scores = []
   score = Score.new
   finished_score = false
@@ -64,16 +66,13 @@ def make_scores(score_info)
 
   i = 0
   until i == score_info.length
-    p "last was price #{last_was_price}"
     part = score_info[i]
  
     if finished_score
       # still more, so start a new score
-      p "Starting a new score"
       scores << score
       score = Score.new
       finished_score = false
-      p "NEW SCORE ++++++"
     end
 
     # rating
@@ -96,22 +95,16 @@ def make_scores(score_info)
     # comments
     else
       m = /\d{2}/.match(part)
-      p "Comment: match: #{m} last was price: #{last_was_price}"
       if /\d{2}/.match(part) && last_was_price
-        p "Found rest of price #{part}"
         dollar_amt = score.price
         score.price = "#{dollar_amt}.#{part}".to_f
-        p "Updated price to #{score.price}"
       else
-        p "found comment #{part}."
         score.comments << part
       end
       last_was_price = false
     end
 
     i+= 1
-
-    p "last was price #{last_was_price}"
   end
 
   scores
@@ -121,17 +114,15 @@ def parse_wine_score_line(line)
   parts = line.split('.')
 
   wine_info = parts.shift
-#  p "Found wine info #{wine_info}"
+
   wine = make_wine wine_info
-#  p "Created wine #{wine}"
 
-  p "Processing scores #{parts.join('.')}"
-
- #   p "Processing part #{part.strip}"
- scores = make_scores parts
+  scores = make_scores parts
 
   # FIXME implement
-#  wine.scores = scores
+  wine.scores = scores
+
+  p "#{wine}"
 end
 
 lines = File.new(ARGV[0]).readlines
