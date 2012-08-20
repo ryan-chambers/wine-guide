@@ -1,4 +1,4 @@
-Argento, Malbec, Mendoza, 2008. Pretty good for the price. $10.10. 87/100. [1 Jan 2009].
+Argento, Malbec, Mendoza, 2008. Pretty good for the price. $10.10. 87/100. [1 Jan 2009]. Fake second review to test parsing. $11.44. 76/100. [1 Jan 2009].
 
 Chakana, Bonarda, 2007. A pretty nice wine. Light, but still good. $13.95. 91/100. [1 Jan 2009].
 

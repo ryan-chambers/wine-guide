@@ -56,42 +56,62 @@ def make_wine(wine_info)
 end
 
 def make_scores(score_info)
+  p "Making scores for #{score_info}"
   scores = []
   score = Score.new
-  score_info_parts = score_info.split('.')
-  prev = nil
   finished_score = false
+  last_was_price = false
 
-  score_info_parts.each do | part |
+  i = 0
+  until i == score_info.length
+    p "last was price #{last_was_price}"
+    part = score_info[i]
+ 
     if finished_score
       # still more, so start a new score
+      p "Starting a new score"
       scores << score
       score = Score.new
       finished_score = false
+      p "NEW SCORE ++++++"
     end
 
     # rating
     if /\d\/100/.match(part)
 #      p "Found score #{part}"
       score.score = part.split('/')[0]
+      last_was_price = false
     # date
     elsif /\[.*\]/.match(part)
 #      p "Found date #{part}"
       score.date = part.sub('[', '').sub(']', '')
 #      p "Found date #{score.date}"
       finished_score = true
+      last_was_price = false
     # price
     elsif /\$.*/.match(part)
-#       p "found price #{part}"
        score.price = part.sub('$', '')
-#       p "Found price #{score.price}"
+       last_was_price = true
+#       p "Found price #{score.price}, #{last_was_price}"
     # comments
     else
-      p "found comment #{part}"
-      score.comments << part
+      m = /\d{2}/.match(part)
+      p "Comment: match: #{m} last was price: #{last_was_price}"
+      if /\d{2}/.match(part) && last_was_price
+        p "Found rest of price #{part}"
+        dollar_amt = score.price
+        score.price = "#{dollar_amt}.#{part}".to_f
+        p "Updated price to #{score.price}"
+      else
+        p "found comment #{part}."
+        score.comments << part
+      end
+      last_was_price = false
     end
 
-    prev = part
+    i+= 1
+
+    p "last was price #{last_was_price}"
   end
 
   scores
@@ -107,10 +127,8 @@ def parse_wine_score_line(line)
 
   p "Processing scores #{parts.join('.')}"
 
-  parts.each do |part|
-    p "Processing part #{part.strip}"
-    scores = make_scores part.strip
-  end
+ #   p "Processing part #{part.strip}"
+ scores = make_scores parts
 
   # FIXME implement
 #  wine.scores = scores
