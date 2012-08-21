@@ -43,7 +43,7 @@ class Grape
      'Trincadeira',
      'Zinfandel',
      'Other Red',
-     'Albariño',
+     'Albarino',
      'Aligote',
      'Bonarda',
      'Chardonnay',

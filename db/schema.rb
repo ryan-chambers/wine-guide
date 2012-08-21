@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819231327) do
+ActiveRecord::Schema.define(:version => 20120821004056) do
 
   create_table "scores", :force => true do |t|
     t.date     "reviewdate"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(:version => 20120819231327) do
   end
 
   add_index "scores", ["wine_id"], :name => "index_scores_on_wine_id"
+
+  create_table "wine_grapes", :force => true do |t|
+    t.string   "grape"
+    t.integer  "wine_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "wine_grapes", ["wine_id"], :name => "index_wine_grapes_on_wine_id"
 
   create_table "wineries", :force => true do |t|
     t.string   "name"
@@ -44,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20120819231327) do
     t.date     "drink_until"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-    t.string   "grapes"
   end
 
 end

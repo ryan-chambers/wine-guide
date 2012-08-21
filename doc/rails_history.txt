@@ -4,3 +4,7 @@ rails generate model Winery name:string
 rails generate model Wine region:string country:string other:string year:integer winery:references lcbo_code:string in_cellar:boolean purchased_date:date drink_from:date drink_until:date
 
 rails generate model Score reviewdate:date score:float comments:text wine:references price:float
+
+rails generate model WineGrape grape:string wine:references
+
+rails generate migration RemoveGrapeFromWines grapes:string
