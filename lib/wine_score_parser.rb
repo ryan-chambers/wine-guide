@@ -13,9 +13,10 @@ class WineVO
     @region = ''
     @lcbo = ''
     @winery_name
+    @country
   end
 
-  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo
+  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
 
   def to_s
     _other = @other.empty? ? '' : other.join(', ')
@@ -24,16 +25,26 @@ class WineVO
   end
 
   def store
-    w = Winery.find_by_name @winery_name
-    if !w
-      w = Winery.new
-      w.name = @winery_name
-      w.save
-    else
-#      p "Found existing winery #{@winery_name}"
+    winery = Winery.find_by_name @winery_name
+    if !winery
+      winery = Winery.new
+      winery.name = @winery_name
+      winery.save!
     end
- 
+
+    wine = Wine.new
+    wine.winery = winery
+    wine.country = @country
+    wine.lcbo_code = @lcbo
+    wine.region = @region
+    wine.year = @year
+    # FIXME - store other
     
+    @grapes.each do | grape |
+      wine.wine_grapes << WineGrape.new(:grape => grape)
+    end
+
+    wine.save!
   end
 end
 
@@ -48,7 +59,11 @@ class ScoreVO
 end
 
 def make_wine(wine_info)
+  # FIXME - stop hard-coding
+  country = 'Argentina'
   wine = WineVO.new
+  wine.country = country
+
   wine_info_parts = wine_info.split(',')
   wine.winery_name = wine_info_parts.shift
 #  p "Found winery #{wine.winery_name}"
@@ -61,8 +76,7 @@ def make_wine(wine_info)
     elsif Grape.is_grape? part
 #      p "Found grape variety #{part}"
       wine.grapes << part
-      # FIXME - stop hard-coding
-    elsif Region.is_region?('Argentina', part)
+    elsif Region.is_region?(country, part)
 #      p "Found region #{part}"
       wine.region = part
     elsif /^LCBO# (\d{1,10})$/.match(part)
