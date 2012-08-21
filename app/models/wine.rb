@@ -12,8 +12,10 @@ class Wine < ActiveRecord::Base
   has_many :scores
 
   def year_after_1800
-    errors.add(:year, "The year must be after 1800") if
-      year < 1800
+    if(@year)
+      errors.add(:year, "The year must be after 1800") if
+        @year < 1800
+    end
   end
 
   def to_s
