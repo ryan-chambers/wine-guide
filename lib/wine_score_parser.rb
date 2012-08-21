@@ -24,14 +24,16 @@ class WineVO
   end
 
   def store
-    w = Winery.find_all_by_name @winery_name
+    w = Winery.find_by_name @winery_name
     if !w
       w = Winery.new
       w.name = @winery_name
       w.save
     else
-      p "Found existing winery #{@winery_name}"
+#      p "Found existing winery #{@winery_name}"
     end
+ 
+    
   end
 end
 
