@@ -3,7 +3,6 @@
 require 'grape.rb'
 require 'country.rb'
 require 'wine.rb'
-# require
 
 # FIXME - use rails classes
 class WineVO
@@ -25,6 +24,7 @@ class WineVO
   end
 
   def store
+#    p "Storing #{self}"
     winery = Winery.find_by_name @winery_name
     if !winery
       winery = Winery.new
@@ -41,7 +41,7 @@ class WineVO
     # FIXME - store other
     
     @grapes.each do | grape |
-      wine.wine_grapes << WineGrape.new(:grape => grape)
+      wine.grapes << Grape.where(:name => grape)
     end
 
     wine.save!
@@ -151,7 +151,7 @@ def parse_wine_score_line(line)
 
   scores = make_scores parts
 
-  # store scores
+  # FIXME - store scores
 end
 
 lines = File.new(ARGV[0]).readlines

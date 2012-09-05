@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120821004056) do
+ActiveRecord::Schema.define(:version => 20120905010546) do
+
+  create_table "grapes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "grapes_wines", :id => false, :force => true do |t|
+    t.integer "grape_id"
+    t.integer "wine_id"
+  end
 
   create_table "scores", :force => true do |t|
     t.date     "reviewdate"
@@ -24,15 +35,6 @@ ActiveRecord::Schema.define(:version => 20120821004056) do
   end
 
   add_index "scores", ["wine_id"], :name => "index_scores_on_wine_id"
-
-  create_table "wine_grapes", :force => true do |t|
-    t.string   "grape"
-    t.integer  "wine_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "wine_grapes", ["wine_id"], :name => "index_wine_grapes_on_wine_id"
 
   create_table "wineries", :force => true do |t|
     t.string   "name"

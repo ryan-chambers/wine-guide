@@ -1,73 +1,13 @@
-# coding: utf-8
+class Grape < ActiveRecord::Base
+  attr_accessible :name, :wines
 
-# FIXME - move to model
+  validates :name, :presence => true
 
-class Grape
-  GRAPES = [
-    'Alfrocheiro',
-    'Almansa',
-    'Amarone',
-    'Baco Noir',
-    'Barbaresco',
-    'Barbera',
-    'Barolo',
-    'Braucol',
-    'Cabernet Franc',
-    'Cabernet Sauvignon',
-    'Carmenere',
-     'Carignan',
-     'Cava',
-     'Cinsault',
-     'Gamay',
-     'Grenache',
-     'Grenache Noir',
-     'Malbec',
-     'Merlot',
-     'Montepulciano',
-     'Mourvedre',
-     'Nebbiolo',
-     'Nero d\'Avola',
-     'Nero di Troia',
-     'Negroamaro',
-     'Petit Verdot',
-     'Petite Sirah',
-     'Pinot Noir',
-     'Pinotage',
-     'Saperavi',
-     'Sangiovese',
-     'Shiraz',
-     'Tempranillo',
-     'Tinta Roriz',
-     'Touriga Franca',
-     'Touriga Nacional',
-     'Trincadeira',
-     'Zinfandel',
-     'Other Red',
-     'Albarino',
-     'Aligote',
-     'Bonarda',
-     'Chardonnay',
-     'Chenin Blanc',
-     'Gewurztraminer',
-     'Gruner Veltliner',
-     'Pinot Blanc',
-     'Pinot Grigio',
-     'Riesling',
-     'Sauvignon Blanc',
-     'Rizling',
-    'Semillon',
-     'Soave',
-     'Torrontes',
-     'Vidal',
-     'Viura',
-     'Verdejo',
-     'Vermentino',
-     'Rose',
-     'White Blend'
-  ]
+  validates_uniqueness_of :name
+
+  has_and_belongs_to_many :wines
 
   def self.is_grape?(grape)
-    GRAPES.include?(grape)
+    not where(:name => grape).empty?
   end
-
 end

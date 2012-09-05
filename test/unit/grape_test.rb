@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WineGrapeTest < ActiveSupport::TestCase
+class GrapeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

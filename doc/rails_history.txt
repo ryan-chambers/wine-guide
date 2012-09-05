@@ -8,3 +8,16 @@ rails generate model Score reviewdate:date score:float comments:text wine:refere
 rails generate model WineGrape grape:string wine:references
 
 rails generate migration RemoveGrapeFromWines grapes:string
+
+rails generate model Grape name:string
+
+rails destroy model WineGrape
+
+rails generate migration RemoveWineGrape
+
+rails generate migration create_grapes_wines_join
+
+
+
+from rails root directory
+./script/rails runner lib/wine_score_parser.rb lib/argentina.txt
