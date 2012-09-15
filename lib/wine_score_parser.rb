@@ -16,7 +16,7 @@ class WineVO
 
   attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
 
-  def create_wine_from_values
+  def create_wine_from_values(winery)
     wine = Wine.new
     wine.winery = winery
     wine.country = @country
@@ -51,7 +51,7 @@ class WineVO
     if wine && wine.length > 0
       wine[0]
     else
-      craete_wine_from_values
+      create_wine_from_values winery
     end
   end
 end
@@ -81,7 +81,7 @@ def make_wine(wine_info)
     if /^\d{4}$/.match(part)
 #      p "Found year #{part}"
       wine.year = part
-    elsif Grape.is_grape? part
+    elsif not Grape.where(:name => part).empty?
 #      p "Found grape variety #{part}"
       wine.grapes << part
     elsif Region.is_region?(country, part)
