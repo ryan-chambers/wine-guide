@@ -16,12 +16,6 @@ class WineVO
 
   attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
 
-  def to_s
-    _other = @other.empty? ? '' : @other.join(', ')
-    _grapes = @grapes.empty? ? '' : @grapes.join(', ')
-    [@winery_name, @region, @year, @lcbo].join(', ')
-  end
-
   def store
     #    p "Storing #{self}"
     winery = Winery.find_by_name @winery_name
@@ -39,13 +33,14 @@ class WineVO
     wine.region = @region
     wine.year = @year
     wine.other = @other.sort!.join(', ')
-    p "#{wine.other}"
     @grapes.each do | grape |
       wine.grapes << Grape.where(:name => grape)
     end
 
     if !wine.save
-      p "Couldn't save wine #{wine.to_s} from winery #{@winery_name}. #{wine.errors.full_messages.to_sentence}"
+      p "Couldn't save wine #{wine.to_s} : #{wine.errors.full_messages.to_sentence}"
+    else
+      p "Stored new wine score from winery #{@winery_name}."
     end
   end
 end
