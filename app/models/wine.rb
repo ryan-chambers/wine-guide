@@ -22,6 +22,6 @@ class Wine < ActiveRecord::Base
   def to_s
     _other = @other.empty? ? '' : other.join(', ')
     _grapes = @grapes.empty? ? '' : grapes.join(', ')
-    [@winery_name, _other, @grapes, @region, @year, @lcbo, @scores.to_s].join(', ')
+    [@winery_name, _other, _grapes, @region, @year, @lcbo, @scores.to_s].join(', ')
   end
 end

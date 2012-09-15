@@ -32,6 +32,7 @@ class WineVO
       winery.save!
     end
 
+    # FIXME - look up from db
     wine = Wine.new
     wine.winery = winery
     wine.country = @country
