@@ -23,4 +23,14 @@ class Wine < ActiveRecord::Base
     _grapes = grapes.empty? ? '' : grapes.join(', ')
     [other, _grapes, region, year, lcbo_code, scores.to_s].join(', ')
   end
+
+  def list_grape_names
+    i = 0
+    grape_names = []
+    until i >= grapes.length
+      grape_names << grapes[i].name
+      i += 1
+    end
+    grape_names.sort!
+  end
 end

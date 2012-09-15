@@ -32,7 +32,7 @@ class WineVO
       p "Couldn't save wine #{wine.to_s} : #{wine.errors.full_messages.to_sentence}"
       false
     else
-      p "Stored new wine score from winery #{@winery_name}."
+      p "Stored new wine from winery #{@winery_name}."
       wine
     end
   end
@@ -46,12 +46,29 @@ class WineVO
       p "Saved new winery #{@winery_name}"
     end
 
-    # FIXME - look up from db
-    wine = Wine.where(:lcbo_code => @lcbo, :year => @year)
+    wine = Wine.where(:lcbo_code => @lcbo, :year => 1944)
     if wine && wine.length > 0
       wine[0]
     else
-      create_wine_from_values winery
+      existing_wine = winery.wines.find { |w|
+        if (w.year.to_s != @year)
+#          p "Year #{w.year} doesn't match #{@year}"
+          false
+        end
+
+        if(w.other != @other.sort!.join(', '))
+#            p "Other #{w.other} doesn't match #{@other.sort!.join(', ')}"
+            false
+        end
+
+        w.list_grape_names == @grapes.sort!.uniq
+      }
+
+      if ! existing_wine
+        create_wine_from_values winery
+      else
+        existing_wine
+      end
     end
   end
 end
@@ -154,11 +171,12 @@ def parse_wine_score_line(line)
 
   wine = make_wine wine_info
 
-  wine.store
+  wine = wine.store
 
-  scores = make_scores parts
-
-  # FIXME - store scores
+  if(wine)
+    scores = make_scores parts
+    # FIXME - store scores
+  end
 end
 
 lines = File.new(ARGV[0]).readlines
