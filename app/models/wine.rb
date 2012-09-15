@@ -1,10 +1,10 @@
 class Wine < ActiveRecord::Base
   attr_accessible :country, :drink_from, :drink_until, :in_cellar, :lcbo_code, :other, :purchased_date,
-    :region, :winery_id, :year, :grapes
+    :region, :year, :grapes
 
   validate :year_after_1800
 
-  validates :winery, :year, :country, :presence => true
+  validates :winery, :year, :country, :grapes, :presence => true
 
   belongs_to :winery
 
@@ -20,8 +20,7 @@ class Wine < ActiveRecord::Base
   end
 
   def to_s
-    _other = @other.empty? ? '' : other.join(', ')
-    _grapes = @grapes.empty? ? '' : grapes.join(', ')
-    [@winery_name, _other, _grapes, @region, @year, @lcbo, @scores.to_s].join(', ')
+    _grapes = grapes.empty? ? '' : grapes.join(', ')
+    [other, _grapes, region, year, lcbo_code, scores.to_s].join(', ')
   end
 end
