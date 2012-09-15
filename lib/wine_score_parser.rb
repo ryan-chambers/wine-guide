@@ -46,7 +46,7 @@ class WineVO
     end
 
     if !wine.save
-      p "Couldn't save wine #{wine.to_s} from winery #{@winery_name}"
+      p "Couldn't save wine #{wine.to_s} from winery #{@winery_name}. #{wine.errors.full_messages.to_sentence}"
     end
   end
 end
