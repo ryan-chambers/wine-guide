@@ -1,7 +1,5 @@
 # coding: utf-8
 
-# FIXME - move to model
-
 class Country
   attr_reader :name
   attr_reader :regions
@@ -11,7 +9,7 @@ class Country
     @regions = regions || []
   end
 
-  ARGENTINA = Country.new('Argentina', ['Mendoza'])
+  ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley'])
   AUSTRALIA = Country.new('Australia', ['McLaren Vale', 'Western Australia'])
   AUSTRIA = Country.new('Austria', [])
 

@@ -4,7 +4,6 @@ require 'grape.rb'
 require 'country.rb'
 require 'wine.rb'
 
-# FIXME - use rails classes
 class WineVO
   def initialize
     @grapes = []
@@ -40,7 +39,8 @@ class WineVO
     wine.region = @region
     wine.year = @year
     # FIXME - store other
-    
+    wine.other = @other.join(', ')
+    p "#{wine.other}"
     @grapes.each do | grape |
       wine.grapes << Grape.where(:name => grape)
     end
@@ -125,7 +125,6 @@ def make_scores(score_info)
        last_was_price = true
     # comments
     else
-      m = /\d{2}/.match(part)
       if /\d{2}/.match(part) && last_was_price
         dollar_amt = score.price
         score.price = "#{dollar_amt}.#{part}".to_f
