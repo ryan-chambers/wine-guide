@@ -38,8 +38,7 @@ class WineVO
     wine.lcbo_code = @lcbo
     wine.region = @region
     wine.year = @year
-    # FIXME - sort alphabetically
-    wine.other = @other.join(', ')
+    wine.other = @other.sort!.join(', ')
     p "#{wine.other}"
     @grapes.each do | grape |
       wine.grapes << Grape.where(:name => grape)
