@@ -16,16 +16,7 @@ class WineVO
 
   attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
 
-  def store
-    #    p "Storing #{self}"
-    winery = Winery.find_by_name @winery_name
-    if !winery
-      winery = Winery.new
-      winery.name = @winery_name
-      winery.save!
-    end
-
-    # FIXME - look up from db
+  def create_wine_from_values
     wine = Wine.new
     wine.winery = winery
     wine.country = @country
@@ -36,11 +27,31 @@ class WineVO
     @grapes.each do | grape |
       wine.grapes << Grape.where(:name => grape)
     end
-
+    
     if !wine.save
       p "Couldn't save wine #{wine.to_s} : #{wine.errors.full_messages.to_sentence}"
+      false
     else
       p "Stored new wine score from winery #{@winery_name}."
+      wine
+    end
+  end
+
+  def store
+    winery = Winery.find_by_name @winery_name
+    if !winery
+      winery = Winery.new
+      winery.name = @winery_name
+      winery.save!
+      p "Saved new winery #{@winery_name}"
+    end
+
+    # FIXME - look up from db
+    wine = Wine.where(:lcbo_code => @lcbo, :year => @year)
+    if wine && wine.length > 0
+      wine[0]
+    else
+      craete_wine_from_values
     end
   end
 end
