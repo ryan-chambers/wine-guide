@@ -188,6 +188,7 @@ def parse_wine_score_line(line)
 
   if(wine)
     scores = make_scores parts
+    p "Found scores #{scores}"
     # FIXME - store scores
   end
 end

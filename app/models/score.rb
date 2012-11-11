@@ -10,5 +10,8 @@ class Score < ActiveRecord::Base
       score > 100 || score < 0
   end
 
+  def to_s
+    [comments, score, reviewdate, price, to, from, in_fridge].join(', ')
+  end
   # FIXME - add setter that hides implementation details for Date
 end
