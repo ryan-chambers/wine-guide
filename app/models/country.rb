@@ -9,12 +9,15 @@ class Country
     @regions = regions
   end
 
-  ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley'])
-  AUSTRALIA = Country.new('Australia', ['McLaren Vale', 'Western Australia'])
-  AUSTRIA = Country.new('Austria')
+  ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley', 'San Juan'])
+  AUSTRALIA = Country.new('Australia', ['McLaren Vale', 'Western Australia', 'Margaret River', 'Barossa Valley', 'Clare Valley',
+    'South Australia'])
+  AUSTRIA = Country.new('Austria', ['Burgenland'])
   BULGARIA = Country.new('Bulgaria')
-  CANADA = Country.new('Canada')
-  CHILE = Country.new('Chile')
+  CANADA = Country.new('Canada', ['VQA Niagara', 'VQA Niagara Peninsula', 'VQA Niagara On The Lake', 
+      'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 'VQA Lake Erie North Shore'])
+  CHILE = Country.new('Chile', ['Rapel Valley', 'Lolol Valley', 'Casablanca Valley', 'Limari Valley', 'Central Valley',
+    'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
   CYPRUS = Country.new('Cyprus')
   FRANCE = Country.new('France')
   GEORGIA = Country.new('Georgia')
