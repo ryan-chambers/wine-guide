@@ -11,6 +11,7 @@ class Score < ActiveRecord::Base
   end
 
   def to_s
+    # FIXME - change getter for price to format as currency
     [comments, score, reviewdate, price, to, from, in_fridge].join(', ')
   end
   # FIXME - add setter that hides implementation details for Date

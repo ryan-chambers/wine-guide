@@ -1,3 +1,4 @@
+Argentina
 Argento, Malbec, Mendoza, 2008. Pretty good for the price. $10.10. 87/100. [1 Jan 2009]. Fake second review to test parsing. $11.44. 76/100. [1 Jan 2009].
 
 Chakana, Bonarda, 2007. A pretty nice wine. Light, but still good. $13.95. 91/100. [1 Jan 2009].
@@ -43,7 +44,7 @@ Château des Fines Roches, Chateauneuf-du-Pape, Mourvedre, Grenache, Syrah, 2007
 
 Trapiche, Broquel, Cabernet Sauvignon, 2006. Very dark, very beautiful colour. Almost Syrah-like in its jamminess. Quite a nice flavour. $15. 91/100. [1 Jan 2009].
 Trapiche, Malbec, 2008. Nice colour and aroma, and nicely hearty. A great value. $8.95. 91/100. [14 August 2009].
-Trapiche, Malbec, 2009. Vulgar. $9. 84/100. [Nov 2010].
+Trapiche, Malbec, 2009. Vulgar. $9. 84/100. [1 Nov 2010].
 
 Trivento Tribu, Syrah, 2008. Not bad. $8.95. 84/100. [5 Apr 2010].
 Trivento Tribu, Malbec, Mendoza, 2009. Not bad. $9.95. 84/100. [6 Nov 2010].

@@ -4,9 +4,9 @@ class Country
   attr_reader :name
   attr_reader :regions
 
-  def initialize(name, regions)
+  def initialize(name, regions = [])
     @name = name
-    @regions = regions || []
+    @regions = regions
   end
 
   ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley'])

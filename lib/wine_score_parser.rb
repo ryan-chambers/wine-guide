@@ -100,9 +100,7 @@ class ScoreVO
   end
 end
 
-def make_wine(wine_info)
-  # FIXME - stop hard-coding
-  country = 'Argentina'
+def make_wine(wine_info, country)
   wine = WineVO.new
   wine.country = country
 
@@ -172,16 +170,16 @@ def make_scores(score_info)
       last_was_price = false
       score.to = part.sub('To ', '')
       score.score = 0
-      p "Got to #{score.to}"
+#      p "Got to #{score.to}"
     elsif /From 2\d{3}/.match(part)
       last_was_price = false
       score.from = part.sub('From ', '')
       score.score = 0
-      p "Got from #{score.from}"
+#      p "Got from #{score.from}"
     elsif part == 'In fridge'
       last_was_price = false
       score.score = 0
-      p "found wine in fridge"
+#      p "found wine in fridge"
       score.in_fridge = true
     else
       score.comments << part
@@ -194,12 +192,12 @@ def make_scores(score_info)
   scores
 end
 
-def parse_wine_score_line(line)
+def parse_wine_score_line(line, country)
   parts = line.split('.')
 
   wine_info = parts.shift
 
-  wine = make_wine wine_info
+  wine = make_wine(wine_info, country)
 
   wine = wine.store
 
@@ -215,10 +213,14 @@ end
 
 lines = File.new(ARGV[0]).readlines
 
+current_country = ''
 lines.each do |line|
   line = line.chomp
   next if line.empty?
 
-  # FIXME - determine if this is a country line or not
-  parse_wine_score_line(line)
+  if(Country.is_country?(line))
+    current_country = line
+  else
+    parse_wine_score_line(line, current_country)
+  end
 end
