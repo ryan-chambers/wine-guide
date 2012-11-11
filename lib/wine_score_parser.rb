@@ -3,6 +3,7 @@
 require 'grape.rb'
 require 'country.rb'
 require 'wine.rb'
+require 'score.rb'
 
 class WineVO
   def initialize
@@ -46,7 +47,7 @@ class WineVO
       p "Saved new winery #{@winery_name}"
     end
 
-    wine = Wine.where(:lcbo_code => @lcbo, :year => 1944)
+    wine = Wine.where(:lcbo_code => @lcbo, :year => @year)
     if wine && wine.length > 0
       wine[0]
     else
@@ -80,6 +81,22 @@ class ScoreVO
   attr_accessor :comments, :score, :date, :price, :from, :to, :in_fridge
   def to_s
     [@comments, @score, @date, @price, @from, @to, @in_fridge].join(', ')
+  end
+
+  def store(wine)
+    score_to_save = Score.new
+    score_to_save.comments = @comments.join(', ')
+    score_to_save.from = @from
+    score_to_save.to = @to
+    score_to_save.in_fridge = @in_fridge
+    score_to_save.score = @score
+    score_to_save.reviewdate = @date
+    score_to_save.price = @price
+    score_to_save.wine = wine
+
+    score_to_save.save!
+
+    p "Stored new score #{score_to_save}"
   end
 end
 
@@ -188,8 +205,11 @@ def parse_wine_score_line(line)
 
   if(wine)
     scores = make_scores parts
-    p "Found scores #{scores}"
-    # FIXME - store scores
+#    p "Found scores #{scores}"
+    scores.each do |score|
+      score.store wine
+    end
+
   end
 end
 
