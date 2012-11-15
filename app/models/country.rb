@@ -19,24 +19,35 @@ class Country
   CHILE = Country.new('Chile', ['Rapel Valley', 'Lolol Valley', 'Casablanca Valley', 'Limari Valley', 'Central Valley',
     'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
   CYPRUS = Country.new('Cyprus')
-  FRANCE = Country.new('France')
+  FRANCE = Country.new('France', ['Côtes Du Rhône Villages', 'Ac Burgundy', 'Ac Loire', 'Ac Beaujolais', 'Bordeaux', 
+      'Pays D\'oc', 'Chateauneuf-du-Pape', 'Ac Côtes Du Rhône', 'Ac Saint Estèphe', 'Ac Languedoc', 'Ac Languedoc Roussillon',
+      'Ac Lalande De Pomerol', 'Ac Côtes De Castillon', 'Ac Lussac St Emillion', 'Ac Listrac', 'Ac Gaillac',
+      'Ac Montagne St émilion', 'Ac Cotes de Bordeaux', 'Ac Premieres Cotes de Blaye', 'Ac Médoc', 'Ac Rhone',
+      'Ac Faugeres', 'Ac Beaumes de Venise', 'Ac Cotes du Rousillon Villages', 'Ac Corbieres', 'Ac Julienas',
+      'Ac Saumur', 'Ac Savoie', 'Ac Alsace', 'Beaujolais Villages', 'Ac Minervois', 'Ac Bandol', 'Ac Saint Julien',
+      'Ac St Nicolas de Bourgueil', 'Ac Fronsac', 'Ac Cotes du Ventoux', 'Ac L\'Andeol Rasteau', 'Burgundy',
+      'Ac Rose D\'anjou'])
   GEORGIA = Country.new('Georgia')
   GERMANY = Country.new('Germany')
   GREECE = Country.new('Greece')
-  ITALY = Country.new('Italy')
-  LEBANON = Country.new('Lebanon')
+  ITALY = Country.new('Italy', ['Brunello di Montalcino', 'Docg Tuscany', 'Tuscany', 'Piedmont', 'Valpolicella',
+      'Doc Sicily', 'Sicily', 'Veneto', 'Igt Veneto', 'Igt Delle Venezie', 'Doc Vernaiolo', 'Doc Valdadige',
+      'Igt Sicilia', 'Doc Piedmont', 'Vino Nobile Di Montepulciano', 'Doc Chianti', 'Doc Gioia del Colle',
+      'Doc Abruzzo', 'Doc Veneto', 'Doc Puglia', 'Igt Campania'])
+  LEBANON = Country.new('Lebanon', ['Bekaa Valley'])
   MACEDONIA = Country.new('Macedonia')
   MOLDOVA = Country.new('Moldova')
   MEXICO = Country.new('Mexico')
-  NEW_ZEALAND = Country.new('New Zealand')
-  PORTUGAL = Country.new('Portugal')
+  NEW_ZEALAND = Country.new('New Zealand', ['South Island'])
+  PORTUGAL = Country.new('Portugal', ['Douro DOC', 'DOC Dao', 'DAO Sul', 'Doc Bairrada'])
   ROMANIA = Country.new('Romania')
   SERBIA = Country.new('Serbia')
   SLOVENIA = Country.new('Slovenia')
-  SOUTH_AFRICA = Country.new('South Africa')
-  SPAIN = Country.new('Spain')
+  SOUTH_AFRICA = Country.new('South Africa', ['WO Western Region', 'Western Cape'])
+  SPAIN = Country.new('Spain', ['Do Almansa', 'Doca Rioja', 'Rueda DO', 'Doc Navarra', 'Do Toro'])
   TURKEY = Country.new('Turkey')
-  USA = Country.new('USA')
+  USA = Country.new('USA', ['Sonoma', 'Mendocino', 'Willamette Valley', 'Monterey', 'Central Valley',
+      'Paso Robles', 'Napa'])
 
   COUNTRIES = {
     ARGENTINA.name => ARGENTINA,
