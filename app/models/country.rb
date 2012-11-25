@@ -46,6 +46,7 @@ class Country
   SOUTH_AFRICA = Country.new('South Africa', ['WO Western Region', 'Western Cape'])
   SPAIN = Country.new('Spain', ['Do Almansa', 'Doca Rioja', 'Rueda DO', 'Doc Navarra', 'Do Toro'])
   TURKEY = Country.new('Turkey')
+  SWITZERLAND = Country.new('Switzerland')
   USA = Country.new('USA', ['Sonoma', 'Mendocino', 'Willamette Valley', 'Monterey', 'Central Valley',
       'Paso Robles', 'Napa'])
 
@@ -74,6 +75,7 @@ class Country
     SOUTH_AFRICA.name => SOUTH_AFRICA,
     SPAIN.name => SPAIN,
     TURKEY.name => TURKEY,
+    SWITZERLAND.name => SWITZERLAND,
     USA.name => USA,
   }
 

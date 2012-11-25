@@ -42,6 +42,7 @@ class CreateGrapes < ActiveRecord::Migration
     Grape.create :name =>  'Pinot Noir'
     Grape.create :name =>  'Pinotage'
     Grape.create :name =>  'Primitivo'
+    Grape.create :name =>  'Prosecco'
     Grape.create :name =>  'Red Blend'
     Grape.create :name =>  'Rondinella'
     Grape.create :name =>  'Saperavi'

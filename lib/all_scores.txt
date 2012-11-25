@@ -862,7 +862,7 @@ Le Pezze, Ripasso, 2006. A great wine. Had a nice faded colour. $14.95. 91/100. 
 
 Livio Sassetti, Brunello Di Montalcino, Sangiovese, 2005, Docg Tuscany, LCBO# 287284. Excellent. $39.95. 93/100. [11 Oct 2012].
 
-Martini & Rossi, Prosecco. A decent sparkler. $11.55. 87/100 [13 Feb 2010].
+Martini & Rossi, Prosecco, 2010. A decent sparkler. $11.55. 87/100 [13 Feb 2010].
 
 Masi, Modello Delle Venezie, 2008. At first tasted like sour apple juice. Got a little bit better after that, but not very impressive. $10. 84/100. [22 Jul 2010].
 Masi, Modello Delle Venezie, 2006. Rosso Delle Venezie. Generic Italian red wine (according to the label), and a generic, weak flavour. Colour looked good, but taste was disappointing. $11.55. 75/100. [1 Jan 2009].
@@ -872,7 +872,7 @@ Masi, Soave, Soave, 2007. A mild flavour, but not too meek to stand up to fish a
 Mauro Veglio, Dolcetto, D'alba, 2009, Doc Piedmont, LCBO# 214486. Okay. 84/100. $14. [1 Jun 2012].
 
 Mezzomondo, Rosso Salento, Negroamaro, 2007. A decent wine, good for the price. A little weak though. $8.40. 91/100. [1 Jan 2009].
-Mezzomondo, Rosso Salento, Sangiovese, Merlot, 2007. Another decent wine, good for the price. [1 Jan 2009]. $9.95. 91/100. Still a good value. $8.45. 91/100/ [21 Oct 2009].
+Mezzomondo, Rosso Salento, Sangiovese, Merlot, 2007. Another decent wine, good for the price. $9.95. 91/100. [1 Jan 2009]. Still a good value. $8.45. 91/100. [21 Oct 2009].
 Mezzomondo, Negroamaro, Salento, 2008. Ahh, what a value. $15.25. 1.5L. 91/100. [17 Jan 2010].
 
 Montalto, Nero D'avola, Cabernet Sauvignon, 2011, Sicily, LCBO# 621151. Quite decent. $8.95. 87/100. [2 Aug 2012].
@@ -902,9 +902,9 @@ Rivera, Nero di Troia, 2006. I liked it at first, but it's really boozy and alwa
 Rocca delle Macie, Doc Vernaiolo, Chianti, 2006. I really liked it, a good Italian red. $16. 91/100. [28 June 2009].
 Rocca delle Macie, Chianti, Riserva, 2006. Very dark, and a very nice wine. $15. 91/100. [1 Aug 2010].
 Rocco delle Macie, Doc Vernaiolo, Chianti, 2007. A very nice red wine, went especially well with tomato cream sauce and pasta. $12.95. 91/100. [1 Jan 2009].
-Rocco delle Macie, Red, Doc Vernaiolo, Chianti, 2007, LCBO# 741749. Still great. $18.95. 91/100. [17 Jan 2010]. Good, but not as great as I previously remembered. 87/100. [9 Apr 2011].
+Rocco delle Macie, Red Blend, Doc Vernaiolo, Chianti, 2007, LCBO# 741749. Still great. $18.95. 91/100. [17 Jan 2010]. Good, but not as great as I previously remembered. 87/100. [9 Apr 2011].
 Rocco delle Macie, Blue, Doc Vernaiolo, Chianti, 2008. Not as good as the red bottle. $13.95. 84/100. [13 Mar 2010]. It wasn't great, and Miwa wasn't a fan, but I thought it was pretty good. $12.45. 87/100. [25 Jul 2010].
-Rocca delle Macie, Grey, Chianti, Riserva, 2006, Docg Tuscany, LCBO# 111641. RRR. $15.95. ?/100. From 2012. To 2018. In fridge.
+Rocca delle Macie, Grey, Chianti, Riserva, 2006, Docg Tuscany, LCBO# 111641, Red Blend. RRR. $15.95. ?/100. From 2012. To 2018. In fridge.
 
 Ruffino, Orvieto, Other White, 2007. I didn't like it at first, but it grew on me. A little on the sweet side. $11.65. 87/100. [1 Jan 2009].
 Ruffino, Orvieto, Other White, 2009. Still on the sweet side, but I liked it. Nice with salmon. $10.95. 91/100. [15 Dec 2010].
@@ -915,7 +915,7 @@ Salice Salentino, Riserva, Puglia, Negroamaro, Malvesia Nera, 2006. Meh... I was
 Salnico, Nuragus, Other White, 2007. Dry. I kind of liked it but it was a little lacking in flavour. 84/100. $14.95. [14 Oct 2009].
 
 Santa Margherita, Pinot Grigio, 2010, Doc Valdadige, LCBO# 106450. Not bad but not great value. $16.95. 84/100. [29 Dec 2011].
-Santa Margherita, Brut, Valdobbiadene, Prosecco, Superiore, Doc Veneto, LCBO# 687582. Not bad. 87/100. $17.95. [6 Sep 2012].
+Santa Margherita, Brut, Valdobbiadene, Prosecco, Superiore, Doc Veneto, LCBO# 687582, 2011. Not bad. 87/100. $17.95. [6 Sep 2012].
 
 Sella & Mosca, Grenache, 2005. Nothing special. $15.95. 87/100. [4 March 2009].
 
@@ -924,7 +924,7 @@ The Soprano's, Chianti, 2007, Other Red. You pay for the name. $14.95. 84/100. [
 Staccali, Chianti, 2006. Great colour and a nice first flavour, but kind of meh the rest of the bottle. Not worth getting again. $16.40. 84/100. [30 April 2009].
 Straccali, Chianti, 2010, Tuscany, 621227. So-so. $12.95. 84/100. [17 Apr 2012].
 
-Storia Antica, Ripasso, Valpolicella, Superiore, 2009, Doc Veneto, LCBO# 273672. Mediocre. $15. 79/100. [27 Mar 2012].
+Storia Antica, Ripasso, Valpolicella, Superiore, 2009, Doc Veneto, LCBO# 273672, Red Blend. Mediocre. $15. 79/100. [27 Mar 2012].
 
 Tenuta Sant'antonio Scaia Rossa, Corvina, 2008. A nice woody, almost cedary nose. Straw-like. Quite good. 91/100. $13.95. [13 May 2010].
 
@@ -932,22 +932,22 @@ Terenzuola, Vermentino, 2009, Doc Colli Di Luni, LCBO# 205823. It was okay. $17.
 
 Tini, Sangiovese, DOC Romagna, 2008. Quite nice. $10. 87/100. [26 Oct 2010].
 
-Tommasi, Ripasso, Viticoltori, 2009, Valpolicella, Classico Superiore, LCBO# 910430. Very nice. $17.95. 91/100. [30 Dec 2011].
+Tommasi, Ripasso, Viticoltori, 2009, Valpolicella, Classico Superiore, LCBO# 910430, Red Blend. Very nice. $17.95. 91/100. [30 Dec 2011].
 
 Travaglini, Nebbiolo, 2005. Medium-bodied and flavoured; not made for strong stuff. But very good for my lemon zest veal at the restaurant. $50 at restaurant. 92/100 [30 May 2009].
 
 Triade Bianco, 2009, Igt Campania, White Blend, LCBO# 214718. It was pretty good; maybe a little too sour and apple-y. $12.95. 87/100. [29 Apr 2011].
 
-Uggiano, Prestige, Chianti, 2009, Docg Tuscany, LCBO# 250852. Great. $15.95. 92/100. [11 Feb 2012].
+Uggiano, Prestige, Chianti, 2009, Docg Tuscany, LCBO# 250852, Red Blend. Great. $15.95. 92/100. [11 Feb 2012].
 
 Umano Ronchi, Montepulciano d'Abruzzo DOC, Montepulciano, 2007. Don't remember. $11.95. 87/100 [5 Feb 2010].
 
-Valpantena, Torre Del Falasco, Ripasso, Valpolicella, 2008, Doc Veneto, LCBO# 642421. Very nice. $16.95. 91/100. [21 Dec 2011]. Still great. $16.95. 91/100. [24 Dec 2011].
+Valpantena, Torre Del Falasco, Ripasso, Valpolicella, 2008, Doc Veneto, Red Blend, LCBO# 642421. Very nice. $16.95. 91/100. [21 Dec 2011]. Still great. $16.95. 91/100. [24 Dec 2011].
 
 Vesevo, Beneventano, Aglianico, 2008, Igt Campania, LCBO# 120907. First time I've had Aglianico. A pretty good wine. $14.95. 87/100. [25 Jul 2011].
 Vespero, Tuscany IGT, Sangiovese, 2005. Definitely not worth the price. The aftertaste had a heaviness to it, with a lot of iron. Very dark. $16.95. 84/100. [15 Jan 2010].
 
-Villa Girardi, Bure Alto, Ripasso, Valpolicella, Classico Superiore, 2009, Doc Veneto, LCBO# 161844. Not sure I liked it at first, but it had a nice smokiness that I enjoyed. $17.95. 87/100. [16 Nov 2011].
+Villa Girardi, Bure Alto, Ripasso, Valpolicella, Classico Superiore, 2009, Red Blend, Doc Veneto, LCBO# 161844. Not sure I liked it at first, but it had a nice smokiness that I enjoyed. $17.95. 87/100. [16 Nov 2011].
 
 Voga, Pino Grigio, 2007. A good white wine; I might have given it a higher score if it was a bit cheaper. $13.95. 87/100. [June 13 2009].
 
@@ -956,11 +956,11 @@ Zenato, Valpolicella, Repasso, 2006. $25. Needs to breathe, but once it does it 
 Zenato, Valpolicella, Repasso, 2007. $25. An excellent wine. Great flavour, and obviously marvellous with Italian food. 91/100. [17 Jan 2010].
 
 Lebanon
-Cave Kouroum, 7Cepages, Syrah, Cinsault, Grenache, Carignan, Cabernet Sauvignon, Merlot, Pinot Noir, 2004. Quite a mongrel blend! (pre-tasting comment). A sturdy, robust wine, but with a lot of great flavour. I really liked it. $15.95. 7.5.10. [7 Apr 2009].
+Cave Kouroum, 7Cepages, Syrah, Cinsault, Grenache, Carignan, Cabernet Sauvignon, Merlot, Pinot Noir, 2004. Quite a mongrel blend! (pre-tasting comment). A sturdy, robust wine, but with a lot of great flavour. I really liked it. $15.95. 91/100. [7 Apr 2009].
 
 Chateau Ksara, Blanc De L'observatoire, 2010, Clairette, Muscat, Sauvignon Blanc, Bekaa Valley, LCBO# 641704. Not bad. $13.95. 87/100. [1 Jul 2012].
 
-Chateau Ksara, Prieuré, 2007, Bekaa Valley, LCBO# 178095. It was good. Had a smokey flavour. $11.85. 91/100. [27 Mar 2011].
+Chateau Ksara, Prieuré, 2007, Bekaa Valley, Red Blend, LCBO# 178095. It was good. Had a smokey flavour. $11.85. 91/100. [27 Mar 2011].
 
 Clos St Thomas, Les Emirs, Cabernet Sauvignon, Syrah and Grenache, 2004. A beautiful colour, and nice hearty flavour. I really liked it. $16.95. 92/100. [1 Jan 2009].
 
@@ -971,9 +971,9 @@ Moldova
 Firebird, Pinot Grigio, 2009. Not very good. Tastes like cheap, sour apple juice. $12.95. 79/100. [2 Sept 2010].
 
 Mexico
-L.A. Cetto, Nebbiolo, Private Reserve, 2003. Better than the petite Syrah, but still not good. Overly bold and boozy. Possibly worth $8.95, but I'm not sure about even that. $18.95. 84/100.  [1 Jan 2009].
-L.A. Cetto, Petite Syrah, 2006. Nice colour. Sour, acidy smell. Tastes more like food cooked with wine than wine. $10. 79/100. [1 Jan 2009].
-L.A. Cetto, Petite Syrah, 2007. Terrible. $11.95. 65/100. [16 Nov 2010].
+LA Cetto, Nebbiolo, Private Reserve, 2003. Better than the petite Syrah, but still not good. Overly bold and boozy. Possibly worth $8.95, but I'm not sure about even that. $18.95. 84/100.  [1 Jan 2009].
+LA Cetto, Petite Syrah, 2006. Nice colour. Sour, acidy smell. Tastes more like food cooked with wine than wine. $10. 79/100. [1 Jan 2009].
+LA Cetto, Petite Syrah, 2007. Terrible. $11.95. 65/100. [16 Nov 2010].
 
 New Zealand
 3 Stones, Gewurztraminer, 2008, Hawkes Bay, North Island, LCBO# 262758. Outstanding. $13.95. 92/100. [8 Mar 2012].
@@ -1068,8 +1068,6 @@ Man, Chenin Blanc, 2010. Pretty darn good. $12.95. 91/100. [12 Jan 2011].
 Man, Syrah, 2006. Genius! $12.95. 93/100. [1 Jan 2009].
 Man, Syrah, 2009. Pretty good. $13.95. 92/100. [23 Jun 2011].
 
-Nederburg, Syrah 2010, Western Cape, LCBO# 527457. RRR. $11.45. ?/100. [16 Jun 2012].
-
 Obikwa, Syrah, 2007. This is what I imagine Syrah to taste like - bold flavour, jammy. $10. 91/100. [1 Jan 2009].
 
 Pinehurst, Cabernet Sauvignon, 2005. A nice strong musky, berry flavour, I liked it. $16. 91/100. [1 Jan 2009].
@@ -1107,7 +1105,7 @@ Marques de Valcarlos, Tempranillo, Cabernet Sauvignon, Crianza, 2005. A nice hea
 
 Montecillo, Crianza La Rioja, 2004. Way too strong, didn't mellow with breathing. Not a good wine for the price. $14.75. 87/100. [1 Jan 2009].
 Montecillo, Blanco, Rioja, 2009. Okay taste, but bad aftertaste. Not very good. 79/100. $9.95. [24 Nov 2010].
-Montecillo, Reserva, 2006, Rioja, LCBO# 621003. Just not that good. Discounted by $2. $16.45. 84/100. [15 Jun 2012].
+Montecillo, Reserva, 2006, Rioja, LCBO# 621003, Red Blend. Just not that good. Discounted by $2. $16.45. 84/100. [15 Jun 2012].
 
 Osborne Ducale, Syrah, Tempranillo, 2007. Pretty good wine for the price and volume. $8.89. 1L. 91/100. [1 Jan 2009].
 
@@ -1115,15 +1113,15 @@ Otazu, Chardonnay, 2008, Doc Navarra, LCBO# 211003. Nice. $12.25. 87/100. [2 Nov
 
 Palacio De Sada, Crianza, Red Blend, 2006, Do Navarra, LCBO# 246736. Pretty nice. $14.95. 91/100. [22 Dec 2011].
 
-Palacios Remondo, Grenache, La Vendimia 2011, Doca Rioja, LCBO# 674564. $14.95. Very nice. 88/100. [31 Oct 2012].
+Palacios Remondo, Grenache, La Vendimia, 2011, Doca Rioja, LCBO# 674564. $14.95. Very nice. 88/100. [31 Oct 2012].
 
 Parxet, Cava, 2009, Brut, Reserva. Very nice. $17. 91/100. [10 May 2012].
 
-Red Guitar, Tempranillo, Grenache. Initially kind of stinky; needed to breath a bit. In the end, not bad, but not great. $12.85. 84/100. [1 Jan 2009].
+Red Guitar, Tempranillo, Grenache, 2008. Initially kind of stinky; needed to breath a bit. In the end, not bad, but not great. $12.85. 84/100. [1 Jan 2009].
 
 Sabor Real Viñas Centenarias, Tempranillo, 2007, Do Toro, LCBO# 244772. Very dark; and hearty Nice. $15. 91/100. [6 Jan 2011].
 
-Señorio De P. Peciña Chobeo De Peciña, Viura, white wine, 2009, Doca Rioja, LCBO #266866. Nice. $17.95. 91/100. [25 Mar 2012].
+Señorio De P Peciña Chobeo De Peciña, Viura, white wine, 2009, Doca Rioja, LCBO #266866. Nice. $17.95. 91/100. [25 Mar 2012].
 
 Segura Viudas, Brut Reserva, Cava, 2009. Nice. $14.55. 91/100. [1 Jan 2011].
 Spanish Quarter, Cabernet Sauvignon, Tempranillo, 2006. A pretty good, nice wine for the price. $13. 91/100. [1 Jan 2009].
@@ -1147,7 +1145,7 @@ Barefoot Cellars, Merlot, 2007. Cheap tasting. $9.95. 65/100. [1 Jan 2009].
 
 Beaulieu Vineyards, Cabernet Sauvignon, 2005. Quite a decent wine for the price. A bit on the sour side, maybe, after spending overnight in the bottle. $10.95. 91/100. [1 Jan 2009].
 
-Beringer Stone Cellars, Cabernet Sauvignon, 2006. A good wine, especially for the price. $13.00. 91/100. [1 Jan 2009].
+Beringer Stone Cellars, Cabernet Sauvignan, 2006. A good wine, especially for the price. $13.00. 91/100. [1 Jan 2009].
 Beringer, California Collection, Cabernet Sauvginon, 2009, LCBO# 113001. Terrible. Tasted like home-made wine. $9.95. 50/100. [8 Mar 2011].
 
 Big Yellow Cab, Mendocino, Cabernet Sauvignon, 2005. A fantastic wine. $17.95. 93/100. [9 Nov 2010].
@@ -1193,7 +1191,7 @@ LaFond Santa Rita Hills, Pinot Noir, 2006. $23.95. A very good wine. 92/100. [1 
 Liberty School, Paso Robles, Cabernet Sauvignon, 2007. Very california - has that flavour that is so familiar. This is a good wine. $18.95. 91/100. [10 Dec 2010].
 Liberty School, Cabernet Sauvignon, 2009, Paso Robles, Central Coast, California, LCBO# 738823. Good; but not great. Too jammy for a cab sauv. Discounted by $2. $17.95. 87/100. [8 Jun 2012].
 
-McManis Family Vineyards, Pinot Noir, 2010, California. Great. At Table 17 restaurat. $50. [28 Jul 2012].
+McManis Family Vineyards, Pinot Noir, 2010, California. Great. At Table 17 restaurant. $50. 92/100. [28 Jul 2012].
 
 Painter Bridge, Chardonnay, 2010, California, LCBO# 230516. Quite good. 91/100. $13.45. 91/100. [1 Feb 2012]. Buttery. $13.05. 91/100. [7 Apr 2012].
 
