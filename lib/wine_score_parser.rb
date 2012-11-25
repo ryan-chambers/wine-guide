@@ -30,7 +30,7 @@ class WineVO
     end
     
     wine.save!
-#    p "Stored new wine #{wine.to_s}."
+    p "Stored new wine #{wine.to_s}."
     wine
   end
 
@@ -40,7 +40,7 @@ class WineVO
       winery = Winery.new
       winery.name = @winery_name
       winery.save!
-#      p "Saved new winery #{@winery_name}"
+      p "Saved new winery #{@winery_name}"
     end
 
     wine = Wine.where(:lcbo_code => @lcbo, :year => @year, :winery_id => winery.id)
@@ -92,7 +92,7 @@ class ScoreVO
 
     score_to_save.save!
 
-#    p "Stored new score #{score_to_save}"
+    p "Stored new score #{score_to_save}"
   end
 end
 
@@ -142,7 +142,7 @@ def make_scores(score_info)
  
     if finished_score
       # still more, so start a new score
-      p "Found another score for same wine"
+#      p "Found another score for same wine"
       score = ScoreVO.new
       scores << score
       finished_score = false
