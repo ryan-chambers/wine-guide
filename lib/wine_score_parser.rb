@@ -213,6 +213,8 @@ def parse_wine_score_line(line, country)
   end
 end
 
+q = Grape.where(:name => 'Nero d\'Avola')
+
 lines = File.new(ARGV[0]).readlines
 
 current_country = ''

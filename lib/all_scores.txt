@@ -32,7 +32,7 @@ Misterio, Malbec, 2008. Weak and flavourness, with an unpleasant sourness. $7.95
 
 Santa Ana La Mascota, Chardonnay, 2010, Cruz De Piedra, Maipú, Mendoza, LCBO# 126870. Very nice. $14.95. 91/100. [7 Apr 2012].
 
-Santa Julia Magna, Cabernet Suavignon, Malbec, Syrah, 2005. Joyous smell of vanilla and honey. Nice dark colour, medium to full body, and dry tannins. Miwa says it has a smoky odour (in a good way). $14.95. 91/100. [5 March 2009].
+Santa Julia Magna, Cabernet Sauvignan, Malbec, Syrah, 2005. Joyous smell of vanilla and honey. Nice dark colour, medium to full body, and dry tannins. Miwa says it has a smoky odour (in a good way). $14.95. 91/100. [5 March 2009].
 
 Rutini Wines Trumpeter, Malbec, 2006. Not good at first, but not bad with a little breathing. $13.95. 87/100. [1 Jan 2009].
 
@@ -791,18 +791,18 @@ Casale del Giglio, Satrico, Lazio IGT, 2011, Chardonnay, Sauvignon, Trebbiano Gi
 
 Cascina Bongiovanni, Dolcetto D'alba, Dolcetto, 2008, Doc Piedmont, LCBO# 203463. Very nice with pasta. 91/100. $12.95. [16 Aug 2011].
 
-Castelmonte Cent'are, Nero D'Avola, 2008, Sicily, LCBO# 546192. Not very good. $12.45. 84/100. [2 May 2011].
+Castelmonte Cent'are, Nero d'Avola, 2008, Sicily, LCBO# 546192. Not very good. $12.45. 84/100. [2 May 2011].
 
 Castellani Filicheto, Vino Nobile Di Montepulciano, Sangiovese, 2009, Docg Tuscany, LCBO# 184937. Very nice. $17.95. 91/100. [18 Aug 2-12].
 
 Castello di Monteliscai, Doc Chianti, 2007. Not bad. This was the wine at the farmhouse in Tuscany that we stayed at. 84/100. $8. [22 May 2012].
 
-Cavalina, Nero D'Avola, Syrah, 2006. Nothing special, but I've had worse wine for the price. $10. 87/100. [1 Jan 2009].
+Cavalina, Nero d'Avola, Syrah, 2006. Nothing special, but I've had worse wine for the price. $10. 87/100. [1 Jan 2009].
 
 Cavit Collection, Pinot Grigio, 2007. A nice value wine. $11.95. 91/100 [21 July 2009]. Second time around it was just as good, if a little heavy. $11.95. 87/100. [17 Jan 2010].
 
-Cent'are, Sicily, Nero D'Avola, 2007. Nothing special. $13.95. 84/100. [4 Dec 2009].
-Cent'are, Nero D'Avola, 2008, Sicily, LCBO# 6546192. This one was very sour. $13.95. 79/100. [11 Apr 2011].
+Cent'are, Sicily, Nero d'Avola, 2007. Nothing special. $13.95. 84/100. [4 Dec 2009].
+Cent'are, Nero d'Avola, 2008, Sicily, LCBO# 6546192. This one was very sour. $13.95. 79/100. [11 Apr 2011].
 
 Cesari delle Venezie, Merlot, 2007. Not a great flavour, but not cheap tasting either. Good value. $7.45. 84/100. Same as before - a good wine for the price. 84/100. [14 September 09].
 Cesari delle Venezie, Merlot, 2008. A fantastic wine. Worth twice as much. Much better than the previous year. $7.30. 91/100. [10 Feb 2010]. Not quite sure why I was so ecstatic last time. It was quite serviceable, but not a revelation. $7.30. 87/100. [17 Feb 2010].
@@ -829,7 +829,7 @@ Fanti, Brunello di Montalcino, Sangiovese, 2004. At restaurant. Amazing. $250. 9
 
 Fattorio del Cerro, 2008, Vino Nobile di Montepulciano, Sangiovese. Not bad. $20. At restaurant in Rome. 87/100. [25 May 2012].
 
-Feudo Disisa, Nero D'avola, 2008, Igt Sicilia, LCBO# 238899. Smelled nice, but disappointing flavour. $14.85. 84/100. [9 Aug 2011].
+Feudo Disisa, Nero d'Avola, 2008, Igt Sicilia, LCBO# 238899. Smelled nice, but disappointing flavour. $14.85. 84/100. [9 Aug 2011].
 
 Firriato, Etna Rosso, 2008, Doc Sicily, LCBO# 219592, Other Red. Nerello Mascalese-Nerello Cappuccio blend. Not a big fan at first, but as the bottle breathed it was nice. Miwa wasn't a big fan though. $16.95. 91/100. [16 May 2011].
 
@@ -837,7 +837,7 @@ Folonari, Pinot Noir, 2006. Cheap tasting; it improves slightly with breathing b
 
 Francesco Minini Terre Avara, Manduria DOC, Primitivo, 2008. not very good. $12.95. 70/100. [5 Aug 2010].
 
-Frescobaldi, Sangiovese, Cabernet Sauvignon, 2007. For an inexpensive wine, it is pretty good. Not too boozy, a bit acidic and unripe, but good for the price. Discounted by $1 50. $10.75. 91/100. [1 Jan 2009].
+Frescobaldi, Sangiovese, Cabernet Sauvignan, 2007. For an inexpensive wine, it is pretty good. Not too boozy, a bit acidic and unripe, but good for the price. Discounted by $1 50. $10.75. 91/100. [1 Jan 2009].
 
 Fumanelli, Valpolicella, Classico, 2008. Miwa doesn't really care for it. $12.95. 84/100. [4 May 2010].
 
@@ -875,7 +875,7 @@ Mezzomondo, Rosso Salento, Negroamaro, 2007. A decent wine, good for the price. 
 Mezzomondo, Rosso Salento, Sangiovese, Merlot, 2007. Another decent wine, good for the price. $9.95. 91/100. [1 Jan 2009]. Still a good value. $8.45. 91/100. [21 Oct 2009].
 Mezzomondo, Negroamaro, Salento, 2008. Ahh, what a value. $15.25. 1.5L. 91/100. [17 Jan 2010].
 
-Montalto, Nero D'avola, Cabernet Sauvignon, 2011, Sicily, LCBO# 621151. Quite decent. $8.95. 87/100. [2 Aug 2012].
+Montalto, Nero d'Avola, Cabernet Sauvignon, 2011, Sicily, LCBO# 621151. Quite decent. $8.95. 87/100. [2 Aug 2012].
 
 Monte Del Frá, Bardolino, 2010, Doc Veneto, Sangiovese, Rondinella, LCBO# 134544. I liked it. Nice and ripe. $12.95. 87/100. [30 Apr 2012]. Absolutely awful, tasted like house wine. Why the difference? Maybe because it came after a cabernet sauvignon and a tempranillo. $12.95. 50/100. [16 Jun 2012].
 
