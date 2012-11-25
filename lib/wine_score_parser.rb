@@ -33,7 +33,7 @@ class WineVO
       p "Couldn't save wine #{wine.to_s} : #{wine.errors.full_messages.to_sentence}"
       false
     else
-      p "Stored new wine from winery #{@winery_name}."
+      p "Stored new wine #{wine.to_s}."
       wine
     end
   end
@@ -94,9 +94,11 @@ class ScoreVO
     score_to_save.price = @price
     score_to_save.wine = wine
 
-    score_to_save.save!
-
-    p "Stored new score #{score_to_save}"
+    if(score_to_save.save)
+      p "Stored new score #{score_to_save}"
+    else
+      p "Couldn't save score #{score_to_save} #{score_to_save.errors.full_messages.to_sentence}"
+    end
   end
 end
 
