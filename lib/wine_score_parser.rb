@@ -29,13 +29,9 @@ class WineVO
       wine.grapes << Grape.where(:name => grape)
     end
     
-    if !wine.save
-      p "Couldn't save wine #{wine.to_s} : #{wine.errors.full_messages.to_sentence}"
-      false
-    else
-      p "Stored new wine #{wine.to_s}."
-      wine
-    end
+    wine.save!
+    p "Stored new wine #{wine.to_s}."
+    wine
   end
 
   def store
@@ -94,11 +90,9 @@ class ScoreVO
     score_to_save.price = @price
     score_to_save.wine = wine
 
-    if(score_to_save.save)
-      p "Stored new score #{score_to_save}"
-    else
-      p "Couldn't save score #{score_to_save} #{score_to_save.errors.full_messages.to_sentence}"
-    end
+    score_to_save.save!
+
+    p "Stored new score #{score_to_save}"
   end
 end
 
