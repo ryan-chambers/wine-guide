@@ -30,7 +30,7 @@ class WineVO
     end
     
     wine.save!
-    p "Stored new wine #{wine.to_s}."
+#    p "Stored new wine #{wine.to_s}."
     wine
   end
 
@@ -40,7 +40,7 @@ class WineVO
       winery = Winery.new
       winery.name = @winery_name
       winery.save!
-      p "Saved new winery #{@winery_name}"
+#      p "Saved new winery #{@winery_name}"
     end
 
     wine = Wine.where(:lcbo_code => @lcbo, :year => @year, :winery_id => winery.id)
@@ -92,7 +92,7 @@ class ScoreVO
 
     score_to_save.save!
 
-    p "Stored new score #{score_to_save}"
+#    p "Stored new score #{score_to_save}"
   end
 end
 
@@ -128,19 +128,23 @@ end
 
 def make_scores(score_info)
   scores = []
-  score = ScoreVO.new
-  scores << score
   finished_score = false
   last_was_price = false
 
   i = 0
   until i == score_info.length
+    if(i == 0)
+      score ||= ScoreVO.new
+      scores << score
+    end
+
     part = score_info[i].strip
  
     if finished_score
       # still more, so start a new score
-      scores << score
+      p "Found another score for same wine"
       score = ScoreVO.new
+      scores << score
       finished_score = false
     end
 
@@ -199,11 +203,13 @@ def parse_wine_score_line(line, country)
 
   if(wine)
     scores = make_scores parts
-#    p "Found scores #{scores}"
+    if(scores.length > 1)
+#      p "Found scores #{scores}"
+    end
+
     scores.each do |score|
       score.store wine
     end
-
   end
 end
 
