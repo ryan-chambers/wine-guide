@@ -43,7 +43,7 @@ class WineVO
       p "Saved new winery #{@winery_name}"
     end
 
-    wine = Wine.where(:lcbo_code => @lcbo, :year => @year)
+    wine = Wine.where(:lcbo_code => @lcbo, :year => @year, :winery_id => winery.id)
     if wine && wine.length > 0
       wine[0]
     else

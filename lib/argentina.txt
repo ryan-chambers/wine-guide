@@ -1,5 +1,5 @@
 Argentina
-Argento, Malbec, Mendoza, 2008. Pretty good for the price. $10.10. 87/100. [1 Jan 2009]. Fake second review to test parsing. $11.44. 76/100. [1 Jan 2009].
+Argento, Malbec, Mendoza, 2008. Pretty good for the price. $10.10. 87/100. [1 Jan 2009].
 
 Chakana, Bonarda, 2007. A pretty nice wine. Light, but still good. $13.95. 91/100. [1 Jan 2009].
 
@@ -23,7 +23,7 @@ La Puerta, Syrah, 2009. Not bad. $8.95. 87/100. [11 May 2010].
 
 Los Arboles, Malbec, 2007. At first tasted like any other cheap wine. After mellowing (airing) a bit, it was passable. $12.95. 87/100. [1 Jan 2009].
 
-Maipe Mendoza, Malbec, 2008. So-so. $12.95. 84/100. [22 Sept 2009].
+Maipe, Mendoza, Malbec, 2008. So-so. $12.95. 84/100. [22 Sept 2009].
 
 Marcus James, Malbec, 2009. It was not bad at all. $9.45. 87/100. [10 Feb 2010]. Still smokey and decent after a night open. $9.45. 87/100. [11 Mar 2010].
 
@@ -32,7 +32,7 @@ Misterio, Malbec, 2008. Weak and flavourness, with an unpleasant sourness. $7.95
 
 Santa Ana La Mascota, Chardonnay, 2010, Cruz De Piedra, Maipú, Mendoza, LCBO# 126870. Very nice. $14.95. 91/100. [7 Apr 2012].
 
-Santa Julia Magna, Cabernet Sauvignon, Malbec, Syrah, 2005. Joyous smell of vanilla and honey. Nice dark colour, medium to full body, and dry tannins. Miwa says it has a smoky odour (in a good way). $14.95. 91/100. [5 March 2009].
+Santa Julia Magna, Cabernet Sauvignan, Malbec, Syrah, 2005. Joyous smell of vanilla and honey. Nice dark colour, medium to full body, and dry tannins. Miwa says it has a smoky odour (in a good way). $14.95. 91/100. [5 March 2009].
 
 Rutini Wines Trumpeter, Malbec, 2006. Not good at first, but not bad with a little breathing. $13.95. 87/100. [1 Jan 2009].
 
@@ -40,9 +40,7 @@ Telteca Anta, Malbec, 2004. Pretty good, but not worth the price. $20.95. 91/100
 
 Terrazas De Los Andes, Reserva, Torrontes, 2010, Salta, Mendoza, LCBO# 243238. Pretty good. $14.95. 87/100. [1 Feb 2012].
 
-Château des Fines Roches, Chateauneuf-du-Pape, Mourvedre, Grenache, Syrah, 2007. $29.90. ?/100. Got at winery. From 2017. To 2022. In fridge.
-
-Trapiche, Broquel, Cabernet Sauvignon, 2006. Very dark, very beautiful colour. Almost Syrah-like in its jamminess. Quite a nice flavour. $15. 91/100. [1 Jan 2009].
+Trapiche, Broquel, Cabernet Sauvignon, 2006. Very dark, very beautiful colour. Almost syrah-like in its jamminess. Quite a nice flavour. $15. 91/100. [1 Jan 2009].
 Trapiche, Malbec, 2008. Nice colour and aroma, and nicely hearty. A great value. $8.95. 91/100. [14 August 2009].
 Trapiche, Malbec, 2009. Vulgar. $9. 84/100. [1 Nov 2010].
 
