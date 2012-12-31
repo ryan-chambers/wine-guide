@@ -18,6 +18,14 @@ class Score < ActiveRecord::Base
     end
   end
 
+  def wine_score
+    if score.nil?
+      ''
+    else
+      score.ceil.to_s
+    end
+  end
+
   def to_s
     [comments, score, reviewdate, price, to, from, in_fridge].join(', ')
   end
