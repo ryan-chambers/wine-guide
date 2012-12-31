@@ -8,6 +8,11 @@ def create_wine_sentence(wine, winery)
   s.join(', ')
 end
 
+def create_wine_score_sentence(score)
+  s = [score.wine_price, score.wine_score + '/100']
+  s.join('. ')
+end
+
 Country::COUNTRIES.keys.each do |country|
   puts "#{country}"
 
@@ -20,7 +25,8 @@ Country::COUNTRIES.keys.each do |country|
     winery_sentence = create_wine_sentence(wine, winery)
     print "#{winery_sentence}."
     wine.scores.each do |score|
-      print " #{score.wine_price}. #{score.score}/100."
+      wine_score = create_wine_score_sentence(score)
+      print " #{wine_score}."
     end
 
     puts
