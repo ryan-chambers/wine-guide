@@ -9,7 +9,15 @@ def create_wine_sentence(wine, winery)
 end
 
 def create_wine_score_sentence(score)
-  s = [score.wine_price, score.wine_score + '/100']
+  s = [score.wine_price, score.wine_score + '/100', score.comments]
+  s << score.from unless score.from.nil?
+  s << score.to unless score.to.nil?
+  if !score.wine_reviewdate.nil?
+    s << '[' + score.wine_reviewdate + ']'
+  end
+  if score.in_fridge
+    s << 'In fridge'
+  end
   s.join('. ')
 end
 
