@@ -1,6 +1,10 @@
 # coding: utf-8
 
-require 'country.rb'
+def create_wine_sentence(wine, winery)
+  s = [winery.name, wine.grapes.join(', '), wine.year]
+  s << "LCBO# " + wine.lcbo_code unless wine.lcbo_code.empty?
+  s.join(', ')
+end
 
 Country::COUNTRIES.keys.each do |country|
   puts "#{country}"
@@ -14,7 +18,8 @@ Country::COUNTRIES.keys.each do |country|
 
     # look up winery
     winery = Winery.find(wine.winery_id)
-    puts "#{winery.name}"
+    winery_sentence = create_wine_sentence(wine, winery)
+    puts "#{winery_sentence}. "
   end
 
   # find all scores for wine
