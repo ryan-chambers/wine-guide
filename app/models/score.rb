@@ -10,8 +10,15 @@ class Score < ActiveRecord::Base
       score > 100 || score < 0
   end
 
+  def wine_price
+    if price.nil?
+      '$ unknown'
+    else
+      '$%.2f' % price
+    end
+  end
+
   def to_s
-    # FIXME - change getter for price to format as currency
     [comments, score, reviewdate, price, to, from, in_fridge].join(', ')
   end
   # FIXME - add setter that hides implementation details for Date
