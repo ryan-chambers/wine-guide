@@ -20,14 +20,21 @@ class Score < ActiveRecord::Base
 
   def wine_score
     if score.nil?
-      ''
+      '?'
     else
       score.ceil.to_s
+    end
+  end
+
+  def wine_reviewdate
+    if reviewdate.nil?
+      nil
+    else
+      reviewdate.strftime('%d %b %Y')
     end
   end
 
   def to_s
     [comments, score, reviewdate, price, to, from, in_fridge].join(', ')
   end
-  # FIXME - add setter that hides implementation details for Date
 end
