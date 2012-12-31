@@ -2,7 +2,9 @@
 
 def create_wine_sentence(wine, winery)
   s = [winery.name, wine.grapes.join(', '), wine.year]
+  s << wine.other unless wine.other.empty?
   s << "LCBO# " + wine.lcbo_code unless wine.lcbo_code.empty?
+  s << wine.region unless wine.region.empty?
   s.join(', ')
 end
 
