@@ -12,16 +12,18 @@ Country::COUNTRIES.keys.each do |country|
   puts "#{country}"
 
   # load all wines for country country
-#  wines = Wine.find(:all, :conditions => [ "country = ?", country], :order => 'winery_id DESC')
   wines = Wine.where("country = ?", country).order('winery_id asc')
 
   wines.each do |wine|
-    # p "#{wine}"
-
     # look up winery
     winery = Winery.find(wine.winery_id)
     winery_sentence = create_wine_sentence(wine, winery)
-    puts "#{winery_sentence}. "
+    print "#{winery_sentence}."
+    wine.scores.each do |score|
+      print " #{score.wine_price}. #{score.score}/100."
+    end
+
+    puts
   end
 
   # find all scores for wine
