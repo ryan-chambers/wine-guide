@@ -20,8 +20,7 @@ class Wine < ActiveRecord::Base
   end
 
   def to_s
-    _grapes = grapes.empty? ? '' : grapes.join(', ')
-    [other, _grapes, region, year, lcbo_code, scores.to_s].join(', ')
+    [other, grapes_to_s, region, year, lcbo_code, scores.to_s].join(', ')
   end
 
   def list_grape_names
@@ -32,5 +31,9 @@ class Wine < ActiveRecord::Base
       i += 1
     end
     grape_names.sort!
+  end
+
+  def grapes_to_s
+    grapes.empty? ? '' : grapes.join(', ')
   end
 end

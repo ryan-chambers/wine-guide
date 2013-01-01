@@ -1,0 +1,32 @@
+<h3>Wines</h3>
+ <!-- FIXME style this page
+ -->
+<table>
+  <thead>
+    <tr>
+      <td>Winery name</td>
+      <td>Country</td>
+      <td>Region</td>
+      <td>Grapes</td>
+      <td>Year</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wines.each do |wine| %>
+    <tr>
+      <td><%= wine.winery.name %></td>
+      <td><%= wine.country %></td>
+      <td><%= wine.region %></td>
+      <td><%= wine.list_grape_names.join(', ') %></td>
+      <td><%= wine.year %> </td>
+      <td><%= link_to 'Show', wine %></td>
+      <td>
+        <!-- FIXME implement
+        -->
+        <a href="#">Add Score</a>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

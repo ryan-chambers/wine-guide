@@ -7,8 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <!-- FIXME style this
+  -->
+  <h1>Wine Guide</h1>
 <%= yield %>
 
+<div>
+  <a href="#">Search</a>
+  <%= link_to "See all wines", wines_path %>
+</div>
 </body>
 </html>
