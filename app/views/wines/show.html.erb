@@ -12,6 +12,11 @@
 <% if ! @wine.lcbo_code.empty? %>
   <a href="http://www.lcbo.ca/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=<%= @wine.lcbo_code %>" target="_new">See in LCBO</a>
 <% end %>
+<% if ! @wine.lcbo_code.empty? %>
+  <!-- FIXME add link
+  -->
+  <a href="#" target="_new">See in WineAlign</a>
+<% end %>
 
 <h2>Scores</h2>
 <% if ! @wine.scores.empty? %>
@@ -45,3 +50,5 @@
   <dd><%= @wine.drink_to %></dd>
 </dl>
 <% end %>
+
+<%= link_to 'Back', wines_path %>
