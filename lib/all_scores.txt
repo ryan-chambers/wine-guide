@@ -15,7 +15,7 @@ Don Cristobal, Malbec, 2008. Dark colour, flavour was okay. $12.95. 87/100. [19 
 
 Graffigna, Cabernet Sauvignon, 2005. Quite bold and robust. Not bad, but not worth the price. $17.95. 87/100. [1 Jan 2009].
 
-J&F Lurton, Torrontes, 2007. $13.95. Vibrant, floral aroma, almost like ice wine, but not as sweet. I really liked this wine a lot. 93/100. [1 Jan 2009]. Second time around, still nice flavour but a funny aftertaste. 91/100. [27 Feb 2009].
+J&F Lurton, Torrontes, 2007. $13.95. Vibrant, floral aroma, almost like ice wine, but not as sweet. I really liked this wine a lot. 93/100. [1 Jan 2009]. Second time around, still nice flavour but a funny aftertaste. $13.95. 91/100. [27 Feb 2009].
 
 La Moscota, Malbec, 2006. A pretty nice wine, but just a shade not worth the price. $13.55. 87/100. [June 19, 2009].
 
@@ -214,6 +214,8 @@ Featherstone, Riesling, 2007. Sour with very little flavour. Like weak apple jui
 Featherstone, Black Sheep, Riesling, 2010, VQA Niagara Peninsula, LCBO# 80234. I really liked it, Miwa not so much. $16.95. 91/100. [21 Feb 2012].
 
 Fielding Estates, Pinot Grigio, 2008, LCBO# 78519. Really nice. A great Ontario white. Discounted by $3.95. $15.20. 91/100. [12 Apr 2011].
+Fielding Estate, Riesling, 2009, VQA Niagara Peninsula, LCBO# 146761. Nice and fizzy. 88/100. [24 Dec 2012].
+
 Flourish, VQA Niagara, Chardonnay, Viognier, 2009, LCBO# 192658. A very unique, strong vanilla flavour. $11.95. 87/100. [23 Apr 2011].
 
 G Marquis, The Silver Line, Pinot Noir, 2010, VQA Niagara On The Lake, LCBO# 258673. Over-priced and ordinary. $19.95. 79/100. [5 Mar 2012].
@@ -285,15 +287,15 @@ Konzelmann, Gewurztraminer, Late Harvest, 2010. Quite nice at winery. Excellent 
 Konzelmann, Pinot Blanc, Niagara, 2009. Nice and bright. $11.60. 91/100. [26 Jan 2011].
 Konzelmann, Pinot Blanc, Niagara, 2010. Nice at the winery. Almost smells like Gewurztraminer. Very pleasant. Miwa says it has a cherry smell. $11.60. 87/100. [2 Oct 2011]. Quite nice. $11.15. 91/100. [15 Feb 2012].
 Konzelmann, Pinot Noir, 2009, LCBO# 200584. Pleasantly nice. $12.95. 91/100. [26 Nov 2011].
-Konzelmann, Pinot Noir, 20010 LCBO# 200584. Crap. $12.95. 79/100. [23 Feb 2012].
+Konzelmann, Pinot Noir, 2010, LCBO# 200584. Crap. $12.95. 79/100. [23 Feb 2012].
 Konzelmann, Riesling, 2008. Nice flavour. $11.95. 91/100. [1 Apr 2010].
 Konzelmann, Syrah, Barrel Aged, 2010, VQA Niagara Peninsula, LCBO# 144857. Pretty good for an Ontario Syrah that is just a few months old. $12.95. 87/100. [13 Sep 2011]. Nice and smokey - I liked it. $12.95. 91/100. [21 Nov 2011].
 Konzelmann, White Moose, White Blend, 2010. Not bad. Nice at winery. $12.95. 87/100. [3 Oct 2011].
 Konzelmann, Syrah, 2011, VQA Niagara Peninsula. Nice and peppery. $12.95. 88/100. [22 Aug 2012].
 Lailey, Chardonnay, 2009, VQA Niagara Peninsula, LCBO# 193482. Wow - just an amazing flavour. Great combination of flavour and dryness. And it was a partially corked bottle too - a little sour on the aftertaste. Can't wait to try the true thing. $19.95. 93/100. [2 Sep 2011].
 Lailey, Unoaked, Chardonnay, 2010, VQA Niagara Peninsula, LCBO# 249326. Good, but their other stuff is better. $16.00. 87/100. [15 Sep 2011]. I loved it at the winery. And good at home too. Not sure why I didn't quite like it as much the first time. $16.00. 91/100. [5 Oct 2011].
+Lailey, Unoaked, Chardonnay, 2011, VQA Niagara Peninsula, LCBO# 299776. Pretty good. $14.95. 87/100. [19 Dec 2012].
 Lailey, Merlot, 2010, VQA Niagara Peninsula, LCBO# 591396. Very nice, but not really worth the price. 89/100. $25.00. [30 Nov 2012].
-
 Lailey, Pinot Noir, 2009, VQA Niagara Peninsula, LCBO# 591404. Excellent. Maybe not quite worth the price, but still excellent - even with a New York strip. $25.00. 91/100. [10 Sep 2011].
 Lailey, Sku 42, Red Blend, VQA Niagara Peninsula, 2008. A sourness that we couldn't get rid of. 84/100. $18. [17 Oct 2011].
 Lailey, Zweigelt, 2008, VQA Niagara Peninsula. Quite nice on the winery - the grape is a mix of Blaufränkisch and another Austrian grape, and it showed. Pretty good. $14. 87/100. [5 Nov 2011].
@@ -337,12 +339,13 @@ Peller Estates, Private Reserve, Baco Noir, 2010, VQA Niagara Peninsula. Sour at
 Peller Estates, Family Series, Chardonnay, 2010, VQA Niagara Peninsula, LCBO# 582825. At first it tasted bad, and even after it warmed up it was a little on the sweet side, but not bad. $10.95. 84/100. [8 Sep 2011].
 
 Pillitteri Estates, Cabernet Sauvignon, 2007, VQA Niagara Peninsula, LCBO# 349233. Sour - not good at all. $16.45. 75/100. [25 Aug 2011].
-Pillitteri, Antagonist, 2010, VQA Niagara Peninsula, Red Blend, LCBO #291948. Not very good. $15.95. 84/100. [26 Sep 2012].
+Pillitteri Estates, Antagonist, 2010, VQA Niagara Peninsula, Red Blend, LCBO #291948. Not very good. $15.95. 84/100. [26 Sep 2012].
 
 Ravine, York Road, White Blend, 2009. Miwa liked it at the restaurant. Miwa's ranking. $16.95. 91/100. [1 Oct 2011].
 Ravine, Chardonnay, 2009. I really liked it at the winery. A unique flavour, almost sparkling texture, but not quite good enough to justify the price. $24.00. 87/100. [11 Dec 2011].
 Ravine, Redcoat, Red Blend, 2010. Miwa liked it at the winery. Not bad. $17.95. 87/100. [9 Nov 2011].
 
+Reif, Cabernet Sauvignon, Merlot, 2011, LCBO# 565713. $13.95. Absolutely awful. No more Ontario Cabernet Merlots. 15/100. [30 Dec 2012].
 Reif, Silver Meritage, 2007, Sauvignon Blanc, Semillon, VQA Niagara River, LCBO# 148817. I really didn't like it at first; but it kind of grew on me. Maybe because it's an older wine. $14.95. 87/100. [18 Aug 2011].
 Reif, Riesling, 2008. Sour and unappealing. $12.05. 79/100. [9 Sept 2010].
 
@@ -413,12 +416,13 @@ Vineland Estates, Cabernet Sauvignon, Merlot, 2008. Definitely a Canadian Cab Me
 Vineland Estates, Chardonnay, 2008. Quite nice. Pretty good. Sweetish. $12.95. 91/100 [6 Jul 2010].
 Vineland Estates, Chardonnay, 2009. Really nice flavour. Bought at winery. $12.75. 91/100. [27 Oct 2010].
 Vineland Estates, Elevation Cabernet, 2007. A nice wine, but too boozy for a higher score, even after decanting. $25. 92/100. [1 Jan 2009]. A little overshadowed by one of Logan's 2003 South Africans; nevertheless it was great. $25. 92/100 [30 Jun 2010].
+Vineland Estates, Reserve, Meritage, 2007, Cabernet Sauvignon, Cabernet Franc, Merlot. RRR. Gift from Logan. $85. In fridge. To 2017.
 Vineland Estates, Chenin Blanc, 2011. At first pretty sour. Then a nice clean sweet-sour. But it ended with a nasty sourness, kind of like puke. Bought at winery. $16.75. 84/100. [22 Oct 2012].
 Vineland Estates, Pinot Meunier, 2008. A quite nice light red. Bought at winery. $15. 91/100. [7 Oct 2010].
 Vineland Estates, Riesling, St Urban, 2008. A bit acidic, but great. Bought at winery. $20. 91/100. [8 Oct 2010].
 Vineland Estates, Riesling, St Urban, 2011. Great texture, like micro-bubbles. The flavour had a little too much apple juice. Bought at winery. $19.75. 89/100. [23 Nov 2012].
 Vineland Estates, Sauvignon Blanc, 2007. Fruity but very flavourful. A great wine. $14.95. 91/100. [5 March 2010]. Still excellent the second time. $16.95. 91/100. [3 Apr 2010]. Why does the price keep going up? Still great though. $17.95. 91/100. [6 May 2010].
-Vineland Estates, Semi-Dry, Reisling, 2008. First sip was way too sour. Later sips were much better, although still with a lot of sourness. I don't care for sourness, but overall it was okay. $13.95. 87/100. [19 May 2010].
+Vineland Estates, Semi-Dry, Riesling, 2008. First sip was way too sour. Later sips were much better, although still with a lot of sourness. I don't care for sourness, but overall it was okay. $13.95. 87/100. [19 May 2010].
 Vineland Estates, Riesling, Semi Dry, 2009, VQA Niagara Peninsula, LCBO# 232033. Kind of sweet. Might have been alright without the sweetness. $13.95. 84/100. [18 Dec 2011]. I really should read the old reviews. Once again, I found the sweetness unattractive with a main course. Nice sparkly texture. It would have been better as an aperitif. $13.95. 86/100. [27 Aug 2012].
 Vineland Estates, Syrah, 2004. Very peppery. The flavour was quite different from when we thought it was worth $40 at the winery. That could be because of the conditions in our Bathurst condo's "wine rack". $40. 91/100. [Feb 21 2009].
 
@@ -445,6 +449,7 @@ Concha Y Toro, Casillero del Diablo, Syrah, 2007. I bought it because it came in
 Concha Y Toro, Maycas Del Limari Reserva, Syrah, 2009, Limari Valley. Probably should have let it age longer, but it was really raw and loaded with tannins. $14.95. 79/100. [1 Jan 2009].
 
 Cono Sur, Pinot Noir, 2007. Drank it a little cool. I liked it. $10.45. 91/100. [1 Jan 2009].
+Cono Sur, Pinot Noir, Bicycle, 2011, LCBO# 341602. Meh. $10.95. 86/100. [22 Dec 2012].
 Cono Sur, Bicycle, Riesling, 2011, Central Valley, LCBO# 156653. Very good. $9.95. 91/100. [4 Jul 2012].
 Cono Sur, Bicycle, Viognier, 2011, Colchagua Valley, LCBO# 64287. Good value. A little sweet. Like a muffled gewurztraminer. Good value. $9.95. 87/100. [30 May 2012].
 
@@ -535,6 +540,8 @@ Calvet, Merlot, Cabernet Sauvignon, 2006. Crappy. $9. 84/100. [1 Sep 2009].
 Cellier Dauphins, Ac Cotes du Rhone, Red Blend, 2008. It was okay. $10. On sale. 87/100. [2 Nov 2010].
 
 Chanson Pére & Fils Le Bourgogne, Pinot Noir, 2008, LCBO# 50575. Great flavour. Price reduction of $2. $16.95. 91/100. [13 May 2011].
+
+Charles Ellner, Seduction, Brut, Champagne, Chardonnay, 2001, LCBO# 106583. RRR. $52.95. ?/100. In fridge.
 
 Château des Fines Roches, Chateauneuf-du-Pape, Mourvedre, Grenache, Syrah, 2001. Had this at the chateau where we stayed for our trip. Wonderful. $100. At restaurant. 93/100. [14 May 2012].
 Château des Fines Roches, Chateauneuf-du-Pape, Mourvedre, Grenache, Syrah, 2007. $29.90. ?/100. Got at winery. From 2017. To 2022. In fridge.
@@ -710,6 +717,7 @@ Patriarche, Pinot Noir, 2007. Maybe not worth the price, but a pretty decent win
 Paul Jaboulet, Aîné, Parallèle 45, Côtes Du Rhône, Syrah, Grenache, 2009, Rhône Valley. Not bad. 88/100. $14.05. [27 Nov 2012].
 
 Perrin & Fils, Cotes du Rhones, Ac L'Andeol Rasteau, Red Blend, 2007. I was not impressed. For this price I expected something more. $19.95. 87/100. [10 Sep 2010].
+Perrin & Fils, Les Sinards, Châteauneuf Du Pape, 2009, Ac Rhone, LCBO# 926626, Grenache, Mourvedre, Syrah.. $34.95. Gift from Dad. ?/100. In fridge. From 2014. To 2025.
 
 Petit Rimauresq, Grenache, Cinsault, Syrah, Rosé, 2011, Ac Côtes De Provence, LCBO# 276360. Very nice. Dry. $13.95. 92/100. [30 Jun 2012].
 
@@ -800,6 +808,8 @@ Caruso & Minini, Terre Di Giumara, Frappato, Red Blend, Nerello Mascalese, 2010,
 Casale del Giglio, Satrico, Lazio IGT, 2011, Chardonnay, Sauvignon, Trebbiano Giallo. Great. $15. 92/100. [27 May 2012].
 
 Cascina Bongiovanni, Dolcetto D'alba, Dolcetto, 2008, Doc Piedmont, LCBO# 203463. Very nice with pasta. 91/100. $12.95. [16 Aug 2011].
+
+Castelgiocondo, Brunello Di Montalcino, Sangiovese, LCBO# 650432, 2005. Gift from Dad. RRR. $49.95. ?/100. In fridge. From 2016. To 2022.
 
 Castelmonte Cent'are, Nero d'Avola, 2008, Sicily, LCBO# 546192. Not very good. $12.45. 84/100. [2 May 2011].
 
@@ -931,6 +941,8 @@ Santa Margherita, Brut, Valdobbiadene, Prosecco, Superiore, Doc Veneto, LCBO# 68
 
 Sella & Mosca, Grenache, 2005. Nothing special. $15.95. 87/100. [4 March 2009].
 
+Silvio Nardi, Brunello di Montalcino, 2007, LCBO# 922054, Sangiovese. Gift from Mark. $41.95. ?/100. From 2017. In fridge.
+
 The Soprano's, Chianti, 2007, Other Red. You pay for the name. $14.95. 84/100. [25 Jun 2010].
 
 Staccali, Chianti, 2006, Red Blend. Great colour and a nice first flavour, but kind of meh the rest of the bottle. Not worth getting again. $16.40. 84/100. [30 April 2009].
@@ -941,6 +953,8 @@ Storia Antica, Ripasso, Valpolicella, Superiore, 2009, Doc Veneto, LCBO# 273672,
 Tenuta Sant'antonio Scaia Rossa, Corvina, 2008. A nice woody, almost cedary nose. Straw-like. Quite good. 91/100. $13.95. [13 May 2010].
 
 Terenzuola, Vermentino, 2009, Doc Colli Di Luni, LCBO# 205823. It was okay. $17.95. 84/100. [6 Mar 2011].
+
+Terresacre, Neravite, Molise Rosso, 2009, Doc Molise, Red Blend, LCBO# 280834. $13.50. Great. 89/100. [26 Dec 2012].
 
 Tini, Sangiovese, DOC Romagna, 2008. Quite nice. $10. 87/100. [26 Oct 2010].
 
@@ -993,6 +1007,8 @@ New Zealand
 Churton, Pinot Noir, 2008, Marlborough, South Island, LCBO# 237164. RRR. $36.95. ?/100. In fridge. From 2014. To 2016.
 
 Hawke's Bay, Merlot, 2007. Not bad. $44. At PicNic. 87/100. [30 Jan 2010].
+
+Kim Crawford, Sauvignon Blanc, 2012, Marlborough, LCBO# 35386. RRR. $16.95. Discounted by $2. Not bad. Nice flavour of passionfruit. Not worth $19 though. 89/100. [29 Dec 2012].
 
 Marlborough, Pinot Noir, 2007. A bit weak in colour and a bit strong. But other than that a nice flavour. $20.95. 91/100. [1 Jan 2009].
 
@@ -1121,6 +1137,8 @@ Montecillo, Crianza La Rioja, 2004, Red Blend. Way too strong, didn't mellow wit
 Montecillo, Blanco, Rioja, 2009, White Blend. Okay taste, but bad aftertaste. Not very good. 79/100. $9.95. [24 Nov 2010].
 Montecillo, Reserva, 2006, Rioja, LCBO# 621003, Red Blend. Just not that good. Discounted by $2. $16.45. 84/100. [15 Jun 2012].
 
+Naveran Dama, Other White, Extra Brut Cava, 2010, LCBO# 223602. $17.95. Decent. 87/100. [14 Dec 2012].
+
 Osborne Ducale, Syrah, Tempranillo, 2007. Pretty good wine for the price and volume. $8.89. 1L. 91/100. [1 Jan 2009].
 
 Otazu, Chardonnay, 2008, Doc Navarra, LCBO# 211003. Nice. $12.25. 87/100. [2 Nov 2011].
@@ -1135,7 +1153,8 @@ Red Guitar, Tempranillo, Grenache, 2008. Initially kind of stinky; needed to bre
 
 Sabor Real Viñas Centenarias, Tempranillo, 2007, Do Toro, LCBO# 244772. Very dark; and hearty Nice. $15. 91/100. [6 Jan 2011].
 
-Señorio De P Peciña Chobeo De Peciña, Viura, White Blend, 2009, Doca Rioja, LCBO #266866. Nice. $17.95. 91/100. [25 Mar 2012].
+Señorío De P Peciña, Reserva, 2001, Doca Rioja, Red Blend, LCBO# 82156. $29.95. Good. Enjoyed the aged wine, but perhaps not the best value. 89/100. [26 Dec 2012].
+Señorio De P Peciña, Chobeo De Peciña, Viura, White Blend, 2009, Doca Rioja, LCBO# 266866. Nice. $17.95. 91/100. [25 Mar 2012].
 
 Segura Viudas, Brut Reserva, Cava, 2009. Nice. $14.55. 91/100. [1 Jan 2011].
 Spanish Quarter, Cabernet Sauvignon, Tempranillo, 2006. A pretty good, nice wine for the price. $13. 91/100. [1 Jan 2009].
@@ -1168,6 +1187,8 @@ Blackstone, Cabernet Sauvignon, 2006. A nice colour, but the flavour is average 
 
 BR Cohn, Sonoma, Cabernet Sauvignon, 2006. We loved it! $25.95. 93/100. [13 Dec 2009]. Second time around, it wasn't as good as an earlier wine we drank in the night. Seemed a bit wimpy and sour. $25.95. 87/100. [23 Dec 2009].
 
+Brooks Amycas, 2008, Pinot Gris, Pinot Blanc, Gewurztraminer, Chardonnay, Muscat, Riesling Oregon, LCBO# 239079. $13.90. A big hit with the white wine drinkers. 89/100. [26 Dec 2012].
+
 Bontera Vineyards, Syrah, 2005. Not bad, but not very good either. Not worth the price. $20. 84/100. [1 Jan 2009].
 Belle Glos Meiomi, Pinot Noir, 2009, LCBO# 130138. A little more medium-bodied than most pinot noir, but still had the nice pinot cherry flavour. A bit pricey though. $26.95. 91/100. [23 Jul 2011].
 
@@ -1196,9 +1217,9 @@ Guenoc, Cabernet Sauvignon, 2009, Lake County, California, LCBO# 104240. Can't h
 
 Ironstone, Symphony, Other White, 2007. $14.95. Sweet and fruity. Beautiful aroma, smells of flowers and lychee, but drink it cold because it's very sweet. 84/100. [8 May 2009].
 
-Kenwood, Cabernet Sauvignon, 2008, Sonoma County, LCBO# 990440. Very good. $21.95. 92/100. [26 Dec 2011].
-Kenwood, Jack London, Cabernet Sauvignon, Sonoma Valley, 2006. Fantastic. At restaurant. $118. 93/100. [2 Jul 2011].
-Kenwood, Jack London, Cabernet Sauvignon, 2007, Sonoma Valley, LCBO# 944843. RRR. $34.95. ?/100. In fridge. Two bottles.
+Kenwood, Cabernet Sauvignon, 2008, Sonoma, LCBO# 990440. Very good. $21.95. 92/100. [26 Dec 2011].
+Kenwood, Jack London, Cabernet Sauvignon, Sonoma, 2006. Fantastic. At restaurant. $118. 93/100. [2 Jul 2011].
+Kenwood, Jack London, Cabernet Sauvignon, 2007, Sonoma, LCBO# 944843. Terrific. $34.95. 91/100. [31 Dec 2012]. RRR. $34.95. ?/100. In fridge.
 
 LaFond Santa Rita Hills, Pinot Noir, 2006. $23.95. A very good wine. 92/100. [1 Jan 2009].
 
