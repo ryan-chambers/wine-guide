@@ -49,6 +49,7 @@
     <% if ! score.to.nil? %>
     Drink To: <%= score.to %>.
     <% end %>
+    <%= link_to 'Edit', [@wine, score], :action => 'edit' %>
   </p>
   <% end %>
 <% end %>
