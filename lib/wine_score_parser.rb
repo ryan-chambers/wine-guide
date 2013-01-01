@@ -183,6 +183,7 @@ def make_scores(score_info)
 #      p "Got from #{score.from}"
     elsif part == 'In fridge'
       last_was_price = false
+      score.in_fridge = true
       score.score = 0
 #      p "found wine in fridge"
       score.in_fridge = true

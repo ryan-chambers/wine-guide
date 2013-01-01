@@ -1,4 +1,5 @@
 class Wine < ActiveRecord::Base
+  # FIXME remove in_cellar
   attr_accessible :country, :drink_from, :drink_until, :in_cellar, :lcbo_code, :other, :purchased_date,
     :region, :year, :grapes
 
@@ -35,5 +36,13 @@ class Wine < ActiveRecord::Base
 
   def grapes_to_s
     grapes.empty? ? '' : grapes.join(', ')
+  end
+
+  def real_scores
+    scores.select {|score| ! score.in_fridge}
+  end
+
+  def cellar_scores
+    scores.select {|score| score.in_fridge}
   end
 end

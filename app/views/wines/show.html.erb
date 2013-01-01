@@ -19,14 +19,14 @@
 <% end %>
 
 <h2>Scores</h2>
-<% if ! @wine.scores.empty? %>
+<% if ! @wine.real_scores.empty? %>
   <table class="wine_scores">
     <tr>
       <th>Date</th>
       <th>Score</th>
       <th>Comments</th>
     </tr>
-  <% @wine.scores.each do |score| %>
+  <% @wine.real_scores.each do |score| %>
     <tr>
       <td><%= score.wine_reviewdate %></td>
       <td><%= score.wine_score %></td>
@@ -39,16 +39,16 @@
 <% end %>
 <br />
 
-<% if @wine.in_cellar %>
-<h2>Cellar Information</h2>
-<dl>
-  <dt>Purchase Date</dt>
-  <dd><%= @wine.purchase_date %></dd>
-  <dt>Drink From</dt>
-  <dd><%= @wine.drink_from %></dd>
-  <dt>Drink To</dt>
-  <dd><%= @wine.drink_to %></dd>
-</dl>
+<% if ! @wine.cellar_scores.empty? %>
+<h2>Cellar Guide</h2>
+  <% @wine.cellar_scores.each do |score| %>
+  <dl>
+    <dt>Drink From</dt>
+    <dd><%= score.from %></dd>
+    <dt>Drink To</dt>
+    <dd><%= score.to %></dd>
+  </dl>
+  <% end %>
 <% end %>
 
 <%= link_to 'Back', wines_path %>
