@@ -54,38 +54,6 @@
 <% end %>
 
 <h2>Add a new score</h2>
-<%= form_for([@wine, @wine.scores.build]) do |f| %>
-  <div class="field">
-    <%= f.label :reviewdate %>
-    <%= f.text_field :reviewdate %>
-  </div>
-  <div class="field">
-    <%= f.label :score %>
-    <%= f.text_field :score %>
-  </div>
-  <div class="field">
-    <%= f.label :comments %>
-    <%= f.text_field :comments %>
-  </div>
-  <div class="field">
-    <%= f.label :price %>
-    $<%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :to %>
-    <%= f.text_field :to %>
-  </div>
-  <div class="field">
-    <%= f.label :from %>
-    <%= f.text_field :from %>
-  </div>
-  <div class="field">
-    <%= f.label :in_fridge %>
-    <%= f.check_box :in_fridge %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render "scores/form" %>
 
 <%= link_to 'Back', wines_path %>
