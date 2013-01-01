@@ -42,12 +42,14 @@
 <% if ! @wine.cellar_scores.empty? %>
 <h2>Cellar Guide</h2>
   <% @wine.cellar_scores.each do |score| %>
-  <dl>
-    <dt>Drink From</dt>
-    <dd><%= score.from %></dd>
-    <dt>Drink To</dt>
-    <dd><%= score.to %></dd>
-  </dl>
+  <p>
+    <% if ! score.from.nil? %>
+    Drink From: <%= score.from %>.
+    <% end %>
+    <% if ! score.to.nil? %>
+    Drink To: <%= score.to %>.
+    <% end %>
+  </p>
   <% end %>
 <% end %>
 
