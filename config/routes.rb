@@ -14,7 +14,12 @@ WineGuide::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :scores, :wines
+  
+  resources :wines do
+    resources :scores
+  end
+
+  resources :scores
 
   # Sample resource route with options:
   #   resources :products do
