@@ -48,22 +48,27 @@ class WineVO
       wine[0]
     else
       existing_wine = winery.wines.find { |w|
-        if (w.year.to_s != @year)
-#          p "Year #{w.year} doesn't match #{@year}"
-          false
-        end
+        #p "Matching #{@year}, #{@other.sort!.join(', ')}, #{@grapes.sort!.uniq} to #{w}"
+        year_match = w.year.to_s == @year
+        
+        #p "Year match: #{year_match}"
 
-        if(w.other != @other.sort!.join(', '))
-#            p "Other #{w.other} doesn't match #{@other.sort!.join(', ')}"
-            false
-        end
+        other_match = w.other == @other.sort!.join(', ')
+        
+        #p "Other match #{other_match}"
 
-        w.list_grape_names == @grapes.sort!.uniq
+        grapes_match = w.list_grape_names == @grapes.sort!.uniq
+
+        #p "Grapes match #{grapes_match}"
+
+        year_match and other_match and grapes_match
       }
 
       if ! existing_wine
+        #p "Wine doesn't exist; creating new one from #{winery}"
         create_wine_from_values winery
       else
+        #p "Using existing wine #{existing_wine}"
         existing_wine
       end
     end
