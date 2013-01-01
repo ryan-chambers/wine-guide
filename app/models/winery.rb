@@ -8,4 +8,8 @@ class Winery < ActiveRecord::Base
   def self.find_by_name(name)
     Winery.where("lower(name) = ?", name.downcase).first
   end
+
+  def to_s
+    name
+  end
 end
