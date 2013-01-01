@@ -40,7 +40,7 @@ class WineVO
       winery = Winery.new
       winery.name = @winery_name
       winery.save!
-      p "Saved new winery #{@winery_name}"
+      # p "Saved new winery #{@winery_name}"
     end
 
     wine = Wine.where(:lcbo_code => @lcbo, :year => @year, :winery_id => winery.id)
