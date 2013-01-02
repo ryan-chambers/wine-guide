@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h2>
   <%= @wine.winery.name %> <%= @wine.grapes_to_s %> <%= @wine.year %>
   (<% if ! @wine.region.empty?%><%= @wine.region %>, <% end %>
@@ -40,7 +38,7 @@
 <br />
 
 <% if ! @wine.cellar_scores.empty? %>
-<h2>Cellar Guide</h2>
+<h2>In Cellar</h2>
   <% @wine.cellar_scores.each do |score| %>
   <p>
     <% if ! score.from.nil? %>
@@ -55,6 +53,8 @@
 <% end %>
 
 <h2>Add a new score</h2>
+<p style="color: red"><%= notice %></p>
+
 <%= render "scores/form" %>
 
 <%= link_to 'Back', wines_path %>

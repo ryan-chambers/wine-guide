@@ -18,12 +18,17 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @wine = Wine.find(params[:wine_id])
+   @wine = Wine.find(params[:wine_id])
    @score = @wine.scores.create(params[:score]) do |score|
       if score.in_fridge
         score.score = 0
       end
     end
+
+    if @score.errors.any?
+      flash[:notice] = 'Errors saving score: ' + @score.errors.full_messages.join(', ')
+    end
+
     redirect_to wine_path(@wine)
   end
 
