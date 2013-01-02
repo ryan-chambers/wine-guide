@@ -164,9 +164,10 @@ def make_scores(score_info)
       finished_score = true
       last_was_price = false
     # price
-    elsif /\$.*/.match(part)
+    elsif /^\$\d*$/.match(part)
       score.price = part.sub('$', '')
       last_was_price = true
+#      p "Found part of price #{score.price}"
     # comments
     elsif /\d{2}/.match(part) && last_was_price
       dollar_amt = score.price
@@ -190,6 +191,7 @@ def make_scores(score_info)
     else
       score.comments << part
       last_was_price = false
+      # p "Found comment #{part}"
     end
 
     i += 1
