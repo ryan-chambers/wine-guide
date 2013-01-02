@@ -8,7 +8,15 @@ class Score < ActiveRecord::Base
   belongs_to :wine
 
   def score_not_null_unless_in_fridge
-    errors.add(:score, "The score cannot be null") if score.nil? and ! in_fridge
+    errors.add(:score, "The score is missing") if score.nil? and ! in_fridge
+  end
+
+  def comments_not_null_unless_in_fridge
+    errors.add(:score, "The comments are missing") if (comments.nil?) and ! in_fridge
+  end
+
+  def reviewdate_not_null_unless_in_fridge
+    errors.add(:score, "The review date is missing") if :reviewdate.nil? and ! in_fridge
   end
 
   def score_between_0_and_100
