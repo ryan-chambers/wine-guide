@@ -1,7 +1,7 @@
 <%= form_for([@wine, @wine.scores.build]) do |f| %>
   <div class="field">
     <%= f.label :reviewdate, "Review Date" %>
-    <%= f.text_field :reviewdate %>
+    <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
   </div>
   <div class="field">
     <%= f.label :score %>

@@ -1,8 +1,18 @@
 <h2>Edit Score</h2>
 <%= form_for(@score) do |f| %>
+  <% if @score.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this score from being saved:</h2>
+    <ul>
+    <% @score.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
   <div class="field">
     <%= f.label :reviewdate, "Review Date" %>
-    <%= f.text_field :reviewdate %>
+    <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
   </div>
   <div class="field">
     <%= f.label :score %>
