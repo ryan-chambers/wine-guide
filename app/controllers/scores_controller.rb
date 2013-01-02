@@ -40,7 +40,7 @@ class ScoresController < ApplicationController
                       :notice => 'Score was successfully updated.') }
         format.json  { head :no_content }
       else
-        format.html  { render :action => "edit" }
+        format.html  { render :action => "show" }
         format.json  { render :json => @score.errors,
                       :status => :unprocessable_entity }
       end
