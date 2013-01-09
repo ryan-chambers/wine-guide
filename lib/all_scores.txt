@@ -107,7 +107,7 @@ Paxton, Aaa, Syrah, Grenache, 2010, McLaren Vale, South Australia, LCBO# 149898.
 
 Peter Lehmann, Layers, Syrah, Tempranillo, Mourvedre, Grenache, 2010, Barossa Valley, South Australia, LCBO# 138883. Forgettable. $17.95. 86/100. [7 Sep 2012].
 
-Penfolds, Thomas Hyland, Syrah, 2008, South Australia, LCBO# 611210. $13.95. It was okay. Discounted $3. 84/100. [14 May 2011].
+Penfolds, Thomas Hyland, Syrah, 2008, South Australia, LCBO# 611210. $19.95. It was okay. Discounted $3. 84/100. [14 May 2011].
 
 Ram's Leap, Syrah, 2007. More like ram's piss. Sour and not very good. $11.45. 65/100. [29 Sep 2010].
 
@@ -150,7 +150,7 @@ Canada
 Alvar, Semillon, Sauvignon Blanc, 2009, VQA Niagara, LCBO# 215392. Quite good. $12.95. 91/100. [24 Mar 2011].
 Alvar, Semillon, Sauvignon Blanc, 2010, VQA Niagara, LCBO# 215392. Just wasn't that into it. $12.95. 84/100. [9 Feb 2012].
 
-Alvento, Aria, Nebbiolo, 2006, VQA Niagara Peninsula, LCBO# 167874. Nice, but a little strange. Very light - due to the grape or the age(?). $21.35. 84/100. [3 Mar 2012].
+Alvento, Aria, Nebbiolo, 2006, VQA Niagara Peninsula, LCBO# 167874. Nice, but a little strange. Very light - due to the grape or the age?. $21.35. 84/100. [3 Mar 2012].
 Alvento, Elige, 2007, Cabernet Sauvignon, Cabernet Franc, Merlot, VQA Niagara Peninsula, LCBO# 226019. It was fantastic, hearty but with some aged elegance. $19.95. 93/100. [18 Jun 2011].
 Alvento, Sondra, 2006, Cabernet Sauvignon, Cabernet Franc, Merlot, VQA Niagara Peninsula, LCBO# 207332. Pretty good, IIRC. Discounted by $4. $16.95. 91/100. [15 Jul 2011].
 
@@ -335,7 +335,7 @@ Pelee Island Winery, Vidal, 2007. Yellowy colour, but a very nice flavour. $10. 
 Pelee Island Winery, Vidal, 2009. Pretty nice. $10.45. 87/100. [5 Jan 2011].
 
 Peller Estates, Family Series, Baco Noir, 2010, VQA Niagara Peninsula. Sour at first and needed decanting; afterwards light and great cherry flavour. Terrific value. $10.25. 92/100. [31 Aug 2011]. Not nearly as impressed the second time. $10.95. 84/100. [30 Nov 2011].
-Peller Estates, Private Reserve, Baco Noir, 2010, VQA Niagara Peninsula. Sour at first and needed aerating. For some reason I liked the regular one more. Definitely needs to be cellared $17.25. 84/100. [9 Sep 2011].
+Peller Estates, Private Reserve, Baco Noir, 2010, VQA Niagara Peninsula. Sour at first and needed aerating. For some reason I liked the regular one more. Definitely needs to be cellared. $17.25. 84/100. [9 Sep 2011].
 Peller Estates, Family Series, Chardonnay, 2010, VQA Niagara Peninsula, LCBO# 582825. At first it tasted bad, and even after it warmed up it was a little on the sweet side, but not bad. $10.95. 84/100. [8 Sep 2011].
 
 Pillitteri Estates, Cabernet Sauvignon, 2007, VQA Niagara Peninsula, LCBO# 349233. Sour - not good at all. $16.45. 75/100. [25 Aug 2011].
@@ -552,7 +552,7 @@ Château Beaucastel, Coudoulet De Beaucastel, 2009, Ac Côtes Du Rhône, Red Ble
 
 Château Beau Site, 2004, Red Blend, Ac Saint Estèphe, Cru Bourgeois Supérieur, LCBO# 967844. Excellent. I love old wines. $37.95. 93/100. [31 Dec 2011].
 
-Chateau Canon de Brem, Bordeaux, Red Blend, 2003. Strong, but without the sophistication and mellowing of an older wine. Maybe it could have been kept longer? $19.95. 87/100 [16 Jul 2010].
+Chateau Canon de Brem, Bordeaux, Red Blend, 2003. Strong, but without the sophistication and mellowing of an older wine. Maybe it could have been kept longer?. $19.95. 87/100 [16 Jul 2010].
 
 Château D'anglès, La Clape Classique, Syrah, Grenache, Mourvedre, 2007, Ac Languedoc, LCBO# 286484. Great. $14.95. 93/100. [10 Aug 2012].
 
@@ -707,7 +707,7 @@ Mas Des Bressades, Cuvée Tradition Blanc, Grenache Blanc, Roussanne, 2011, Ac C
 
 Michel Delhommeau, Other White, Muscadet, 2008. When not drunk too cold was quite nice. $12.95. 89/100. [20 Jul 2010].
 
-Mouton Cadet, Blanc, White Blend, Bordeaux, 2007. Dry but not bland, a very nice white wine. $12.95. 92/100. [20 Feb 2009]. Second time around, it had a funny, strong smell. Lack of quality control?. 84/100. [27 Feb 2009].
+Mouton Cadet, Blanc, White Blend, Bordeaux, 2007. Dry but not bland, a very nice white wine. $12.95. 92/100. [20 Feb 2009]. Second time around, it had a funny, strong smell. Lack of quality control?. $12.95. 84/100. [27 Feb 2009].
 
 Ogier, Ac Cotes du Ventoux, Grenache, Syrah, 2007. $10.95. Regular $11.95. A great wine for the price. Hearty, nice flavour. Definitely a great value. 91/100. [28 May 2009].
 Ogier, Heritages, Ac Cotes Du Rhone, 2009, LCBO# 535849, Red Blend. Has potential, but way too raw. $12.95. 84/100. [18 Jan 2011].
@@ -862,7 +862,7 @@ Frescobaldi, Sangiovese, Cabernet Sauvignan, 2007. For an inexpensive wine, it i
 
 Fumanelli, Valpolicella, Red Blend, Classico, 2008. Miwa doesn't really care for it. $12.95. 84/100. [4 May 2010].
 
-Fontanafredda Briccotondo, Barbera, 2011, Doc Piedmont, LCBO# 72348. Excellent. 92/100. [1 Sep 2012].
+Fontanafredda Briccotondo, Barbera, 2011, Doc Piedmont, LCBO# 72348. $15.95. Excellent. 92/100. [1 Sep 2012].
 
 Gabbiano, Chianti, 2010, Tuscany, Red Blend, LCBO# 78006, Red Blend. Pretty good. $11.95. 87/100. [9 Jan 2012].
 Gabbiano, Pinot Grigio, 2011, Tre Venezie, Veneto, 2011, LCBO# 77990. Not very good. $12.95. 75/100. [9 Jun 2012].
@@ -925,7 +925,7 @@ Rivera, Nero di Troia, 2006. I liked it at first, but it's really boozy and alwa
 Rocca delle Macie, Doc Vernaiolo, Chianti, Red Blend, 2006. I really liked it, a good Italian red. $16. 91/100. [28 June 2009].
 Rocca delle Macie, Chianti, Riserva, 2006, Red Blend. Very dark, and a very nice wine. $15. 91/100. [1 Aug 2010].
 Rocco delle Macie, Doc Vernaiolo, Chianti, 2007, Red Blend. A very nice red wine, went especially well with tomato cream sauce and pasta. $12.95. 91/100. [1 Jan 2009].
-Rocco delle Macie, Red Blend, Doc Vernaiolo, Chianti, 2007, LCBO# 741749. Still great. $18.95. 91/100. [17 Jan 2010]. Good, but not as great as I previously remembered. 87/100. [9 Apr 2011].
+Rocco delle Macie, Red Blend, Doc Vernaiolo, Chianti, 2007, LCBO# 741749. Still great. $18.95. 91/100. [17 Jan 2010]. Good, but not as great as I previously remembered. 87/100. $18.95. [9 Apr 2011].
 Rocco delle Macie, Blue, Doc Vernaiolo, Chianti, 2008, Red Blend. Not as good as the red bottle. $13.95. 84/100. [13 Mar 2010]. It wasn't great, and Miwa wasn't a fan, but I thought it was pretty good. $12.45. 87/100. [25 Jul 2010].
 Rocca delle Macie, Grey, Chianti, Riserva, 2006, Docg Tuscany, LCBO# 111641, Red Blend. RRR. $15.95. ?/100. From 2012. To 2018. In fridge.
 
@@ -961,7 +961,7 @@ Tini, Sangiovese, DOC Romagna, 2008. Quite nice. $10. 87/100. [26 Oct 2010].
 
 Tommasi, Ripasso, Viticoltori, 2009, Valpolicella, Classico Superiore, LCBO# 910430, Red Blend. Very nice. $17.95. 91/100. [30 Dec 2011].
 
-Travaglini, Nebbiolo, 2005. Medium-bodied and flavoured; not made for strong stuff. But very good for my lemon zest veal at the restaurant. $50 at restaurant. 92/100 [30 May 2009].
+Travaglini, Nebbiolo, 2005. Medium-bodied and flavoured; not made for strong stuff. But very good for my lemon zest veal at the restaurant. $50. 92/100 [30 May 2009].
 
 Triade Bianco, 2009, Igt Campania, White Blend, LCBO# 214718. It was pretty good; maybe a little too sour and apple-y. $12.95. 87/100. [29 Apr 2011].
 
@@ -1076,7 +1076,7 @@ Cathedral Cellar, Chenin Blanc, 2011, Coastal Region, LCBO# 278325. Minerally, a
 
 Charles Back Fairview, Syrah, 2008. Wasn't so good. $14.95. 84/100. [15 Jan 2011].
 
-Drostdy-Hof, Reserve, Syrah, 2005. The smell is a bit boozy, but the flavour is really nice. A good value. $12. 1L. 92/100. [1 Jan 2009]. Second time around still pretty good. 91/100. [1 Jan 2009].
+Drostdy-Hof, Reserve, Syrah, 2005. The smell is a bit boozy, but the flavour is really nice. A good value. $12. 1L. 92/100. [1 Jan 2009]. Second time around still pretty good. 91/100. $12. [1 Jan 2009].
 Drostdy-Hof, Merlot, 2009. Not bad at all. $9.95. 87/100. [19 Apr 2010].
 
 Fish Hoek, Sauvignon Blanc, 2009. Plenty of flavour. A nice hint of fruitiness but not sweet. $9.75. 91/100. [9 Jan 2010].
@@ -1092,11 +1092,11 @@ Lord's Winery, Sauvignon Blanc, 2007. Once it has warmed a little from the fridg
 Juno, Arthouse, Syrah, Mourvedre, 2007. Very South African Syrah - bold and jammy, but nice with the mourvedre. $14.95. 91/100. [25 Aug 2010]. Wasn't much of a fan. $14.95. 84/100. [15 Jan 2011].
 
 Man, Cabernet Sauvignon, 2006. A pretty good wine, but nothing too special. $15. Bought in Quebec. 91/100. [5 August 2009].
-Man, Cabernet Sauvignon, 2007. Very acidic. A big disappointment considering the Syrah. $14.75. 87/100. [14 Feb 2009]. Much deepier, smokier and better flavour than before. 91/100. [10 Mar 2009].
-Man, Chenin Blanc, 2008. A pretty good white wine; a bit acidic at first but nice and floral. 87/100. [7 August 2009].
+Man, Cabernet Sauvignon, 2007. Very acidic. A big disappointment considering the Syrah. $14.75. 87/100. [14 Feb 2009]. Much deeper, smokier and better flavour than before. 91/100. $14.75. [10 Mar 2009].
+Man, Chenin Blanc, 2008. $14.95. A pretty good white wine; a bit acidic at first but nice and floral. 87/100. [7 August 2009].
 Man, Tormentoso Old Vine, Chenin Blanc, 2011, Wo Paarl, LCBO# 278366. Like an Ontarian wine with its minerality. But something was missing. $14.95. 87/100. [9 Aug 2012].
 Man, Chenin Blanc, 2010. Pretty darn good. $12.95. 91/100. [12 Jan 2011].
-Man, Syrah, 2006. Genius! $12.95. 93/100. [1 Jan 2009].
+Man, Syrah, 2006. Genius!. $12.95. 93/100. [1 Jan 2009].
 Man, Syrah, 2009. Pretty good. $13.95. 92/100. [23 Jun 2011].
 
 Obikwa, Syrah, 2007. This is what I imagine Syrah to taste like - bold flavour, jammy. $10. 91/100. [1 Jan 2009].
@@ -1118,9 +1118,9 @@ Bodegas Castano Hecula, Yecla DO, Mourvedre, 2008. Tasted very French - like a B
 
 Bodegas Piqueras, Valcanto, Monastrell, Mourvedre, 2008, Do Almansa, LCBO #214197. Pretty good. $13.95. 87/100. [27 Feb 2012]. Mediocre. $13.95. 79/100. [21 Mar 2012].
 
-Castillo de Almansa Reserva, Almansa, Tempranillo, Mourvedre, Grenache, 2004. A beautiful colour and a nice bold flavour. Excellent value! $11.85. 92/100. [1 Jan 2009].
+Castillo de Almansa Reserva, Almansa, Tempranillo, Mourvedre, Grenache, 2004. A beautiful colour and a nice bold flavour. Excellent value!. $11.85. 92/100. [1 Jan 2009].
 
-Castillo de Monseran, DO Carinena, Garnacha, Grenache, 2007. Had a terrible after taste. An awful wine. $8.95. 10/100. Second time, still really bad. 65/100. [16 Aug 2009].
+Castillo de Monseran, DO Carinena, Garnacha, Grenache, 2007. Had a terrible after taste. An awful wine. $8.95. 10/100. [16 Aug 2009].
 
 Chivite, Gran Feudo Reserva, 2005, Tempranillo, Cabernet Sauvignon, Do Navarra, LCBO# 479014. Really liked this one a lot. $15.95. 91/100. [1 Jun 2011].
 
@@ -1186,7 +1186,7 @@ Big Yellow Cab, Mendocino, Cabernet Sauvignon, 2005. A fantastic wine. $17.95. 9
 
 Blackstone, Cabernet Sauvignon, 2006. A nice colour, but the flavour is average at best. The smell just overwhelms with alcohol. $15. 87/100. [1 Jan 2009].
 
-BR Cohn, Sonoma, Cabernet Sauvignon, 2006. We loved it! $25.95. 93/100. [13 Dec 2009]. Second time around, it wasn't as good as an earlier wine we drank in the night. Seemed a bit wimpy and sour. $25.95. 87/100. [23 Dec 2009].
+BR Cohn, Sonoma, Cabernet Sauvignon, 2006. We loved it!. $25.95. 93/100. [13 Dec 2009]. Second time around, it wasn't as good as an earlier wine we drank in the night. Seemed a bit wimpy and sour. $25.95. 87/100. [23 Dec 2009].
 
 Brooks Amycas, 2008, Pinot Gris, Pinot Blanc, Gewurztraminer, Chardonnay, Muscat, Riesling Oregon, LCBO# 239079. $13.90. A big hit with the white wine drinkers. 89/100. [26 Dec 2012].
 
@@ -1242,7 +1242,7 @@ RH Phillips, Syrah, 2006. Not very good at all. $11.95. 75/100. [15 Dec 2009].
 
 Robert Mondavi, Woodbridge, Cabernet Sauvignon, 2009. Definitely needed the decanter. But pretty good. Discounted by $1. $10.95. 87/100. [1 Feb 2011].
 Robert Mondavi, Woodbridge, Sauvignon Blanc, 2007. I don't drink much Sauv Blanc, but this one had a really nice aroma, and plenty of flavour with a bit of sweetness - I didn't mind at all. $11.95. 91/100. [3 Apr 2009].
-Robert Mondavi, Woodbridge, Sauvignon Blanc, 2008. Almost the exact same as the 2007. A great wine. $11.95. 91/100. [11 Nov 2009] Still great. $11.95. 91/100 [15 Jun 2010].
+Robert Mondavi, Woodbridge, Sauvignon Blanc, 2008. Almost the exact same as the 2007. A great wine. $11.95. 91/100. [11 Nov 2009]. Still great. $11.95. 91/100 [15 Jun 2010].
 Robert Mondavi, Woodbridge, Sauvignon Blanc, 2009. Tasted a lot like sour apple juice. Not nearly as good as previous vintages. $11.95. 84/100. [30 Jan 2011].
 
 Rodney Strong, Merlot, Sonoma, 2005. Amazing value. At restaurant. $52. 93/100. [4 Feb 2012].
