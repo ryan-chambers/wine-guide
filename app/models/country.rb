@@ -4,9 +4,12 @@ class Country
   attr_reader :name
   attr_reader :regions
 
+  COUNTRIES = {}
+
   def initialize(name, regions = [])
     @name = name
     @regions = regions
+    COUNTRIES.store(name, self)
   end
 
   ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley', 'San Juan'])
@@ -49,35 +52,6 @@ class Country
   SWITZERLAND = Country.new('Switzerland')
   USA = Country.new('USA', ['Sonoma', 'Mendocino', 'Willamette Valley', 'Monterey', 'Central Valley',
       'Paso Robles', 'Napa'])
-
-  COUNTRIES = {
-    ARGENTINA.name => ARGENTINA,
-    AUSTRALIA.name => AUSTRALIA,
-    AUSTRIA.name => AUSTRIA,
-    BULGARIA.name => BULGARIA,
-    CANADA.name => CANADA,
-    CHILE.name => CHILE,
-    CYPRUS.name => CYPRUS,
-    FRANCE.name => FRANCE,
-    GEORGIA.name => GEORGIA,
-    GERMANY.name => GERMANY,
-    GREECE.name => GREECE,
-    ITALY.name => ITALY,
-    LEBANON.name => LEBANON,
-    MACEDONIA.name => MACEDONIA,
-    MOLDOVA.name => MOLDOVA,
-    MEXICO.name => MEXICO,
-    NEW_ZEALAND.name => NEW_ZEALAND,
-    PORTUGAL.name => PORTUGAL,
-    ROMANIA.name => ROMANIA,
-    SERBIA.name => SERBIA,
-    SLOVENIA.name => SLOVENIA,
-    SOUTH_AFRICA.name => SOUTH_AFRICA,
-    SPAIN.name => SPAIN,
-    TURKEY.name => TURKEY,
-    SWITZERLAND.name => SWITZERLAND,
-    USA.name => USA,
-  }
 
   def self.is_country?(country)
     COUNTRIES.has_key?(country)
