@@ -7,6 +7,8 @@ class Wine < ActiveRecord::Base
 
   validates :winery, :year, :country, :grapes, :presence => true
 
+  validates :year, :numericality => true
+
   belongs_to :winery
 
   has_many :scores
@@ -14,10 +16,7 @@ class Wine < ActiveRecord::Base
   has_and_belongs_to_many :grapes
 
   def year_after_1800
-    if(@year)
-      errors.add(:year, "The year must be after 1800") if
-        @year < 1800
-    end
+      errors.add(:year, "must be after 1800.") if year < 1800
   end
 
   def to_s
