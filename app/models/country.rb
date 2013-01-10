@@ -5,11 +5,13 @@ class Country
   attr_reader :regions
 
   COUNTRIES = {}
+  COUNTRY_LIST = []
 
   def initialize(name, regions = [])
     @name = name
     @regions = regions
     COUNTRIES.store(name, self)
+    COUNTRY_LIST << name
   end
 
   ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley', 'San Juan'])

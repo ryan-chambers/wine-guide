@@ -1,0 +1,48 @@
+<h2>Create new wine</h2>
+<%= form_for(@wine) do |f| %>
+  <% if @wine.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@wine.errors.count, "error") %> prohibited
+        this wine from being saved:</h2>
+    <ul>
+    <% @wine.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <label for="winery_name">Winery Name</label> <br />
+    <input id="winery_name" type="text" name="winery_name" value="<%= @winery_name %> " />
+  </div>
+  <div class="field">
+    <%= f.label :other, 'Other Notes' %><br />
+    <%= f.text_field :other %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :lcbo_code %><br />
+    <%= f.text_field :lcbo_code %>
+  </div>
+  <div class="field">
+    <%= f.label :other %><br />
+    <%= f.text_field :other %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= select("wine", "country", Country::COUNTRY_LIST)  %>
+  </div>
+  <div class="field">
+    <!-- FIXME update region based on country
+    -->
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

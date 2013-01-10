@@ -1,0 +1,13 @@
+page to add new wineries and wines
+
+search page - unobtrusive javascript rails cast (obsolete?)
+Publish to WWW (production)
+
+
+import latest scores document and verify
+security (rails casts for Devise, XSS, rails guide security article)
+host on heroku?
+create postgres production env
+modify utils to work on certain environments
+import scores to production
+
