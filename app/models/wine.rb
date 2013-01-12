@@ -16,7 +16,7 @@ class Wine < ActiveRecord::Base
   has_and_belongs_to_many :grapes
 
   def year_after_1800
-      errors.add(:year, "must be after 1800.") if year < 1800
+      errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
   end
 
   def to_s

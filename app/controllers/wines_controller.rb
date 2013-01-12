@@ -25,6 +25,15 @@ class WinesController < ApplicationController
 
     @winery = Winery.find_by_name(@winery_name)
 
+    params[:grapes][:grapes].split('|').each do |grape_id|
+      if ! grape_id.empty?
+        logger.info "Found grape_id #{grape_id}"
+
+        # FIXME - add grape to score
+        # FIXME - persist grape list back to page to re-create
+      end
+    end
+
     if @winery
       logger.info "Found existing winery #{@winery}"
       @wine.winery = @winery
@@ -50,6 +59,7 @@ class WinesController < ApplicationController
   def new
     @wine = Wine.new
     @winery_name = ''
+    @grapes =
 
     respond_to do |format|
       format.html  # new.html.erb

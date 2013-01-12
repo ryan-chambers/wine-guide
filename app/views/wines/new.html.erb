@@ -25,7 +25,15 @@
     <%= f.text_field :year %>
   </div>
   <div class="field">
-    <%= f.label :lcbo_code %><br />
+    <%= f.label 'Grapes' %><br />
+    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Select'})  %>
+  </div>
+  <%=  hidden_field(:grapes, :grapes) %>
+  <!--
+    FIXME - show list of grapes as selected; give option to remove
+  -->
+  <div class="field">
+    <%= f.label :lcbo_code, 'LCBO Code' %><br />
     <%= f.text_field :lcbo_code %>
   </div>
   <div class="field">
@@ -46,3 +54,7 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  enableGrapePicker();
+</script>
