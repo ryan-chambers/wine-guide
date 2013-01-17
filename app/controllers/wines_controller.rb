@@ -29,24 +29,26 @@ class WinesController < ApplicationController
       if ! grape_id.empty?
         logger.info "Found grape_id #{grape_id}"
 
-        # FIXME - add grape to score
-        # FIXME - persist grape list back to page to re-create
+        @wine.grapes << Grape.find(grape_id)
       end
     end
 
     if @winery
       logger.info "Found existing winery #{@winery}"
-      @wine.winery = @winery
     else
       logger.info "Creating new winery #{@winery_name}"
       @winery = Winery.new
       @winery.name = @winery_name
       @winery.save
     end
+    
+    @wine.winery = @winery
 
     logger.info "Got wine #{@wine}"
 
     @wine.save
+
+    # FIXME - persist grape list back to page to re-create
 
     if @wine.errors.any?
       flash[:notice] = 'Errors saving wine ' + @wine.errors.full_messages.join(', ')
