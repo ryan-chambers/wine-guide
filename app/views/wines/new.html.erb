@@ -26,12 +26,13 @@
   </div>
   <div class="field">
     <%= f.label 'Grapes' %><br />
-    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Select'})  %>
+    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] })  %>
   </div>
   <%=  hidden_field(:grapes, :grapes) %>
-  <!--
-    FIXME - show list of grapes as selected; give option to remove
-  -->
+  <div class="field">
+    <ul id="grape_list">
+    </ul>
+  </div>
   <div class="field">
     <%= f.label :lcbo_code, 'LCBO Code' %><br />
     <%= f.text_field :lcbo_code %>
