@@ -61,7 +61,7 @@ class WinesController < ApplicationController
   def new
     @wine = Wine.new
     @winery_name = ''
-    @grapes =
+    @grapes_ids = ''
 
     respond_to do |format|
       format.html  # new.html.erb

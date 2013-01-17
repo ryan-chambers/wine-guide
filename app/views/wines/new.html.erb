@@ -27,8 +27,8 @@
   <div class="field">
     <%= f.label 'Grapes' %><br />
     <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] })  %>
+    <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " />
   </div>
-  <%=  hidden_field(:grapes, :grapes) %>
   <div class="field">
     <ul id="grape_list">
     </ul>
