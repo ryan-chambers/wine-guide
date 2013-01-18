@@ -17,12 +17,13 @@ function enableGrapePicker() {
     $(document).on('click', '.remove_grape', function(e) {
         var $selected = $(e.currentTarget).parent();
         var class_to_remove = $selected.attr('class');
-        var id = $selected.data('id');
+        var id = $selected.data('id') + '';
 
         $('.' + class_to_remove).remove();
 
         var kept_ids = $selected_grape_ids.val().split('|').filter(function(item) {
-            return item.length > 0 && item !== id;
+            var result = item.length > 0 && item !== id && item !== ' ';
+            return result;
         });
         $selected_grape_ids.val(kept_ids.join('|'));
     });

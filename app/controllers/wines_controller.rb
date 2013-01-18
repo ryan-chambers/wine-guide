@@ -25,8 +25,8 @@ class WinesController < ApplicationController
 
     @winery = Winery.find_by_name(@winery_name)
 
-    params[:grapes][:grapes].split('|').each do |grape_id|
-      if ! grape_id.empty?
+    params[:grape_ids].split('|').each do |grape_id|
+      if ! grape_id.empty? and grape_id != ' '
         logger.info "Found grape_id #{grape_id}"
 
         @wine.grapes << Grape.find(grape_id)
@@ -44,6 +44,7 @@ class WinesController < ApplicationController
     
     @wine.winery = @winery
 
+    logger.info "Got winery #{@winery}"
     logger.info "Got wine #{@wine}"
 
     @wine.save
