@@ -52,6 +52,11 @@ class WinesController < ApplicationController
     @wine.save
 
     if @wine.errors.any?
+      if @wine.country
+        @regions = Country::COUNTRIES[@wine.country].regions
+      else
+        @regions = []
+      end
       flash[:notice] = 'Errors saving wine ' + @wine.errors.full_messages.join(', ')
       render :action => 'new'
     else
@@ -63,6 +68,7 @@ class WinesController < ApplicationController
     @wine = Wine.new
     @winery_name = ''
     @grapes_ids = ''
+    @regions = []
 
     respond_to do |format|
       format.html  # new.html.erb
