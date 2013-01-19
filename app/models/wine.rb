@@ -5,7 +5,7 @@ class Wine < ActiveRecord::Base
 
   validate :year_after_1800
 
-  validates :winery, :year, :country, :grapes, :presence => true
+  validates :winery_id, :year, :country, :grapes, :presence => true
 
   validates :year, :numericality => true
 
