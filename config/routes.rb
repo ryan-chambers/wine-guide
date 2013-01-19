@@ -19,7 +19,7 @@ WineGuide::Application.routes.draw do
     resources :scores
   end
 
-  resources :scores
+  resources :scores, :countries
 
   # Sample resource route with options:
   #   resources :products do

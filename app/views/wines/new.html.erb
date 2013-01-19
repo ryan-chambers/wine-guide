@@ -16,7 +16,7 @@
     <label for="winery_name">Winery Name</label> <br />
     <!-- FIXME auto-complete for existing wineries
     -->
-    <input id="winery_name" type="text" name="winery_name" value="<%= @winery_name %> " />
+    <input id="winery_name" type="text" name="winery_name" value="<%= @winery_name %> " size="30" />
   </div>
   <div class="field">
     <%= f.label :other, 'Other Notes' %><br />
@@ -45,7 +45,7 @@
   </div>
   <div class="field">
     <%= f.label :country %><br />
-    <%= select("wine", "country", Country::COUNTRY_LIST)  %>
+    <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'} ) %>
   </div>
   <div class="field">
     <!-- FIXME update region based on country
