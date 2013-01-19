@@ -22,10 +22,11 @@ class WinesController < ApplicationController
     @wine = Wine.new(params[:wine])
 
     @winery_name = params[:winery_name]
+    @grape_ids = params[:grape_ids]
 
     @winery = Winery.find_by_name(@winery_name)
 
-    params[:grape_ids].split('|').each do |grape_id|
+    @grape_ids.split('|').each do |grape_id|
       if ! grape_id.empty? and grape_id != ' '
         logger.info "Found grape_id #{grape_id}"
 
@@ -48,8 +49,6 @@ class WinesController < ApplicationController
     logger.info "Got wine #{@wine}"
 
     @wine.save
-
-    # FIXME - persist grape list back to page to re-create
 
     if @wine.errors.any?
       flash[:notice] = 'Errors saving wine ' + @wine.errors.full_messages.join(', ')
