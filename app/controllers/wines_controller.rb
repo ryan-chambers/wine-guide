@@ -27,8 +27,9 @@ class WinesController < ApplicationController
     @winery = Winery.find_by_name(@winery_name)
 
     @grape_ids.split('|').each do |grape_id|
+      grape_id = grape_id.strip
       if ! grape_id.empty? and grape_id != ' '
-        logger.info "Found grape_id #{grape_id}"
+        logger.info "Found grape_id <#{grape_id}>"
 
         @wine.grapes << Grape.find(grape_id)
       end
