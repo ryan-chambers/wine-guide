@@ -55,6 +55,7 @@ class WinesController < ApplicationController
       flash[:notice] = 'Errors saving wine ' + @wine.errors.full_messages.join(', ')
       render :action => 'new'
     else
+      # FIXME - this redirect is broken
       redirect_to wine_path(@wine)
     end
   end
