@@ -1,3 +1,4 @@
+// FIXME create namespace these functions
 function enableGrapePicker() {
     var $grape_select = $('#grape_0');
     var $selected_grape_ids = $('#grape_ids');
@@ -42,5 +43,24 @@ function enableGrapePicker() {
             return result;
         });
         $selected_grape_ids.val(kept_ids.join('|'));
+    });
+}
+
+function enableRegionPicker() {
+    var $region_select = $('#wine_region'),
+        $country_select = $('#wine_country');
+
+    $country_select.change(function(e) {
+        var country_name = $country_select.find('option:selected').text();
+        $.ajax({
+            url: '/countries.json?country=' + country_name,
+            context: document.body
+        }).done(function (regions) {
+            var select = document.getElementById('wine_region');
+            select.options.length = 0;
+            regions.forEach(function (region) {
+               select.options.add(new Option(region, region));
+            });
+        });
     });
 }

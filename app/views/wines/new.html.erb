@@ -48,10 +48,8 @@
     <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'} ) %>
   </div>
   <div class="field">
-    <!-- FIXME update region based on country
-    -->
     <%= f.label :region %><br />
-    <%= f.text_field :region %>
+    <%= select("wine", "region", []) %>
   </div>
   <div class="actions">
     <%= f.submit %>
@@ -60,4 +58,5 @@
 
 <script type="text/javascript">
   enableGrapePicker();
+  enableRegionPicker();
 </script>
