@@ -11,7 +11,6 @@ class WineVO
     @other = []
     @region = ''
     @lcbo = ''
-    @winery_name
     @country
   end
 
