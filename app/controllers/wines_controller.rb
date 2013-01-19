@@ -53,7 +53,7 @@ class WinesController < ApplicationController
 
     if @wine.errors.any?
       if @wine.country
-        @regions = Country::COUNTRIES[@wine.country].regions
+        @regions = Country::COUNTRIES[@wine.country].regions << ''
       else
         @regions = []
       end

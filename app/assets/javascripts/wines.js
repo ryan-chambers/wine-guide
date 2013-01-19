@@ -58,6 +58,7 @@ function enableRegionPicker() {
         }).done(function (regions) {
             var select = document.getElementById('wine_region');
             select.options.length = 0;
+            select.options.add(new Option('', ''));
             regions.forEach(function (region) {
                select.options.add(new Option(region, region));
             });
