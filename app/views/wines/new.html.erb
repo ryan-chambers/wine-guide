@@ -28,7 +28,7 @@
   </div>
   <div class="field">
     <%= f.label 'Grapes' %><br />
-    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] })  %>
+    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Choose grapes'} ) %>
     <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " />
   </div>
   <div class="field">

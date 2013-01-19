@@ -4,14 +4,30 @@ function enableGrapePicker() {
     var $grape_list = $('#grape_list');
     var counter = 0;
 
+    function addGrapeToList(grape_id, grape_name) {
+        $grape_list.append('<li class="grape_ctr_' + counter + '" data-id="' + grape_id + '">' + grape_name + '&nbsp;<a href="#" class="remove_grape">Remove</a></li>');
+        counter++;
+    }
+
+    // create grape list if grape_ids already populated
+    $selected_grape_ids.val().split('|').forEach(function (grape_id) {
+        grape_id = $.trim(grape_id);
+        if(grape_id === '') {
+            return;
+        }
+        var grape_name = $grape_select.find('option[value="' + grape_id + '"]').text();
+        if(grape_name !== '') {
+            addGrapeToList(grape_id, grape_name);
+        }
+    });
+
     $grape_select.change(function() {
         var $selected = $('#grape_0 option:selected');
         var grape_id = $selected.attr('value');
         var grape_name = $selected.text();
 
         $selected_grape_ids.val($selected_grape_ids.val() + '|' + grape_id);
-        $grape_list.append('<li class="grape_ctr_' + counter + '" data-id="' + grape_id + '">' + grape_name + '&nbsp;<a href="#" class="remove_grape">Remove</a></li>');
-        counter++;
+        addGrapeToList(grape_id, grape_name);
     });
 
     $(document).on('click', '.remove_grape', function(e) {
