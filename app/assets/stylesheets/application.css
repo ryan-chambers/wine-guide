@@ -1,3 +1,7 @@
+/*
+ *= require jquery.ui.all
+ */
+
 .field_with_errors {
     color: red;
 }
