@@ -1,4 +1,6 @@
 WineGuide::Application.routes.draw do
+  get "wineries/search"
+
   get "home/index"
 
   # The priority is based upon order of creation:

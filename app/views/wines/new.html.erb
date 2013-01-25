@@ -14,9 +14,7 @@
 
   <div class="field">
     <label for="winery_name">Winery Name</label> <br />
-    <!-- FIXME auto-complete for existing wineries
-    -->
-    <input id="winery_name" type="text" name="winery_name" value="<%= @winery_name %> " size="30" />
+    <input id="winery_name" type="text" name="winery_name" class="ui-autocomplete-input" value="<%= @winery_name %> " size="30" />
   </div>
   <div class="field">
     <%= f.label :other, 'Other Notes' %><br />
@@ -59,4 +57,7 @@
 <script type="text/javascript">
   enableGrapePicker();
   enableRegionPicker();
+  $(document).ready(function() {
+  	$('#winery_name').autocomplete({source: '/wineries/search'});
+  });
 </script>

@@ -63,7 +63,7 @@ class WinesController < ApplicationController
       redirect_to wine_path(@wine)
     end
   end
-
+  
   def new
     @wine = Wine.new
     @winery_name = ''
