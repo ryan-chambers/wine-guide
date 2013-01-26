@@ -5,9 +5,13 @@ class WineriesController < ApplicationController
       like= "%".concat(params[:term].downcase.concat("%"))
       wineries = Winery.where("name like ?", like).order('name asc')
     else
-      wineries = Winery.all.order('name desc')
+      wineries = Winery.find(:all, :order => 'name asc')
     end
     list = wineries.map { |w| w.name }
-    render json: list
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => list}
+    end
   end
 end
