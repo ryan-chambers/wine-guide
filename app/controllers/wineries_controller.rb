@@ -7,11 +7,7 @@ class WineriesController < ApplicationController
     else
       wineries = Winery.find(:all, :order => 'name asc')
     end
-    list = wineries.map { |w| w.name }
-
-    respond_to do |format|
-      format.html
-      format.json { render :json => list}
-    end
+    
+    render :json => wineries.map { |w| w.name }
   end
 end

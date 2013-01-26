@@ -4,6 +4,13 @@
 <div>
    <%= link_to 'Create new wine', new_wine_path %>
 </div>
+<div>
+	<%= form_tag("/wines", :method => "get") do %>
+	  	<%= label_tag(:term, "Search") %>
+  		<%= text_field_tag(:term) %>
+  		<%= submit_tag("Search") %>
+  	<% end %>
+</div>
 <table>
   <thead>
     <tr>

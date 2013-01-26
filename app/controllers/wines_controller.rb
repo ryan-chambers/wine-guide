@@ -1,7 +1,18 @@
 class WinesController < ApplicationController
   def index
     # FIXME add pagination
-    @wines = Wine.limit(50)
+    if params[:term]
+      like= "%".concat(params[:term].downcase.concat("%"))
+      wineries = Winery.where("name like ?", like).order('name asc')      
+      @wines = []
+      wineries.inject(@wines) { |all, winery| 
+        winery.wines.inject(all) { |iall, w| iall << w }  
+      }
+    else
+      @wines = Wine.limit(50)
+    end
+
+    logger.info "got wines #{@wines}"
 
     respond_to do |format|
       format.html
