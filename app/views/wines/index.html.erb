@@ -5,7 +5,7 @@
    <%= link_to 'Create new wine', new_wine_path %>
 </div>
 <div>
-	<%= form_tag("/wines", :method => "get") do %>
+	<%= form_tag(wines_path, :method => "get") do %>
 	  	<%= label_tag(:term, "Search") %>
   		<%= text_field_tag(:term) %>
   		<%= submit_tag("Search") %>
