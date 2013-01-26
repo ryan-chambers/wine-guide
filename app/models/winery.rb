@@ -6,12 +6,16 @@ class Winery < ActiveRecord::Base
   has_many :wines
 
   def self.find_by_name(name)
-    Winery.where("lower(name) = ?", name.downcase).first
+    where("lower(name) = ?", name.downcase).first
   end
 
   def self.search_by_name(name)
+    if(name)
       like= "%".concat(name.downcase.concat("%"))
-      Winery.where("name like ?", like).order('name asc')
+      where("name like ?", like).order('name asc')
+    else
+      scoped
+    end
   end
 
   def to_s

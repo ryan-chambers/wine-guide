@@ -1,6 +1,5 @@
 class WinesController < ApplicationController
   def index
-    # FIXME add pagination
     if params[:term]
       wineries = Winery.search_by_name params[:term]
       @wines = []
@@ -8,7 +7,7 @@ class WinesController < ApplicationController
         winery.wines.inject(all) { |iall, w| iall << w }  
       }
     else
-      @wines = Wine.limit(50)
+      @wines = Wine.paginate(:page => params[:page])
     end
 
     logger.info "got wines #{@wines}"

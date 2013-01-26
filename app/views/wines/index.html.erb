@@ -23,7 +23,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @wines.each do |wine| %>
+  	<% @wines.each do |wine| %>
     <tr>
       <td><%= wine.winery.name %></td>
       <td><%= wine.country %></td>
@@ -40,3 +40,4 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @wines %>
