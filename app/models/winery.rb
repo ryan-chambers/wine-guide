@@ -9,6 +9,11 @@ class Winery < ActiveRecord::Base
     Winery.where("lower(name) = ?", name.downcase).first
   end
 
+  def self.search_by_name(name)
+      like= "%".concat(name.downcase.concat("%"))
+      Winery.where("name like ?", like).order('name asc')
+  end
+
   def to_s
     name
   end

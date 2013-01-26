@@ -2,8 +2,7 @@ class WinesController < ApplicationController
   def index
     # FIXME add pagination
     if params[:term]
-      like= "%".concat(params[:term].downcase.concat("%"))
-      wineries = Winery.where("name like ?", like).order('name asc')      
+      wineries = Winery.search_by_name params[:term]
       @wines = []
       wineries.inject(@wines) { |all, winery| 
         winery.wines.inject(all) { |iall, w| iall << w }  

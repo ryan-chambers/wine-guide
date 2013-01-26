@@ -2,8 +2,7 @@
 class WineriesController < ApplicationController
   def search
     if params[:term]
-      like= "%".concat(params[:term].downcase.concat("%"))
-      wineries = Winery.where("name like ?", like).order('name asc')
+      wineries = Winery.search_by_name params[:term]
     else
       wineries = Winery.find(:all, :order => 'name asc')
     end
