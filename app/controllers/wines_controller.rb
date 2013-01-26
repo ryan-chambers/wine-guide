@@ -52,7 +52,7 @@ class WinesController < ApplicationController
     @wine.save
 
     if @wine.errors.any?
-      if @wine.country
+      if @wine.country and Country::is_country? @wine.country
         @regions = Country::COUNTRIES[@wine.country].regions << ''
       else
         @regions = []
