@@ -1,4 +1,6 @@
 class ScoresController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+
   def index
     @scores = Score.all
 

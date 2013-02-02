@@ -1,4 +1,6 @@
 class WinesController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+
   def index
     if params[:term]
       wineries = Winery.search_by_name params[:term]
