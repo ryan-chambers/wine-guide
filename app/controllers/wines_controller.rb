@@ -35,6 +35,7 @@ class WinesController < ApplicationController
 
     @winery = Winery.find_by_name(@winery_name)
 
+    # FIXME - this is a hack. Need to figure out how to embed grapes in wine form
     @grape_ids.split('|').each do |grape_id|
       grape_id = grape_id.strip
       if ! grape_id.empty? and grape_id != ' '
