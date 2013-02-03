@@ -38,10 +38,6 @@
     <%= f.text_field :lcbo_code %>
   </div>
   <div class="field">
-    <%= f.label :other %><br />
-    <%= f.text_field :other %>
-  </div>
-  <div class="field">
     <%= f.label :country %><br />
     <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'} ) %>
   </div>
@@ -55,8 +51,8 @@
 <% end %>
 
 <script type="text/javascript">
-  enableGrapePicker();
-  enableRegionPicker();
+  wines.enableGrapePicker();
+  wines.enableRegionPicker();
   $(document).ready(function() {
   	$('#winery_name').autocomplete({source: '/wineries/search'});
   });

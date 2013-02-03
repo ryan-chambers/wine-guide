@@ -1,5 +1,3 @@
 #!/bin/sh
 
-# FIXME redirect output to file
-
-./script/rails runner lib/wine_score_exporter.rb
+./script/rails runner lib/wine_score_exporter.rb >> wine_export_`date "+%d-%m-%Y"`.txt

@@ -1,4 +1,5 @@
 class Score < ActiveRecord::Base
+  # FIXME this represents a bottle more than a score because it has a price and notes whether it's in the fridge or not. 
   attr_accessible :reviewdate, :score, :comments, :price, :wine, :to, :from, :in_fridge
 
   validate :score_between_0_and_100, :score_not_null_unless_in_fridge, :comments_not_null_unless_in_fridge, :reviewdate_not_null_unless_in_fridge

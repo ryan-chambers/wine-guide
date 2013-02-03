@@ -19,5 +19,7 @@ rails generate migration create_grapes_wines_join
 
 rails generate migration AddCellarInfoToScore to:integer from:integer in_fridge:boolean
 
+rails generate migration RemoveCellarInfoFromWines in_cellar:boolean drink_from:date drink_until:date
+
 from rails root directory
 ./script/rails runner lib/wine_score_parser.rb lib/argentina.txt

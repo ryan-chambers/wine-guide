@@ -19,7 +19,6 @@
       <td>Region</td>
       <td>Grapes</td>
       <td>Year</td>
-      <td></td>
     </tr>
   </thead>
   <tbody>
@@ -31,13 +30,10 @@
       <td><%= wine.list_grape_names.join(', ') %></td>
       <td><%= wine.year %> </td>
       <td><%= link_to 'Show', wine %></td>
-      <td>
-        <!-- FIXME implement
-        -->
-        <a href="#">Add Score</a>
-      </td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<%= will_paginate @wines %>
+<% if ! params[:term] %>
+	<%= will_paginate @wines %>
+<% end %>

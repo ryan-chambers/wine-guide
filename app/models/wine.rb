@@ -1,7 +1,5 @@
 class Wine < ActiveRecord::Base
-  # FIXME remove in_cellar, drink_from, drink_until
-  attr_accessible :country, :drink_from, :drink_until, :in_cellar, :lcbo_code, :other, :purchased_date,
-    :region, :year, :grapes
+  attr_accessible :country,  :lcbo_code, :other, :purchased_date, :region, :year, :grapes
 
   validate :year_after_1800
 
