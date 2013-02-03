@@ -12,7 +12,7 @@ class WinesController < ApplicationController
       @wines = Wine.paginate(:page => params[:page])
     end
 
-    logger.info "got wines #{@wines}"
+#    logger.info "got wines #{@wines}"
 
     respond_to do |format|
       format.html
