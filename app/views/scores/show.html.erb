@@ -2,16 +2,7 @@
 
 <h2>Edit Score</h2>
 <%= form_for(@score) do |f| %>
-  <% if @score.errors.any? %>
-  <div id="errorExplanation">
-    <div>Score could not be saved because of <%= pluralize(@score.errors.count, "error") %>.</div>
-    <ul>
-    <% @score.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
+  <%= render "shared/error_messages", :target => @score %>
   <div class="field">
     <%= f.label :reviewdate, "Review Date" %>
     <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
