@@ -30,7 +30,7 @@ class CreateGrapes < ActiveRecord::Migration
     Grape.create :name =>  'Grenache Noir'
     Grape.create :name =>  'Foch'
     Grape.create :name =>  'Malbec'
-    Grape.create :name =>  'Mercia'
+    Grape.create :name =>  'Mencia'
     Grape.create :name =>  'Merlot'
     Grape.create :name =>  'Montepulciano'
     Grape.create :name =>  'Mourvedre'
