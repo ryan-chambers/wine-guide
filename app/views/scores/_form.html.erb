@@ -1,19 +1,19 @@
 <%= form_for([@wine, @wine.scores.build]) do |f| %>
   <div class="field">
     <%= f.label :reviewdate, "Review Date" %>
-    <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
+    * <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
   </div>
   <div class="field">
     <%= f.label :score %>
-    <%= f.text_field :score %>
+    * <%= f.text_field :score %>
   </div>
   <div class="field">
     <%= f.label :comments %>
-    <%= f.text_field :comments %>
+    * <%= f.text_field :comments %>
   </div>
   <div class="field">
     <%= f.label :price %>
-    $<%= f.text_field :price %>
+    * $<%= f.text_field :price %>
   </div>
   <div class="field">
     <%= f.label :to %>
