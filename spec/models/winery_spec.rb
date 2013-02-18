@@ -6,10 +6,15 @@ describe Winery do
   end
 
   it "find a winery case-insensitively" do
-    expect(Winery.find_by_name 'ALVIENTO').to eq(@winery)
+    winery_name = "Alvento"
+    alviento = Winery.create!(name: winery_name)
+
+    expect(Winery.find_by_name 'ALVENTO').to eq(alviento)
   end
   
   it "fails validation without name" do
-    FactoryGirl.build(:winery, :name => "").should_not be_valid
+    winery = Winery.new
+    winery.save
+    winery.errors.get(:name).should_not be_nil
   end
 end
