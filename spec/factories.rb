@@ -1,3 +1,5 @@
-Factory.define :winery do |w|
-  w.name 'Alvento' 
+FactoryGirl.define do
+  factory :winery do
+    name 'Alvento' 
+  end
 end

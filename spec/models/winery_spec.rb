@@ -1,10 +1,12 @@
 require "spec_helper"
 
 describe Winery do
-  it "find a winery case-insensitively" do
-    alviento = Winery.create!(name: "Alviento")
+  setup do
+    @winery = build(:winery)
+  end
 
-    expect(Winery.find_by_name 'ALVIENTO').to eq(alviento)
+  it "find a winery case-insensitively" do
+    expect(Winery.find_by_name 'ALVIENTO').to eq(@winery)
   end
   
   it "fails validation without name" do
