@@ -11,7 +11,7 @@ class Winery < ActiveRecord::Base
 
   def self.search_by_name(name)
     if(name)
-      like= "%".concat(name.downcase.concat("%"))
+      like = "%".concat(name.downcase.concat("%"))
       where("name like ?", like).order('name asc')
     else
       scoped
