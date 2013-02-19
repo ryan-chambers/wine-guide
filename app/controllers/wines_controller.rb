@@ -5,6 +5,7 @@ class WinesController < ApplicationController
     if params[:term]
       wineries = Winery.search_by_name params[:term]
       @wines = []
+      # FIXME this feels very wrong
       wineries.inject(@wines) { |all, winery| 
         winery.wines.inject(all) { |iall, w| iall << w }  
       }
