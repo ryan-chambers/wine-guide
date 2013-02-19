@@ -13,10 +13,6 @@ class Wine < ActiveRecord::Base
 
   has_and_belongs_to_many :grapes
 
-  def year_after_1800
-      errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
-  end
-
   def to_s
     [other, grapes_to_s, region, year, lcbo_code, scores.to_s].join(', ')
   end
@@ -41,5 +37,11 @@ class Wine < ActiveRecord::Base
 
   def cellar_scores
     scores.select {|score| score.in_fridge}
+  end
+
+  private
+  
+  def year_after_1800
+      errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
   end
 end
