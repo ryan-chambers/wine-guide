@@ -34,5 +34,11 @@ describe Winery do
     end    
   end
 
+  describe "associations" do
+    it "has many wines" do
+      Winery.new.should respond_to(:wines)
+    end
+  end
+
   # FIXME add test case for name uniqueness
 end
