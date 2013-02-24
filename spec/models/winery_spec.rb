@@ -1,6 +1,7 @@
 require "spec_helper"
 
 describe Winery do
+  # not really used, but this is how to use factory girl
   setup do
     @winery = build(:winery)
   end
