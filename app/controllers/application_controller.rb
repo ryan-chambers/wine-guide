@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protected
     def authenticate
-      authenticate_or_request_with_http_digest do |username|
+      authenticate_or_request_with_http_digest(ENV['WINE_GUIDE_REALM']) do |username|
         USERS[username]
       end
     end

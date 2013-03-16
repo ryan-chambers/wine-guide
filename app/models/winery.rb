@@ -6,7 +6,11 @@ class Winery < ActiveRecord::Base
   has_many :wines
 
   def self.find_by_name(name)
-    where("lower(name) = ?", name.downcase).first
+    if(name)
+      where("lower(name) = ?", name.downcase).first
+    else
+      nil
+    end  
   end
 
   def self.search_by_name(name)

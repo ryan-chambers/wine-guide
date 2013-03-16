@@ -3,7 +3,7 @@ require "spec_helper"
 describe Winery do
   # not really used, but this is how to use factory girl
   setup do
-    @winery = build(:winery)
+    @winery = build(:alvento)
   end
 
   describe "validations" do
@@ -23,13 +23,13 @@ describe Winery do
     end
     
     it "gets everything when searching by nil" do
-      w1 = create(:winery)
+      w1 = create(:alvento)
       w2 = Winery.create!(name: 'Wine 2')
       expect(Winery.search_by_name nil).to eq([w1, w2])
     end
   
     it "searches for all partially matching names when searching by term" do
-      w1 = create(:winery)
+      w1 = create(:alvento)
       w2 = Winery.create!(name: 'Wine 2')
       expect(Winery.search_by_name 'VEN').to eq([w1])
     end    

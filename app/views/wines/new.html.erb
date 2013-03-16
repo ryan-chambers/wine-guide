@@ -2,20 +2,20 @@
 <%= form_for(@wine) do |f| %>
   <%= render "shared/error_messages", :target => @wine %>
   <div class="field">
-    <label for="winery_name">Winery Name</label> <br />
-    * <input id="winery_name" type="text" name="winery_name" class="ui-autocomplete-input" value="<%= @winery_name %>" size="30" />
+    <label for="winery_name">Winery Name * </label> <br />
+    <input id="winery_name" type="text" name="winery_name" data-provide="typeahead" value="<%= @winery_name %>" size="30" autocomplete="off" />
   </div>
   <div class="field">
     <%= f.label :other, 'Other Notes' %><br />
     <%= f.text_field :other %>
   </div>
   <div class="field">
-    <%= f.label :year %><br />
-    * <%= f.text_field :year %>
+    <%= f.label :year, 'Year *' %> <br />
+    <%= f.text_field :year %>
   </div>
   <div class="field">
     <%= f.label 'Grapes' %><br />
-    * <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Choose grapes'} ) %>
+    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Choose grapes'} ) %>
     <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " />
   </div>
   <div class="field">
@@ -27,8 +27,8 @@
     <%= f.text_field :lcbo_code %>
   </div>
   <div class="field">
-    <%= f.label :country %><br />
-    * <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'} ) %>
+    <%= f.label :country, 'Country *' %> <br />
+    <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'} ) %>
   </div>
   <div class="field">
     <%= f.label :region %><br />
@@ -42,7 +42,18 @@
 <script type="text/javascript">
   wines.enableGrapePicker();
   wines.enableRegionPicker();
-  $(document).ready(function() {
-  	$('#winery_name').autocomplete({source: '/wineries/search'});
+
+  $('#winery_name').typeahead({
+  	source : function(query, process) {
+  		return $.ajax({
+  			url: '/wineries/search',
+  			type: 'get',
+  			data: {term: query},
+  			dataType: 'json',
+  			success : function(json) {
+  				return process(json);
+  			}
+  		});
+  	}
   });
 </script>

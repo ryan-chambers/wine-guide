@@ -39,16 +39,19 @@ class WinesController < ApplicationController
 
     @winery = Winery.find_by_name(@winery_name)
 
-    # FIXME - this is a hack. Need to figure out how to embed grapes in wine form
-    @grape_ids.split('|').each do |grape_id|
-      grape_id = grape_id.strip
-      if ! grape_id.empty? and grape_id != ' '
-        logger.info "Found grape_id <#{grape_id}>"
-
-        @wine.grapes << Grape.find(grape_id)
+    # FIXME this is a hack. Need to figure out how to embed grapes in wine form
+    if(@grape_ids)
+      @grape_ids.split('|').each do |grape_id|
+        grape_id = grape_id.strip
+        if ! grape_id.empty? and grape_id != ' '
+          logger.info "Found grape_id <#{grape_id}>"
+  
+          @wine.grapes << Grape.find(grape_id)
+        end
       end
     end
 
+    # FIXME is this a hack too? According to Efficient Rails TDD on youtube it is
     if @winery
       logger.info "Found existing winery #{@winery}"
     else
@@ -57,7 +60,7 @@ class WinesController < ApplicationController
       @winery.name = @winery_name
       @winery.save
     end
-    
+
     @wine.winery = @winery
 
     logger.info "Got winery #{@winery}"
@@ -71,9 +74,12 @@ class WinesController < ApplicationController
       else
         @regions = []
       end
-      flash[:notice] = 'Errors saving wine ' + @wine.errors.full_messages.join(', ')
+      err_msg = 'Errors saving wine ' + @wine.errors.full_messages.join(', ')
+      flash[:notice] = err_msg
+      logger.info "Could not save wine: #{err_msg}"
       render :action => 'new'
     else
+      flash[:notice] = "The wine was saved."
       redirect_to wine_path(@wine)
     end
   end
