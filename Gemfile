@@ -32,9 +32,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  
+  gem 'therubyracer'
 end
 
-gem "therubyracer"
+gem 'libv8', '~> 3.11.8'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 

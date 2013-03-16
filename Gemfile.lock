@@ -162,6 +162,7 @@ DEPENDENCIES
   factory_girl_rails (~> 3.0)
   jquery-rails
   less-rails
+  libv8 (~> 3.11.8)
   meta_request
   pg
   rails (= 3.2.12)
