@@ -18,8 +18,6 @@ group :production do
   gem 'pg'
 end
 
-gem 'jquery-ui-rails'
-
 gem 'will_paginate', '3.0.3'
 
 gem "thin"
