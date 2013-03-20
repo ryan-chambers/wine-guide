@@ -82,7 +82,7 @@ class CreateGrapes < ActiveRecord::Migration
     Grape.create :name =>  'Other White'
     Grape.create :name =>  'Rizling'
     Grape.create :name =>  'Roussanne'
-    Grape.create :name => 'Semillon'
+    Grape.create :name =>  'Semillon'
     Grape.create :name =>  'Soave'
     Grape.create :name =>  'Torrontes'
     Grape.create :name =>  'Vidal'
