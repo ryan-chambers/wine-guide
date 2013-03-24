@@ -6,14 +6,16 @@
 <% end %>
 </h2>
 
+<%= link_to 'Back', wines_path %>
+
 <% if ! @wine.lcbo_code.empty? %>
   <a href="http://www.lcbo.ca/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=<%= @wine.lcbo_code %>" target="_new">See in LCBO</a>
   <a href="http://www.winealign.com/search?q=<%= @wine.lcbo_code %>" target="_new">See in WineAlign</a>
 <% end %>
 
-<h2>Scores</h2>
+<h3>Scores</h3>
 <% if ! @wine.real_scores.empty? %>
-  <table class="wine_scores">
+  <table class="table">
     <tr>
       <th>Date</th>
       <th>Score</th>
@@ -30,10 +32,9 @@
 <% else %>
   No scores for this wine.
 <% end %>
-<br />
 
 <% if ! @wine.cellar_scores.empty? %>
-<h2>In Cellar</h2>
+<h3>In Cellar</h3>
   <% @wine.cellar_scores.each do |score| %>
   <p>
     <% if ! score.from.nil? %>
@@ -47,9 +48,7 @@
   <% end %>
 <% end %>
 
-<h2>Add a new score</h2>
+<h3>Add a new score</h3>
 <p style="color: red"><%= notice %></p>
 
 <%= render "scores/form" %>
-
-<%= link_to 'Back', wines_path %>
