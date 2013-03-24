@@ -1,15 +1,12 @@
 <h3>Wines</h3>
 <div>
-   <%= link_to 'Create new wine', new_wine_path %>
-</div>
-<div>
 	<%= form_tag(wines_path, :method => "get") do %>
-	  	<%= label_tag(:term, "Search") %>
+		<i class="icon-search"></i>
   		<%= text_field_tag(:term) %>
   		<%= submit_tag("Search") %>
   	<% end %>
 </div>
-<table>
+<table class="table">
   <thead>
     <tr>
       <td>Winery name</td>
