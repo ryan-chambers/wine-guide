@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Edit Score</h2>
+<%= link_to 'Back to wine', @score.wine %>
+
+<h3>Edit Score</h3>
 <%= form_for(@score) do |f| %>
   <%= render "shared/error_messages", :target => @score %>
   <div class="field">
@@ -8,16 +10,16 @@
     <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
   </div>
   <div class="field">
-    <%= f.label :score %>
-    * <%= f.text_field :score %>
+    <%= f.label :score, 'Score *' %>
+    <%= f.text_field :score %>
   </div>
   <div class="field">
-    <%= f.label :comments %>
-    * <%= f.text_field :comments %>
+    <%= f.label :comments, 'Comments *' %>
+    <%= f.text_field :comments %>
   </div>
   <div class="field">
-    <%= f.label :price %>
-    * $<%= f.text_field :price %>
+    <%= f.label :price, 'Price *' %>
+    $<%= f.text_field :price %>
   </div>
   <div class="field">
     <%= f.label :to %>
@@ -28,12 +30,11 @@
     <%= f.text_field :from %>
   </div>
   <div class="field">
-    <%= f.label :in_fridge %>
-    <%= f.check_box :in_fridge %>
+  	<label class="checkbox">
+	    <%= f.check_box :in_fridge %> In fridge
+  	</label>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <button type="submit" class="btn">Submit</button>
   </div>
 <% end %>
-
-<%= link_to 'Back to wine', @score.wine %>
