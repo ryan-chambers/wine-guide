@@ -67,6 +67,7 @@ class CreateGrapes < ActiveRecord::Migration
     Grape.create :name =>  'Chardonnay'
     Grape.create :name =>  'Chasselas'
     Grape.create :name =>  'Chenin Blanc'
+    Grape.create :name =>  'Garganega'
     Grape.create :name =>  'Grenache Blanc'
     Grape.create :name =>  'Gewurztraminer'
     Grape.create :name =>  'Gruner Veltliner'
