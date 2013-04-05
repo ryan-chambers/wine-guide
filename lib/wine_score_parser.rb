@@ -1,5 +1,6 @@
 # coding: utf-8
 
+require 'open-uri'
 require 'grape.rb'
 require 'country.rb'
 require 'wine.rb'
@@ -220,7 +221,7 @@ def parse_wine_score_line(line, country)
   end
 end
 
-lines = File.new(ARGV[0]).readlines
+lines = open(ARGV[0]) { |f| f.readlines }
 
 current_country = ''
 lines.each do |line|
