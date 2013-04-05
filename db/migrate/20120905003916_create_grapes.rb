@@ -77,6 +77,7 @@ class CreateGrapes < ActiveRecord::Migration
     Grape.create :name =>  'Muscat'
     Grape.create :name =>  'Pecorino'
     Grape.create :name =>  'Nuragus'
+    Grape.create :name =>  'Picpoul De Pinet'
     Grape.create :name =>  'Pinot Blanc'
     Grape.create :name =>  'Pinot Grigio'
     Grape.create :name =>  'Riesling'
