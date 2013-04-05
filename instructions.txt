@@ -1,0 +1,6 @@
+-- Importing Grape
+
+heroku run bash
+./script/grape_import.sh "Name Of Grape"
+
+./script/run_importer_main.sh https://dl.dropbox.com/u/13326771/wines.txt
