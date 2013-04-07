@@ -1,11 +1,4 @@
 <h3>Wines</h3>
-<div>
-	<%= form_tag(wines_path, :method => "get", :class => 'form-search') do %>
-		<i class="icon-search"></i>
-  		<%= text_field_tag 'term', nil, :class => 'input-medium search-query' %>
-  		<button type="submit" class="btn">Search</button>
-  	<% end %>
-</div>
 <table class="table">
   <thead>
     <tr>
