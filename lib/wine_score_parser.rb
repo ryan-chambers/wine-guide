@@ -40,7 +40,7 @@ class WineVO
       winery = Winery.new
       winery.name = @winery_name
       winery.save!
-      # p "Saved new winery #{@winery_name}"
+      p "Saved new winery #{@winery_name}"
     end
 
     wine = Wine.where(:lcbo_code => @lcbo, :year => @year, :winery_id => winery.id)
@@ -221,12 +221,16 @@ def parse_wine_score_line(line, country)
   end
 end
 
-lines = open(ARGV[0]) { |f| f.readlines }
+lines = open(ARGV[0], "r:UTF-8") { |f| 
+  f.readlines 
+}
 
 current_country = ''
 lines.each do |line|
   line = line.chomp
   next if line.empty?
+
+  line = line.force_encoding('UTF-8')
 
   if(Country.is_country?(line))
     current_country = line
