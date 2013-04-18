@@ -1,0 +1,37 @@
+<h2>Cellar Report</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <td>Wine</td>
+      <td>Country</td>
+      <td>Region</td>
+      <td>Grapes</td>
+      <td>Vintage</td>
+      <td>Price</td>
+      <td>From</td>
+      <td>To</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @wines.each do |wine| %>
+    <tr>
+      <td>
+      	<%= wine.winery.name %>
+      	<% if wine.other%>
+	      	<br /> 
+	      	<span><%= wine.other %></span>
+      	<% end %> 
+      </td>
+      <td><%= wine.country %></td>
+      <td><%= wine.region %></td>
+      <td><%= wine.list_grape_names.join(', ') %></td>
+      <td><%= wine.year %> </td>
+      <td>$<%= wine.scores[0].price %> </td>
+      <td><%= wine.scores[0].from %> </td>
+      <td><%= wine.scores[0].to %> </td>
+      <td><%= link_to 'Show', wine %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

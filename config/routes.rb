@@ -1,4 +1,6 @@
 WineGuide::Application.routes.draw do
+  get "reports/cellar"
+
   get "wineries/search"
 
   get "home/index"

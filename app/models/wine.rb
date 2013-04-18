@@ -13,6 +13,10 @@ class Wine < ActiveRecord::Base
 
   has_and_belongs_to_many :grapes
 
+  def self.find_wines_in_cellar
+    Wine.joins(:scores).where(:scores => {:in_fridge => true})
+  end
+
   def to_s
     [other, grapes_to_s, region, year, lcbo_code, scores.to_s].join(', ')
   end

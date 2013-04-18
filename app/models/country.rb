@@ -24,10 +24,10 @@ class Country
   CHILE = Country.new('Chile', ['Rapel Valley', 'Lolol Valley', 'Casablanca Valley', 'Limari Valley', 'Central Valley',
     'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
   CYPRUS = Country.new('Cyprus')
-  FRANCE = Country.new('France', ['Côtes Du Rhône Villages', 'Ac Burgundy', 'Ac Loire', 'Ac Beaujolais', 'Bordeaux', 
+  FRANCE = Country.new('France', ['Côtes Du Rhône Villages', 'Ac Burgundy', 'Ac Loire', 'Ac Beaujolais', 'Bordeaux', 'Ac Bordeaux Supérieur',
       'Pays D\'oc', 'Chateauneuf-du-Pape', 'Ac Côtes Du Rhône', 'Ac Saint Estèphe', 'Ac Languedoc', 'Ac Languedoc Roussillon',
-      'Ac Lalande De Pomerol', 'Ac Côtes De Castillon', 'Ac Lussac St Emillion', 'Ac Listrac', 'Ac Gaillac',
-      'Ac Montagne St émilion', 'Ac Cotes de Bordeaux', 'Ac Premieres Cotes de Blaye', 'Ac Médoc', 'Ac Rhone',
+      'Ac Lalande De Pomerol', 'Ac Côtes De Castillon', 'Ac Lussac St Emillion', 'AC Montagne-Saint Emilion', 'Ac Listrac', 'Ac Gaillac',
+      'Ac Montagne St émilion', 'Ac Cotes de Bordeaux', 'Ac Premieres Cotes de Blaye', 'Ac Médoc', 'Ac Haut-Médoc', 'Ac Rhone',
       'Ac Faugeres', 'Ac Beaumes de Venise', 'Ac Cotes du Rousillon Villages', 'Ac Corbieres', 'Ac Julienas',
       'Ac Saumur', 'Ac Savoie', 'Ac Alsace', 'Beaujolais Villages', 'Ac Minervois', 'Ac Bandol', 'Ac Saint Julien',
       'Ac St Nicolas de Bourgueil', 'Ac Fronsac', 'Ac Cotes du Ventoux', 'Ac L\'Andeol Rasteau', 'Burgundy',
@@ -39,7 +39,7 @@ class Country
   ITALY = Country.new('Italy', ['Brunello di Montalcino', 'Docg Tuscany', 'Tuscany', 'Piedmont', 'Valpolicella',
       'Doc Sicily', 'Sicily', 'Veneto', 'Igt Veneto', 'Igt Delle Venezie', 'Doc Vernaiolo', 'Doc Valdadige',
       'Igt Sicilia', 'Doc Piedmont', 'Vino Nobile Di Montepulciano', 'Doc Chianti', 'Doc Gioia del Colle',
-      'Doc Abruzzo', 'Doc Veneto', 'Doc Puglia', 'Igt Campania'])
+      'Doc Abruzzo', 'Doc Veneto', 'Doc Puglia', 'Igt Campania', 'Igt Veronese'])
   LEBANON = Country.new('Lebanon', ['Bekaa Valley'])
   MACEDONIA = Country.new('Macedonia')
   MOLDOVA = Country.new('Moldova')

@@ -4,6 +4,7 @@ Feature: Cellar Report
 	Should view the cellar report page
 
 	Scenario: Shows the cellar reports page
+		Given some bottles of wine in the cellar
 		Given I am on the home page
-		When I click the cellar reports link
-		Then I should see the cellar report page
+		When I click "Cellar"
+		Then I should see the cellar report
