@@ -20,6 +20,7 @@ FactoryGirl.define do
       before(:create) do |wine|
         wine.winery = create(:alvento)
         wine.grapes << build(:grape)
+        wine.lcbo_code = '123456'
       end
     end
 

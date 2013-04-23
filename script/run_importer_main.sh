@@ -5,4 +5,4 @@ if [ -z $1 ]; then
 	exit 1
 fi
 
-./script/rails runner lib/wine_score_parser.rb $1
+./script/rails runner lib/wine_score_parser_runner.rb $1

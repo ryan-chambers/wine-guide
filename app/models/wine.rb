@@ -17,6 +17,15 @@ class Wine < ActiveRecord::Base
     Wine.joins(:scores).where(:scores => {:in_fridge => true})
   end
 
+  def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)
+    p "Searching for lcbo code '#{lcbo_code}'"
+    if winery_id and year and ! lcbo_code.empty?
+      Wine.where(:lcbo_code => lcbo_code, :year => year, :winery_id => winery_id)
+    else
+      []
+    end
+  end
+
   def to_s
     [other, grapes_to_s, region, year, lcbo_code, scores.to_s].join(', ')
   end

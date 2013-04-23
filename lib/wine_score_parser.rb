@@ -15,7 +15,7 @@ class WineVO
     @country
   end
 
-  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
+  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country, :grapes
 
   def create_wine_from_values(winery)
     wine = Wine.new
@@ -28,7 +28,7 @@ class WineVO
     @grapes.each do | grape |
       wine.grapes << Grape.where(:name => grape)
     end
-    
+
     wine.save!
     p "Stored new wine #{wine.to_s}."
     wine
@@ -43,35 +43,40 @@ class WineVO
       p "Saved new winery #{@winery_name}"
     end
 
-    wine = Wine.where(:lcbo_code => @lcbo, :year => @year, :winery_id => winery.id)
+    wine = Wine.find_by_winery_year_lcbo_code(winery.id, @year, @lcbo)
     if wine && wine.length > 0
+      # p "Found matching wine #{wine[0]} for year #{@year}, code #{@lcbo}"
       wine[0]
     else
       existing_wine = winery.wines.find { |w|
-        #p "Matching #{@year}, #{@other.sort!.join(', ')}, #{@grapes.sort!.uniq} to #{w}"
+        # p "Matching #{@year}, #{@other.sort!.join(', ')}, #{@grapes.sort!.uniq} to #{w}"
         year_match = w.year.to_s == @year
         
-        #p "Year match: #{year_match}"
+        # p "Year match: #{year_match}"
 
         other_match = w.other == @other.sort!.join(', ')
         
-        #p "Other match #{other_match}"
+        # p "Other match #{other_match}"
 
         grapes_match = w.list_grape_names == @grapes.sort!.uniq
 
-        #p "Grapes match #{grapes_match}"
+        # p "Grapes match #{grapes_match}"
 
         year_match and other_match and grapes_match
       }
 
       if ! existing_wine
-        #p "Wine doesn't exist; creating new one from #{winery}"
+        p "Wine doesn't exist; creating new one from #{winery}"
         create_wine_from_values winery
       else
-        #p "Using existing wine #{existing_wine}"
+        p "Using existing wine #{existing_wine}"
         existing_wine
       end
     end
+  end
+
+  def to_s
+    [winery_name, other, grapes.join(', '), region, year, lcbo].join(', ')
   end
 end
 
@@ -207,34 +212,14 @@ def parse_wine_score_line(line, country)
 
   wine = make_wine(wine_info, country)
 
-  wine = wine.store
+#  wine = wine.store
 
   if(wine)
     scores = make_scores parts
     if(scores.length > 1)
 #      p "Found scores #{scores}"
     end
-
-    scores.each do |score|
-      score.store wine
-    end
   end
-end
 
-lines = open(ARGV[0], "r:UTF-8") { |f| 
-  f.readlines 
-}
-
-current_country = ''
-lines.each do |line|
-  line = line.chomp
-  next if line.empty?
-
-  line = line.force_encoding('UTF-8')
-
-  if(Country.is_country?(line))
-    current_country = line
-  else
-    parse_wine_score_line(line, current_country)
-  end
+  {:wine => wine, :scores => scores}
 end
