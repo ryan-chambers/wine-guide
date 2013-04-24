@@ -18,7 +18,7 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)
-    p "Searching for lcbo code '#{lcbo_code}'"
+    # p "Searching for lcbo code '#{lcbo_code}'"
     if winery_id and year and ! lcbo_code.empty?
       Wine.where(:lcbo_code => lcbo_code, :year => year, :winery_id => winery_id)
     else

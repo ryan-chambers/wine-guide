@@ -6,8 +6,6 @@
 <% end %>
 </h2>
 
-<%= link_to 'Back', wines_path %>
-
 <% if ! @wine.lcbo_code.empty? %>
   <a href="http://www.lcbo.ca/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=<%= @wine.lcbo_code %>" target="_new">See in LCBO</a>
   <a href="http://www.winealign.com/search?q=<%= @wine.lcbo_code %>" target="_new">See in WineAlign</a>
