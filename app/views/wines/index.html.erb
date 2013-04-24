@@ -2,7 +2,7 @@
 <table class="table">
   <thead>
     <tr>
-      <td>Winery name</td>
+      <td>Wine</td>
       <td>Country</td>
       <td>Region</td>
       <td>Grapes</td>
@@ -12,7 +12,12 @@
   <tbody>
   	<% @wines.each do |wine| %>
     <tr>
-      <td><%= wine.winery.name %></td>
+      <td>
+      	<%= wine.winery.name %>
+      	<% if wine.other %>
+      		<br /> <small class="muted"><%= wine.other %></small>
+      	<% end%>
+      </td>
       <td><%= wine.country %></td>
       <td><%= wine.region %></td>
       <td><%= wine.list_grape_names.join(', ') %></td>
