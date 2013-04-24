@@ -16,7 +16,7 @@ class Country
 
   ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley', 'San Juan'])
   AUSTRALIA = Country.new('Australia', ['McLaren Vale', 'Western Australia', 'Margaret River', 'Barossa Valley', 'Clare Valley',
-    'South Australia'])
+    'South Australia', 'Southeast Australia'])
   AUSTRIA = Country.new('Austria', ['Burgenland'])
   BULGARIA = Country.new('Bulgaria')
   CANADA = Country.new('Canada', ['VQA Niagara', 'VQA Niagara Peninsula', 'VQA Niagara On The Lake', 
