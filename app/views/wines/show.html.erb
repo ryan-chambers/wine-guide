@@ -7,8 +7,10 @@
 </h2>
 
 <% if ! @wine.lcbo_code.empty? %>
-  <a href="http://www.lcbo.ca/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=<%= @wine.lcbo_code %>" target="_new">See in LCBO</a>
-  <a href="http://www.winealign.com/search?q=<%= @wine.lcbo_code %>" target="_new">See in WineAlign</a>
+	<ul class="nav nav-pills">
+	    <li><a href="http://www.lcbo.ca/lcbo-ear/lcbo/product/details.do?language=EN&itemNumber=<%= @wine.lcbo_code %>" target="_new">See at LCBO</a></li>
+	    <li><a href="http://www.winealign.com/search?q=<%= @wine.lcbo_code %>" target="_new2">See at WineAlign</a></li>
+	</ul>
 <% end %>
 
 <h3>Scores</h3>
