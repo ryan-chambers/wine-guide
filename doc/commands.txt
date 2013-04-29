@@ -1,0 +1,3 @@
+To start locally (binds to port 5000):
+
+foreman start

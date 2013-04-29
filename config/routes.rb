@@ -20,10 +20,10 @@ WineGuide::Application.routes.draw do
   #   resources :products
   
   resources :wines do
-    resources :scores
+    resources :bottles
   end
 
-  resources :scores, :countries
+  resources :bottles, :countries
 
   # Sample resource route with options:
   #   resources :products do

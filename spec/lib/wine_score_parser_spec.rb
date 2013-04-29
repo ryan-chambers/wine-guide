@@ -5,9 +5,9 @@ require 'wine_score_parser'
 
 describe 'Wine Score Parser' do
   describe 'parsing one line from file' do
-    s = parse_wine_score_line('a', 'Canada')
+    s = parse_wine_bottle_line('a', 'Canada')
   end
-  
+
   describe 'parsing the winery sentence' do
     it 'identifies all parts' do
       w = make_wine('Château Lajarre, Cuvée Eléonore, Red Blend, 2010,'\
@@ -19,6 +19,13 @@ describe 'Wine Score Parser' do
       expect(w.country).to eq('France')
       expect(w.region).to eq('Bordeaux')
       expect(w.year).to eq('2010')
+    end
+  end
+
+  describe 'parsing the bottle info' do
+    it 'identifies bought date' do
+      b = make_bottles(['Bought Mar 2012'])
+      expect(b[0].bought).to eq('Mar 2012') 
     end
   end
 end

@@ -4,7 +4,7 @@ require 'open-uri'
 require 'grape.rb'
 require 'country.rb'
 require 'wine.rb'
-require 'score.rb'
+require 'bottle.rb'
 
 class WineVO
   def initialize
@@ -80,29 +80,30 @@ class WineVO
   end
 end
 
-class ScoreVO
+class BottleVO
   def initialize
     @comments = []
   end
-  attr_accessor :comments, :score, :date, :price, :from, :to, :in_fridge
+  attr_accessor :comments, :score, :date, :price, :from, :to, :in_fridge, :bought
   def to_s
     [@comments, @score, @date, @price, @from, @to, @in_fridge].join(', ')
   end
 
   def store(wine)
-    score_to_save = Score.new
-    score_to_save.comments = @comments.join(', ')
-    score_to_save.from = @from
-    score_to_save.to = @to
-    score_to_save.in_fridge = @in_fridge
-    score_to_save.score = @score
-    score_to_save.reviewdate = @date
-    score_to_save.price = @price
-    score_to_save.wine = wine
+    bottle_to_save = Bottle.new
+    bottle_to_save.comments = @comments.join(', ')
+    bottle_to_save.from = @from
+    bottle_to_save.to = @to
+    bottle_to_save.in_fridge = @in_fridge
+    bottle_to_save.score = @score
+    bottle_to_save.reviewdate = @date
+    bottle_to_save.price = @price
+    bottle_to_save.wine = wine
+    bottle_to_save.bought = bought
 
-    score_to_save.save!
+    bottle_to_save.save!
 
-    p "Stored new score #{score_to_save}"
+    p "Stored new bottle #{bottle_to_save}"
   end
 end
 
@@ -136,76 +137,80 @@ def make_wine(wine_info, country)
   wine
 end
 
-def make_scores(score_info)
-  scores = []
-  finished_score = false
+def make_bottles(bottle_info)
+  bottles = []
+  finished_bottle = false
   last_was_price = false
 
   i = 0
-  until i == score_info.length
+  until i == bottle_info.length
     if(i == 0)
-      score ||= ScoreVO.new
-      scores << score
+      bottle ||= BottleVO.new
+      bottles << bottle
     end
 
-    part = score_info[i].strip
- 
-    if finished_score
-      # still more, so start a new score
-#      p "Found another score for same wine"
-      score = ScoreVO.new
-      scores << score
-      finished_score = false
+    part = bottle_info[i].strip
+
+    if finished_bottle
+      # still more, so start a new bottle
+#      p "Found another bottle for same wine"
+      bottle = BottleVO.new
+      bottles << bottle
+      finished_bottle = false
     end
 
     # rating
     if /\d\/100/.match(part)
-#      p "Found score #{part}"
-      score.score = part.split('/')[0]
+#      p "Found bottle #{part}"
+      bottle.score = part.split('/')[0]
       last_was_price = false
     # date
     elsif /\[.*\]/.match(part)
-      score.date = part.sub('[', '').sub(']', '')
-      finished_score = true
+      bottle.date = part.sub('[', '').sub(']', '')
+      finished_bottle = true
       last_was_price = false
     # price
     elsif /^\$\d*$/.match(part)
-      score.price = part.sub('$', '')
+      bottle.price = part.sub('$', '')
       last_was_price = true
-#      p "Found part of price #{score.price}"
+#      p "Found part of price #{bottle.price}"
     # comments
     elsif /\d{2}/.match(part) && last_was_price
-      dollar_amt = score.price
-      score.price = "#{dollar_amt}.#{part}".to_f
+      dollar_amt = bottle.price
+      bottle.price = "#{dollar_amt}.#{part}".to_f
     elsif /To 2\d{3}/.match(part)
       last_was_price = false
-      score.to = part.sub('To ', '')
-      score.score = 0
-#      p "Got to #{score.to}"
+      bottle.to = part.sub('To ', '')
+      bottle.score = 0
+#      p "Got to #{bottle.to}"
     elsif /From 2\d{3}/.match(part)
       last_was_price = false
-      score.from = part.sub('From ', '')
-      score.score = 0
-#      p "Got from #{score.from}"
+      bottle.from = part.sub('From ', '')
+      bottle.score = 0
+#      p "Got from #{bottle.from}"
     elsif part == 'In fridge'
       last_was_price = false
-      score.in_fridge = true
-      score.score = 0
+      bottle.in_fridge = true
+      bottle.score = 0
 #      p "found wine in fridge"
-      score.in_fridge = true
-    else
-      score.comments << part
+      bottle.in_fridge = true
+    elsif /Bought [A-Z][a-z]{2} \d{4}/.match(part)
       last_was_price = false
-      # p "Found comment #{part}"
+#      p "Found bought date #{part}"
+      bottle.bought = part.sub('Bought ', '')
+    else
+      bottle.comments << part
+      last_was_price = false
+      # "Found comment #{part}"
     end
 
     i += 1
   end
 
-  scores
+  bottles
 end
 
-def parse_wine_score_line(line, country)
+def parse_wine_bottle_line(line, country)
   parts = line.split('.')
 
   wine_info = parts.shift
@@ -215,11 +220,11 @@ def parse_wine_score_line(line, country)
 #  wine = wine.store
 
   if(wine)
-    scores = make_scores parts
-    if(scores.length > 1)
-#      p "Found scores #{scores}"
+    bottles = make_bottles parts
+    if(bottles.length > 1)
+#      p "Found bottles #{bottles}"
     end
   end
 
-  {:wine => wine, :scores => scores}
+  {:wine => wine, :bottles => bottles}
 end

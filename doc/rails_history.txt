@@ -21,5 +21,6 @@ rails generate migration AddCellarInfoToScore to:integer from:integer in_fridge:
 
 rails generate migration RemoveCellarInfoFromWines in_cellar:boolean drink_from:date drink_until:date
 
-from rails root directory
-./script/rails runner lib/wine_score_parser.rb lib/argentina.txt
+rails generate migration RenameScoreToBottle
+
+rails generate migration AddBoughtInfoToBottle bought:string

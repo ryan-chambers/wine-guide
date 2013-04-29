@@ -9,12 +9,12 @@ class Wine < ActiveRecord::Base
 
   belongs_to :winery
 
-  has_many :scores
+  has_many :bottles
 
   has_and_belongs_to_many :grapes
 
   def self.find_wines_in_cellar
-    Wine.joins(:scores).where(:scores => {:in_fridge => true})
+    Wine.joins(:bottles).where(:bottles => {:in_fridge => true})
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)
@@ -27,7 +27,7 @@ class Wine < ActiveRecord::Base
   end
 
   def to_s
-    [other, grapes_to_s, region, year, lcbo_code, scores.to_s].join(', ')
+    [other, grapes_to_s, region, year, lcbo_code, bottles.to_s].join(', ')
   end
 
   def list_grape_names
@@ -44,12 +44,12 @@ class Wine < ActiveRecord::Base
     grapes.empty? ? '' : grapes.join(', ')
   end
 
-  def real_scores
-    scores.select {|score| ! score.in_fridge}
+  def drunk_bottles
+    bottles.select {|bottle| ! bottle.in_fridge}
   end
 
-  def cellar_scores
-    scores.select {|score| score.in_fridge}
+  def cellar_bottles
+    bottles.select {|bottle| bottle.in_fridge}
   end
 
   private

@@ -1,7 +1,7 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
 Given /^some bottles of wine in the cellar$/ do
-  FactoryGirl.create(:score_in_cellar)
+  FactoryGirl.create(:bottle_in_cellar)
 end
 
 Given /^I am on (.+)$/ do | page_name |
@@ -19,4 +19,5 @@ Then /I should see the cellar report/ do
   page.should have_content('$19.95')
   page.should have_content('2014')
   page.should have_content('2017')
+  page.should have_content('Apr 2012')
 end

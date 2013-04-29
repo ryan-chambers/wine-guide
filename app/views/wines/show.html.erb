@@ -14,18 +14,18 @@
 <% end %>
 
 <h3>Scores</h3>
-<% if ! @wine.real_scores.empty? %>
+<% if ! @wine.drunk_bottles.empty? %>
   <table class="table">
     <tr>
       <th>Date</th>
       <th>Score</th>
       <th>Comments</th>
     </tr>
-  <% @wine.real_scores.each do |score| %>
+  <% @wine.drunk_bottles.each do |bottle| %>
     <tr>
-      <td><%= score.wine_reviewdate %></td>
-      <td><%= score.wine_score %></td>
-      <td><%= score.comments %></td>
+      <td><%= bottle.wine_reviewdate %></td>
+      <td><%= bottle.wine_score %></td>
+      <td><%= bottle.comments %></td>
     </tr>
   <% end %>
   </table>
@@ -33,22 +33,22 @@
   No scores for this wine.
 <% end %>
 
-<% if ! @wine.cellar_scores.empty? %>
+<% if ! @wine.cellar_bottles.empty? %>
 <h3>In Cellar</h3>
-  <% @wine.cellar_scores.each do |score| %>
+  <% @wine.cellar_bottles.each do |bottle| %>
   <p>
-    <% if ! score.from.nil? %>
-    Drink From: <%= score.from %>.
+    <% if ! bottle.from.nil? %>
+    Drink From: <%= bottle.from %>.
     <% end %>
-    <% if ! score.to.nil? %>
-    Drink To: <%= score.to %>.
+    <% if ! bottle.to.nil? %>
+    Drink To: <%= bottle.to %>.
     <% end %>
-    <%= link_to 'Edit', [@wine, score], :action => 'edit' %>
+    <%= link_to 'Edit', [@wine, bottle], :action => 'edit' %>
   </p>
   <% end %>
 <% end %>
 
-<h3>Add a new score</h3>
+<h3>Add a new bottle</h3>
 <p style="color: red"><%= notice %></p>
 
-<%= render "scores/form" %>
+<%= render "bottles/form" %>

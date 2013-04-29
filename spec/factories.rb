@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :alvento, class: Winery do
     name 'Alvento' 
   end
-  
+
   factory :vineland, class: Winery do
     name 'Vineland Estates'
   end
@@ -32,26 +32,27 @@ FactoryGirl.define do
     end
   end
   
-  factory :score do
+  factory :bottle do
     price 19.95
-    
-    factory :score_drank, parent: :score do
-      before(:create) do |score|
-        score.wine = create(:wine_with_grapes_a)
-        score.reviewdate = Date.new
-        score.score = 86
-        score.comments = 'Okay'
-        score.in_fridge = false
+
+    factory :bottle_drank, parent: :bottle do
+      before(:create) do |bottle|
+        bottle.wine = create(:wine_with_grapes_a)
+        bottle.reviewdate = Date.new
+        bottle.score = 86
+        bottle.comments = 'Okay'
+        bottle.in_fridge = false
       end
     end
-    
-    factory :score_in_cellar, parent: :score do
-      before(:create) do |score|
-        score.wine = create(:wine_with_grapes_b)
-        score.in_fridge = true
-        score.from = 2014
-        score.to = 2017
-        score.score = 0
+
+    factory :bottle_in_cellar, parent: :bottle do
+      before(:create) do |bottle|
+        bottle.wine = create(:wine_with_grapes_b)
+        bottle.in_fridge = true
+        bottle.from = 2014
+        bottle.to = 2017
+        bottle.score = 0
+        bottle.bought = 'Apr 2012'
       end
     end
   end
