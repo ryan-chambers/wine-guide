@@ -1,8 +1,12 @@
 Running scripts at heroku
 
+heroku run bash
+
+-- Running db migrations
+rake db:migrate
+
 -- Importing Grape
 
-heroku run bash
 ./script/grape_import.sh "Name Of Grape"
 
 -- Parsing wine file
