@@ -86,7 +86,7 @@ class BottleVO
   end
   attr_accessor :comments, :score, :date, :price, :from, :to, :in_fridge, :bought
   def to_s
-    [@comments, @score, @date, @price, @from, @to, @in_fridge].join(', ')
+    [@comments, @score, @date, @price, @from, @to, @in_fridge, @bought].join(', ')
   end
 
   def store(wine)
@@ -159,25 +159,24 @@ def make_bottles(bottle_info)
       finished_bottle = false
     end
 
-    # rating
+#    p "matching #{part}"
+
     if /\d\/100/.match(part)
 #      p "Found bottle #{part}"
       bottle.score = part.split('/')[0]
       last_was_price = false
-    # date
     elsif /\[.*\]/.match(part)
       bottle.date = part.sub('[', '').sub(']', '')
       finished_bottle = true
       last_was_price = false
-    # price
     elsif /^\$\d*$/.match(part)
       bottle.price = part.sub('$', '')
       last_was_price = true
 #      p "Found part of price #{bottle.price}"
-    # comments
-    elsif /\d{2}/.match(part) && last_was_price
+    elsif /^\d{2}$/.match(part) && last_was_price
       dollar_amt = bottle.price
       bottle.price = "#{dollar_amt}.#{part}".to_f
+#      p "Found rest of price #{bottle.price}"
     elsif /To 2\d{3}/.match(part)
       last_was_price = false
       bottle.to = part.sub('To ', '')
@@ -201,7 +200,7 @@ def make_bottles(bottle_info)
     else
       bottle.comments << part
       last_was_price = false
-      # "Found comment #{part}"
+#      "Found comment #{part}"
     end
 
     i += 1

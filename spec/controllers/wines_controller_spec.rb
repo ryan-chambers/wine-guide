@@ -47,7 +47,7 @@ describe WinesController do
     context "when successful" do
       before do
         authenticate_with_http_digest
-        grape = create(:grape)
+        grape = create(:sauvignonblanc)
         @grape_id = grape.id
         @wine_params = {:wine => {:country => 'Canada', :year => '2012'}, 
           :winery_name => 'Alvento', 

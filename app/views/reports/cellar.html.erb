@@ -1,3 +1,7 @@
+<ul class="nav nav-tabs">
+	<li class="<%= 'active' unless params[:term] == 'soon' %>"><a href="cellar.html">All</a></li>
+	<li class="<%= 'active' if params[:term] == 'soon' %>"><a href="cellar.html?term=soon">Ready to Drink</a></li>
+</ul>
 <h2>Cellar Report</h2>
 <table class="table">
   <thead>

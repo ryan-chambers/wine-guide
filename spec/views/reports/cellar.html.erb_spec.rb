@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe "/reports/cellar" do
   it "shows all relevant fields for the cellar report" do
-    b1 = create(:bottle_in_cellar)
+    b1 = create(:bottle_in_cellar_later)
     assign(:wines, [b1.wine])
 
     render
