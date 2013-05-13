@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back to wine', @score.wine %>
+<%= link_to 'Back to wine', @bottle.wine %>
 
 <h3>Edit Score</h3>
-<%= form_for(@score) do |f| %>
-  <%= render "shared/error_messages", :target => @score %>
+<%= form_for(@bottle) do |f| %>
+  <%= render "shared/error_messages", :target => @bottle %>
   <div class="field">
     <%= f.label :reviewdate, "Review Date" %>
     <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
@@ -15,7 +15,7 @@
   </div>
   <div class="field">
     <%= f.label :comments, 'Comments *' %>
-    <%= f.text_field :comments %>
+    <%= f.text_area :comments, :rows => 4  %>
   </div>
   <div class="field">
     <%= f.label :price, 'Price *' %>
