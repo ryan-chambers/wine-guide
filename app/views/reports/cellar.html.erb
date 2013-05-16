@@ -33,7 +33,7 @@
       <td><%= wine.list_grape_names.join(', ') %></td>
       <td><%= wine.year %> </td>
       <td><%= wine.bottles[0].bought %> </td>
-      <td>$<%= wine.bottles[0].price %> </td>
+      <td><%= number_to_currency(wine.bottles[0].price) %></td>
       <td><%= wine.bottles[0].from %> </td>
       <td><%= wine.bottles[0].to %> </td>
       <td><%= link_to 'Show', wine %></td>
