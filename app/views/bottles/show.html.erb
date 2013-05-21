@@ -7,7 +7,7 @@
   <%= render "shared/error_messages", :target => @bottle %>
   <div class="field">
     <%= f.label :reviewdate, "Review Date" %>
-    <%= f.text_field :reviewdate, :value => Time.new.strftime('%d %b %Y') %>
+    <%= f.text_field :reviewdate, :class => 'datepicker', :value => Time.new.strftime('%d-%m-%Y') %>
   </div>
   <div class="field">
     <%= f.label :score, 'Score *' %>
@@ -38,3 +38,8 @@
     <button type="submit" class="btn">Submit</button>
   </div>
 <% end %>
+<script type="text/javascript">
+$('.datepicker').datepicker({
+    format: 'dd-mm-yyyy'
+});
+</script>
