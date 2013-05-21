@@ -9,7 +9,7 @@ class Country
 
   def initialize(name, regions = [])
     @name = name
-    @regions = regions
+    @regions = regions.sort!
     COUNTRIES.store(name, self)
     COUNTRY_LIST << name
   end
