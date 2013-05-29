@@ -10,7 +10,7 @@ var wines = function() {
 	        $grape_list.append('<li class="grape_ctr_' + counter + '" data-id="' + grape_id + '">' + grape_name + '&nbsp;<a href="#" class="remove_grape">Remove</a></li>');
 	        counter++;
 	    }
-	
+
 	    // create grape list if grape_ids already populated
 	    $selected_grape_ids.val().split('|').forEach(function (grape_id) {
 	        grape_id = $.trim(grape_id);

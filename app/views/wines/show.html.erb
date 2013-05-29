@@ -13,7 +13,7 @@
 	</ul>
 <% end %>
 
-<h3>Scores</h3>
+<h3>Bottles</h3>
 <% if ! @wine.drunk_bottles.empty? %>
   <table class="table">
     <tr>
@@ -30,7 +30,7 @@
   <% end %>
   </table>
 <% else %>
-  No scores for this wine.
+  No bottles for this wine.
 <% end %>
 
 <% if ! @wine.cellar_bottles.empty? %>

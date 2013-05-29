@@ -49,6 +49,6 @@ class Bottle < ActiveRecord::Base
   end
 
   def to_s
-    [comments, score, reviewdate, price, to, from, in_fridge].join(', ')
+    [comments, score, reviewdate, price, to, from, in_fridge, (bought unless bought.nil?)].join(', ')
   end
 end
