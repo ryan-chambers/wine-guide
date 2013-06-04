@@ -7,6 +7,15 @@ class Grape < ActiveRecord::Base
 
   has_and_belongs_to_many :wines
 
+  def self.search_by_name(name)
+    if(name)
+      like = "%".concat(name.downcase.concat("%"))
+      where("lower(name) like ?", like).order('name asc')
+    else
+      scoped
+    end
+  end
+
   def to_s
     name
   end

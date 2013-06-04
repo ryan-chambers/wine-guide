@@ -32,6 +32,12 @@ describe Wine do
       expect(Wine.find_wines_in_cellar_ready_to_drink).to eq([s2.wine, s3.wine])      
     end
 
+    it "finds all wines by winery name" do
+      wine = create(:wine_with_grapes_a)
+
+      expect(Wine.find_wines_by_winery_name('lvento')[0]).to eq(wine)
+    end
+
     it "finds wines matching what is parsed from file" do
       w = create(:wine_with_grapes_a)
       winery = Winery.find_by_name('Alvento')

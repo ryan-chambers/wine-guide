@@ -1,11 +1,17 @@
 <h3>Wines</h3>
+<form id="grape_filter_form" action="/wines">
+	<input type="hidden" name="utf8" value="✓" />
+	<input id="grape_filter" data-provide="typeahead" autocomplete="off" placeholder="All Grapes" name="grape_filter">
+</form>
 <table class="table">
   <thead>
     <tr>
       <th>Wine</th>
       <th>Country</th>
       <th>Region</th>
-      <th>Grapes</th>
+      <th>
+      	Grapes 
+      </th>
       <th>Year</th>
     </tr>
   </thead>
@@ -30,3 +36,20 @@
 <% if ! params[:term] %>
 	<%= will_paginate @wines %>
 <% end %>
+<script type="text/javascript">
+  $('#grape_filter').change(function() {
+  	$('#grape_filter_form').submit();
+  }).typeahead({
+  	source : function(query, process) {
+		return $.ajax({
+			url: '/grapes/search',
+			type: 'get',
+			data: {term: query},
+			dataType: 'json',
+			success : function(json) {
+				return process(json);
+			}
+		});
+  	}
+  });
+</script>

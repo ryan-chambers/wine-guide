@@ -1,11 +1,6 @@
 require "spec_helper"
 
 describe Winery do
-  # not really used, but this is how to use factory girl
-  setup do
-    @winery = build(:alvento)
-  end
-
   describe "validations" do
     it "fails validation without name" do
       winery = Winery.new

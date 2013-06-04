@@ -38,7 +38,7 @@ class Country
   HUNGARY = Country.new('Hungary')
   ITALY = Country.new('Italy', ['Brunello di Montalcino', 'Docg Tuscany', 'Tuscany', 'Piedmont', 'Valpolicella',
       'Doc Sicily', 'Sicily', 'Veneto', 'Igt Veneto', 'Igt Delle Venezie', 'Doc Vernaiolo', 'Doc Valdadige',
-      'Igt Sicilia', 'Doc Piedmont', 'Vino Nobile Di Montepulciano', 'Doc Chianti', 'Doc Gioia del Colle',
+      'Igt Sicilia', 'Igt Toscana', 'Doc Piedmont', 'Vino Nobile Di Montepulciano', 'Doc Chianti', 'Doc Gioia del Colle',
       'Doc Abruzzo', 'Doc Veneto', 'Doc Puglia', 'Igt Campania', 'Igt Veronese'])
   LEBANON = Country.new('Lebanon', ['Bekaa Valley'])
   MACEDONIA = Country.new('Macedonia')

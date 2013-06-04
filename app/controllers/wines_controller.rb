@@ -2,16 +2,13 @@ class WinesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
 
   def index
+    logger.info "searching for #{params[:term]}"
+
     if params[:term]
-      wineries = Winery.search_by_name params[:term]
-      @wines = []
-      # FIXME this feels very wrong - maybe use view instead
-      # or investigate how to search through join
-      wineries.inject(@wines) { |all, winery| 
-        winery.wines.inject(all) { |iall, w| iall << w }  
-      }
+      logger.info "searching for #{params[:term]}"
+      @wines = Wine.find_wines_by_winery_name params[:term]
     else
-      @wines = Wine.paginate(:page => params[:page])
+      @wines = Wine.filter_paginate(params[:grape_filter], :page => params[:page])
     end
 
 #    logger.info "got wines #{@wines}"

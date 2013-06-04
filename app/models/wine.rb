@@ -13,8 +13,22 @@ class Wine < ActiveRecord::Base
 
   has_and_belongs_to_many :grapes
 
+  def self.filter_paginate(grape_filter, page)
+    if(grape_filter)
+      like = "%".concat(grape_filter.downcase.concat("%"))
+      Wine.joins(:grapes).where("lower(grapes.name like ?)", like).paginate(page)
+    else
+      Wine.paginate(page)
+    end
+  end
+
   def self.find_wines_in_cellar
     Wine.joins(:bottles).where(:bottles => {:in_fridge => true})
+  end
+
+  def self.find_wines_by_winery_name(winery_name)
+    like = "%".concat(winery_name.downcase.concat("%"))
+    Wine.joins(:winery).where("lower(wineries.name) like ?", like)
   end
 
   def self.find_wines_in_cellar_ready_to_drink

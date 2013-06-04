@@ -14,6 +14,19 @@ When /^I click "([^\"]*)"$/ do |link|
   click_link(link)
 end
 
+When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
+  fill_in(field.gsub(' ', '_'), :with => value)
+end
+
+When /^I press "([^\"]*)"$/ do |button|
+  click_button(button)
+end
+
+When /^I submit the form "([^\"]*)"$/ do |form_id|
+    element = find_by_id(form_id)
+    Capybara::RackTest::Form.new(page.driver, element.native).submit :name => nil
+end
+
 Then /I should see the cellar report/ do
   page.should have_content('Vineland Estates')
   page.should have_content('Sauvignon Blanc')
@@ -28,4 +41,14 @@ Then /I should see the ready\-to\-drink report/ do
   page.should have_content('Cave Springs')
   page.should_not have_content('Vineland Estates')
   page.should have_content('I Mocali')
+end
+
+Then /I should see the search results for Vineland/ do
+  page.should have_content('Vineland Estates')
+  page.should_not have_content('I Mocali')
+end
+
+Then /I should see the search results for Vernaccia/ do
+  page.should have_content('Vernaccia')
+  page.should_not have_content('Sauvignon Blanc')
 end
