@@ -11,7 +11,9 @@ describe Grape do
       grape.save
       grape.errors.get(:name).should_not be_nil
     end
-  end  
+
+    it { should validate_uniqueness_of(:name) }
+  end
 
   describe "searches" do
     it "case-insensitively for all matching grapes" do

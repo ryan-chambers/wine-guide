@@ -7,6 +7,8 @@ describe Winery do
       winery.save
       winery.errors.get(:name).should_not be_nil
     end
+
+    it { should validate_uniqueness_of(:name) }
   end  
 
   describe "finders" do

@@ -9,13 +9,14 @@ gem 'rails', '3.2.13'
 
 group :development, :test do
   gem 'sqlite3'
-  gem "rspec-rails", "~> 2.0"
+  gem "rspec-rails", "~> 2.12"
 end
 
 group :test do
   gem "factory_girl_rails", "~> 3.0"
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :production do

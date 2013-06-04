@@ -2,17 +2,20 @@
 
 grape = ARGV.join(' ')
 
-existing_grape = Grape.where(:name => grape)
+normalized_grape_name = grape.split(/(\W)/).map(&:capitalize).join
+existing_grape = Grape.where(:name => normalized_grape_name)
 
-if existing_grape
-  puts "Creating new grape #{grape}"
+# p "#{existing_grape.exists?}"
+
+if ! existing_grape.exists?
+  puts "Creating new grape #{normalized_grape_name}"
   new_grape = Grape.new
-  new_grape.name = grape
+  new_grape.name = normalized_grape_name
   if new_grape.save
-    puts "Saved new grape #{grape}"
+    puts "Saved new grape #{normalized_grape_name}"
   else
-    puts "Got an error saving grape #{grape}"
+    puts "Got an error saving grape #{normalized_grape_name}"
   end
 else
-  puts "#{grape} already exists"
+  puts "#{normalized_grape_name} already exists"
 end
