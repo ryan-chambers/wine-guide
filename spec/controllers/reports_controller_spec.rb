@@ -31,4 +31,26 @@ describe ReportsController do
       assigns[:wines].should == [s3.wine]
     end
   end
+
+  describe "GET 'country'" do
+    it "returns http succcess" do
+      get 'country'
+      response.should be_success
+    end
+
+    it "renders the 'country' template" do
+      get 'country'
+      response.should render_template('country')
+    end
+
+    it "assigns country report data to @country_summaries" do
+      create(:bottle_drank)
+      create(:bottle_drank_2)
+      create(:bottle_drank_3)
+
+      get 'country'
+
+      assigns[:country_summaries].should_not be_nil
+    end
+  end
 end

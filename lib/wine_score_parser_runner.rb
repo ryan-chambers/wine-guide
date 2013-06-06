@@ -19,8 +19,8 @@ lines.each do |line|
   else
     wine_and_bottles = parse_wine_bottle_line(line, current_country)
 
-    wine = wine_and_bottles[:wine].store
-      if(wine)
+   wine = wine_and_bottles[:wine].store
+   if(wine)
       wine_and_bottles[:bottles].each do |bottle|
         bottle.store wine
       end

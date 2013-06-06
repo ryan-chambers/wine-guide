@@ -5,14 +5,12 @@ class Winery < ActiveRecord::Base
 
   has_many :wines
 
-  before_save { |winery| winery.name = winery.name.split(/(\W)/).map(&:capitalize).join }
-
   def self.find_by_name(name)
     if(name)
       where("lower(name) = ?", name.downcase).first
     else
       nil
-    end  
+    end
   end
 
   def self.search_by_name(name)

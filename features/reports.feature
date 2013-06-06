@@ -1,8 +1,4 @@
 Feature: Cellar Report
-	In order to see the list of wines in the cellar
-	A visitor
-	Should view the cellar report page
-
 	Scenario: Shows the cellar reports page
 		Given some bottles of wine in the cellar
 		And I am on the home page
@@ -15,3 +11,9 @@ Feature: Cellar Report
 		And I click "Cellar"
 		When I click "Ready to Drink"
 		Then I should see the ready-to-drink report
+
+	Scenario: Shows the country reports page
+		Given some wine reviews
+		And I am on the home page
+		When I click "Country"
+		Then I should see the country report

@@ -1,0 +1,25 @@
+<h2>Country Report</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Number of bottles</th>
+      <th>Average Score (Points)</th>
+      <th>Average Price</th>
+      <th>Points/$</th>
+      <th>$/Points</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @country_summaries.each do |report| %>
+  		<tr>
+	  		<td><%= report.country %></td>
+	  		<td><%= report.total_bottles %></td>
+	  		<td><%= number_with_precision(report.avg_score, :precision => 1) %></td>
+	  		<td><%= number_to_currency(report.avg_price) %></td>
+	  		<td><%= number_with_precision(report.avg_score / report.avg_price, :precision => 2) %></td>
+	  		<td><%= number_with_precision(report.avg_price / report.avg_score, :precision => 3) %></td>
+  		</tr>
+  	<% end%>
+  </tbody>
+</table>

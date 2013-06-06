@@ -15,6 +15,10 @@ FactoryGirl.define do
     name 'I Mocali'
   end
 
+  factory :kenwood, class: Winery do
+    name 'Kenwood'
+  end
+  
   factory :sauvignonblanc, class: Grape do
     name 'Sauvignon Blanc'
   end
@@ -23,13 +27,17 @@ FactoryGirl.define do
     name 'Vernaccia'
   end
 
+  factory :merlot, class:Grape do
+    name 'Nerlot'
+  end
+
   factory :wine do
-    country 'Canada'
     year 2011
     other 'Reserve'
 
     factory :wine_with_grapes_a, parent: :wine do
       before(:create) do |wine|
+        wine.country = 'Canada'
         wine.winery = create(:alvento)
         wine.grapes << build(:sauvignonblanc)
         wine.lcbo_code = '123456'
@@ -38,6 +46,7 @@ FactoryGirl.define do
 
     factory :wine_with_grapes_b, parent: :wine do
       before(:create) do |wine|
+        wine.country = 'Canada'
         wine.winery = create(:vineland)
         wine.grapes << build(:sauvignonblanc)
       end
@@ -45,6 +54,7 @@ FactoryGirl.define do
 
     factory :wine_with_grapes_c, parent: :wine do
       before(:create) do |wine|
+        wine.country = 'Canada'
         wine.winery = create(:cavesprings)
         wine.grapes << build(:sauvignonblanc)
       end
@@ -52,8 +62,17 @@ FactoryGirl.define do
 
     factory :wine_with_grapes_d, parent: :wine do
       before(:create) do |wine|
+        wine.country = 'Italy'
         wine.winery = create(:imocali)
         wine.grapes << build(:vernaccia)
+      end
+    end
+
+    factory :wine_with_grapes_e, parent: :wine do
+      before(:create) do |wine|
+        wine.country = 'USA'
+        wine.winery = create(:kenwood)
+        wine.grapes << build(:merlot)
       end
     end
   end
@@ -68,6 +87,29 @@ FactoryGirl.define do
         bottle.score = 86
         bottle.comments = 'Okay'
         bottle.in_fridge = false
+        bottle.price = 19.95
+      end
+    end
+
+    factory :bottle_drank_2, parent: :bottle do
+      before(:create) do |bottle|
+        bottle.wine = create(:wine_with_grapes_e)
+        bottle.reviewdate = Date.new
+        bottle.score = 93
+        bottle.comments = 'Fantastic'
+        bottle.in_fridge = false
+        bottle.price = 29.95
+      end
+    end
+
+    factory :bottle_drank_3, parent: :bottle do
+      before(:create) do |bottle|
+        bottle.wine = create(:wine_with_grapes_c)
+        bottle.reviewdate = Date.new
+        bottle.score = 87
+        bottle.comments = 'Good'
+        bottle.in_fridge = false
+        bottle.price = 14.95
       end
     end
 

@@ -6,4 +6,8 @@ class ReportsController < ApplicationController
       @wines = Wine.find_wines_in_cellar
     end
   end
+
+  def country
+    @country_summaries = Bottle.generate_country_report
+  end
 end

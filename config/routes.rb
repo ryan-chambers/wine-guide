@@ -2,6 +2,7 @@ WineGuide::Application.routes.draw do
   get "grapes/search"
 
   get "reports/cellar"
+  get "reports/country"
 
   get "wineries/search"
 

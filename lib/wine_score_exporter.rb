@@ -8,16 +8,16 @@ def create_wine_sentence(wine, winery)
   s.join(', ')
 end
 
-def create_wine_score_sentence(score)
-  s = [score.wine_price, score.wine_score + '/100', score.comments]
-  if ! score.from.nil?
-    s << 'From ' + score.from.to_s
+def create_wine_bottle_sentence(bottle)
+  s = [bottle.price, bottle.score.to_s + '/100', bottle.comments]
+  if ! bottle.from.nil?
+    s << 'From ' + bottle.from.to_s
   end
-  s << 'To ' + score.to.to_s unless score.to.nil?
-  if !score.wine_reviewdate.nil?
-    s << '[' + score.wine_reviewdate + ']'
+  s << 'To ' + bottle.to.to_s unless bottle.to.nil?
+  if !bottle.wine_reviewdate.nil?
+    s << '[' + bottle.wine_reviewdate + ']'
   end
-  if score.in_fridge
+  if bottle.in_fridge
     s << 'In fridge'
   end
   s.join('. ')
@@ -35,9 +35,9 @@ Country::COUNTRIES.keys.each do |country|
     winery = Winery.find(wine.winery_id)
     winery_sentence = create_wine_sentence(wine, winery)
     print "#{winery_sentence}."
-    wine.scores.each do |score|
-      wine_score = create_wine_score_sentence(score)
-      print " #{wine_score}."
+    wine.bottles.each do |bottle|
+      wine_bottle = create_wine_bottle_sentence(bottle)
+      print " #{wine_bottle}."
     end
 
     puts
