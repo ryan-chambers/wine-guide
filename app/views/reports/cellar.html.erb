@@ -32,6 +32,9 @@
       <td><%= wine.region %></td>
       <td><%= wine.list_grape_names.join(', ') %></td>
       <td><%= wine.year %> </td>
+      <%
+        # FIXME if there is more than one bottle in the cellar, show them all
+      %>
       <td><%= wine.cellar_bottles[0].bought %> </td>
       <td><%= number_to_currency(wine.cellar_bottles[0].price) %></td>
       <td><%= wine.cellar_bottles[0].from %> </td>
