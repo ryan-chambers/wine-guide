@@ -17,3 +17,9 @@ Feature: Cellar Report
 		And I am on the home page
 		When I click "Country"
 		Then I should see the country report
+
+	Scenario: Shows the this day in wine report
+		Given some wine reviews
+		And I am on the home page
+		When I click "This Day in Wine"
+		Then I should see the this day in wine report

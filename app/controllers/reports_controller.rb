@@ -10,4 +10,8 @@ class ReportsController < ApplicationController
   def country
     @country_summaries = Bottle.generate_country_report
   end
+
+  def this_day_in_wine
+    @wines = Wine.find_wines_drank_this_day
+  end
 end

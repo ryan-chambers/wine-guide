@@ -24,3 +24,5 @@ rails generate migration RemoveCellarInfoFromWines in_cellar:boolean drink_from:
 rails generate migration RenameScoreToBottle
 
 rails generate migration AddBoughtInfoToBottle bought:string
+
+rails generate migration AddDayOfYearToBottle review_day_of_year:string

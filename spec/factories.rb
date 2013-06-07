@@ -83,7 +83,7 @@ FactoryGirl.define do
     factory :bottle_drank, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_a)
-        bottle.reviewdate = Date.new
+        bottle.reviewdate = Time.new.strftime('%d %b %Y')
         bottle.score = 86
         bottle.comments = 'Okay'
         bottle.in_fridge = false
@@ -94,7 +94,7 @@ FactoryGirl.define do
     factory :bottle_drank_2, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_e)
-        bottle.reviewdate = Date.new
+        bottle.reviewdate = Time.new.strftime('%d %b %Y')
         bottle.score = 93
         bottle.comments = 'Fantastic'
         bottle.in_fridge = false
@@ -105,7 +105,7 @@ FactoryGirl.define do
     factory :bottle_drank_3, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_c)
-        bottle.reviewdate = Date.new
+        bottle.reviewdate = Time.new.strftime('%d %b %Y')
         bottle.score = 87
         bottle.comments = 'Good'
         bottle.in_fridge = false

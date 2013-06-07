@@ -51,5 +51,11 @@ describe Wine do
       
       expect(Wine.find_by_winery_year_lcbo_code(winery.id, 2011, '')).to eq([])
     end
+    
+    it "finds all bottles drunk on today's date" do
+      b = create(:bottle_drank)
+
+      expect(Wine.find_wines_drank_this_day[0]).to eq(b.wine)
+    end
   end
 end

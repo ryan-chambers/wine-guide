@@ -12,6 +12,14 @@ describe Bottle do
     end
   end
 
+  describe "fields" do
+    it "must have a non-nil review day of year if review date is set" do
+      @bottle = Bottle.new
+      @bottle.reviewdate= '11 Jan 2009'
+      expect(@bottle[:review_day_of_year]).not_to be_nil
+    end
+  end
+
   describe "report generator" do
     it "generates a country report based on bottles in the database" do
       create(:bottle_drank)

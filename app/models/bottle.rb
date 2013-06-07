@@ -1,11 +1,21 @@
 class Bottle < ActiveRecord::Base
   attr_accessible :reviewdate, :score, :comments, :price, :wine, :to, :from, :in_fridge, :bought
+  attr_reader :review_day_of_year
 
   validate :score_between_0_and_100, :score_not_null_unless_in_fridge, :comments_not_null_unless_in_fridge, :reviewdate_not_null_unless_in_fridge
 
   validates :price, :presence => true
 
   belongs_to :wine
+
+  def reviewdate=(reviewdate)
+    self[:reviewdate] = reviewdate
+    if ! reviewdate.nil?
+      d = Date.parse reviewdate
+      self[:review_day_of_year] = d.day.to_s.concat(' ').concat(d.month.to_s)
+#      p "Set review day of year to #{review_day_of_year} from #{reviewdate}"
+    end
+  end
 
   def self.generate_country_report
     Bottle.find_by_sql("select wines.country, avg(bottles.score) as avg_score, avg(bottles.price) as avg_price, count(bottles.id) as count

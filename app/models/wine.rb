@@ -26,6 +26,10 @@ class Wine < ActiveRecord::Base
     Wine.joins(:bottles).where(:bottles => {:in_fridge => true})
   end
 
+  def self.find_wines_drank_this_day
+    Wine.joins(:bottles).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year})
+  end
+
   def self.find_wines_by_winery_name(winery_name)
     like = "%".concat(winery_name.downcase.concat("%"))
     Wine.joins(:winery).where("lower(wineries.name) like ?", like)
@@ -71,9 +75,22 @@ class Wine < ActiveRecord::Base
     bottles.select {|bottle| bottle.in_fridge}
   end
 
+  def drank_this_day_bottles
+    bottles.select { |bottle|
+      p "#{bottle.review_day_of_year}"
+      # FIXME why can't i access using attr?
+      bottle[:review_day_of_year] == Wine::day_of_year
+    }
+  end
+
   private
 
   def year_after_1800
       errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
+  end
+
+  def self.day_of_year 
+    d = Time.new
+    d.day.to_s.concat(' ').concat(d.month.to_s)
   end
 end

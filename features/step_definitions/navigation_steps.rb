@@ -65,3 +65,7 @@ Then /I should see the search results for Vernaccia/ do
   page.should have_content('Vernaccia')
   page.should_not have_content('Sauvignon Blanc')
 end
+
+Then /I should see the this day in wine report/ do
+  page.should have_content('Cave Springs')
+end
