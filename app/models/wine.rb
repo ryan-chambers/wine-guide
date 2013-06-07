@@ -72,7 +72,7 @@ class Wine < ActiveRecord::Base
   end
 
   private
-  
+
   def year_after_1800
       errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
   end
