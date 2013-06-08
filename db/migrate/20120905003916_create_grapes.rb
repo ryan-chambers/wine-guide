@@ -15,6 +15,7 @@ class CreateGrapes < ActiveRecord::Migration
     Grape.create :name => 'Baga'
     Grape.create :name => 'Barbaresco'
     Grape.create :name => 'Barbera'
+    Grape.create :name => 'Bonarda'
     Grape.create :name => 'Barolo'
     Grape.create :name => 'Braucol'
     Grape.create :name => 'Cabernet Franc'
