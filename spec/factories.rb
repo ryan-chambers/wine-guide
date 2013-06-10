@@ -117,8 +117,8 @@ FactoryGirl.define do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_b)
         bottle.in_fridge = true
-        bottle.from = 2014
-        bottle.to = Time.new.strftime('%Y').to_i + 5
+        bottle.drink_from = 2014
+        bottle.drink_to = Time.new.strftime('%Y').to_i + 5
         bottle.score = 0
         bottle.bought = 'Apr 2011'
       end
@@ -128,7 +128,7 @@ FactoryGirl.define do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_c)
         bottle.in_fridge = true
-        bottle.to = Time.new.strftime('%Y').to_i + 1
+        bottle.drink_to = Time.new.strftime('%Y').to_i + 1
         bottle.score = 0
         bottle.bought = 'Apr 2012'
       end
@@ -138,8 +138,8 @@ FactoryGirl.define do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_d)
         bottle.in_fridge = true
-        bottle.to = Time.new.strftime('%Y').to_i + 1
-        bottle.from = Time.new.strftime('%Y').to_i
+        bottle.drink_to = Time.new.strftime('%Y').to_i + 1
+        bottle.drink_from = Time.new.strftime('%Y').to_i
         bottle.score = 0
         bottle.bought = 'May 2013'
       end

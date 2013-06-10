@@ -37,7 +37,7 @@ class Wine < ActiveRecord::Base
 
   def self.find_wines_in_cellar_ready_to_drink
     from = Time.new.strftime('%Y').to_i
-    Wine.joins(:bottles).where('(bottles."from" is null or bottles."from" <= ?) and bottles.in_fridge = ?', from, true)
+    Wine.joins(:bottles).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true)
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)

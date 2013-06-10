@@ -33,8 +33,8 @@ describe 'Wine Score Parser' do
 
 #      p "#{b}"
       expect(b.bought).to eq('May 2012')
-      expect(b.from).to eq('2014')
-      expect(b.to).to eq('2017')
+      expect(b.drink_from).to eq('2014')
+      expect(b.drink_to).to eq('2017')
       expect(b.in_fridge).to eq(true)
       expect(b.price).to eq("17")
     end

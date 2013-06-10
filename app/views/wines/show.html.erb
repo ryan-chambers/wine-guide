@@ -37,11 +37,11 @@
 <h3>In Cellar</h3>
   <% @wine.cellar_bottles.each do |bottle| %>
   <p>
-    <% if ! bottle.from.nil? %>
-    Drink From: <%= bottle.from %>.
+    <% if ! bottle.drink_from.nil? %>
+    Drink From: <%= bottle.drink_from %>.
     <% end %>
-    <% if ! bottle.to.nil? %>
-    Drink To: <%= bottle.to %>.
+    <% if ! bottle.drink_to.nil? %>
+    Drink To: <%= bottle.drink_to %>.
     <% end %>
     <%= link_to 'Edit', [@wine, bottle], :action => 'edit' %>
   </p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130607161950) do
+ActiveRecord::Schema.define(:version => 20130610151957) do
 
   create_table "bottles", :force => true do |t|
     t.date     "reviewdate"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20130607161950) do
     t.float    "price"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.integer  "to"
-    t.integer  "from"
+    t.integer  "drink_to"
+    t.integer  "drink_from"
     t.boolean  "in_fridge"
     t.string   "bought"
     t.string   "review_day_of_year"

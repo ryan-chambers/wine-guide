@@ -1,5 +1,5 @@
 class Bottle < ActiveRecord::Base
-  attr_accessible :reviewdate, :score, :comments, :price, :wine, :to, :from, :in_fridge, :bought
+  attr_accessible :reviewdate, :score, :comments, :price, :wine, :drink_to, :drink_from, :in_fridge, :bought
   attr_reader :review_day_of_year
 
   validate :score_between_0_and_100, :score_not_null_unless_in_fridge, :comments_not_null_unless_in_fridge, :reviewdate_not_null_unless_in_fridge
@@ -10,7 +10,7 @@ class Bottle < ActiveRecord::Base
 
   def reviewdate=(reviewdate)
     self[:reviewdate] = reviewdate
-    if ! reviewdate.nil?
+    if ! reviewdate.empty?
       d = Date.parse reviewdate
       self[:review_day_of_year] = d.day.to_s.concat(' ').concat(d.month.to_s)
 #      p "Set review day of year to #{review_day_of_year} from #{reviewdate}"
@@ -70,7 +70,7 @@ class Bottle < ActiveRecord::Base
   end
 
   def to_s
-    [comments, score, reviewdate, price, to, from, in_fridge, (bought unless bought.nil?)].join(', ')
+    [comments, score, reviewdate, price, drink_to, drink_from, in_fridge, (bought unless bought.nil?)].join(', ')
   end
 end
 

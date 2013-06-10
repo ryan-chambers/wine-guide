@@ -10,10 +10,10 @@ end
 
 def create_wine_bottle_sentence(bottle)
   s = [bottle.price, bottle.score.to_s + '/100', bottle.comments]
-  if ! bottle.from.nil?
-    s << 'From ' + bottle.from.to_s
+  if ! bottle.drink_from.nil?
+    s << 'From ' + bottle.drink_from.to_s
   end
-  s << 'To ' + bottle.to.to_s unless bottle.to.nil?
+  s << 'To ' + bottle.drink_to.to_s unless bottle.drink_to.nil?
   if !bottle.wine_reviewdate.nil?
     s << '[' + bottle.wine_reviewdate + ']'
   end

@@ -84,7 +84,7 @@ class BottleVO
   def initialize
     @comments = []
   end
-  attr_accessor :comments, :score, :date, :price, :from, :to, :in_fridge, :bought
+  attr_accessor :comments, :score, :date, :price, :drink_from, :drink_to, :in_fridge, :bought
   def to_s
     [@comments, @score, @date, @price, @from, @to, @in_fridge, @bought].join(', ')
   end
@@ -92,8 +92,8 @@ class BottleVO
   def store(wine)
     bottle_to_save = Bottle.new
     bottle_to_save.comments = @comments.join(', ')
-    bottle_to_save.from = @from
-    bottle_to_save.to = @to
+    bottle_to_save.drink_from = @drink_from
+    bottle_to_save.drink_to = @drink_to
     bottle_to_save.in_fridge = @in_fridge
     bottle_to_save.score = @score
     bottle_to_save.reviewdate = @date
@@ -179,14 +179,14 @@ def make_bottles(bottle_info)
 #      p "Found rest of price #{bottle.price}"
     elsif /To 2\d{3}/.match(part)
       last_was_price = false
-      bottle.to = part.sub('To ', '')
+      bottle.drink_to = part.sub('To ', '')
       bottle.score = 0
-#      p "Got to #{bottle.to}"
+#      p "Got to #{bottle.drink_to}"
     elsif /From 2\d{3}/.match(part)
       last_was_price = false
-      bottle.from = part.sub('From ', '')
+      bottle.drink_from = part.sub('From ', '')
       bottle.score = 0
-#      p "Got from #{bottle.from}"
+#      p "Got from #{bottle.drink_from}"
     elsif part == 'In fridge'
       last_was_price = false
       bottle.in_fridge = true
