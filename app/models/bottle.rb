@@ -10,7 +10,7 @@ class Bottle < ActiveRecord::Base
 
   def reviewdate=(reviewdate)
     self[:reviewdate] = reviewdate
-    if ! reviewdate.empty?
+    if ! reviewdate.nil? and ! reviewdate.empty?
       d = Date.parse reviewdate
       self[:review_day_of_year] = d.day.to_s.concat(' ').concat(d.month.to_s)
 #      p "Set review day of year to #{review_day_of_year} from #{reviewdate}"
