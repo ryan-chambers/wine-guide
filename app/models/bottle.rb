@@ -24,7 +24,7 @@ class Bottle < ActiveRecord::Base
       and (bottles.in_fridge is null or bottles.in_fridge = 'f')
       group by wines.country
       order by wines.country").collect { |r|
-        CountryReportVO.new :country => r[:country], :avg_score => r[:avg_score], :total_bottles => r[:count], :avg_price => r[:avg_price]
+        CountryReportVO.new :country => r[:country], :avg_score => Float(r[:avg_score]), :total_bottles => Integer(r[:count]), :avg_price => Float(r[:avg_price])
       }
   end
 
