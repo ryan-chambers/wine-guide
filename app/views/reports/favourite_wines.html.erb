@@ -1,4 +1,16 @@
 <h2>Favourite Wines</h2>
+<form id="score_filter_form" action="/reports/favourite_wines">
+	<label for="score_filter">Minimum score</label>
+	<select id="score_filter" name="score_filter">
+		<option>96</option>
+		<option>95</option>
+		<option>94</option>
+		<option>93</option>
+		<option>92</option>
+		<option>91</option>
+		<option selected="selected">90</option>
+	</select>
+</form>
 <table class="table">
   <thead>
     <tr>
@@ -33,3 +45,8 @@
     <% end %>
   </tbody>
 </table>
+<script type="text/javascript">
+	$('#score_filter').change(function() {
+		$('#score_filter_form').submit();
+	});
+</script>

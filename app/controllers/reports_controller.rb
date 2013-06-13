@@ -16,6 +16,6 @@ class ReportsController < ApplicationController
   end
 
   def favourite_wines
-    @wines = Wine.find_favourites
+    @wines = Wine.find_favourites params[:score_filter]
   end
 end
