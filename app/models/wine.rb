@@ -75,9 +75,13 @@ class Wine < ActiveRecord::Base
     bottles.select {|bottle| bottle.in_fridge}
   end
 
+  def favourite_bottles
+    bottles.select {|bottle| bottle.score >= 90 }
+  end
+
   def drank_this_day_bottles
     bottles.select { |bottle|
-      p "#{bottle.review_day_of_year}"
+#      p "#{bottle.review_day_of_year}"
       # FIXME why can't i access using attr?
       bottle[:review_day_of_year] == Wine::day_of_year
     }
