@@ -23,7 +23,7 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_favourites
-    Wine.joins(:bottles).where('bottles.score >= 90')
+    Wine.joins(:bottles).where('bottles.score >= 90').uniq
   end
 
   def self.find_wines_in_cellar
