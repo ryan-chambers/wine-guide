@@ -69,3 +69,7 @@ end
 Then /I should see the this day in wine report/ do
   page.should have_content('Cave Springs')
 end
+
+Then /I should see the favourite wines report/ do
+  pending # FIXME implement
+end

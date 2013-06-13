@@ -23,3 +23,10 @@ Feature: Cellar Report
 		And I am on the home page
 		When I click "This Day in Wine"
 		Then I should see the this day in wine report
+
+	Scenario: Shows the favourite wines report
+		Given some wine reviews
+		And I am on the home page
+		When I click "Favourite Wines"
+		Then I should see the favourite wines report
+		
