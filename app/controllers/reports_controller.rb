@@ -16,6 +16,6 @@ class ReportsController < ApplicationController
   end
 
   def favourite_wines
-    @wines = []
+    @wines = Wine.find_favourites
   end
 end

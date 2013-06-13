@@ -65,10 +65,30 @@ describe ReportsController do
       response.should render_template('this_day_in_wine')
     end
 
-    it "assigns country report data to @country_summaries" do
+    it "assigns country report data to @wines" do
       create(:bottle_drank)
 
       get 'this_day_in_wine'
+
+      assigns[:wines].should_not be_nil
+    end
+  end
+
+  describe "GET 'favourite_wines'" do
+    it "returns http success" do
+      get 'favourite_wines'
+      response.should be_success
+    end
+
+    it "renders the 'favourite_wines' template" do
+      get 'favourite_wines'
+      response.should render_template('favourite_wines')
+    end
+
+    it "assigns country report data to @wines" do
+      create(:bottle_drank_2)
+
+      get 'favourite_wines'
 
       assigns[:wines].should_not be_nil
     end
