@@ -9,7 +9,6 @@
       <th>Vintage</th>
       <th>Price</th>
       <th>Score</th>
-      <th>Year</th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +27,6 @@
       <td><%= wine.year %> </td>
       <td><%= number_to_currency(wine.drank_this_day_bottles[0].price) %></td>
       <td><%= wine.drank_this_day_bottles[0].score %></td>
-      <td><%= wine.drank_this_day_bottles[0].reviewdate.strftime('%Y') %></td>
     </tr>
     <% end %>
   </tbody>
