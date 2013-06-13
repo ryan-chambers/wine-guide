@@ -29,4 +29,3 @@ Feature: Cellar Report
 		And I am on the home page
 		When I click "Favourite Wines"
 		Then I should see the favourite wines report
-		

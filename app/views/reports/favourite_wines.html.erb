@@ -1,0 +1,35 @@
+<h2>Favourite Wines</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Wine</th>
+      <th>Country</th>
+      <th>Region</th>
+      <th>Grapes</th>
+      <th>Vintage</th>
+      <th>Price</th>
+      <th>Score</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @wines.each do |wine| %>
+    <tr>
+      <td>
+      	<%= wine.winery.name %>
+      	<% if wine.other%>
+	      	<br /> 
+	      	<span class="muted"><%= wine.other %></span>
+      	<% end %> 
+      </td>
+      <td><%= wine.country %></td>
+      <td><%= wine.region %></td>
+      <td><%= wine.list_grape_names.join(', ') %></td>
+      <td><%= wine.year %> </td>
+      <td><%= number_to_currency(wine.favourite_bottles[0].price) %></td>
+      <td><%= wine.favourite_bottles[0].score %></td>
+      <td><%= wine.favourite_bottles[0].reviewdate.strftime('%Y') %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
