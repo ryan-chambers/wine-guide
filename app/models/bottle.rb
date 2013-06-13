@@ -8,6 +8,12 @@ class Bottle < ActiveRecord::Base
 
   belongs_to :wine
 
+  after_initialize :init
+
+  def init
+    in_fridge ||= false
+  end
+
   def reviewdate=(reviewdate)
     self[:reviewdate] = reviewdate
     if ! reviewdate.nil? and ! reviewdate.empty?

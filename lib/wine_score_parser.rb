@@ -83,6 +83,7 @@ end
 class BottleVO
   def initialize
     @comments = []
+    @in_fridge = false
   end
   attr_accessor :comments, :score, :date, :price, :drink_from, :drink_to, :in_fridge, :bought
   def to_s
@@ -189,7 +190,6 @@ def make_bottles(bottle_info)
 #      p "Got from #{bottle.drink_from}"
     elsif part == 'In fridge'
       last_was_price = false
-      bottle.in_fridge = true
       bottle.score = 0
 #      p "found wine in fridge"
       bottle.in_fridge = true
