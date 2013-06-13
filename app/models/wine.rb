@@ -22,6 +22,10 @@ class Wine < ActiveRecord::Base
     end
   end
 
+  def self.find_favourites
+    Wine.joins(:bottles).where('bottles.score >= 90')
+  end
+
   def self.find_wines_in_cellar
     Wine.joins(:bottles).where(:bottles => {:in_fridge => true})
   end

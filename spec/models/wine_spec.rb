@@ -29,6 +29,13 @@ describe Wine do
   end
 
   describe "finders" do
+    it "finds all wines with scores greater than 90" do
+      b1 = create(:bottle_drank)
+      b2 = create(:bottle_drank_2)
+
+      expect(Wine.find_favourites).to eq([b2.wine])
+    end
+
     it "finds all wines with bottles indicating they are in the cellar" do
       s1 = create(:bottle_drank)
       s2 = create(:bottle_in_cellar_later)
