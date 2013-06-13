@@ -71,5 +71,8 @@ Then /I should see the this day in wine report/ do
 end
 
 Then /I should see the favourite wines report/ do
-  pending # FIXME implement
+  page.should_not have_content('Alvento')
+  page.should_not have_content('86')
+  page.should have_content('Kenwood')
+  page.should have_content('93')
 end
