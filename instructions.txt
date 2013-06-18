@@ -11,3 +11,6 @@ rake db:migrate
 
 -- Parsing wine file
 ./script/run_importer_main.sh https://dl.dropbox.com/u/13326771/wines.txt
+
+-- To Drop DB:
+heroku pg:reset DATABASE_URL
