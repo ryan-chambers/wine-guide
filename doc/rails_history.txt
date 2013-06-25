@@ -28,3 +28,7 @@ rails generate migration AddBoughtInfoToBottle bought:string
 rails generate migration AddDayOfYearToBottle review_day_of_year:string
 
 rails g migration FixBottleToFromColumns
+
+rails g migration SetBaroloBarbarescoRegions
+
+rails g migration RemoveGrapesBaroloBarbaresco
