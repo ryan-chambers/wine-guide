@@ -36,7 +36,7 @@ class Country
   GERMANY = Country.new('Germany')
   GREECE = Country.new('Greece')
   HUNGARY = Country.new('Hungary')
-  ITALY = Country.new('Italy', ['Brunello di Montalcino', 'Docg Tuscany', 'Tuscany', 'Piedmont', 'Valpolicella',
+  ITALY = Country.new('Italy', ['Brunello di Montalcino', 'Rosso di Montalcino', 'Docg Tuscany', 'Tuscany', 'Piedmont', 'Valpolicella',
       'Doc Sicily', 'Sicily', 'Veneto', 'Igt Veneto', 'Igt Delle Venezie', 'Doc Vernaiolo', 'Doc Valdadige',
       'Igt Sicilia', 'Igt Toscana', 'Doc Piedmont', 'Vino Nobile Di Montepulciano', 'Doc Chianti', 'Doc Gioia del Colle',
       'Doc Abruzzo', 'Doc Veneto', 'Doc Puglia', 'Igt Campania', 'Igt Veronese'])
