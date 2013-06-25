@@ -15,11 +15,15 @@ class Wine < ActiveRecord::Base
 
   def self.filter_paginate(grape_filter, page)
     if(grape_filter)
-      like = "%".concat(grape_filter.downcase.concat("%"))
-      Wine.joins(:grapes).where("lower(grapes.name) like ?", like).paginate(page)
+      find_by_grapes(grape_filter).paginate(page)
     else
       Wine.joins(:winery).paginate(page).order('wineries.name asc')
     end
+  end
+
+  def self.find_by_grapes(grapes)
+    like = "%".concat(grapes.downcase.concat("%"))
+    Wine.joins(:grapes).where("lower(grapes.name) like ?", like)
   end
 
   def self.find_favourites(score_filter)
@@ -56,7 +60,7 @@ class Wine < ActiveRecord::Base
   end
 
   def to_s
-    [other, grapes_to_s, region, year, lcbo_code, bottles.to_s].join(', ')
+    [other, grapes_to_s, region, year, lcbo_code, grapes.to_s, bottles.to_s].join(', ')
   end
 
   def list_grape_names
