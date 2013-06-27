@@ -49,6 +49,7 @@ FactoryGirl.define do
         wine.country = 'Canada'
         wine.winery = create(:vineland)
         wine.grapes << build(:sauvignonblanc)
+        wine.lcbo_code = '98765432'
       end
     end
 

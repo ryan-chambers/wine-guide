@@ -6,7 +6,11 @@ class WinesController < ApplicationController
 
     if params[:term]
       logger.info "searching for #{params[:term]}"
-      @wines = Wine.find_wines_by_winery_name params[:term]
+      if WinesController.is_lcbo_code params[:term]
+        @wines = Wine.find_all_by_lcbo_code params[:term]
+      else
+        @wines = Wine.find_wines_by_winery_name params[:term]
+      end
     else
       @wines = Wine.filter_paginate(params[:grape_filter], :page => params[:page])
     end
@@ -79,6 +83,10 @@ class WinesController < ApplicationController
       flash[:notice] = "The wine was saved."
       redirect_to wine_path(@wine)
     end
+  end
+
+  def self.is_lcbo_code(term)
+    /\d{1,10}/ =~ term
   end
   
   def new

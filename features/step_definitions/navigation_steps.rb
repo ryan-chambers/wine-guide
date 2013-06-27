@@ -61,6 +61,11 @@ Then /I should see the search results for Vineland/ do
   page.should_not have_content('I Mocali')
 end
 
+Then /I should see the search results for Alvento/ do
+  page.should have_content('Alvento')
+  page.should_not have_content('I Mocali')
+end
+
 Then /I should see the search results for Vernaccia/ do
   page.should have_content('Vernaccia')
   page.should_not have_content('Sauvignon Blanc')

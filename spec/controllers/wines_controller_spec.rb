@@ -6,29 +6,37 @@ describe WinesController do
       get 'index'
       response.should be_success
     end
-    
+
     it "renders the 'index' template" do
       get :index
       response.should render_template('index')
     end
-    
+
     it "assigns all wines to @wines variable when no term specified" do
       w1 = create(:wine_with_grapes_a)
       w2 = create(:wine_with_grapes_b)
-      
+
       get :index
       assigns[:wines].should == [w1, w2]
     end
-    
-    it "assigns matching wines to @wines variable when term is specified" do
+
+    it "assigns wineries searched by winery name when non-LCBO code term is specified" do
       w1 = create(:wine_with_grapes_a)
       w2 = create(:wine_with_grapes_b)
 
       get :index, :term => 'Alv'
       assigns[:wines].should == [w1]
     end
+
+    it "assigns wineries searched by LCBO code when specified" do
+      w1 = create(:wine_with_grapes_a)
+      w2 = create(:wine_with_grapes_b)
+
+      get :index, :term => '98765432'
+      assigns[:wines].should == [w2]
+    end
   end
-  
+
   describe "get 'new'" do
     it "fails without validation" do
       get 'new'
@@ -84,5 +92,15 @@ describe WinesController do
         }.should_not change(Wine, :count)
       end
     end
+  end
+
+  it "knows the format of an LCBO code" do
+    expect(WinesController.is_lcbo_code 'RR').to be_nil
+    expect(WinesController.is_lcbo_code '123').not_to be_nil
+    expect(WinesController.is_lcbo_code '1234').not_to be_nil
+    expect(WinesController.is_lcbo_code '12345').not_to be_nil
+    expect(WinesController.is_lcbo_code '123456').not_to be_nil
+    expect(WinesController.is_lcbo_code '1234567').not_to be_nil
+    expect(WinesController.is_lcbo_code '12345678').not_to be_nil
   end
 end

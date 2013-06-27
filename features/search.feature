@@ -12,6 +12,13 @@ Feature: Search for wines
 		When I press "Search"
 		Then I should see the search results for Vineland
 
+	Scenario: Search by LCBO code
+		Given some wine reviews
+		And I am on the home page
+		And I fill in "term" with "123456"
+		When I press "Search"
+		Then I should see the search results for Alvento
+
 	Scenario: Filter by grape
 		Given some bottles of wine in the cellar
 		And I am on the home page
