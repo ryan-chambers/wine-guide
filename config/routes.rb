@@ -1,4 +1,6 @@
 WineGuide::Application.routes.draw do
+  get "export/export"
+
   get "grapes/search"
 
   get "reports/cellar"

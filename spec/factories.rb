@@ -38,6 +38,7 @@ FactoryGirl.define do
     factory :wine_with_grapes_a, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
+        wine.region = 'VQA Niagara'
         wine.winery = create(:alvento)
         wine.grapes << build(:sauvignonblanc)
         wine.lcbo_code = '123456'
@@ -117,6 +118,7 @@ FactoryGirl.define do
     factory :bottle_in_cellar_later, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_b)
+        bottle.comments = 'RRR'
         bottle.in_fridge = true
         bottle.drink_from = 2014
         bottle.drink_to = Time.new.strftime('%Y').to_i + 5
@@ -128,6 +130,7 @@ FactoryGirl.define do
     factory :bottle_in_cellar_sooner, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_c)
+        bottle.comments = 'RRR'
         bottle.in_fridge = true
         bottle.drink_to = Time.new.strftime('%Y').to_i + 1
         bottle.score = 0
@@ -139,6 +142,7 @@ FactoryGirl.define do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_d)
         bottle.in_fridge = true
+        bottle.comments = 'RRR'
         bottle.drink_to = Time.new.strftime('%Y').to_i + 1
         bottle.drink_from = Time.new.strftime('%Y').to_i
         bottle.score = 0

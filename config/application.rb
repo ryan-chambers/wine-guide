@@ -62,6 +62,8 @@ module WineGuide
 
     config.time_zone = 'Eastern Time (US & Canada)'
     config.active_record.default_timezone = 'Eastern Time (US & Canada)'
+    
+    config.autoload_paths += %W(#{config.root}/lib)
  
     config.generators do |g|
       g.fixture_replacement :factory_girl
