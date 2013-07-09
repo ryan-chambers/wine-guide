@@ -33,12 +33,12 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_in_cellar
-    Wine.joins(:bottles).where(:bottles => {:in_fridge => true})
+    Wine.joins(:bottles).where(:bottles => {:in_fridge => true}).order('bottles.drink_from')
   end
 
   def self.find_in_cellar_ready_to_drink
     from = Time.new.strftime('%Y').to_i
-    Wine.joins(:bottles).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true)
+    Wine.joins(:bottles).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true).order('bottles.drink_from')
   end
 
   # FIXME rename
