@@ -19,12 +19,14 @@
     <tr>
       <th>Date</th>
       <th>Score</th>
+      <th>Price</th>
       <th>Comments</th>
     </tr>
   <% @wine.drunk_bottles.each do |bottle| %>
     <tr>
       <td><%= bottle.wine_reviewdate %></td>
       <td><%= bottle.wine_score %></td>
+      <td><%= number_to_currency(bottle.price) %></td>
       <td><%= bottle.comments %></td>
     </tr>
   <% end %>
