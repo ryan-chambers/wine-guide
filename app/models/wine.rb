@@ -17,13 +17,13 @@ class Wine < ActiveRecord::Base
     if(grape_filter)
       find_by_grapes(grape_filter).paginate(page)
     else
-      Wine.joins(:winery).paginate(page).order('wineries.name asc')
+      Wine.joins(:winery).includes(:grapes, :winery).paginate(page).order('wineries.name asc')
     end
   end
 
   def self.find_by_grapes(grapes)
     like = "%".concat(grapes.downcase.concat("%"))
-    Wine.joins(:grapes).where("lower(grapes.name) like ?", like)
+    Wine.joins(:grapes).includes(:grapes, :winery).where("lower(grapes.name) like ?", like)
   end
 
   def self.find_favourites(score_filter)
