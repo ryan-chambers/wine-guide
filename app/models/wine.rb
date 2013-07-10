@@ -29,7 +29,7 @@ class Wine < ActiveRecord::Base
   def self.find_favourites(score_filter)
     logger.info "Filtering for favourites scored #{score_filter} and higher"
     score = score_filter || 90
-    Wine.joins(:bottles).where('bottles.score >= :score', {:score => score}).uniq
+    Wine.joins(:bottles).includes(:grapes, :bottles, :winery).where('bottles.score >= :score', {:score => score}).uniq
   end
 
   def self.find_in_cellar
