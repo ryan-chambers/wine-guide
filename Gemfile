@@ -10,6 +10,7 @@ gem 'rails', '3.2.13'
 group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails", "~> 2.12"
+  gem "bullet"
 end
 
 group :test do
