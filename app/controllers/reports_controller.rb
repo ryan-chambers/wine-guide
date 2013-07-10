@@ -12,7 +12,7 @@ class ReportsController < ApplicationController
   end
 
   def this_day_in_wine
-    @wines = Wine.find_wines_drank_this_day
+    @wines = Wine.find_drank_this_day
   end
 
   def favourite_wines

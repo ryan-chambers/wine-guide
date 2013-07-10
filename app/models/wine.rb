@@ -41,13 +41,11 @@ class Wine < ActiveRecord::Base
     Wine.joins(:bottles).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true).order('bottles.drink_from')
   end
 
-  # FIXME rename
-  def self.find_wines_drank_this_day
+  def self.find_drank_this_day
     Wine.joins(:bottles).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year})
   end
 
-  # FIXME rename
-  def self.find_wines_by_winery_name(winery_name)
+  def self.find_by_winery_name(winery_name)
     like = "%".concat(winery_name.downcase.concat("%"))
     Wine.joins(:winery).where("lower(wineries.name) like ?", like)
   end

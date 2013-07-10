@@ -9,7 +9,7 @@ class WinesController < ApplicationController
       if WinesController.is_lcbo_code params[:term]
         @wines = Wine.find_all_by_lcbo_code params[:term]
       else
-        @wines = Wine.find_wines_by_winery_name params[:term]
+        @wines = Wine.find_by_winery_name params[:term]
       end
     else
       @wines = Wine.filter_paginate(params[:grape_filter], :page => params[:page])

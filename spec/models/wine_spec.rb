@@ -56,7 +56,7 @@ describe Wine do
     it "finds all wines by winery name" do
       wine = create(:wine_with_grapes_a)
 
-      expect(Wine.find_wines_by_winery_name('lvento')[0]).to eq(wine)
+      expect(Wine.find_by_winery_name('lvento')[0]).to eq(wine)
     end
 
     it "finds wines matching what is parsed from file" do
@@ -76,7 +76,7 @@ describe Wine do
     it "finds all bottles drunk on today's date" do
       b = create(:bottle_drank)
 
-      expect(Wine.find_wines_drank_this_day[0]).to eq(b.wine)
+      expect(Wine.find_drank_this_day[0]).to eq(b.wine)
     end
   end
 end
