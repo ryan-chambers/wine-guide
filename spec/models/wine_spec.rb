@@ -42,7 +42,7 @@ describe Wine do
       s3 = create(:bottle_in_cellar_sooner)
       s4 = create(:bottle_in_cellar_now)
 
-      expect(Wine.find_in_cellar).to eq([s2.wine, s3.wine, s4.wine])
+      expect(Wine.find_in_cellar).to eq([s3.wine, s4.wine, s2.wine])
     end
 
     it "finds all wines that will be ready to drink in the next two years" do
