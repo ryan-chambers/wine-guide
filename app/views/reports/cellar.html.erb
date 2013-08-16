@@ -15,6 +15,7 @@
       <th>Price</th>
       <th>From</th>
       <th>To</th>
+      <th>Cellar/Fridge</th>
       <th></th>
     </tr>
   </thead>
@@ -39,6 +40,7 @@
       <td><%= number_to_currency(wine.cellar_bottles[0].price) %></td>
       <td><%= wine.cellar_bottles[0].drink_from %> </td>
       <td><%= wine.cellar_bottles[0].drink_to %> </td>
+      <td><%= wine.cellar_bottles[0].recommended_storage %></td>
       <td><%= link_to 'Show', wine %></td>
     </tr>
     <% end %>

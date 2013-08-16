@@ -98,6 +98,18 @@ class Bottle < ActiveRecord::Base
     }
     tweet.join(' ')
   end  
+
+  def recommended_storage
+    if in_fridge
+      if price > 25 and drink_to and drink_to > Date.today.year + 2
+        'cellar'
+      else
+        'fridge'
+      end
+    else
+      'none'
+    end
+  end
 end
 
 class CountryReportVO

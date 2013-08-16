@@ -82,4 +82,44 @@ describe Bottle do
       expect(country_reports[1].country).to eq('USA')
     end
   end
+
+  describe "storage recommendation" do
+    it "recommends storage in the cellar if price > $25 and drink to 3 or more years away" do
+      b = create(:bottle_in_cellar_later)
+      b.price = 25.15
+      b.drink_to = Date.today.year + 3
+#      p "#{b.drink_to}"
+
+      expect(b.recommended_storage).to eq('cellar')
+    end
+
+    it "recommends storage in the fridge if price < $25" do
+      b = create(:bottle_in_cellar_later)
+      b.price = 25
+
+      expect(b.recommended_storage).to eq('fridge')
+    end
+
+    it "recommends storage in the fridge if drink from less than 3 years away" do
+      b = create(:bottle_in_cellar_later)
+      b.price = 25.15
+      b.drink_to = Date.today.year + 2
+
+      expect(b.recommended_storage).to eq('fridge')
+    end
+
+    it "recommends storage in the fridge if drink to empty" do
+      b = create(:bottle_in_cellar_later)
+      b.price = 25.15
+      b.drink_to = nil
+
+      expect(b.recommended_storage).to eq('fridge')
+    end
+
+    it "recommends nothing if the wine is not in the fridge" do
+      b = create(:bottle_drank)
+
+      expect(b.recommended_storage).to eq('none')
+    end
+  end
 end
