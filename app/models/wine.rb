@@ -73,8 +73,8 @@ class Wine < ActiveRecord::Base
     grape_names.sort!
   end
 
-  def grapes_to_s
-    grapes.empty? ? '' : grapes.join(', ')
+  def grapes_to_s(separator=", ")
+    grapes.empty? ? '' : grapes.join(separator)
   end
 
   def drunk_bottles

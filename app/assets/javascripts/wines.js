@@ -1,11 +1,12 @@
 var wines = function() {
+	var $modal_reference;
 
 	function enableGrapePicker() {
 	    var $grape_select = $('#grape_0');
 	    var $selected_grape_ids = $('#grape_ids');
 	    var $grape_list = $('#grape_list');
 	    var counter = 0;
-	
+
 	    function addGrapeToList(grape_id, grape_name) {
 	        $grape_list.append('<li class="grape_ctr_' + counter + '" data-id="' + grape_id + '">' + grape_name + '&nbsp;<a href="#" class="remove_grape">Remove</a></li>');
 	        counter++;
@@ -22,7 +23,7 @@ var wines = function() {
 	            addGrapeToList(grape_id, grape_name);
 	        }
 	    });
-	
+
 	    $grape_select.change(function() {
 	        var $selected = $('#grape_0 option:selected');
 	        var grape_id = $selected.attr('value');
@@ -66,9 +67,24 @@ var wines = function() {
 	        });
 	    });
 	}
-	
+
+	function enableBottleTweeting(modal_id) {
+		$modal_reference = $(modal_id);
+		$modal_reference.modal({show: false});
+		return $modal_reference;
+	}
+
+	function generateTweet(bottle_id, callback) {
+        $.ajax({
+            url: '/tweets/bottle.json?bottle_id=' + bottle_id,
+            context: document.body
+        }).done(callback);
+	}
+
 	return {
 		enableGrapePicker: enableGrapePicker,
-		enableRegionPicker: enableRegionPicker
+		enableRegionPicker: enableRegionPicker,
+		enableBottleTweeting: enableBottleTweeting,
+		generateTweet: generateTweet
 	}	
 }();

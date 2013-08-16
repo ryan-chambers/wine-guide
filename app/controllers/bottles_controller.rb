@@ -28,6 +28,7 @@ class BottlesController < ApplicationController
     end
 
     if @bottle.errors.any?
+      # FIXME this should be :alert, not notice
       flash[:notice] = 'Errors saving bottle: ' + @bottle.errors.full_messages.join(', ')
     end
 

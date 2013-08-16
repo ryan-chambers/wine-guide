@@ -10,6 +10,10 @@ class Bottle < ActiveRecord::Base
 
   after_initialize :init
 
+  def can_tweet
+    ! in_fridge
+  end
+
   def init
     in_fridge ||= false
   end
@@ -78,6 +82,22 @@ class Bottle < ActiveRecord::Base
   def to_s
     [comments, score, reviewdate, price, drink_to, drink_from, in_fridge, (bought unless bought.nil?)].join(', ')
   end
+
+  def to_tweet
+    parts = [wine.winery.name, wine.grapes_to_s('/'), wine.other, wine.year.to_s + '.', comments + '.', score.to_i.to_s + "/100", "$" + price.to_s]
+    tweet = parts.inject([]) { |out, next_part|
+#      p "Adding #{next_part} to #{out}"
+      if ! next_part.nil?
+        tweet_length = out.join(' ').length + next_part.length + 1
+        if tweet_length <= 140
+          out << next_part
+        end
+      end
+#      p "Got #{out}"
+      out
+    }
+    tweet.join(' ')
+  end  
 end
 
 class CountryReportVO

@@ -9,7 +9,9 @@ class CountriesController < ApplicationController
       end
     else
       logger.info "Invalid country #{@country}"
-      format.json { render :json => ''}
+      respond_to do |format|
+        format.json { render :json => ''}
+      end
     end
   end
 end

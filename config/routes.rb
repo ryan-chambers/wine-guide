@@ -1,4 +1,7 @@
 WineGuide::Application.routes.draw do
+  get "tweets/bottle"
+  post "tweets/tweet_bottle"
+
   get "export/export"
 
   get "grapes/search"
@@ -25,7 +28,7 @@ WineGuide::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  
+
   resources :wines do
     resources :bottles
   end

@@ -5,3 +5,6 @@
 # Disallow: /
 
 Disallow: /wines/new
+Disallow: /export/
+Disallow: /reports/
+Disallow: /bottles/tweet

@@ -36,4 +36,6 @@ WineGuide::Application.configure do
   config.active_support.deprecation = :stderr
   
   config.log_level = :debug
+
+  config.twitter_client = FakeTwitter
 end

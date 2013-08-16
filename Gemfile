@@ -48,6 +48,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'jquery-rails'
 
+gem 'twitter'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

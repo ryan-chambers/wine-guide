@@ -48,4 +48,6 @@ WineGuide::Application.configure do
     Bullet.rails_logger = true
     Bullet.airbrake = false
   end
+
+  config.twitter_client = FakeTwitter
 end

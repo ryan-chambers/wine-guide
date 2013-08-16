@@ -13,6 +13,13 @@
 	</ul>
 <% end %>
 
+<% if flash[:tweeted] %>
+<div class="alert">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	Tweet sent
+</div>
+<% end %>
+
 <h3>Bottles</h3>
 <% if ! @wine.drunk_bottles.empty? %>
   <table class="table">
@@ -21,6 +28,7 @@
       <th>Score</th>
       <th>Price</th>
       <th>Comments</th>
+      <th></th>
     </tr>
   <% @wine.drunk_bottles.each do |bottle| %>
     <tr>
@@ -28,6 +36,11 @@
       <td><%= bottle.wine_score %></td>
       <td><%= number_to_currency(bottle.price) %></td>
       <td><%= bottle.comments %></td>
+      <td>
+      	<% if bottle.can_tweet %>
+      		<a role="button" class="btn tweet-action" data-bottle-id="<%= bottle.id %>">Tweet</a>
+      	<% end %>
+      </td>
     </tr>
   <% end %>
   </table>
@@ -54,3 +67,35 @@
 <p style="color: red"><%= notice %></p>
 
 <%= render "bottles/form" %>
+
+<div id="tweet-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel">Tweet bottle score</h3>
+  	</div>
+	<div class="modal-body">
+		<%= form_tag('/tweets/tweet_bottle', :method => :post) %>
+  			<fieldset>
+	  			<textarea rows="4" id="tweet-message" style="width: 300px" name="message"></textarea>
+				<input name="wine_id" type="hidden" value="<%= @wine.id %>" />
+				<span class="help-block">The above message will be tweeted.</span>
+		    	<button type="submit" class="btn btn-primary">Tweet</button>
+	    	</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+    	<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  	</div>
+</div>
+
+<script type="text/javascript">
+	var modal_ref = wines.enableBottleTweeting('#tweet-modal');
+
+	$('.tweet-action').click(function(e) {
+		var bottle_id = $(this).data('bottle-id');
+		wines.generateTweet(bottle_id, function(tweet) {
+			$('#tweet-message').val(tweet.msg);
+			modal_ref.modal('show');
+		});
+	});
+</script>
