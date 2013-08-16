@@ -13,3 +13,6 @@ heroku run bash
 
 -- To Drop DB:
 heroku pg:reset DATABASE_URL
+
+-- To set Heroku environment variables:
+heroku config:set GITHUB_USERNAME=joesmith
