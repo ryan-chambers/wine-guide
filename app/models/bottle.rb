@@ -1,4 +1,7 @@
 class Bottle < ActiveRecord::Base
+  FRIDGE = 'Fridge'
+  CELLAR = 'Cellar'
+
   attr_accessible :reviewdate, :score, :comments, :price, :wine, :drink_to, :drink_from, :in_fridge, :bought
   attr_reader :review_day_of_year
 
@@ -102,9 +105,9 @@ class Bottle < ActiveRecord::Base
   def recommended_storage
     if in_fridge
       if price > 25 and drink_to and drink_to > Date.today.year + 2
-        'cellar'
+        CELLAR
       else
-        'fridge'
+        FRIDGE
       end
     else
       'none'

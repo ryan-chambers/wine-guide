@@ -90,14 +90,14 @@ describe Bottle do
       b.drink_to = Date.today.year + 3
 #      p "#{b.drink_to}"
 
-      expect(b.recommended_storage).to eq('cellar')
+      expect(b.recommended_storage).to eq(Bottle::CELLAR)
     end
 
     it "recommends storage in the fridge if price < $25" do
       b = create(:bottle_in_cellar_later)
       b.price = 25
 
-      expect(b.recommended_storage).to eq('fridge')
+      expect(b.recommended_storage).to eq(Bottle::FRIDGE)
     end
 
     it "recommends storage in the fridge if drink from less than 3 years away" do
@@ -105,7 +105,7 @@ describe Bottle do
       b.price = 25.15
       b.drink_to = Date.today.year + 2
 
-      expect(b.recommended_storage).to eq('fridge')
+      expect(b.recommended_storage).to eq(Bottle::FRIDGE)
     end
 
     it "recommends storage in the fridge if drink to empty" do
@@ -113,7 +113,7 @@ describe Bottle do
       b.price = 25.15
       b.drink_to = nil
 
-      expect(b.recommended_storage).to eq('fridge')
+      expect(b.recommended_storage).to eq(Bottle::FRIDGE)
     end
 
     it "recommends nothing if the wine is not in the fridge" do
