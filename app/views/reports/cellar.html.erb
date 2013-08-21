@@ -15,13 +15,19 @@
       <th>Price</th>
       <th>From</th>
       <th>To</th>
-      <th>Cellar/Fridge</th>
+      <th>
+      	<select id="cellar-picker" style="width: auto">
+      		<option>Both</option>
+      		<option>Cellar</option>
+      		<option>Fridge</option>
+      	</select>
+      </th>
       <th></th>
     </tr>
   </thead>
   <tbody>
   	<% @wines.each do |wine| %>
-    <tr>
+    <tr class="js-<%= wine.cellar_bottles[0].recommended_storage %>">
       <td>
       	<%= wine.winery.name %>
       	<% if wine.other%>
@@ -46,3 +52,21 @@
     <% end %>
   </tbody>
 </table>
+
+<script type="text/javascript">
+	var fridge = $('.js-Fridge'),
+		cellar = $('.js-Cellar');
+	$('#cellar-picker').change(function(e) {
+		var show = $(this).val();
+		if(show === 'Both') {
+			fridge.show();
+			cellar.show();
+		} else if(show ==='Fridge') {
+			fridge.show();
+			cellar.hide();
+		} else {
+			fridge.hide();
+			cellar.show();
+		}
+	});
+</script>
