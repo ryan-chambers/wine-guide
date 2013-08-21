@@ -22,7 +22,9 @@ class TweetsController < ApplicationController
   def tweet_bottle
     begin
       t = self.app_config.twitter_client
+      p "Sending tweet #{params[:message]}"
       t.update(params[:message])
+      p "Tweeting finished"
     rescue Exception => e
       p "Message #{params[:message]} failed to be tweeted."
       p "#{e.message}"
