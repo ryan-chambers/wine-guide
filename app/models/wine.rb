@@ -42,7 +42,7 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_drank_this_day
-    Wine.joins(:bottles).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year})
+    Wine.joins(:bottles).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
   end
 
   def self.find_by_winery_name(winery_name)
