@@ -77,15 +77,16 @@ describe WinesController do
     context "when failure" do
       before do
         authenticate_with_http_digest
+        @wine_params = {:wine => {:not_real => 'phoney'}}
       end
 
       it "re-renders the 'new' template" do
-        post :create
+        post :create, @wine_params
         response.should render_template('new')
       end
 
       it "should not create a wine record" do
-        post :create
+        post :create, @wine_params
         response.should render_template('new')
         lambda {
           post :create, @wine_params

@@ -1,0 +1,5 @@
+-- To precompile assets - for production
+bundle exec rake assets:precompile
+
+-- to see outdated gems
+bundle outdated

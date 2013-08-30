@@ -2,58 +2,51 @@ source 'https://rubygems.org'
 
 ruby "2.0.0"
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3'
-  gem "rspec-rails", "~> 2.12"
-  gem "bullet"
+  gem 'sqlite3', '1.3.8'
+  gem "rspec-rails", "~> 2.14.0"
+  gem "bullet", "4.6.0"
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 3.0"
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
+  gem "factory_girl_rails", "~> 4.2.1"
+  gem 'cucumber-rails', "1.4.0", :require => false
+  gem 'database_cleaner', "1.1.1"
   gem 'shoulda-matchers'
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.16.0'
 end
 
-gem 'will_paginate', '3.0.3'
+gem 'will_paginate', '~> 3.0'
 
 gem "thin"
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'sass-rails',   '~> 4.0.0'
+gem 'coffee-rails', '~> 4.0.0'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+gem 'uglifier', '>= 1.3.0'
 
-  gem 'uglifier', '>= 1.0.3'
-  
-  gem 'therubyracer'
-end
+gem 'therubyracer'
 
 gem 'libv8', '~> 3.11.8'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'less-rails', '2.3.3'
+gem 'twitter-bootstrap-rails', '2.2.8'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '3.0.4'
 
-gem 'twitter'
+gem 'twitter', '4.8.1'
 
 group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
+  gem 'better_errors', '0.9.0'
+  gem 'binding_of_caller', '0.7.2'
+  gem 'meta_request', '0.2.8'
 end
 
 # To use ActiveModel has_secure_password

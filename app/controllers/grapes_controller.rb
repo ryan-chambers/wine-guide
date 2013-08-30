@@ -3,7 +3,7 @@ class GrapesController < ApplicationController
     if params[:term]
       grapes = Grape.search_by_name params[:term]
     else
-      grapes = Grape.find(:all, :order => 'name asc')
+      grapes = Grape.findAll
     end
 
     render :json => grapes.map { |w| w.name }

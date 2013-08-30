@@ -2,7 +2,7 @@ class Bottle < ActiveRecord::Base
   FRIDGE = 'Fridge'
   CELLAR = 'Cellar'
 
-  attr_accessible :reviewdate, :score, :comments, :price, :wine, :drink_to, :drink_from, :in_fridge, :bought
+#  attr_accessible :reviewdate, :score, :comments, :price, :wine, :drink_to, :drink_from, :in_fridge, :bought
   attr_reader :review_day_of_year
 
   validate :score_between_0_and_100, :score_not_null_unless_in_fridge, :comments_not_null_unless_in_fridge, :reviewdate_not_null_unless_in_fridge

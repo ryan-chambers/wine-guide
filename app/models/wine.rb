@@ -1,6 +1,4 @@
 class Wine < ActiveRecord::Base
-  attr_accessible :country,  :lcbo_code, :other, :purchased_date, :region, :year, :grapes
-
   validate :year_after_1800
 
   validates :winery_id, :year, :country, :grapes, :presence => true
@@ -30,6 +28,10 @@ class Wine < ActiveRecord::Base
     logger.info "Filtering for favourites scored #{score_filter} and higher"
     score = score_filter || 90
     Wine.joins(:bottles).includes(:grapes, :bottles, :winery).where('bottles.score >= :score', {:score => score}).uniq
+  end
+
+  def self.find_all_by_lcbo_code(lcbo_code)
+    Wine.where(lcbo_code: lcbo_code)
   end
 
   def self.find_in_cellar

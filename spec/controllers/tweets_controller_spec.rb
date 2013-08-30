@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 describe TweetsController do
-  before do
-    authenticate_with_http_digest
-  end
-
   describe "get 'bottle'" do
     it "returns the default tweet for a bottle" do
       bottle = create(:bottle_drank)
@@ -30,12 +26,22 @@ describe TweetsController do
   end
 
   describe "post 'tweet_bottle'" do
-    it "returns http success" do
+    it "returns http success when authenticated" do
+      authenticate_with_http_digest
+
       wine = create(:wine_with_grapes_e)
 
       post 'tweet_bottle', :wine_id => wine.id
 
       assert_redirected_to wine_path(assigns(:wine))
+    end
+
+    it "returns failure when not authenticated" do
+      wine = create(:wine_with_grapes_e)
+
+      post 'tweet_bottle', :wine_id => wine.id
+
+      expect(response.response_code).to eq(401)
     end
   end
 end

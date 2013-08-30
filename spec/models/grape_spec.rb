@@ -19,5 +19,15 @@ describe Grape do
     it "case-insensitively for all matching grapes" do
       expect(Grape.search_by_name 'SAUVIG').to eq([@grape])
     end
+
+    it "returns all grapes when no search term entered" do
+      g2 = create(:vernaccia)
+      expect(Grape.search_by_name nil).to eq([@grape, g2])
+    end
+
+    it "returns all grapes sorted alphabetically" do
+      g1 = create(:merlot)
+      expect(Grape.findAll).to eq([g1, @grape])
+    end
   end
 end

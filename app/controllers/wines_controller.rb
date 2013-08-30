@@ -33,7 +33,7 @@ class WinesController < ApplicationController
   end
 
   def create
-    @wine = Wine.new(params[:wine])
+    @wine = Wine.new(wine_params)
 
     @winery_name = params[:winery_name]
     @grape_ids = params[:grape_ids]
@@ -99,5 +99,11 @@ class WinesController < ApplicationController
       format.html  # new.html.erb
       format.json  { render :json => @wine }
     end
+  end
+
+  private
+
+  def wine_params
+    params.require(:wine).permit(:country, :lcbo_code, :other, :purchased_date, :region, :year, :grapes)
   end
 end

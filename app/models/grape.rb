@@ -1,5 +1,5 @@
 class Grape < ActiveRecord::Base
-  attr_accessible :name, :wines
+#  attr_accessible :name, :wines
 
   validates :name, :presence => true
 
@@ -14,8 +14,12 @@ class Grape < ActiveRecord::Base
       like = "%".concat(name.downcase.concat("%"))
       where("lower(name) like ?", like).order('name asc')
     else
-      scoped
+      Grape.findAll
     end
+  end
+
+  def self.findAll
+    self.order('name asc')
   end
 
   def to_s

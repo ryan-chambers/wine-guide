@@ -1,5 +1,5 @@
 class Winery < ActiveRecord::Base
-  attr_accessible :name, :wines
+#  attr_accessible :name, :wines
 
   validates :name, :presence => true, :uniqueness => { :case_sensitive => false }
 
@@ -18,7 +18,8 @@ class Winery < ActiveRecord::Base
       like = "%".concat(name.downcase.concat("%"))
       where("lower(name) like ?", like).order('name asc')
     else
-      scoped
+      # FIXME don't return everything
+      order('name asc')
     end
   end
 
