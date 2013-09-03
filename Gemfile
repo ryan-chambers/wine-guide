@@ -22,6 +22,7 @@ end
 
 group :production do
   gem 'pg', '0.16.0'
+  gem 'rails_12factor'
 end
 
 gem 'will_paginate', '~> 3.0'
