@@ -21,7 +21,7 @@ class BottlesController < ApplicationController
 
   def create
    @wine = Wine.find(params[:wine_id])
-   @bottle = @wine.bottles.create(params[:bottle]) do |bottle|
+   @bottle = @wine.bottles.create(bottle_params) do |bottle|
       if bottle.in_fridge
         bottle.score = 0
       end
@@ -43,7 +43,7 @@ class BottlesController < ApplicationController
     @bottle = Bottle.find(params[:id])
 
     respond_to do |format|
-      if @bottle.update_attributes(params[:bottle])
+      if @bottle.update_attributes(bottle_params)
         format.html  { redirect_to(@bottle,
                       :notice => 'Bottle was successfully updated.') }
         format.json  { head :no_content }
@@ -53,5 +53,11 @@ class BottlesController < ApplicationController
                       :status => :unprocessable_entity }
       end
     end
+  end
+
+  private
+
+  def bottle_params
+    params.require(:bottle).permit(:reviewdate, :score, :comments, :price, :drink_to, :drink_from, :in_fridge, :bought)
   end
 end
