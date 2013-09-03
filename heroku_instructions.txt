@@ -11,6 +11,9 @@ heroku run bash
 	-- Parsing wine file
 	./script/run_importer_main.sh https://dl.dropbox.com/u/13326771/wines.txt
 
+-- To precompile assets
+bundle exec rake assets:precompile
+
 -- To Drop DB:
 heroku pg:reset DATABASE_URL
 
