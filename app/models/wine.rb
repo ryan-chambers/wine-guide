@@ -48,8 +48,13 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_by_winery_name(winery_name)
+    p "searching wine by winery name #{winery_name}"
+    limit = 100
+    if winery_name.empty?
+      limit = 5
+    end
     like = "%".concat(winery_name.downcase.concat("%"))
-    Wine.joins(:winery).where("lower(wineries.name) like ?", like)
+    Wine.joins(:winery, :grapes).where("lower(wineries.name) like ?", like).limit(limit)
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)
