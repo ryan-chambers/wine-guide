@@ -2,7 +2,7 @@ class WinesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
 
   def index
-    logger.info "searching for #{params[:term]}"
+    logger.info "Got search param #{params[:term]}"
 
     if params[:term]
       logger.info "searching for #{params[:term]}"
