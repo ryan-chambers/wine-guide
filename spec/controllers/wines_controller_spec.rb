@@ -96,6 +96,7 @@ describe WinesController do
   end
 
   it "knows the format of an LCBO code" do
+    expect(WinesController.is_lcbo_code '').to be_nil
     expect(WinesController.is_lcbo_code 'RR').to be_nil
     expect(WinesController.is_lcbo_code '123').not_to be_nil
     expect(WinesController.is_lcbo_code '1234').not_to be_nil
