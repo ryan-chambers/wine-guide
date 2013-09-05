@@ -38,7 +38,10 @@ gem 'therubyracer'
 
 gem 'libv8', '~> 3.11.8'
 gem 'less-rails', '2.3.3'
-gem 'twitter-bootstrap-rails', '2.2.8'
+#gem 'twitter-bootstrap-rails', '2.2.8'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
+gem 'anjlab-widgets'
 
 gem 'jquery-rails', '3.0.4'
 

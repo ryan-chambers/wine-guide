@@ -1,41 +1,59 @@
 <h2>Create new wine</h2>
-<%= form_for(@wine) do |f| %>
+<%= form_for(@wine, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
   <%= render "shared/error_messages", :target => @wine %>
-  <div class="field">
-    <label for="winery_name">Winery Name * </label> <br />
-    <input id="winery_name" type="text" name="winery_name" data-provide="typeahead" value="<%= @winery_name %>" size="30" autocomplete="off" />
+  <div class="form-group">
+    <label for="winery_name" class="col-lg-2 control-label">Winery Name * </label>
+    <div class="col-lg-3">
+    	<input class="form-control" id="winery_name" type="text" name="winery_name" value="<%= @winery_name %>" style="width: 269px" autocomplete="off" />
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :other, 'Other Notes' %><br />
-    <%= f.text_field :other %>
+  <div class="form-group">
+   	<%= f.label :other, 'Other Notes', class: 'col-lg-2 control-label' %>
+  	<div class="col-lg-3">
+	    <%= f.text_field :other, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :year, 'Year *' %> <br />
-    <%= f.text_field :year %>
+  <div class="form-group">
+    <%= f.label :year, 'Year *', class: 'col-lg-2 control-label' %>
+  	<div class="col-lg-3">
+	    <%= f.text_field :year, class: 'form-control' %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label 'Grapes' %><br />
-    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Choose grapes'} ) %>
-    <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " />
+  <div class="form-group">
+    <%= f.label 'Grapes', class: 'col-lg-2 control-label' %>
+   	<div class="col-lg-3">
+	    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Choose grapes'}, { :class => 'form-control'} ) %>
+	    <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " class="form-control" />
+	</div>
   </div>
-  <div class="field">
-    <ul id="grape_list">
-    </ul>
+  <div class="form-group">
+  	<label class="col-lg-2 control-label"></label>
+  	<div class="col-lg-3">
+	    <ul id="grape_list"></ul>
+  	</div>
   </div>
-  <div class="field">
-    <%= f.label :lcbo_code, 'LCBO Code' %><br />
-    <%= f.text_field :lcbo_code %>
+  <div class="form-group">
+    <%= f.label :lcbo_code, 'LCBO Code', class: 'col-lg-2 control-label' %>
+  	<div class="col-lg-3">
+	    <%= f.text_field :lcbo_code %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :country, 'Country *' %> <br />
-    <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'} ) %>
+  <div class="form-group">
+    <%= f.label :country, 'Country *', class: 'col-lg-2 control-label' %>
+  	<div class="col-lg-3">
+	    <%= select("wine", "country", Country::COUNTRY_LIST, {:prompt => 'Choose country'}, { :class => "form-control" } ) %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :region %><br />
-    <%= select("wine", "region", @regions) %>
+  <div class="form-group">
+    <%= f.label :region, class: 'col-lg-2 control-label' %>
+ 	<div class="col-lg-3">
+	    <%= select("wine", "region", @regions, {}, { :class => "form-control" }) %>
+	</div>
   </div>
-  <div>
-    <button type="submit" class="btn">Submit</button>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+  		<button type="submit" class="btn">Submit</button>
+  	</div>
   </div>
 <% end %>
 
@@ -44,16 +62,7 @@
   wines.enableRegionPicker();
 
   $('#winery_name').typeahead({
-  	source : function(query, process) {
-  		return $.ajax({
-  			url: '/wineries/search',
-  			type: 'get',
-  			data: {term: query},
-  			dataType: 'json',
-  			success : function(json) {
-  				return process(json);
-  			}
-  		});
-  	}
+  	name: "wineries",
+  	remote: '/wineries/search?term=%QUERY',
   });
 </script>
