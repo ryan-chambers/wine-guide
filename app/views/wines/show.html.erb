@@ -66,9 +66,9 @@
 <h3>Add a new bottle</h3>
 <% if alert and ! alert.empty? %>
 	<div class="alert alert-block alert-danger fade in">
-	<% alert.each do |a| %>
-        <p><%= a %></p>
-	<% end %>
+		<% alert.each do |msg| %>
+	        <p><%= msg %></p>
+		<% end %>
 	</div>
 <% end%>
 
