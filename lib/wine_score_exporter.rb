@@ -31,7 +31,7 @@ class WineScoreExporter
 '
 
   def export_db
-    j = Country::COUNTRIES.keys.inject(StringIO.new) {|out, country|
+    j = Country::COUNTRIES.keys.reduce(StringIO.new) {|out, country|
       l = StringIO.new
       l << "#{country}"
       l << NEW_LINE

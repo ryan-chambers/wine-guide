@@ -1,8 +1,8 @@
 var wines = function() {
 	var $modal_reference;
 
-	function enableGrapePicker() {
-	    var $grape_select = $('#grape_0');
+	function enableGrapePicker(grape_name_field) {
+	    var $grape_name = grape_name_field;
 	    var $selected_grape_ids = $('#grape_ids');
 	    var $grape_list = $('#grape_list');
 	    var counter = 0;
@@ -18,21 +18,19 @@ var wines = function() {
 	        if(grape_id === '') {
 	            return;
 	        }
-	        var grape_name = $grape_select.find('option[value="' + grape_id + '"]').text();
+	        var grape_name = $grape_name.find('option[value="' + grape_id + '"]').text();
 	        if(grape_name !== '') {
 	            addGrapeToList(grape_id, grape_name);
 	        }
 	    });
 
-	    $grape_select.change(function() {
-	        var $selected = $('#grape_0 option:selected');
-	        var grape_id = $selected.attr('value');
-	        var grape_name = $selected.text();
-	
-	        $selected_grape_ids.val($selected_grape_ids.val() + '|' + grape_id);
-	        addGrapeToList(grape_id, grape_name);
+	    $grape_name.on('typeahead:selected', function(e, selected_grape) {
+	        $selected_grape_ids.val($selected_grape_ids.val() + '|' + selected_grape.id);
+	        // FIXME filter out duplicate grapes
+	        addGrapeToList(selected_grape.id, selected_grape.name);
+	        $grape_name_field.typeahead('setQuery', '');
 	    });
-	
+
 	    $(document).on('click', '.remove_grape', function(e) {
 	        var $selected = $(e.currentTarget).parent();
 	        var class_to_remove = $selected.attr('class');
@@ -47,7 +45,7 @@ var wines = function() {
 	        $selected_grape_ids.val(kept_ids.join('|'));
 	    });
 	}
-	
+
 	function enableRegionPicker() {
 	    var $region_select = $('#wine_region'),
 	        $country_select = $('#wine_country');
@@ -86,5 +84,5 @@ var wines = function() {
 		enableRegionPicker: enableRegionPicker,
 		enableBottleTweeting: enableBottleTweeting,
 		generateTweet: generateTweet
-	}	
+	};
 }();

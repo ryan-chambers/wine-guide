@@ -9,18 +9,18 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709162238) do
+ActiveRecord::Schema.define(version: 20130911004500) do
 
-  create_table "bottles", :force => true do |t|
+  create_table "bottles", force: true do |t|
     t.date     "reviewdate"
     t.float    "score"
     t.text     "comments"
     t.integer  "wine_id"
     t.float    "price"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "drink_to"
     t.integer  "drink_from"
     t.boolean  "in_fridge"
@@ -28,35 +28,34 @@ ActiveRecord::Schema.define(:version => 20130709162238) do
     t.string   "review_day_of_year"
   end
 
-  add_index "bottles", ["wine_id"], :name => "index_scores_on_wine_id"
+  add_index "bottles", ["wine_id"], name: "index_scores_on_wine_id"
 
-  create_table "grapes", :force => true do |t|
+  create_table "grapes", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "grapes_wines", :id => false, :force => true do |t|
+  create_table "grapes_wines", id: false, force: true do |t|
     t.integer "grape_id"
     t.integer "wine_id"
   end
 
-  create_table "wineries", :force => true do |t|
+  create_table "wineries", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "wines", :force => true do |t|
+  create_table "wines", force: true do |t|
     t.string   "region"
     t.string   "country"
     t.string   "other"
     t.integer  "year"
     t.integer  "winery_id"
     t.string   "lcbo_code"
-    t.date     "purchased_date"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

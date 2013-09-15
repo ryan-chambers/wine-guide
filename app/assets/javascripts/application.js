@@ -16,3 +16,4 @@
 //= require_tree .
 //= require bootstrap-datepicker
 //= require typeahead
+//= require Chart

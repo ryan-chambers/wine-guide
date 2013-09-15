@@ -32,3 +32,5 @@ rails g migration FixBottleToFromColumns
 rails g migration SetBaroloBarbarescoRegions
 
 rails g migration RemoveGrapesBaroloBarbaresco
+
+rails g migration RemovePurchasedDateFromWines purchased_date:date

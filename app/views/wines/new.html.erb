@@ -22,8 +22,8 @@
   <div class="form-group">
     <%= f.label 'Grapes', class: 'col-lg-2 control-label' %>
    	<div class="col-lg-3">
-	    <%= select("grape", "0", Grape.all.collect { |g| [g.name, g.id] }, {:prompt => 'Choose grapes'}, { :class => 'form-control'} ) %>
-	    <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " class="form-control" />
+   		<input type="text" id="grape_name" size="168" class="form-control" />
+	    <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " />
 	</div>
   </div>
   <div class="form-group">
@@ -35,7 +35,7 @@
   <div class="form-group">
     <%= f.label :lcbo_code, 'LCBO Code', class: 'col-lg-2 control-label' %>
   	<div class="col-lg-3">
-	    <%= f.text_field :lcbo_code %>
+	    <%= f.text_field :lcbo_code, class: 'form-control' %>
 	</div>
   </div>
   <div class="form-group">
@@ -58,11 +58,17 @@
 <% end %>
 
 <script type="text/javascript">
-  wines.enableGrapePicker();
+  var $grape_name_field = $('#grape_name'); 
+  wines.enableGrapePicker($grape_name_field);
   wines.enableRegionPicker();
 
   $('#winery_name').typeahead({
   	name: "wineries",
   	remote: '/wineries/search?term=%QUERY',
+  });
+  $grape_name_field.typeahead({
+  	name: "grapes",
+  	remote : "/grapes/search?detailed=true&term=%QUERY",
+  	valueKey: "name"
   });
 </script>

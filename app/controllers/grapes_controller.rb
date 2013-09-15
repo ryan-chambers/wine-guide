@@ -6,6 +6,10 @@ class GrapesController < ApplicationController
       grapes = Grape.findAll
     end
 
-    render :json => grapes.map { |w| w.name }
+    if params[:detailed]
+      render :json => grapes.map { |g| { :name => g.name, :id => g.id } }
+    else
+      render :json => grapes.map { |g| g.name}
+    end
   end
 end

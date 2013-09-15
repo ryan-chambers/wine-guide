@@ -34,11 +34,6 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'uglifier', '>= 1.3.0'
 
-gem 'therubyracer'
-
-gem 'libv8', '~> 3.11.8'
-gem 'less-rails', '2.3.3'
-#gem 'twitter-bootstrap-rails', '2.2.8'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 gem 'anjlab-widgets'

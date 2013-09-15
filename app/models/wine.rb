@@ -48,7 +48,7 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_by_winery_name(winery_name)
-    p "searching wine by winery name #{winery_name}"
+#    p "searching wine by winery name #{winery_name}"
     limit = 100
     if winery_name.empty?
       limit = 5
@@ -85,7 +85,9 @@ class Wine < ActiveRecord::Base
   end
 
   def drunk_bottles
-    bottles.select {|bottle| ! bottle.in_fridge}
+    dbs = bottles.select {|bottle| ! bottle.in_fridge}
+    dbs.sort_by { |b| b.reviewdate }
+    dbs.reverse!
   end
 
   def cellar_bottles

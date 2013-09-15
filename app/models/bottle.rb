@@ -87,7 +87,7 @@ class Bottle < ActiveRecord::Base
 
   def to_tweet
     parts = [wine.winery.name, wine.grapes_to_s('/'), wine.other, wine.year.to_s + '.', comments + '.', score.to_i.to_s + "/100", "$" + price.to_s]
-    tweet = parts.inject([]) { |out, next_part|
+    tweet = parts.reduce([]) { |out, next_part|
 #      p "Adding #{next_part} to #{out}"
       if ! next_part.nil?
         tweet_length = out.join(' ').length + next_part.length + 1

@@ -1,5 +1,5 @@
--- To precompile assets - for production
-bundle exec rake assets:precompile
-
 -- to see outdated gems
 bundle outdated
+
+-- recreate test schema
+rake db:test:load

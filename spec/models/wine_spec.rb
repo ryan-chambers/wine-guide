@@ -25,7 +25,15 @@ describe Wine do
       b1 = create(:bottle_drank_2)
 
       expect(b1.wine.favourite_bottles).to eq([b1])
-    end    
+    end
+
+    it "knows bottles that have been drunk" do
+      b1 = create(:bottle_drank)
+      wine = b1.wine
+      b2 = Bottle.new(reviewdate: 2.days.from_now.strftime('%d %b %Y'))
+      wine.bottles << b2
+      expect(wine.drunk_bottles).to eq([b2, b1])
+    end
   end
 
   describe "finders" do
