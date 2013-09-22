@@ -33,7 +33,7 @@
     <% end %>
   </tbody>
 </table>
-<% if ! params[:term] %>
+<% if ! params[:term] and ! params[:reviews_from] and ! params[:reviews_to] %>
 	<%= will_paginate @wines %>
 <% end %>
 <script type="text/javascript">

@@ -42,12 +42,14 @@ FactoryGirl.define do
         wine.winery = create(:alvento)
         wine.grapes << build(:sauvignonblanc)
         wine.lcbo_code = '123456'
+        wine.other = 'Reserve'
       end
     end
 
     factory :wine_with_grapes_b, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
+        wine.region = 'VQA Niagara'
         wine.winery = create(:vineland)
         wine.grapes << build(:sauvignonblanc)
         wine.lcbo_code = '98765432'
@@ -57,6 +59,7 @@ FactoryGirl.define do
     factory :wine_with_grapes_c, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
+        wine.region = 'VQA Niagara'
         wine.winery = create(:cavesprings)
         wine.grapes << build(:sauvignonblanc)
       end
@@ -96,7 +99,7 @@ FactoryGirl.define do
     factory :bottle_drank_2, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_e)
-        bottle.reviewdate = Time.new.strftime('%d %b %Y')
+        bottle.reviewdate = -2.days.from_now.strftime('%d %b %Y')
         bottle.score = 93
         bottle.comments = 'Fantastic'
         bottle.in_fridge = false
@@ -107,7 +110,7 @@ FactoryGirl.define do
     factory :bottle_drank_3, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:wine_with_grapes_c)
-        bottle.reviewdate = Time.new.strftime('%d %b %Y')
+        bottle.reviewdate = -4.days.from_now.strftime('%d %b %Y')
         bottle.score = 87
         bottle.comments = 'Good'
         bottle.in_fridge = false

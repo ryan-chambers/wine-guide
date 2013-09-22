@@ -47,14 +47,39 @@ class Wine < ActiveRecord::Base
     Wine.joins(:bottles).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
   end
 
-  def self.find_by_winery_name(winery_name)
-#    p "searching wine by winery name #{winery_name}"
-    limit = 100
-    if winery_name.empty?
-      limit = 5
+  def self.search_for_wine(search_term, review_from, review_to)
+    if review_from.empty? and review_to.empty?
+      results = Wine.joins(:winery, :grapes)
+    else
+      results = Wine.joins(:winery, :grapes, :bottles)
     end
-    like = "%".concat(winery_name.downcase.concat("%"))
-    Wine.joins(:winery, :grapes).includes(:winery, :grapes).where("lower(wineries.name) like ?", like).limit(limit)
+    results = results.includes(:winery, :grapes)
+
+    limit = 5
+
+    if ! search_term.empty?
+#      p "Searching for winery/other/region #{search_term}"
+      like = "%".concat(search_term.downcase.concat("%"))
+      results = results.where("lower(wineries.name) like ? or lower(wines.other) like ? or lower(wines.region) like ?", like, like, like)
+      limit = 100      
+    end
+
+    if ! review_from.empty?
+#      p "searching after #{review_from}"
+      results = results.where("bottles.reviewdate >= ?", Date.parse(review_from))
+      limit = 100
+    end
+
+    if ! review_to.empty?
+#      p "searching before #{review_to}"
+      results = results.where("bottles.reviewdate <= ?", Date.parse(review_to))
+#      p "#{results.arel.to_sql}"
+      limit = 100
+    end
+
+    results = results.limit(limit)
+
+    results
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)

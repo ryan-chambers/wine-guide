@@ -2,14 +2,15 @@ class WinesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
 
   def index
-    logger.info "Got search param #{params[:term]}"
+    logger.info "Got search params #{params[:term]}, #{params[:reviews_from]}, #{params[:reviews_to]}"
 
-    if params[:term]
-      logger.info "searching for #{params[:term]}"
+    if params[:term] or params[:reviews_from] or params[:reviews_to]
+      logger.info "searching for #{params[:term]}, #{params[:reviews_from]}, #{params[:reviews_to]}"
       if WinesController.is_lcbo_code params[:term]
+        logger.info "Searching for lcbo code #{params[:term]}"
         @wines = Wine.find_all_by_lcbo_code params[:term]
       else
-        @wines = Wine.find_by_winery_name params[:term]
+        @wines = Wine.search_for_wine params[:term] || '', params[:reviews_from] || '', params[:reviews_to] || ''
       end
     else
       @wines = Wine.filter_paginate(params[:grape_filter], :page => params[:page])

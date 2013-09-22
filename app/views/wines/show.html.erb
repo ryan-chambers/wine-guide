@@ -38,7 +38,7 @@
       <td><%= bottle.comments %></td>
       <td>
       	<% if bottle.can_tweet %>
-      		<a role="button" class="btn tweet-action" data-bottle-id="<%= bottle.id %>">Tweet</a>
+      		<button class="btn btn-primary tweet-action" data-bottle-id="<%= bottle.id %>">Tweet</button>
       	<% end %>
       </td>
     </tr>

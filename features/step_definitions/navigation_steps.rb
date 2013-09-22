@@ -72,7 +72,7 @@ Then /I should see the search results for Vernaccia/ do
 end
 
 Then /I should see the this day in wine report/ do
-  page.should have_content('Cave Springs')
+  page.should have_content('Alvento')
 end
 
 Then /I should see the favourite wines report/ do
