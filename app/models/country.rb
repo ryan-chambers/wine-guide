@@ -23,6 +23,7 @@ class Country
       'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 'VQA Lake Erie North Shore', 'VQA Lincoln Lakeshore'])
   CHILE = Country.new('Chile', ['Rapel Valley', 'Lolol Valley', 'Casablanca Valley', 'Limari Valley', 'Central Valley',
     'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
+  CROATIA = Country.new('Croatia', ['Kalnik'])
   CYPRUS = Country.new('Cyprus')
   FRANCE = Country.new('France', ['Côtes Du Rhône Villages', 'Ac Burgundy', 'Ac Loire', 'Ac Beaujolais', 'Bordeaux', 'Ac Bordeaux Supérieur',
       'Pays D\'oc', 'Chateauneuf-du-Pape', 'Ac Côtes Du Rhône', 'Ac Saint Estèphe', 'Ac Languedoc', 'Ac Languedoc Roussillon',
