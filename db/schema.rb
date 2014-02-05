@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20130911004500) do
     t.text     "comments"
     t.integer  "wine_id"
     t.float    "price"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "drink_to"
     t.integer  "drink_from"
     t.boolean  "in_fridge"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20130911004500) do
     t.string   "review_day_of_year"
   end
 
-  add_index "bottles", ["wine_id"], name: "index_scores_on_wine_id"
+  add_index "bottles", ["wine_id"], name: "index_bottles_on_wine_id"
 
   create_table "grapes", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "grapes_wines", id: false, force: true do |t|
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 20130911004500) do
 
   create_table "wineries", force: true do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "wines", force: true do |t|
@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20130911004500) do
     t.integer  "year"
     t.integer  "winery_id"
     t.string   "lcbo_code"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
