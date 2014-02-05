@@ -18,6 +18,14 @@ describe Bottle do
       @bottle.reviewdate= '11 Jan 2009'
       expect(@bottle[:review_day_of_year]).not_to be_nil
     end
+
+    it "must have a nil review day if in fridge" do
+      @bottle = Bottle.new
+      @bottle.in_fridge = true
+      @bottle.reviewdate= '1 Jan 2009'
+      @bottle.save
+      expect(@bottle.errors.get(:reviewdate)).not_to be_nil
+    end
   end
 
   describe "tweet" do

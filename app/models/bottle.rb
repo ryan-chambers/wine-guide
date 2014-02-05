@@ -50,7 +50,9 @@ class Bottle < ActiveRecord::Base
   end
 
   def reviewdate_not_null_unless_in_fridge
-    errors.add(:reviewdate, "is missing.") if :reviewdate.nil? and ! in_fridge
+#    p "review date #{reviewdate}, in fridge #{in_fridge}"
+    errors.add(:reviewdate, "is missing.") if reviewdate.nil? and ! in_fridge
+    errors.add(:reviewdate, "can't be populated if wine is in fridge.") if ! reviewdate.nil? and in_fridge
   end
 
   def score_between_0_and_100
