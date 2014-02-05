@@ -102,9 +102,9 @@ class BottleVO
     bottle_to_save.wine = wine
     bottle_to_save.bought = bought
 
-    bottle_to_save.save!
+    p "Storing new bottle #{bottle_to_save}"
 
-    p "Stored new bottle #{bottle_to_save}"
+    bottle_to_save.save!
   end
 end
 
@@ -168,6 +168,7 @@ def make_bottles(bottle_info)
       last_was_price = false
     elsif /\[.*\]/.match(part)
       bottle.date = part.sub('[', '').sub(']', '')
+      p "Found end of date part; finished bottle"
       finished_bottle = true
       last_was_price = false
     elsif /^\$\d*$/.match(part)
