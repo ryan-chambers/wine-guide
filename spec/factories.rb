@@ -11,6 +11,10 @@ FactoryGirl.define do
     name 'Cave Springs'
   end
 
+  factory :lailey, class: Winery do
+    name 'Lailey'
+  end
+
   factory :imocali, class: Winery do
     name 'I Mocali'
   end
@@ -28,7 +32,7 @@ FactoryGirl.define do
   end
 
   factory :merlot, class:Grape do
-    name 'Nerlot'
+    name 'Merlot'
   end
 
   factory :wine do
@@ -80,6 +84,14 @@ FactoryGirl.define do
         wine.grapes << build(:merlot)
       end
     end
+
+    factory :wine_lailey_merlot, parent: :wine do
+      before(:create) do |wine|
+        wine.country = 'Canada'
+        wine.winery = create(:lailey)
+        wine.grapes << build(:merlot)
+      end
+    end
   end
 
   factory :bottle do
@@ -123,9 +135,8 @@ FactoryGirl.define do
         bottle.wine = create(:wine_with_grapes_b)
         bottle.comments = 'RRR'
         bottle.in_fridge = true
-        bottle.drink_from = 2014
+        bottle.drink_from = Time.new.strftime('%Y').to_i + 3
         bottle.drink_to = Time.new.strftime('%Y').to_i + 5
-        bottle.score = 0
         bottle.bought = 'Apr 2011'
       end
     end
@@ -136,7 +147,6 @@ FactoryGirl.define do
         bottle.comments = 'RRR'
         bottle.in_fridge = true
         bottle.drink_to = Time.new.strftime('%Y').to_i + 1
-        bottle.score = 0
         bottle.bought = 'Apr 2012'
       end
     end
@@ -148,7 +158,6 @@ FactoryGirl.define do
         bottle.comments = 'RRR'
         bottle.drink_to = Time.new.strftime('%Y').to_i + 1
         bottle.drink_from = Time.new.strftime('%Y').to_i
-        bottle.score = 0
         bottle.bought = 'May 2013'
       end
     end

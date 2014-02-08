@@ -56,7 +56,7 @@ class Bottle < ActiveRecord::Base
   end
 
   def score_between_0_and_100
-    errors.add(:score, "must be between 0 and 100.") if score.nil? || score > 100 || score < 0
+    errors.add(:score, "must be between 0 and 100.") if ! in_fridge and (score.nil? || score > 100 || score < 0)
   end
 
   def wine_price

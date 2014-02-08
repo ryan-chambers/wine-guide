@@ -11,25 +11,6 @@ class Wine < ActiveRecord::Base
 
   has_and_belongs_to_many :grapes
 
-  def self.filter_paginate(grape_filter, page)
-    if(grape_filter)
-      find_by_grapes(grape_filter).paginate(page)
-    else
-      Wine.joins(:winery).includes(:grapes, :winery).paginate(page).order('wineries.name asc')
-    end
-  end
-
-  def self.find_by_grapes(grapes)
-    like = "%".concat(grapes.downcase.concat("%"))
-    Wine.joins(:grapes).includes(:grapes, :winery).where("lower(grapes.name) like ?", like)
-  end
-
-  def self.find_favourites(score_filter)
-    logger.info "Filtering for favourites scored #{score_filter} and higher"
-    score = score_filter || 90
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery).where('bottles.score >= :score', {:score => score}).uniq
-  end
-
   def self.find_all_by_lcbo_code(lcbo_code)
     Wine.where(lcbo_code: lcbo_code)
   end
@@ -80,6 +61,36 @@ class Wine < ActiveRecord::Base
     results = results.limit(limit)
 
     results
+  end
+
+  def self.filter_by_grapes_country(grapes, country)
+    logger.info "Filtering by grapes #{grapes}, country #{country}"
+    if ! grapes.empty?
+      grapes_like = "%".concat(grapes.downcase.concat("%"))
+      results = Wine.joins(:grapes).includes(:grapes, :winery).where("lower(grapes.name) like ?", grapes_like)
+    else
+      results = Wine.includes(:grapes, :winery)
+    end
+
+    if ! country.empty?
+      results = results.where(:wines => {:country => country})
+    end
+
+    results
+  end
+
+  def self.filter_paginate(grape_filter, country_filter, page)
+    if(grape_filter || country_filter)
+      filter_by_grapes_country(grape_filter, country_filter).paginate(page)
+    else
+      Wine.joins(:winery).includes(:grapes, :winery).paginate(page).order('wineries.name asc')
+    end
+  end
+
+  def self.find_favourites(score_filter)
+    logger.info "Filtering for favourites scored #{score_filter} and higher"
+    score = score_filter || 90
+    Wine.joins(:bottles).includes(:grapes, :bottles, :winery).where('bottles.score >= :score', {:score => score}).uniq
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)

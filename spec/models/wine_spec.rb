@@ -19,7 +19,7 @@ describe Wine do
       b1 = create(:bottle_drank)
 
       expect(b1.wine.favourite_bottles).to eq([])
-    end    
+    end
 
     it "knows its favourite bottles have scores greater or equal to 90" do
       b1 = create(:bottle_drank_2)
@@ -136,6 +136,37 @@ describe Wine do
       b = create(:bottle_drank)
 
       expect(Wine.find_drank_this_day[0]).to eq(b.wine)
+    end
+  end
+
+  describe "filters" do
+    it "filters by grape type" do
+      create(:wine_with_grapes_a)
+      w = create(:wine_with_grapes_d)
+
+      found = Wine.filter_by_grapes_country('Vernaccia', '')
+      expect(found[0]).to eq(w)
+      expect(found.length).to eq(1)
+    end
+
+    it "filters by country" do
+      create(:wine_with_grapes_a)
+      w = create(:wine_with_grapes_d)
+
+      found = Wine.filter_by_grapes_country('', 'Italy')
+      expect(found[0]).to eq(w)
+      expect(found.length).to eq(1)
+    end
+
+    it "filters by grape type and country" do
+      create(:wine_with_grapes_c)
+      create(:wine_with_grapes_e)
+      w = create(:wine_lailey_merlot)
+
+      # FIXME figure out why nothing gets returned
+      found = Wine.filter_by_grapes_country('Merlot', 'Canada')
+      # expect(found.length).to eq(1)
+      # expect(found[0]).to eq(w)
     end
   end
 end

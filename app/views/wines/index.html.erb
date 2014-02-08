@@ -1,7 +1,15 @@
 <h3>Wines</h3>
-<form id="grape_filter_form" action="/wines">
+<!-- FIXME see if this form can be straightened out with bootstrap 3 -->
+<form id="filter_form" class="form-inline" action="/wines" role='search'>
 	<input type="hidden" name="utf8" value="✓" />
-	<input id="grape_filter" autocomplete="off" placeholder="All Grapes" name="grape_filter">
+	<input type="text" class="form-control" id="grape_filter" autocomplete="off" placeholder="All Grapes" name="grape_filter">
+	<select id="country_filter" name="country_filter" class="span3 form-control" style="width: 22%">
+		<option value="">Choose Country</option>
+		<% Country::COUNTRY_LIST.each do |country| %>
+			<option value="<%= country %>"><%= country %></option>
+		<% end%>
+	</select>
+	<button class="btn btn-default" type="submit">Filter</button>
 </form>
 <table class="table">
   <thead>
@@ -40,7 +48,5 @@
   $('#grape_filter').typeahead({
   	name: "grapes",
   	remote : "/grapes/search?term=%QUERY"
-  }).on('typeahead:selected', function(e, selected_grape) {
-  	$('#grape_filter_form').submit();
   });
 </script>

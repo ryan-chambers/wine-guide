@@ -50,7 +50,7 @@ class Country
   ROMANIA = Country.new('Romania')
   SERBIA = Country.new('Serbia')
   SLOVENIA = Country.new('Slovenia')
-  SOUTH_AFRICA = Country.new('South Africa', ['WO Western Region', 'Western Cape', 'WO Coastal Region'])
+  SOUTH_AFRICA = Country.new('South Africa', ['WO Coastal Region', 'WO Western Region', 'WO Western Cape', 'WO Stellenbosch'])
   SPAIN = Country.new('Spain', ['Do Almansa', 'Doca Rioja', 'Rueda DO', 'Doc Navarra', 'Do Toro'])
   TURKEY = Country.new('Turkey')
   SWITZERLAND = Country.new('Switzerland')

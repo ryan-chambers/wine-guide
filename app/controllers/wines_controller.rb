@@ -13,7 +13,7 @@ class WinesController < ApplicationController
         @wines = Wine.search_for_wine params[:term] || '', params[:reviews_from] || '', params[:reviews_to] || ''
       end
     else
-      @wines = Wine.filter_paginate(params[:grape_filter], :page => params[:page])
+      @wines = Wine.filter_paginate(params[:grape_filter] || '', params[:country_filter] || '', :page => params[:page])
     end
 
 #    logger.info "got wines #{@wines}"
@@ -41,7 +41,7 @@ class WinesController < ApplicationController
 
     @winery = Winery.find_by_name(@winery_name)
 
-    # FIXME this is a hack. Need to figure out how to embed grapes in wine form
+    # FIXME this is a hack. Need to figure out how to embed grapes in wine form; search for how to model many-to-many for REST
     if(@grape_ids)
       @grape_ids.split('|').each do |grape_id|
         grape_id = grape_id.strip
