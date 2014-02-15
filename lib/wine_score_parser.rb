@@ -168,9 +168,15 @@ def make_bottles(bottle_info)
       last_was_price = false
     elsif /\[.*\]/.match(part)
       bottle.date = part.sub('[', '').sub(']', '')
-      p "Found end of date part; finished bottle"
+#      p "Found end of date part; finished bottle"
       finished_bottle = true
       last_was_price = false
+    elsif part == 'In fridge'
+      last_was_price = false
+      bottle.score = 0
+#      p "found wine in fridge"
+      bottle.in_fridge = true
+      finished_bottle = true
     elsif /^\$\d*$/.match(part)
       bottle.price = part.sub('$', '')
       last_was_price = true
@@ -189,11 +195,6 @@ def make_bottles(bottle_info)
       bottle.drink_from = part.sub('From ', '')
       bottle.score = 0
 #      p "Got from #{bottle.drink_from}"
-    elsif part == 'In fridge'
-      last_was_price = false
-      bottle.score = 0
-#      p "found wine in fridge"
-      bottle.in_fridge = true
     elsif /Bought [A-Z][a-z]{2} \d{4}/.match(part)
       last_was_price = false
 #      p "Found bought date #{part}"

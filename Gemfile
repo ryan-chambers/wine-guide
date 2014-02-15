@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "2.0.0"
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,18 +10,18 @@ gem 'rails', '4.0.0'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem "rspec-rails", "~> 2.14.0"
-  gem "bullet", "4.6.0"
+  gem "bullet"
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 4.2.1"
+  gem "factory_girl_rails", "~> 4.4.0"
   gem 'cucumber-rails', "1.4.0", :require => false
-  gem 'database_cleaner', "1.1.1"
+  gem 'database_cleaner', "1.2.0"
   gem 'shoulda-matchers'
 end
 
 group :production do
-  gem 'pg', '0.16.0'
+  gem 'pg', '0.17.1'
   gem 'rails_12factor'
 end
 
@@ -38,7 +38,7 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 gem 'anjlab-widgets'
 
-gem 'jquery-rails', '3.0.4'
+gem 'jquery-rails', '~> 3.1.0'
 
 gem 'twitter', '4.8.1'
 

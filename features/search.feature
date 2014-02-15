@@ -23,5 +23,12 @@ Feature: Search for wines
 		Given some bottles of wine in the cellar
 		And I am on the home page
 		And I fill in "grape_filter" with "Vernaccia"
-		When I submit the form "grape_filter_form"
+		When I submit the form "filter_form"
 		Then I should see the search results for Vernaccia
+
+	Scenario: Filter by country
+		Given some bottles of wine in the cellar
+		And I am on the home page
+		And I select "Canada" in "country_filter"
+		When I submit the form "filter_form"
+		Then I should see the search results for Canada

@@ -29,7 +29,7 @@ describe 'Wine Score Parser' do
     end
 
     it 'parses cellar info' do
-      b = make_bottles('$17. ?/100. From 2014. To 2017. In fridge. Bought May 2012.'.split('.'))[0]
+      b = make_bottles('$17. ?/100. From 2014. To 2017. Bought May 2012. In fridge.'.split('.'))[0]
 
 #      p "#{b}"
       expect(b.bought).to eq('May 2012')

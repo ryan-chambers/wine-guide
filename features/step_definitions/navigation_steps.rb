@@ -24,6 +24,10 @@ When /^I fill in "([^\"]*)" with "([^\"]*)"$/ do |field, value|
   fill_in(field.gsub(' ', '_'), :with => value)
 end
 
+When /^I select "([^\"]*)" in "([^\"]*)"$/ do |value, field|
+  select(value, :from => field)
+end
+
 When /^I press "([^\"]*)"$/ do |button|
   click_button(button)
 end
@@ -69,6 +73,11 @@ end
 Then /I should see the search results for Vernaccia/ do
   page.should have_content('Vernaccia')
   page.should_not have_content('Sauvignon Blanc')
+end
+
+Then /I should see the search results for Canada/ do
+  page.should have_content('Sauvignon Blanc') # from Canadian wine
+  page.should_not have_content('Vernaccia') # from Italian wine
 end
 
 Then /I should see the this day in wine report/ do
