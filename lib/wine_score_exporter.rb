@@ -14,6 +14,9 @@ class WineScoreExporter
 
   def create_wine_bottle_sentence(bottle)
     s = ['$' + bottle.price.to_s, bottle.score.to_i.to_s + '/100', bottle.comments]
+    if ! bottle.bought.nil?
+      s << 'Bought ' + bottle.bought
+    end
     if ! bottle.drink_from.nil?
       s << 'From ' + bottle.drink_from.to_s
     end

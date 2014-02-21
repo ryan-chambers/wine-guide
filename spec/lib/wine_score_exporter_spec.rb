@@ -26,6 +26,7 @@ describe 'Wine Score Exporter' do
       expect(sentence).to include('From 20')
       expect(sentence).to include('To 20')
       expect(sentence).to include('In fridge')
+      expect(sentence).to include('May 2013')
     end
 
     it 'turns a wine and winery into a sentence' do
