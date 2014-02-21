@@ -5,8 +5,6 @@ heroku run bash
 	-- Running db migrations
 	rake db:migrate
 
-	-- Importing Grape
-	./script/grape_import.sh "Name Of Grape"
 
 	-- Parsing wine file
 	./script/run_importer_main.sh https://dl.dropbox.com/u/13326771/wines.txt
