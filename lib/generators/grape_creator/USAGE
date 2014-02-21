@@ -1,0 +1,8 @@
+Description:
+    Use this to create a migration to insert a new grape.
+
+Example:
+    rails generate grape_creator "Name of Grape"
+
+    This will create:
+        db/migrate/create_name_of_grape.rb
