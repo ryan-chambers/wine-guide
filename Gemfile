@@ -35,14 +35,9 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'uglifier', '>= 1.3.0'
 
-#gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-#                              :github => 'anjlab/bootstrap-rails'
-
-#gem 'anjlab-widgets'
-
 gem 'jquery-rails', '~> 3.1.0'
 
-gem 'twitter', '4.8.1'
+gem 'twitter', '5.7.1'
 
 group :development do
   gem 'better_errors', '0.9.0'
