@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="span12">
+			<div class="col-md-12">
 				<h1>Wine Guide</h1>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 			    <ul class="nav navbar-nav">
 					<li><%= link_to 'Create new wine', new_wine_path %></li>
 				  	<li class="dropdown">
-				  		<a data-toggle="dropdown" class="dropdown-toggle" href="#">Reports <b class="caret"></b></a>
+				  		<a class="dropdown-toggle" data-toggle="dropdown" href="#">Reports <b class="caret"></b></a>
 				  		<ul class="dropdown-menu">
 				  			<li><%= link_to "Cellar", { :controller => "reports", :action => "cellar" }, :class => 'cellar_report' %></li>
 				  			<li><%= link_to "Country", { :controller => "reports", :action => "country" }, :class => 'cellar_report' %></li>
@@ -40,7 +40,7 @@
 			    </ul>
 				<%= form_tag(wines_path, :method => "get", :class => 'navbar-form navbar-left', :role => 'search') do %>
 					<div class="form-group">
-			  			<%= text_field_tag 'term', nil, :placeholder => 'Search', :length => '10' %>
+			  			<%= text_field_tag 'term', nil, :placeholder => 'Winery, region', :length => '10' %>
 					    <%= text_field_tag 'reviews_from', nil, :class => 'datepicker', :placeholder => 'Reviews from', :length => '10' %>
 					    <%= text_field_tag 'reviews_to', nil, :class => 'datepicker', :placeholder => 'Reviews to', :length => '10' %>
 			  		</div>
@@ -52,7 +52,7 @@
 			</div>
 	    </nav>
 		<div class="row">
-			<div class="span12">
+			<div class="col-md-12">
 				<%= yield %>
 			</div>
 		</div>

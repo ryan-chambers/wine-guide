@@ -19,7 +19,7 @@
       	<%= wine.winery.name %>
       	<% if wine.other%>
 	      	<br /> 
-	      	<span class="muted"><%= wine.other %></span>
+	      	<span class="text-muted"><%= wine.other %></span>
       	<% end %> 
       </td>
       <td><%= wine.country %></td>
@@ -27,7 +27,7 @@
       <td><%= wine.list_grape_names.join(', ') %></td>
       <td><%= wine.year %> </td>
       <td><%= number_to_currency(wine.drank_this_day_bottles[0].price) %></td>
-      <td><%= wine.drank_this_day_bottles[0].score %></td>
+      <td><%= wine.drank_this_day_bottles[0].score.to_i %></td>
       <td><%= wine.drank_this_day_bottles[0].reviewdate.strftime('%Y') %></td>
     </tr>
     <% end %>

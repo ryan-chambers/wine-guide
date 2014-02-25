@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require_tree .
 //= require typeahead
 //= require Chart
+//= require bootstrap
 //= require bootstrap-datepicker2
