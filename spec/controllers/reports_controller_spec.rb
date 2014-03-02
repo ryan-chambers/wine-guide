@@ -47,6 +47,21 @@ describe ReportsController do
     end
   end
 
+  describe "GET 'score_breakdown'" do
+    it "assigns score breakdown to param" do
+      s1 = create(:bottle_in_cellar_later)
+      s2 = create(:bottle_in_cellar_sooner)
+      s3 = create(:bottle_in_cellar_now)
+
+      get 'score_breakdown'
+
+      response.should be_success
+
+      assigns[:scores].should_not be_nil
+      assigns[:score_counts].should_not be_nil
+    end
+  end
+
   describe "GET 'country'" do
     it "returns http succcess" do
       get 'country'

@@ -40,6 +40,16 @@ class Bottle < ActiveRecord::Base
       }
   end
 
+  def self.generate_score_breakdown_report
+    Bottle.find_by_sql("select score, count(score) as score_count
+      from bottles
+      group by score
+      having score >= 1
+      order by score asc").collect { |s|
+        ScoreBreakdownReportVO.new :score => Integer(s[:score]), :score_count => Integer(s[:score_count])
+      }    
+  end
+
   def score_not_null_unless_in_fridge
     errors.add(:score, "is missing.") if score.nil? and ! in_fridge
   end
@@ -116,16 +126,26 @@ class Bottle < ActiveRecord::Base
   end
 end
 
-class CountryReportVO
+class ReportVO
   def initialize args
     args.each do |k,v|
       instance_variable_set("@#{k}", v) unless v.nil?
     end
   end
+end
 
+class CountryReportVO < ReportVO
   attr_reader :country, :avg_score, :total_bottles, :avg_price
 
   def to_s
     [country, total_bottles, avg_price, avg_score].join(', ')
+  end
+end
+
+class ScoreBreakdownReportVO < ReportVO
+  attr_reader :score, :score_count
+
+  def to_s
+    [score, score_count].join(', ')
   end
 end

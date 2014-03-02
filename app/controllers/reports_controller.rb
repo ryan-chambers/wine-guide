@@ -19,6 +19,12 @@ class ReportsController < ApplicationController
     @bottles = num_bottles.join(',')
   end
 
+  def score_breakdown
+    score_breakdowns = Bottle.generate_score_breakdown_report
+    @scores = score_breakdowns.map { | s | s.score }.join(', ')
+    @score_counts = score_breakdowns.map { | s | s.score_count }.join(', ')
+  end
+
   def country
     @country_summaries = Bottle.generate_country_report
   end

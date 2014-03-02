@@ -89,6 +89,25 @@ describe Bottle do
       expect(country_reports[0].total_bottles).to eq(2)
       expect(country_reports[1].country).to eq('USA')
     end
+
+    it "generates a score breakdown report based on bottles in the database" do
+      create(:bottle_drank)
+      create(:bottle_drank_2)
+      create(:bottle_drank_3)
+
+      score_counts = Bottle.generate_score_breakdown_report
+
+      score_counts.each do |c|
+#        p "#{c.to_s}"
+      end
+
+      expect(score_counts[0].score).to eq(86)
+      expect(score_counts[0].score_count).to eq(1)
+      expect(score_counts[1].score).to eq(87)
+      expect(score_counts[1].score_count).to eq(1)
+      expect(score_counts[2].score).to eq(93)
+      expect(score_counts[2].score_count).to eq(1)
+    end
   end
 
   describe "storage recommendation" do

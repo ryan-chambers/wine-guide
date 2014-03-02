@@ -5,8 +5,8 @@ require 'winery.rb'
 class WineScoreExporter
 
   def create_wine_sentence(wine, winery)
-    s = [winery.name, wine.grapes.join(', '), wine.year]
-    s << wine.other unless wine.other.nil? or wine.other.empty?
+    s = [winery.name.gsub('.', ''), wine.grapes.join(', '), wine.year]
+    s << wine.other.gsub('.', '') unless wine.other.nil? or wine.other.empty?
     s << wine.region unless wine.region.nil? or wine.region.empty?
     s << "LCBO# " + wine.lcbo_code unless wine.lcbo_code.empty?
     s.join(', ')

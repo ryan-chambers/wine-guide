@@ -31,11 +31,13 @@ describe 'Wine Score Exporter' do
 
     it 'turns a wine and winery into a sentence' do
       wine = create(:wine_with_grapes_a)
+      wine.winery.name = 'St. Vincent'
+      wine.other = 'St. George Vineyard'
       sentence = @fixture.create_wine_sentence(wine, wine.winery)
 #      puts "#{sentence}"
-      expect(sentence).to include(wine.winery.name)
+      expect(sentence).to include('St Vincent')
       expect(sentence).to include(wine.grapes[0].name)
-      expect(sentence).to include(wine.other)
+      expect(sentence).to include('St George Vineyard')
       expect(sentence).to include(wine.region)
       expect(sentence).to include(wine.year.to_s)
       expect(sentence).to include(wine.lcbo_code)
