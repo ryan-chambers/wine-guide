@@ -3,3 +3,6 @@ bundle outdated
 
 -- recreate test schema
 rake db:test:load
+
+-- generate migration for new grape
+rails generate grape_creator "Name of Grape"

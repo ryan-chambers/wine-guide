@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140221021018) do
+ActiveRecord::Schema.define(version: 20140316142555) do
 
   create_table "bottles", force: true do |t|
     t.date     "reviewdate"
