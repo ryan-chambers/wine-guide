@@ -2,9 +2,9 @@ require "spec_helper"
 
 describe ReportsHelper do
   before do
-    @b1 = create(:bottle_in_cellar_later)
-    @b2 = create(:bottle_in_cellar_sooner)
-    @b3 = create(:bottle_in_cellar_now)
+    @b1 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+    @b2 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
+    @b3 = create(:imocali_vernaccia_bottle_now)
     @wines = [@b1.wine, @b2.wine, @b3.wine]
   end
 

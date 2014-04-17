@@ -3,7 +3,7 @@ require 'spec_helper'
 describe TweetsController do
   describe "get 'bottle'" do
     it "returns the default tweet for a bottle" do
-      bottle = create(:bottle_drank)
+      bottle = create(:alvento_sauvignonblanc_bottle_drank)
 
       get :bottle, :bottle_id => bottle.id, :format => :json
 
@@ -15,7 +15,7 @@ describe TweetsController do
     end
 
     it "returns empty for a bottle that should not be tweeted" do
-      bottle = create(:bottle_in_cellar_now)
+      bottle = create(:imocali_vernaccia_bottle_now)
 
       get :bottle, :bottle_id => bottle.id, :format => :json
 
@@ -29,7 +29,7 @@ describe TweetsController do
     it "returns http success when authenticated" do
       authenticate_with_http_digest
 
-      wine = create(:wine_with_grapes_e)
+      wine = create(:kenwood_merlot)
 
       post 'tweet_bottle', :wine_id => wine.id
 
@@ -37,7 +37,7 @@ describe TweetsController do
     end
 
     it "returns failure when not authenticated" do
-      wine = create(:wine_with_grapes_e)
+      wine = create(:kenwood_merlot)
 
       post 'tweet_bottle', :wine_id => wine.id
 

@@ -13,24 +13,24 @@ describe WinesController do
     end
 
     it "assigns all wines to @wines variable when no term specified" do
-      w1 = create(:wine_with_grapes_a)
-      w2 = create(:wine_with_grapes_b)
+      w1 = create(:alvento_sauvignonblanc)
+      w2 = create(:vineland_sauvignonblanc)
 
       get :index
       assigns[:wines].should == [w1, w2]
     end
 
     it "assigns wineries searched by winery name when non-LCBO code term is specified" do
-      w1 = create(:wine_with_grapes_a)
-      w2 = create(:wine_with_grapes_b)
+      w1 = create(:alvento_sauvignonblanc)
+      w2 = create(:vineland_sauvignonblanc)
 
       get :index, :term => 'Alv'
       assigns[:wines].should == [w1]
     end
 
     it "assigns wineries searched by LCBO code when specified" do
-      w1 = create(:wine_with_grapes_a)
-      w2 = create(:wine_with_grapes_b)
+      w1 = create(:alvento_sauvignonblanc)
+      w2 = create(:vineland_sauvignonblanc)
 
       get :index, :term => '98765432'
       assigns[:wines].should == [w2]

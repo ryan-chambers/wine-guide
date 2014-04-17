@@ -1,9 +1,5 @@
 class Grape < ActiveRecord::Base
-#  attr_accessible :name, :wines
-
-  validates :name, :presence => true
-
-  validates_uniqueness_of :name
+  validates :name, :presence => true, uniqueness: true
 
   has_and_belongs_to_many :wines
 

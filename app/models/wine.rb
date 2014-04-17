@@ -117,7 +117,15 @@ class Wine < ActiveRecord::Base
   end
 
   def grapes_to_s(separator=", ")
-    grapes.empty? ? '' : grapes.join(separator)
+    if grapes.empty?
+      ''
+    else
+      grape_names = grapes.reduce([]) { |out, g|
+#        p "Adding #{g.name} to #{out}"
+        out << g.name
+      }
+      grape_names.join(separator)
+    end
   end
 
   def drunk_bottles

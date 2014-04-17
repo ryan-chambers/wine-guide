@@ -1,15 +1,15 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
 Given /^some bottles of wine in the cellar$/ do
-  FactoryGirl.create(:bottle_in_cellar_later)
-  FactoryGirl.create(:bottle_in_cellar_sooner)
-  FactoryGirl.create(:bottle_in_cellar_now)
+  FactoryGirl.create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+  FactoryGirl.create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
+  FactoryGirl.create(:imocali_vernaccia_bottle_now)
 end
 
 Given /^some wine reviews$/ do
-  FactoryGirl.create(:bottle_drank)
-  FactoryGirl.create(:bottle_drank_2)
-  FactoryGirl.create(:bottle_drank_3)
+  FactoryGirl.create(:alvento_sauvignonblanc_bottle_drank)
+  FactoryGirl.create(:kenwood_merlot_drank)
+  FactoryGirl.create(:vineland_sauvignonblanc_drank)
 end
 
 Given /^I am on (.+)$/ do | page_name |
@@ -55,7 +55,6 @@ Then /I should see the country report/ do
 end
 
 Then /I should see the ready\-to\-drink report/ do
-  page.should have_content('Cave Springs')
   page.should_not have_content('Vineland Estates')
   page.should have_content('I Mocali')
 end

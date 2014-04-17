@@ -30,7 +30,7 @@ describe Bottle do
 
   describe "tweet" do
     before do
-      @bottle = create(:bottle_drank)
+      @bottle = create(:alvento_sauvignonblanc_bottle_drank)
     end
 
     it "generates a tweet" do
@@ -66,16 +66,16 @@ describe Bottle do
     end
 
     it "cannot tweet if the bottle is not in the fridge" do
-      b = create(:bottle_in_cellar_later)
+      b = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
       expect(b.can_tweet).to eq(false)
     end
   end
 
   describe "report generator" do
     it "generates a country report based on bottles in the database" do
-      create(:bottle_drank)
-      create(:bottle_drank_2)
-      create(:bottle_drank_3)
+      create(:alvento_sauvignonblanc_bottle_drank)
+      create(:kenwood_merlot_drank)
+      create(:vineland_sauvignonblanc_drank)
 
       country_reports = Bottle.generate_country_report
 
@@ -91,14 +91,14 @@ describe Bottle do
     end
 
     it "generates a score breakdown report based on bottles in the database" do
-      create(:bottle_drank)
-      create(:bottle_drank_2)
-      create(:bottle_drank_3)
+      create(:alvento_sauvignonblanc_bottle_drank)
+      create(:kenwood_merlot_drank)
+      create(:vineland_sauvignonblanc_drank)
 
       score_counts = Bottle.generate_score_breakdown_report
 
       score_counts.each do |c|
-#        p "#{c.to_s}"
+#         p "#{c.to_s}"
       end
 
       expect(score_counts[0].score).to eq(86)
@@ -112,7 +112,7 @@ describe Bottle do
 
   describe "storage recommendation" do
     it "recommends storage in the cellar if price > $25 and drink to 3 or more years away" do
-      b = create(:bottle_in_cellar_later)
+      b = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
       b.price = 25.15
       b.drink_to = Date.today.year + 3
 #      p "#{b.drink_to}"
@@ -121,14 +121,14 @@ describe Bottle do
     end
 
     it "recommends storage in the fridge if price < $25" do
-      b = create(:bottle_in_cellar_later)
+      b = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
       b.price = 25
 
       expect(b.recommended_storage).to eq(Bottle::FRIDGE)
     end
 
     it "recommends storage in the fridge if drink from less than 3 years away" do
-      b = create(:bottle_in_cellar_later)
+      b = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
       b.price = 25.15
       b.drink_to = Date.today.year + 2
 
@@ -136,7 +136,7 @@ describe Bottle do
     end
 
     it "recommends storage in the fridge if drink to empty" do
-      b = create(:bottle_in_cellar_later)
+      b = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
       b.price = 25.15
       b.drink_to = nil
 
@@ -144,7 +144,7 @@ describe Bottle do
     end
 
     it "recommends nothing if the wine is not in the fridge" do
-      b = create(:bottle_drank)
+      b = create(:alvento_sauvignonblanc_bottle_drank)
 
       expect(b.recommended_storage).to eq('none')
     end

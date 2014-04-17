@@ -1,56 +1,65 @@
 FactoryGirl.define do
   factory :alvento, class: Winery do
-    name 'Alvento' 
+    name 'Alvento'
+    initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :vineland, class: Winery do
     name 'Vineland Estates'
+    initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :cavesprings, class: Winery do
     name 'Cave Springs'
+    initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :lailey, class: Winery do
     name 'Lailey'
+    initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :imocali, class: Winery do
     name 'I Mocali'
+    initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :kenwood, class: Winery do
     name 'Kenwood'
+    initialize_with { Winery.find_or_create_by(name: name)}
   end
   
   factory :sauvignonblanc, class: Grape do
     name 'Sauvignon Blanc'
+    initialize_with { Grape.find_or_create_by(name: name)}
   end
 
   factory :vernaccia, class: Grape do
     name 'Vernaccia'
+    initialize_with { Grape.find_or_create_by(name: name)}
   end
 
-  factory :merlot, class:Grape do
+  factory :merlot, class: Grape do
     name 'Merlot'
+    initialize_with { Grape.find_or_create_by(name: name)}
   end
 
   factory :wine do
     year 2011
     other 'Reserve'
 
-    factory :wine_with_grapes_a, parent: :wine do
+    factory :alvento_sauvignonblanc, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
         wine.region = 'VQA Niagara'
         wine.winery = create(:alvento)
-        wine.grapes << build(:sauvignonblanc)
+        wine.grapes << create(:sauvignonblanc)
         wine.lcbo_code = '123456'
         wine.other = 'Reserve'
       end
     end
 
-    factory :wine_with_grapes_b, parent: :wine do
+    factory :vineland_sauvignonblanc, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
         wine.region = 'VQA Niagara'
@@ -60,7 +69,7 @@ FactoryGirl.define do
       end
     end
 
-    factory :wine_with_grapes_c, parent: :wine do
+    factory :cavesprings_sauvignonblanc, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
         wine.region = 'VQA Niagara'
@@ -69,7 +78,7 @@ FactoryGirl.define do
       end
     end
 
-    factory :wine_with_grapes_d, parent: :wine do
+    factory :imocali_vernaccia, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Italy'
         wine.winery = create(:imocali)
@@ -77,7 +86,7 @@ FactoryGirl.define do
       end
     end
 
-    factory :wine_with_grapes_e, parent: :wine do
+    factory :kenwood_merlot, parent: :wine do
       before(:create) do |wine|
         wine.country = 'USA'
         wine.winery = create(:kenwood)
@@ -85,7 +94,7 @@ FactoryGirl.define do
       end
     end
 
-    factory :wine_lailey_merlot, parent: :wine do
+    factory :lailey_merlot, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Canada'
         wine.winery = create(:lailey)
@@ -97,9 +106,9 @@ FactoryGirl.define do
   factory :bottle do
     price 19.95
 
-    factory :bottle_drank, parent: :bottle do
+    factory :alvento_sauvignonblanc_bottle_drank, parent: :bottle do
       before(:create) do |bottle|
-        bottle.wine = create(:wine_with_grapes_a)
+        bottle.wine = create(:alvento_sauvignonblanc)
         bottle.reviewdate = Time.new.strftime('%d %b %Y')
         bottle.score = 86
         bottle.comments = 'Okay'
@@ -108,9 +117,9 @@ FactoryGirl.define do
       end
     end
 
-    factory :bottle_drank_2, parent: :bottle do
+    factory :kenwood_merlot_drank, parent: :bottle do
       before(:create) do |bottle|
-        bottle.wine = create(:wine_with_grapes_e)
+        bottle.wine = create(:kenwood_merlot)
         bottle.reviewdate = -2.days.from_now.strftime('%d %b %Y')
         bottle.score = 93
         bottle.comments = 'Fantastic'
@@ -119,9 +128,9 @@ FactoryGirl.define do
       end
     end
 
-    factory :bottle_drank_3, parent: :bottle do
+    factory :vineland_sauvignonblanc_drank, parent: :bottle do
       before(:create) do |bottle|
-        bottle.wine = create(:wine_with_grapes_c)
+        bottle.wine = create(:vineland_sauvignonblanc)
         bottle.reviewdate = -4.days.from_now.strftime('%d %b %Y')
         bottle.score = 87
         bottle.comments = 'Good'
@@ -130,9 +139,9 @@ FactoryGirl.define do
       end
     end
 
-    factory :bottle_in_cellar_later, parent: :bottle do
+    factory :vineland_sauvignonblanc_bottle_in_cellar_later, parent: :bottle do
       before(:create) do |bottle|
-        bottle.wine = create(:wine_with_grapes_b)
+        bottle.wine = create(:vineland_sauvignonblanc)
         bottle.comments = 'RRR'
         bottle.in_fridge = true
         bottle.drink_from = Time.new.strftime('%Y').to_i + 3
@@ -141,9 +150,9 @@ FactoryGirl.define do
       end
     end
 
-    factory :bottle_in_cellar_sooner, parent: :bottle do
+    factory :cavesprings_sauvignonblanc_bottle_in_cellar_sooner, parent: :bottle do
       before(:create) do |bottle|
-        bottle.wine = create(:wine_with_grapes_c)
+        bottle.wine = create(:cavesprings_sauvignonblanc)
         bottle.comments = 'RRR'
         bottle.in_fridge = true
         bottle.drink_to = Time.new.strftime('%Y').to_i + 1
@@ -151,9 +160,9 @@ FactoryGirl.define do
       end
     end
 
-    factory :bottle_in_cellar_now, parent: :bottle do
+    factory :imocali_vernaccia_bottle_now, parent: :bottle do
       before(:create) do |bottle|
-        bottle.wine = create(:wine_with_grapes_d)
+        bottle.wine = create(:imocali_vernaccia)
         bottle.in_fridge = true
         bottle.comments = 'RRR'
         bottle.drink_to = Time.new.strftime('%Y').to_i + 1

@@ -8,7 +8,7 @@ describe 'Wine Score Exporter' do
 
   describe 'it turns database records into sentences' do
     it 'turns a bottle into a sentence' do
-      b = create(:bottle_drank)
+      b = create(:alvento_sauvignonblanc_bottle_drank)
       sentence = @fixture.create_wine_bottle_sentence(b)
 #      puts "#{sentence}"
       expect(sentence).to include('86/100.')
@@ -19,7 +19,7 @@ describe 'Wine Score Exporter' do
     end
 
     it 'turns a bottle in the fridge into a sentence' do
-      b = create(:bottle_in_cellar_now)
+      b = create(:imocali_vernaccia_bottle_now)
       sentence = @fixture.create_wine_bottle_sentence(b)
 #      puts "#{sentence}"
       expect(sentence).to include('$19.95.')
@@ -30,7 +30,7 @@ describe 'Wine Score Exporter' do
     end
 
     it 'turns a wine and winery into a sentence' do
-      wine = create(:wine_with_grapes_a)
+      wine = create(:alvento_sauvignonblanc)
       wine.winery.name = 'St. Vincent'
       wine.other = 'St. George Vineyard'
       sentence = @fixture.create_wine_sentence(wine, wine.winery)
