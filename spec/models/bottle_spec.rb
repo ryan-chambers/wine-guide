@@ -108,6 +108,36 @@ describe Bottle do
       expect(score_counts[2].score).to eq(93)
       expect(score_counts[2].score_count).to eq(1)
     end
+
+    it "generates a summary for a given year" do
+      create(:alvento_sauvignonblanc_bottle_drank)
+      create(:kenwood_merlot_drank)
+      create(:vineland_sauvignonblanc_drank)
+      year = 2014
+
+      year_summary = Bottle.generate_summary_for_year(year)
+
+#      p "#{year_summary.to_s}"
+
+      expect(year_summary.year).to eq(year)
+      expect(year_summary.total_bottles).to eq(3)
+    end
+
+    it "generates a summary for all years" do
+      create(:alvento_sauvignonblanc_bottle_drank)
+      create(:kenwood_merlot_drank)
+      create(:imocali_vernaccia_bottle_drank_last_year)
+
+      yearly_report = Bottle.generate_yearly_report
+      
+      yearly_report.each do |c|
+#         p "#{c.to_s}"
+      end
+
+      expect(yearly_report.length).to eq(2)
+      expect(yearly_report[0].total_bottles).to eq(1)
+      expect(yearly_report[1].total_bottles).to eq(2)
+    end
   end
 
   describe "storage recommendation" do

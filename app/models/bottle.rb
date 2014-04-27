@@ -40,6 +40,24 @@ class Bottle < ActiveRecord::Base
       }
   end
 
+  def self.generate_yearly_report
+    year_range = Bottle.minimum(:reviewdate).year .. Time.new.year
+    year_range.map { |y|
+      generate_summary_for_year y 
+    }
+  end
+
+  def self.generate_summary_for_year(year)
+    y = year.to_s
+    Bottle.find_by_sql("select count(score) as total_bottles,
+       avg(score) as avg_score,
+       avg(price) as avg_price
+       from bottles
+       where reviewdate >= '" + y + "-01-01' and reviewdate <= '" + y + "-12-31'").collect { |s|
+        YearReportVO.new :year => year, :avg_score => Float(s[:avg_score]), :total_bottles => Integer(s[:total_bottles]), :avg_price => Float(s[:avg_price])
+    }[0]
+  end
+
   def self.generate_score_breakdown_report
     Bottle.find_by_sql("select score, count(score) as score_count
       from bottles
@@ -131,6 +149,14 @@ class ReportVO
     args.each do |k,v|
       instance_variable_set("@#{k}", v) unless v.nil?
     end
+  end
+end
+
+class YearReportVO < ReportVO
+  attr_reader :year, :avg_score, :total_bottles, :avg_price
+  
+  def to_s
+    [year, avg_score, total_bottles, avg_price].join(', ')
   end
 end
 

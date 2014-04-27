@@ -10,6 +10,7 @@ WineGuide::Application.routes.draw do
   get "reports/score_breakdown"
   get "reports/maturity_profile"
   get "reports/country"
+  get "reports/yearly"
   get "reports/this_day_in_wine"
   get "reports/favourite_wines"
 

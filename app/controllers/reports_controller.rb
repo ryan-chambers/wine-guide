@@ -29,6 +29,10 @@ class ReportsController < ApplicationController
     @country_summaries = Bottle.generate_country_report
   end
 
+  def yearly
+    @yearly_summaries = Bottle.generate_yearly_report
+  end
+
   def this_day_in_wine
     @wines = Wine.find_drank_this_day
   end

@@ -84,6 +84,31 @@ describe ReportsController do
     end
   end
 
+  describe "GET 'yearly'" do
+    it "returns http succcess" do
+      get 'country'
+      response.should be_success
+    end
+
+    it "renders the 'yearly' template" do
+      create(:alvento_sauvignonblanc_bottle_drank)
+
+      get 'yearly'
+
+      response.should render_template('yearly')
+    end
+
+    it "assigns country report data to @yearly_summaries" do
+      create(:alvento_sauvignonblanc_bottle_drank)
+      create(:kenwood_merlot_drank)
+      create(:imocali_vernaccia_bottle_drank_last_year)
+
+      get 'yearly'
+
+      assigns[:yearly_summaries].should_not be_nil
+    end
+  end
+
   describe "GET 'this_day_in_wine'" do
     it "returns http success" do
       get 'this_day_in_wine'

@@ -139,6 +139,16 @@ FactoryGirl.define do
       end
     end
 
+    factory :imocali_vernaccia_bottle_drank_last_year, parent: :bottle do
+      before(:create) do |bottle|
+        bottle.wine = create(:imocali_vernaccia)
+        bottle.in_fridge = false
+        bottle.score = 88
+        bottle.comments = 'RRR'
+        bottle.reviewdate = -370.days.from_now.strftime('%d %b %Y')
+      end
+    end
+
     factory :vineland_sauvignonblanc_bottle_in_cellar_later, parent: :bottle do
       before(:create) do |bottle|
         bottle.wine = create(:vineland_sauvignonblanc)

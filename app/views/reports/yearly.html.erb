@@ -1,0 +1,21 @@
+<h2>Country Report</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Number of bottles</th>
+      <th>Average Score (Points)</th>
+      <th>Average Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @yearly_summaries.each do |report| %>
+  		<tr>
+	  		<td><%= report.year %></td>
+	  		<td><%= report.total_bottles %></td>
+	  		<td><%= number_with_precision(report.avg_score, :precision => 1) %></td>
+	  		<td><%= number_to_currency(report.avg_price) %></td>
+  		</tr>
+  	<% end %>
+  </tbody>
+</table>

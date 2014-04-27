@@ -25,13 +25,27 @@ class Country
     'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
   CROATIA = Country.new('Croatia', ['Kalnik'])
   CYPRUS = Country.new('Cyprus')
-  FRANCE = Country.new('France', ['Côtes Du Rhône Villages', 'Ac Burgundy', 'Ac Loire', 'Ac Beaujolais', 'Bordeaux', 'Ac Bordeaux Supérieur',
-      'Pays D\'oc', 'Chateauneuf-du-Pape', 'Ac Côtes Du Rhône', 'Ac Saint Estèphe', 'Ac Languedoc', 'Ac Languedoc Roussillon',
-      'Ac Lalande De Pomerol', 'Ac Côtes De Castillon', 'Ac Lussac St Emillion', 'AC Montagne-Saint Emilion', 'Ac Listrac', 'Ac Gaillac',
-      'Ac Montagne St émilion', 'Ac Cotes de Bordeaux', 'Ac Premieres Cotes de Blaye', 'Ac Médoc', 'Ac Haut-Médoc', 'Ac Rhone',
-      'Ac Faugeres', 'Ac Beaumes de Venise', 'Ac Cotes du Rousillon Villages', 'Ac Corbieres', 'Ac Julienas',
-      'Ac Saumur', 'Ac Savoie', 'Ac Alsace', 'Beaujolais Villages', 'Ac Minervois', 'Ac Bandol', 'Ac Saint Julien',
-      'Ac St Nicolas de Bourgueil', 'Ac Fronsac', 'Ac Cotes du Ventoux', 'Ac L\'Andeol Rasteau', 'Burgundy',
+  FRANCE = Country.new('France', [
+      # Bordeaux
+      'Bordeaux', 'Ac Bordeaux Supérieur', 'Ac Cotes de Bordeaux', 
+        # Medoc
+        'Ac Médoc', 'Ac Haut-Médoc', 'Ac Listrac', 'Ac Saint Estèphe', 'Ac Pauillac', 'Ac Saint Julien', 'Ac Margaux', 'Ac Moulis', 
+        # Graves
+        'Ac Graves',
+        # Pomerol
+        'Ac Pomerol', 'Ac Lalande De Pomerol', 
+        # St Emilion
+        'Ac Montagne St Emilion', 'Ac Lussac St Emillion', 
+      # Burgundy  
+      'Ac Burgundy', 'Ac Beaujolais', 'Burgundy', 'Beaujolais Villages', 
+      # Rhone
+      'Ac Beaumes de Venise', 'Chateauneuf-du-Pape', 'Ac Côtes Du Rhône', 'Ac Rhone', 'Côtes Du Rhône Villages', 'Ac Cotes du Ventoux', 
+      # the rest
+      'Ac L\'Andeol Rasteau', 'Ac Alsace', 'Ac Bandol', 'Ac Corbieres', 'Ac Côtes De Castillon', 'Ac Cotes du Rousillon Villages', 'Ac Faugeres', 'Ac Fronsac', 
+      'Ac Gaillac', 'Ac Julienas',
+      'Ac Languedoc', 'Ac Languedoc Roussillon', 'Ac Loire', 'Ac Minervois',  
+      'Pays D\'oc', 'Ac Premieres Cotes de Blaye', 
+      'Ac Saumur', 'Ac Savoie', 'Ac St Nicolas de Bourgueil', 
       'Ac Rose D\'anjou'])
   GEORGIA = Country.new('Georgia')
   GERMANY = Country.new('Germany')

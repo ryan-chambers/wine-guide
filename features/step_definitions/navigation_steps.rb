@@ -12,6 +12,12 @@ Given /^some wine reviews$/ do
   FactoryGirl.create(:vineland_sauvignonblanc_drank)
 end
 
+Given /^some wine reviews over the years$/ do
+  FactoryGirl.create(:alvento_sauvignonblanc_bottle_drank)
+  FactoryGirl.create(:kenwood_merlot_drank)
+  FactoryGirl.create(:imocali_vernaccia_bottle_drank_last_year)
+end
+
 Given /^I am on (.+)$/ do | page_name |
   visit path_to (page_name)
 end
@@ -52,6 +58,12 @@ Then /I should see the country report/ do
   page.should have_content('86.5')
   page.should have_content('17.45')
   page.should have_content('USA')
+end
+
+Then /I should see the yearly report/ do
+  page.should have_content('88.0')
+  page.should have_content('89.5')
+  page.should have_content('2')
 end
 
 Then /I should see the ready\-to\-drink report/ do
