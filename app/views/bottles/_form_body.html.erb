@@ -1,5 +1,5 @@
   <div class="form-group">
-  	<label class="col-lg-2 control-label">In fridge</label>
+  	<label for="bottle_in_fridge" class="col-lg-2 control-label">In fridge</label>
   	<div class="col-lg-3">
 	    <%= f.check_box :in_fridge %>
 	</div>
@@ -7,43 +7,43 @@
   <div class="form-group">
     <%= f.label :price, 'Price *', class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-    	<%= f.text_field :price %>
+    	<%= f.text_field :price, :class => 'form-control'  %>
    	</div>
   </div>
   <div id="review-date-container" class="form-group">
     <%= f.label :reviewdate, "Review Date *", class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-	    <%= f.text_field :reviewdate, :class => 'datepicker', :value => Time.new.strftime('%d-%m-%Y') %>
+	    <%= f.text_field :reviewdate, :class => 'datepicker form-control', :value => Time.new.strftime('%d-%m-%Y') %>
 	</div>
   </div>
   <div id="score-container" class="form-group">
     <%= f.label :score, 'Score *', class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-	    <%= f.text_field :score %>
+	    <%= f.text_field :score, :class => 'form-control' %>
 	</div>
   </div>
   <div id="comments-container" class="form-group">
     <%= f.label :comments, 'Comments *', class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-	    <%= f.text_area :comments, :rows => 4  %>
+	    <%= f.text_area :comments, :rows => 4, :class => 'form-control' %>
 	</div>
   </div>
   <div class="form-group">
     <%= f.label :drink_to, class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-	    <%= f.text_field :drink_to %>
+	    <%= f.text_field :drink_to, :class => 'form-control' %>
 	</div>
   </div>
   <div class="form-group">
     <%= f.label :drink_from, class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-	    <%= f.text_field :drink_from %>
+	    <%= f.text_field :drink_from, :class => 'form-control' %>
 	</div>
   </div>
   <div class="form-group">
     <%= f.label :bought, class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
-	    <%= f.text_field :bought %>
+	    <%= f.text_field :bought, :class => 'form-control' %>
 	</div>
   </div>
   <div class="form-group">

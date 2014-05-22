@@ -84,9 +84,8 @@
 			<div class="modal-body">
 				<%= form_tag('/tweets/tweet_bottle', :method => :post) %>
 		  			<fieldset>
-			  			<textarea rows="4" id="tweet-message" style="width: 300px" name="message"></textarea>
+			  			<textarea maxlength="140" class="form-control" rows="4" id="tweet-message" name="message" style="margin-bottom: 10px"></textarea>
 						<input name="wine_id" type="hidden" value="<%= @wine.id %>" />
-						<span class="help-block">The above message will be tweeted.</span>
 				    	<button type="submit" class="btn btn-primary">Tweet</button>
 			    	</fieldset>
 				</form>
@@ -107,5 +106,9 @@
 			$('#tweet-message').val(tweet.msg);
 			modal_ref.modal('show');
 		});
+	});
+
+	$('#tweet-message').maxlength({
+		alwaysShow: true
 	});
 </script>

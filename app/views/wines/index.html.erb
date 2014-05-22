@@ -47,7 +47,7 @@
   </tbody>
 </table>
 <% if ! params[:term] and ! params[:reviews_from] and ! params[:reviews_to] %>
-	<%= will_paginate @wines %>
+	<%= will_paginate @wines, renderer: BootstrapPagination::Rails %>
 <% end %>
 <script type="text/javascript">
   $('#grape_filter').typeahead({

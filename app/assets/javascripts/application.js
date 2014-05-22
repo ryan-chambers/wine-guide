@@ -17,3 +17,4 @@
 //= require Chart
 //= require bootstrap
 //= require bootstrap-datepicker2
+//= require bootstrap-maxlength.min
