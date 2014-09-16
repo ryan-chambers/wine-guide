@@ -42,7 +42,7 @@ class Country
       # Rhone
       'Ac Beaumes de Venise', 'Chateauneuf-du-Pape', 'Ac Côtes Du Rhône', 'Ac Rhone', 'Côtes Du Rhône Villages', 'Ac Cotes du Ventoux', 
       # the rest
-      'Ac L\'Andeol Rasteau', 'Ac Alsace', 'Ac Bandol', 'Ac Corbieres', 'Ac Côtes De Castillon', 'Ac Cotes du Rousillon Villages', 'Ac Faugeres', 'Ac Fronsac', 
+      'Ac L\'Andeol Rasteau', 'Ac Alsace', 'Ac Bandol', 'Ac Champagne', 'Ac Corbieres', 'Ac Côtes De Castillon', 'Ac Cotes du Rousillon Villages', 'Ac Faugeres', 'Ac Fronsac', 
       'Ac Gaillac', 'Ac Julienas',
       'Ac Languedoc', 'Ac Languedoc Roussillon', 'Ac Loire', 'Ac Minervois',  
       'Pays D\'oc', 'Ac Premieres Cotes de Blaye', 
