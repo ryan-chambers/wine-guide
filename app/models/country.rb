@@ -66,7 +66,7 @@ class Country
   SERBIA = Country.new('Serbia')
   SLOVENIA = Country.new('Slovenia')
   SOUTH_AFRICA = Country.new('South Africa', ['WO Coastal Region', 'WO Western Region', 'WO Western Cape', 'WO Stellenbosch'])
-  SPAIN = Country.new('Spain', ['Do Almansa', 'Doca Rioja', 'Rueda DO', 'Doc Navarra', 'Do Toro'])
+  SPAIN = Country.new('Spain', ['Do Almansa', 'Doc Navarra', 'Doca Priorat', 'Doca Rioja', 'Rueda DO', 'Do Toro'])
   TURKEY = Country.new('Turkey')
   SWITZERLAND = Country.new('Switzerland')
   USA = Country.new('USA', ['Sonoma', 'Mendocino', 'Willamette Valley', 'Monterey', 'Central Valley',
