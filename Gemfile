@@ -8,11 +8,11 @@ gem 'rails', '~> 4.1.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
   gem "rspec-rails", "~> 2.14.0"
   gem "bullet"
 end
 
+gem 'pg', '0.17.1'
 
 group :test do
   gem "factory_girl_rails", "~> 4.4.1"
@@ -23,7 +23,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.17.1'
   gem 'rails_12factor'
 end
 

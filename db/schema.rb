@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140420180314) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bottles", force: true do |t|
     t.date     "reviewdate"
     t.float    "score"
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140420180314) do
     t.string   "review_day_of_year"
   end
 
-  add_index "bottles", ["wine_id"], name: "index_bottles_on_wine_id"
+  add_index "bottles", ["wine_id"], name: "index_bottles_on_wine_id", using: :btree
 
   create_table "grapes", force: true do |t|
     t.string   "name"
