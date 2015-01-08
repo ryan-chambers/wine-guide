@@ -14,12 +14,12 @@ describe ReportsController do
     end
 
     it "assigns all wines in cellar to @wines variable by default" do
-      s1 = create(:alvento_sauvignonblanc_bottle_drank)
-      s2 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
-      s3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
+      b1 = create(:alvento_sauvignonblanc_bottle_drank)
+      b2 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+      b3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
 
       get 'cellar'
-      assigns[:wines].should == [s3.wine, s2.wine]
+      assigns[:wines].should == [b2.wine, b3.wine]
     end
 
     it "assigns wines ready to drink soon when told to" do
