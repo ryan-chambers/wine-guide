@@ -113,7 +113,7 @@ describe Bottle do
       create(:alvento_sauvignonblanc_bottle_drank)
       create(:kenwood_merlot_drank)
       create(:vineland_sauvignonblanc_drank)
-      year = 2014
+      year = Date.today.year
 
       year_summary = Bottle.generate_summary_for_year(year)
 
