@@ -52,20 +52,27 @@ describe Wine do
     end
 
     it "finds all wines with bottles indicating they are in the cellar" do
-      s1 = create(:alvento_sauvignonblanc_bottle_drank)
-      s2 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
-      s3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
-      s4 = create(:imocali_vernaccia_bottle_now)
+      b1 = create(:alvento_sauvignonblanc_bottle_drank)
+      b2 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+      b3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
+      b4 = create(:imocali_vernaccia_bottle_now)
 
-      expect(Wine.find_in_cellar).to eq([s3.wine, s4.wine, s2.wine])
+#      p "b2 drink_from: #{b2.drink_from}"
+#      p "b3 drink_from: #{b3.drink_from}"
+#      p "b4 drink_from: #{b4.drink_from}"
+
+      expect(Wine.find_in_cellar).to eq([b4.wine, b2.wine, b3.wine])
     end
 
     it "finds all wines that will be ready to drink in the next two years" do
-      s1 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
-      s2 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
-      s3 = create(:imocali_vernaccia_bottle_now)
+      b1 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+      b2 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
+      b3 = create(:imocali_vernaccia_bottle_now)
 
-      expect(Wine.find_in_cellar_ready_to_drink).to eq([s2.wine, s3.wine])      
+#      p "b2 drink_from: #{b2.drink_from}"
+#      p "b3 drink_from: #{b3.drink_from}"
+
+      expect(Wine.find_in_cellar_ready_to_drink).to eq([b3.wine, b2.wine])      
     end
 
     it "searches all wines by winery name" do
