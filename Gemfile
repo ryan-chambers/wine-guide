@@ -12,7 +12,7 @@ group :development, :test do
   gem "bullet"
 end
 
-gem 'pg', '0.17.1'
+gem 'pg', '0.18.1'
 
 group :test do
   gem "factory_girl_rails", "~> 4.4.1"
