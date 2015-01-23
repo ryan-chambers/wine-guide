@@ -16,7 +16,7 @@ gem 'pg', '0.17.1'
 
 group :test do
   gem "factory_girl_rails", "~> 4.4.1"
-  gem 'cucumber-rails', "1.4.0", :require => false
+  gem 'cucumber-rails', "1.4.2", :require => false
   gem 'database_cleaner', "1.2.0"
   gem 'minitest'
   gem 'shoulda-matchers'
