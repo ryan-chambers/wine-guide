@@ -1,18 +1,18 @@
 source 'https://rubygems.org'
 
-ruby "2.2.0"
+ruby '2.2.0'
 
 gem 'rails', '~> 4.2.0'
 
 group :development, :test do
-  gem "rspec-rails", "~> 3.0"
-  gem "bullet"
+  gem 'rspec-rails', '~> 3.0'
+  gem 'bullet'
 end
 
 gem 'pg', '0.18.1'
 
 group :test do
-  gem "factory_girl_rails", "~> 4.5.0"
+  gem 'factory_girl_rails', '~> 4.5.0'
   gem 'cucumber-rails', '1.4.2', :require => false
   gem 'database_cleaner', '1.4.0'
   gem 'minitest'
