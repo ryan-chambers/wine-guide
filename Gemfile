@@ -36,7 +36,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails', '~> 3.1.0'
 
-gem 'twitter', '5.7.1'
+gem 'twitter', '5.13.0'
 
 group :development do
   gem 'better_errors', '2.1.1'
