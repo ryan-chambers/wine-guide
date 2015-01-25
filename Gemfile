@@ -4,9 +4,6 @@ ruby "2.2.0"
 
 gem 'rails', '~> 4.2.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 group :development, :test do
   gem "rspec-rails", "~> 3.0"
   gem "bullet"
@@ -42,22 +39,8 @@ gem 'jquery-rails', '~> 3.1.0'
 gem 'twitter', '5.7.1'
 
 group :development do
-  gem 'better_errors', '0.9.0'
+  gem 'better_errors', '2.1.1'
   gem 'binding_of_caller', '0.7.2'
   gem 'meta_request', '0.2.8'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
