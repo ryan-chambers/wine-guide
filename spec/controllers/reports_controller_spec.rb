@@ -5,12 +5,12 @@ describe ReportsController do
   describe "GET 'cellar'" do
     it "returns http success" do
       get 'cellar'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "renders the 'cellar' template" do
       get 'cellar'
-      response.should render_template('cellar')
+      expect(response).to render_template('cellar')
     end
 
     it "assigns all wines in cellar to @wines variable by default" do
@@ -19,7 +19,7 @@ describe ReportsController do
       b3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
 
       get 'cellar'
-      assigns[:wines].should == [b2.wine, b3.wine]
+      expect(assigns[:wines]).to eq([b2.wine, b3.wine])
     end
 
     it "assigns wines ready to drink soon when told to" do
@@ -28,7 +28,7 @@ describe ReportsController do
       s3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
 
       get 'cellar', :term => 'soon'
-      assigns[:wines].should == [s3.wine]
+      expect(assigns[:wines]).to eq([s3.wine])
     end
   end
 
@@ -40,10 +40,10 @@ describe ReportsController do
 
       get 'maturity_profile'
 
-      response.should be_success
+      expect(response).to be_success
 
-      assigns[:labels].should_not be_nil
-      assigns[:bottles].should_not be_nil
+      expect(assigns[:labels]).not_to be_nil
+      expect(assigns[:bottles]).not_to be_nil
     end
   end
 
@@ -55,22 +55,22 @@ describe ReportsController do
 
       get 'score_breakdown'
 
-      response.should be_success
+      expect(response).to be_success
 
-      assigns[:scores].should_not be_nil
-      assigns[:score_counts].should_not be_nil
+      expect(assigns[:scores]).not_to be_nil
+      expect(assigns[:score_counts]).not_to be_nil
     end
   end
 
   describe "GET 'country'" do
     it "returns http succcess" do
       get 'country'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "renders the 'country' template" do
       get 'country'
-      response.should render_template('country')
+      expect(response).to render_template('country')
     end
 
     it "assigns country report data to @country_summaries" do
@@ -80,14 +80,14 @@ describe ReportsController do
 
       get 'country'
 
-      assigns[:country_summaries].should_not be_nil
+      expect(assigns[:country_summaries]).not_to be_nil
     end
   end
 
   describe "GET 'yearly'" do
     it "returns http succcess" do
       get 'country'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "renders the 'yearly' template" do
@@ -95,7 +95,7 @@ describe ReportsController do
 
       get 'yearly'
 
-      response.should render_template('yearly')
+      expect(response).to render_template('yearly')
     end
 
     it "assigns country report data to @yearly_summaries" do
@@ -105,19 +105,19 @@ describe ReportsController do
 
       get 'yearly'
 
-      assigns[:yearly_summaries].should_not be_nil
+      expect(assigns[:yearly_summaries]).not_to be_nil
     end
   end
 
   describe "GET 'this_day_in_wine'" do
     it "returns http success" do
       get 'this_day_in_wine'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "renders the 'this_day_in_wine' template" do
       get 'this_day_in_wine'
-      response.should render_template('this_day_in_wine')
+      expect(response).to render_template('this_day_in_wine')
     end
 
     it "assigns country report data to @wines" do
@@ -125,19 +125,19 @@ describe ReportsController do
 
       get 'this_day_in_wine'
 
-      assigns[:wines].should_not be_nil
+      expect(assigns[:wines]).not_to be_nil
     end
   end
 
   describe "GET 'favourite_wines'" do
     it "returns http success" do
       get 'favourite_wines'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "renders the 'favourite_wines' template" do
       get 'favourite_wines'
-      response.should render_template('favourite_wines')
+      expect(response).to render_template('favourite_wines')
     end
 
     it "assigns country report data to @wines" do
@@ -145,7 +145,7 @@ describe ReportsController do
 
       get 'favourite_wines'
 
-      assigns[:wines].should_not be_nil
+      expect(assigns[:wines]).not_to be_nil
     end
   end
 end

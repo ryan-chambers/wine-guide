@@ -4,12 +4,12 @@ describe WinesController do
   describe "get 'index'" do
     it "should be successful" do
       get 'index'
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "renders the 'index' template" do
       get :index
-      response.should render_template('index')
+      expect(response).to render_template('index')
     end
 
     it "assigns all wines to @wines variable when no term specified" do
@@ -17,7 +17,7 @@ describe WinesController do
       w2 = create(:vineland_sauvignonblanc)
 
       get :index
-      assigns[:wines].should == [w1, w2]
+      expect(assigns[:wines]).to eq([w1, w2])
     end
 
     it "assigns wineries searched by winery name when non-LCBO code term is specified" do
@@ -25,7 +25,7 @@ describe WinesController do
       w2 = create(:vineland_sauvignonblanc)
 
       get :index, :term => 'Alv'
-      assigns[:wines].should == [w1]
+      expect(assigns[:wines]).to eq([w1])
     end
 
     it "assigns wineries searched by LCBO code when specified" do
@@ -33,21 +33,21 @@ describe WinesController do
       w2 = create(:vineland_sauvignonblanc)
 
       get :index, :term => '98765432'
-      assigns[:wines].should == [w2]
+      expect(assigns[:wines]).to eq([w2])
     end
   end
 
   describe "get 'new'" do
     it "fails without validation" do
       get 'new'
-      response.should_not be_success
+      expect(response).not_to be_success
     end
 
     it "succeeds with validation" do
       authenticate_with_http_digest
       get 'new'
-      response.should be_success
-      assigns[:wine].should_not be_nil
+      expect(response).to be_success
+      expect(assigns[:wine]).not_to be_nil
     end
   end
 
@@ -68,9 +68,9 @@ describe WinesController do
       end
 
       it "creates a wine record" do
-        lambda {
+        expect {
           post :create, @wine_params
-        }.should change(Wine, :count).by(1)
+        }.to change(Wine, :count).by(1)
       end
     end
 
@@ -82,15 +82,15 @@ describe WinesController do
 
       it "re-renders the 'new' template" do
         post :create, @wine_params
-        response.should render_template('new')
+        expect(response).to render_template('new')
       end
 
       it "should not create a wine record" do
         post :create, @wine_params
-        response.should render_template('new')
-        lambda {
+        expect(response).to render_template('new')
+        expect {
           post :create, @wine_params
-        }.should_not change(Wine, :count)
+        }.not_to change(Wine, :count)
       end
     end
   end

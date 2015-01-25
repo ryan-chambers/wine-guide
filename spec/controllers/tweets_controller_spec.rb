@@ -9,9 +9,9 @@ describe TweetsController do
 
 #      puts response.body
 
-      response.should be_success
+      expect(response).to be_success
       expect(response.body).to include(bottle.wine.year.to_s)
-      response.header['Content-Type'].should include 'application/json'
+      expect(response.header['Content-Type']).to include 'application/json'
     end
 
     it "returns empty for a bottle that should not be tweeted" do
@@ -19,9 +19,9 @@ describe TweetsController do
 
       get :bottle, :bottle_id => bottle.id, :format => :json
 
-      response.should be_success
+      expect(response).to be_success
       expect(response.body).not_to include(bottle.wine.year.to_s)
-      response.header['Content-Type'].should include 'application/json'
+      expect(response.header['Content-Type']).to include 'application/json'
     end
   end
 

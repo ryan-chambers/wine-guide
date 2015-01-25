@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 ruby "2.1.3"
 
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 4.2.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.14.0"
+  gem "rspec-rails", "~> 3.0"
   gem "bullet"
 end
 
