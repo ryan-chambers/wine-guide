@@ -8,7 +8,7 @@ gem 'rails', '~> 4.2.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.99"
+  gem "rspec-rails", "~> 3.0"
   gem "bullet"
 end
 
