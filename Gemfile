@@ -12,11 +12,11 @@ group :development, :test do
   gem "bullet"
 end
 
-gem 'pg', '0.17.1'
+gem 'pg', '0.18.1'
 
 group :test do
   gem "factory_girl_rails", "~> 4.4.1"
-  gem 'cucumber-rails', "1.4.0", :require => false
+  gem 'cucumber-rails', "1.4.2", :require => false
   gem 'database_cleaner', "1.2.0"
   gem 'minitest'
   gem 'shoulda-matchers'
@@ -32,7 +32,7 @@ gem 'will_paginate-bootstrap'
 gem "thin"
 
 gem 'sass-rails',   '~> 4.0.0', '>= 4.0.2'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass', '~> 3.1.1.0'
 
 gem 'uglifier', '>= 1.3.0'
