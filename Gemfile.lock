@@ -112,10 +112,10 @@ GEM
       mime-types (>= 1.16, < 3)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
-    meta_request (0.2.8)
-      callsite
-      rack-contrib
-      railties
+    meta_request (0.3.4)
+      callsite (~> 0.0, >= 0.0.11)
+      rack-contrib (~> 1.1)
+      railties (>= 3.0.0, < 5.0.0)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -238,7 +238,7 @@ DEPENDENCIES
   database_cleaner (= 1.4.0)
   factory_girl_rails (~> 4.4.1)
   jquery-rails (~> 3.1.0)
-  meta_request (= 0.2.8)
+  meta_request (= 0.3.4)
   minitest
   pg (= 0.18.1)
   rails (~> 4.2.0)
