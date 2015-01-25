@@ -1,5 +1,5 @@
 module HTTPDigestAuthentication
   def authenticate_with_http_digest
-    controller.stub(:authenticate)
+    allow(controller).to receive(:authenticate)
   end
 end

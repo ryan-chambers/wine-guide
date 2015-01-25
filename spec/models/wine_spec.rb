@@ -4,12 +4,12 @@ describe Wine do
   describe "validations" do
     before do
       @wine = Wine.new
-      @wine.should_not be_valid
+      expect(@wine).not_to be_valid
     end
 
     [:year, :country].each do |attr|
       it "must have #{attr}" do
-        @wine.errors.get(attr).should_not be_nil
+        expect(@wine.errors.get(attr)).not_to be_nil
       end
     end
   end

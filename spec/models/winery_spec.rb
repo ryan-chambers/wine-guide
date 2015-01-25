@@ -5,10 +5,10 @@ describe Winery do
     it "fails validation without name" do
       winery = Winery.new
       winery.save
-      winery.errors.get(:name).should_not be_nil
+      expect(winery.errors.get(:name)).not_to be_nil
     end
 
-    it { should validate_uniqueness_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
   end  
 
   describe "finders" do
@@ -34,7 +34,7 @@ describe Winery do
 
   describe "associations" do
     it "has many wines" do
-      Winery.new.should respond_to(:wines)
+      expect(Winery.new).to respond_to(:wines)
     end
   end
 
