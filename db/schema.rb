@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420180314) do
+ActiveRecord::Schema.define(version: 20150128013940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bottles", force: true do |t|
+  create_table "bottles", force: :cascade do |t|
     t.date     "reviewdate"
     t.float    "score"
     t.text     "comments"
@@ -27,36 +27,36 @@ ActiveRecord::Schema.define(version: 20140420180314) do
     t.integer  "drink_to"
     t.integer  "drink_from"
     t.boolean  "in_fridge"
-    t.string   "bought"
-    t.string   "review_day_of_year"
+    t.string   "bought",             limit: 255
+    t.string   "review_day_of_year", limit: 255
   end
 
   add_index "bottles", ["wine_id"], name: "index_bottles_on_wine_id", using: :btree
 
-  create_table "grapes", force: true do |t|
-    t.string   "name"
+  create_table "grapes", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "grapes_wines", id: false, force: true do |t|
+  create_table "grapes_wines", id: false, force: :cascade do |t|
     t.integer "grape_id"
     t.integer "wine_id"
   end
 
-  create_table "wineries", force: true do |t|
-    t.string   "name"
+  create_table "wineries", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "wines", force: true do |t|
-    t.string   "region"
-    t.string   "country"
-    t.string   "other"
+  create_table "wines", force: :cascade do |t|
+    t.string   "region",     limit: 255
+    t.string   "country",    limit: 255
+    t.string   "other",      limit: 255
     t.integer  "year"
     t.integer  "winery_id"
-    t.string   "lcbo_code"
+    t.string   "lcbo_code",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
