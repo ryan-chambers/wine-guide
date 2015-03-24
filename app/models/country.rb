@@ -21,7 +21,7 @@ class Country
   BRAZIL = Country.new('Brazil')
   BULGARIA = Country.new('Bulgaria')
   CANADA = Country.new('Canada', ['VQA Beamsville Bench', 'VQA British Columbia', 'VQA Niagara', 'VQA Niagara Peninsula', 'VQA Niagara On The Lake', 
-      'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 'VQA Lake Erie North Shore', 'VQA Lincoln Lakeshore', 'VQA Prince Edward County'])
+      'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 'VQA Lake Erie North Shore', 'VQA Lincoln Lakeshore', 'VQA Prince Edward County', 'VQA St David''s Bench'. 'VQA Twenty Mile Bench'])
   CHILE = Country.new('Chile', ['Rapel Valley', 'Lolol Valley', 'Maule Valley', 'Casablanca Valley', 'Limari Valley', 'Central Valley',
     'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
   CROATIA = Country.new('Croatia', ['Kalnik'])
