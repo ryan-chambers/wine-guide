@@ -47,7 +47,8 @@ class Country
       'Ac Languedoc', 'Ac Languedoc Roussillon', 'Ac Loire', 'Ac Minervois',  
       'Pays D\'oc', 'Ac Premieres Cotes de Blaye', 
       'Ac Saumur', 'Ac Savoie', 'Ac St Nicolas de Bourgueil', 
-      'Ac Rose D\'anjou'])
+      'Ac Rose D\'anjou',
+      'Ac Vouvray'])
   GEORGIA = Country.new('Georgia')
   GERMANY = Country.new('Germany')
   GREECE = Country.new('Greece')
