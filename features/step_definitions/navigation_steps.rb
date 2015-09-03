@@ -44,60 +44,60 @@ When /^I submit the form "([^\"]*)"$/ do |form_id|
 end
 
 Then /I should see the cellar report/ do
-  page.should have_content('Vineland Estates')
-  page.should have_content('Sauvignon Blanc')
-  page.should have_content('$19.95')
-  page.should have_content('Apr 2012')
-  page.should have_content('Cave Springs')
-  page.should have_content('I Mocali')
-  page.should have_content('May 2013')
+  expect(page).to have_content('Vineland Estates')
+  expect(page).to have_content('Sauvignon Blanc')
+  expect(page).to have_content('$19.95')
+  expect(page).to have_content('Apr 2012')
+  expect(page).to have_content('Cave Springs')
+  expect(page).to have_content('I Mocali')
+  expect(page).to have_content('May 2013')
 end
 
 Then /I should see the country report/ do
-  page.should have_content('Canada')
-  page.should have_content('86.5')
-  page.should have_content('17.45')
-  page.should have_content('USA')
+  expect(page).to have_content('Canada')
+  expect(page).to have_content('86.5')
+  expect(page).to have_content('17.45')
+  expect(page).to have_content('USA')
 end
 
 Then /I should see the yearly report/ do
-  page.should have_content('88.0')
-  page.should have_content('89.5')
-  page.should have_content('2')
+  expect(page).to have_content('88.0')
+  expect(page).to have_content('89.5')
+  expect(page).to have_content('2')
 end
 
 Then /I should see the ready\-to\-drink report/ do
-  page.should_not have_content('Vineland Estates')
-  page.should have_content('I Mocali')
+  expect(page).to_not have_content('Vineland Estates')
+  expect(page).to have_content('I Mocali')
 end
 
 Then /I should see the search results for Vineland/ do
-  page.should have_content('Vineland Estates')
-  page.should_not have_content('I Mocali')
+  expect(page).to have_content('Vineland Estates')
+  expect(page).to_not have_content('I Mocali')
 end
 
 Then /I should see the search results for Alvento/ do
-  page.should have_content('Alvento')
-  page.should_not have_content('I Mocali')
+  expect(page).to have_content('Alvento')
+  expect(page).to_not have_content('I Mocali')
 end
 
 Then /I should see the search results for Vernaccia/ do
-  page.should have_content('Vernaccia')
-  page.should_not have_content('Sauvignon Blanc')
+  expect(page).to have_content('Vernaccia')
+  expect(page).to_not have_content('Sauvignon Blanc')
 end
 
 Then /I should see the search results for Canada/ do
-  page.should have_content('Sauvignon Blanc') # from Canadian wine
-  page.should_not have_content('Vernaccia') # from Italian wine
+  expect(page).to have_content('Sauvignon Blanc') # from Canadian wine
+  expect(page).to_not have_content('Vernaccia') # from Italian wine
 end
 
 Then /I should see the this day in wine report/ do
-  page.should have_content('Alvento')
+  expect(page).to have_content('Alvento')
 end
 
 Then /I should see the favourite wines report/ do
-  page.should_not have_content('Alvento')
-  page.should_not have_content('86')
-  page.should have_content('Kenwood')
-  page.should have_content('93')
+  expect(page).to_not have_content('Alvento')
+  expect(page).to_not have_content('86')
+  expect(page).to have_content('Kenwood')
+  expect(page).to have_content('93')
 end

@@ -1,3 +1,3 @@
-To start locally (binds to port 5000):
+To start locally (binds to port 3000):
 
-foreman start
+rails s
