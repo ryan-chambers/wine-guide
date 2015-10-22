@@ -10,19 +10,31 @@ describe Bottle do
     it "must have a price" do
       expect(@bottle.errors.get(:price)).not_to be_nil
     end
+
+    it "may have a to date before the from date" do
+      @bottle.drink_from = Time.new.strftime('%Y').to_i + 1
+      @bottle.drink_to = Time.new.strftime('%Y').to_i + 1
+      expect(@bottle.errors.get(:drink_from)).to be_nil
+    end
+
+    it "must have a to date after the from date" do
+      @bottle.drink_from = Time.new.strftime('%Y').to_i + 3
+      @bottle.drink_to = Time.new.strftime('%Y').to_i + 1
+      expect(@bottle.errors.get(:drink_from)).not_to be_nil
+    end
   end
 
   describe "fields" do
     it "must have a non-nil review day of year if review date is set" do
       @bottle = Bottle.new
-      @bottle.reviewdate= '11 Jan 2009'
+      @bottle.reviewdate = '11 Jan 2009'
       expect(@bottle[:review_day_of_year]).not_to be_nil
     end
 
     it "must have a nil review day if in fridge" do
       @bottle = Bottle.new
       @bottle.in_fridge = true
-      @bottle.reviewdate= '1 Jan 2009'
+      @bottle.reviewdate = '1 Jan 2009'
       @bottle.save
       expect(@bottle.errors.get(:reviewdate)).not_to be_nil
     end
