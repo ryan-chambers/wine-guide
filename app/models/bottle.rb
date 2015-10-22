@@ -4,7 +4,7 @@ class Bottle < ActiveRecord::Base
 
   attr_reader :review_day_of_year
 
-  validate :score_between_0_and_100, :score_not_null_unless_in_fridge, :comments_not_null_unless_in_fridge, :reviewdate_not_null_unless_in_fridge
+  validate :score_between_0_and_100, :score_not_null_unless_in_fridge, :comments_not_null_unless_in_fridge, :reviewdate_not_null_unless_in_fridge, :drink_from_before_drink_to 
 
   validates :price, :presence => true
 
@@ -85,6 +85,11 @@ class Bottle < ActiveRecord::Base
 
   def score_between_0_and_100
     errors.add(:score, "must be between 0 and 100.") if ! in_fridge and (score.nil? || score > 100 || score < 0)
+  end
+
+  def drink_from_before_drink_to
+#    p "drink_from is #{drink_from} and drink_to is #{drink_to}"
+    errors.add(:drink_from, "must be after drink to") if drink_from and drink_to and (drink_from.to_i >= drink_to.to_i)
   end
 
   def wine_price
