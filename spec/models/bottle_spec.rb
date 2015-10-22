@@ -12,14 +12,20 @@ describe Bottle do
     end
 
     it "may have a to date before the from date" do
-      @bottle.drink_from = Time.new.strftime('%Y').to_i + 1
-      @bottle.drink_to = Time.new.strftime('%Y').to_i + 1
+      @bottle.drink_from = Time.new.strftime('%Y').to_i + 2
+      @bottle.drink_to = Time.new.strftime('%Y').to_i + 3
+
+      expect(@bottle).not_to be_valid
+
       expect(@bottle.errors.get(:drink_from)).to be_nil
     end
 
     it "must have a to date after the from date" do
-      @bottle.drink_from = Time.new.strftime('%Y').to_i + 3
-      @bottle.drink_to = Time.new.strftime('%Y').to_i + 1
+      @bottle.drink_from = Time.new.strftime('%Y').to_i + 5
+      @bottle.drink_to = Time.new.strftime('%Y').to_i + 4
+
+      expect(@bottle).not_to be_valid
+
       expect(@bottle.errors.get(:drink_from)).not_to be_nil
     end
   end
