@@ -1,5 +1,3 @@
-# coding: utf-8
-
 class Country
   attr_reader :name
   attr_reader :regions
