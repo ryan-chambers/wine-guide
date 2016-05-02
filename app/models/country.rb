@@ -13,8 +13,8 @@ class Country
   end
 
   ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley', 'San Juan'])
-  AUSTRALIA = Country.new('Australia', ['McLaren Vale', 'Western Australia', 'Margaret River', 'Barossa Valley', 'Clare Valley',
-    'South Australia', 'Southeast Australia'])
+  AUSTRALIA = Country.new('Australia', ['Barossa Valley', 'Clare Valley',
+    'McLaren Vale', 'Western Australia', 'Margaret River', 'New South Wales', 'South Australia', 'Southeast Australia'])
   AUSTRIA = Country.new('Austria', ['Burgenland'])
   BRAZIL = Country.new('Brazil')
   BULGARIA = Country.new('Bulgaria')
