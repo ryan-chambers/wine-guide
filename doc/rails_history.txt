@@ -38,3 +38,5 @@ rails g migration RemovePurchasedDateFromWines purchased_date:date
 rails g migration SetWesternCapeRegion
 
 rails g migration CreateGrapeTrebbianoDiLugano
+
+rails g migration RemoveNiagaraPeninsulaRegion

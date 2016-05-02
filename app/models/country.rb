@@ -13,15 +13,17 @@ class Country
   end
 
   ARGENTINA = Country.new('Argentina', ['Mendoza', 'Calchaquies Valley', 'San Juan'])
-  AUSTRALIA = Country.new('Australia', ['McLaren Vale', 'Western Australia', 'Margaret River', 'Barossa Valley', 'Clare Valley',
-    'South Australia', 'Southeast Australia'])
+  AUSTRALIA = Country.new('Australia', ['Barossa Valley', 'Clare Valley',
+    'McLaren Vale', 'Western Australia', 'Margaret River', 'New South Wales', 'South Australia', 'Southeast Australia'])
   AUSTRIA = Country.new('Austria', ['Burgenland'])
   BRAZIL = Country.new('Brazil')
   BULGARIA = Country.new('Bulgaria')
-  CANADA = Country.new('Canada', ['VQA Beamsville Bench', 'VQA British Columbia', 'VQA Niagara', 'VQA Niagara Peninsula', 'VQA Niagara On The Lake', 
-      'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 'VQA Lake Erie North Shore', 'VQA Lincoln Lakeshore', 'VQA Prince Edward County', 'VQA St David''s Bench', 'VQA Twenty Mile Bench'])
-  CHILE = Country.new('Chile', ['Rapel Valley', 'Lolol Valley', 'Maule Valley', 'Casablanca Valley', 'Limari Valley', 'Central Valley',
-    'Colchagua Valley', 'Maipo Valley', 'Elqui Valley'])
+  CANADA = Country.new('Canada', ['VQA Beamsville Bench', 'VQA British Columbia', 'VQA Niagara Peninsula', 
+      'VQA Niagara On The Lake', 'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 
+      'VQA Lake Erie North Shore', 'VQA Lincoln Lakeshore', 'VQA Prince Edward County', 
+      'VQA St David''s Bench', 'VQA Twenty Mile Bench'])
+  CHILE = Country.new('Chile', ['Aconcagua Valley', 'Casablanca Valley', 'Central Valley', 'Colchagua Valley', 'Elqui Valley', 'Limari Valley', 'Lolol Valley', 
+    'Maipo Valley', 'Maule Valley', 'Rapel Valley'])
   CROATIA = Country.new('Croatia', ['Kalnik'])
   CYPRUS = Country.new('Cyprus')
   FRANCE = Country.new('France', [
