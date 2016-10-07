@@ -2,6 +2,8 @@
 
 <%= link_to 'Back to wine', @bottle.wine %>
 
+<%= render "wines/summary", :wine => @bottle.wine %>
+
 <h3>Edit Score</h3>
 
 <%= form_for(@bottle, html: {class: 'form-horizontal', role: 'form' }) do |f| %>
