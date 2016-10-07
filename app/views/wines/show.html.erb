@@ -1,10 +1,4 @@
-<h2>
-  <%= @wine.winery.name %> <%= @wine.grapes_to_s %> <%= @wine.year %>
-  (<% if ! @wine.region.empty?%><%= @wine.region %>, <% end %><%= @wine.country %>)
-<% if ! @wine.other? %>
-   <%= @wine.other %>
-<% end %>
-</h2>
+<%= render "wines/summary", :wine => @wine %>
 
 <% if ! @wine.lcbo_code.empty? %>
 	<ul class="nav nav-pills">
