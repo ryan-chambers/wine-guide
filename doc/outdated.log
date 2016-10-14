@@ -1,0 +1,30 @@
+Fetching gem metadata from https://rubygems.org/.........
+Fetching additional metadata from https://rubygems.org/..
+Resolving dependencies...
+
+Outdated gems included in the bundle:
+  * coffee-rails (4.2.1 > 4.1.0) Gemfile specifies "~> 4.1.0"
+  * rails (5.0.0.1 > 4.2.7.1) Gemfile specifies "= 4.2.7.1"
+  * shoulda-matchers (3.1.1 > 2.8.0)
+  * uglifier (3.0.2 > 2.7.2)
+  * will_paginate (3.1.3 > 3.0.7) Gemfile specifies "~> 3.0"
+  * actionmailer (5.0.0.1 > 4.2.7.1)
+  * actionpack (5.0.0.1 > 4.2.7.1)
+  * actionview (5.0.0.1 > 4.2.7.1)
+  * activejob (5.0.0.1 > 4.2.7.1)
+  * activemodel (5.0.0.1 > 4.2.7.1)
+  * activerecord (5.0.0.1 > 4.2.7.1)
+  * activesupport (5.0.0.1 > 4.2.7.1)
+  * arel (7.1.4 > 6.0.3)
+  * autoprefixer-rails (6.5.1 > 6.5.0.2)
+  * coderay (1.1.1 > 1.1.0)
+  * coffee-script-source (1.10.0 > 1.9.1.1)
+  * cucumber-core (2.0.0 > 1.5.0)
+  * equalizer (0.0.11 > 0.0.10)
+  * http (2.0.3 > 1.0.4)
+  * json (2.0.2 > 1.8.3)
+  * rack (2.0.1 > 1.6.4)
+  * rails-dom-testing (2.0.1 > 1.0.7)
+  * rails_serve_static_assets (0.0.5 > 0.0.4)
+  * rails_stdout_logging (0.0.5 > 0.0.4)
+  * railties (5.0.0.1 > 4.2.7.1)
