@@ -23,7 +23,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'will_paginate', '~> 3.0'
+gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
 
 gem 'thin', '~> 1.7'
