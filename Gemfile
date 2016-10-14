@@ -5,7 +5,7 @@ ruby '2.2.0'
 gem 'rails', '= 4.2.7.1'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.5.2'
   gem 'bullet', '5.4.2'   # notify n+1 queries
 end
 
@@ -29,7 +29,7 @@ gem 'will_paginate-bootstrap'
 gem 'thin'
 
 gem 'sass-rails',   '~> 5.0.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '~> 4.1.0'  # is this really needed?
 gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'uglifier', '>= 1.3.0'
