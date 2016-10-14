@@ -26,7 +26,7 @@ end
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 
-gem 'thin'
+gem 'thin', '~> 1.7'
 
 gem 'sass-rails',   '~> 5.0.0'
 gem 'coffee-rails', '~> 4.1.0'  # is this really needed?
