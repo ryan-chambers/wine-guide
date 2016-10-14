@@ -12,7 +12,7 @@ end
 gem 'pg', '0.19.0'
 
 group :test do
-  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'factory_girl_rails', '~> 4.7.0'
   gem 'cucumber-rails', '1.4.5', :require => false
   gem 'database_cleaner', '~> 1.5.0'
   gem 'minitest'
