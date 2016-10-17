@@ -73,6 +73,7 @@ class Country
   SPAIN = Country.new('Spain', ['Do Almansa', 'Doc Navarra', 'Doca Priorat', 'Doca Rioja', 'Rueda DO', 'Do Toro'])
   TURKEY = Country.new('Turkey')
   SWITZERLAND = Country.new('Switzerland')
+  URUGUAY = Country.new('Uruguay')
   USA = Country.new('USA', ['Sonoma', 'Mendocino', 'Willamette Valley', 'Monterey', 'Central Valley',
       'Paso Robles', 'Napa'])
 
