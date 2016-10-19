@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require 'wine_score_exporter'
 
 describe 'Wine Score Exporter' do

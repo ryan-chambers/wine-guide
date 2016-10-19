@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "routes for wines" do
   it 'should route /wines to wines controller' do
