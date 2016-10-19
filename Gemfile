@@ -29,7 +29,6 @@ gem 'will_paginate-bootstrap'
 gem 'thin', '~> 1.7'
 
 gem 'sass-rails',   '~> 5.0.0'
-gem 'coffee-rails', '~> 4.1.0'  # is this really needed?
 gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'uglifier', '~> 3.0.0'
