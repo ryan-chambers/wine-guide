@@ -16,7 +16,7 @@ group :test do
   gem 'cucumber-rails', '1.4.5', :require => false
   gem 'database_cleaner', '~> 1.5.0'
   gem 'minitest'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '2.8.0'
 end
 
 group :production do
