@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 describe "/reports/cellar" do
   it "shows all relevant fields for the cellar report" do

@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 describe Winery do
   describe "validations" do
@@ -8,7 +8,10 @@ describe Winery do
       expect(winery.errors.get(:name)).not_to be_nil
     end
 
-    it { is_expected.to validate_uniqueness_of(:name) }
+    it do
+      is_expected.to validate_uniqueness_of(:name).
+      case_insensitive
+    end
   end  
 
   describe "finders" do

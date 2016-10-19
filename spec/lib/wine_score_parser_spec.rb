@@ -1,6 +1,6 @@
 # coding: utf-8
 
-require 'spec_helper'
+require 'rails_helper'
 require 'wine_score_parser'
 
 describe 'Wine Score Parser' do
