@@ -6,3 +6,6 @@ rake db:test:load
 
 -- generate migration for new grape
 rails generate grape_creator "Name of Grape"
+
+-- new grapes
+rake db:migrate
