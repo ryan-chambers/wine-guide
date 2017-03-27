@@ -17,7 +17,7 @@ describe Bottle do
 
       expect(@bottle).not_to be_valid
 
-      expect(@bottle.errors.get(:drink_from)).to be_nil
+      expect(@bottle.errors.get(:drink_from)).to be_empty
     end
 
     it "must have a to date after the from date" do
