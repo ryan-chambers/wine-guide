@@ -17,6 +17,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5.0'
   gem 'minitest'
   gem 'shoulda-matchers', '3.1.1'
+  gem 'rails-controller-testing'    # rails 5.0.0
 end
 
 group :production do
