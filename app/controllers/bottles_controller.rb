@@ -1,5 +1,5 @@
 class BottlesController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show]
+  before_action :authenticate, :except => [:index, :show]
 
   def index
     @bottles = Bottle.all

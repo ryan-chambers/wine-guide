@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show]
+  before_action :authenticate, :except => [:index, :show]
 
   def index
     logger.info "Got search params #{params[:term]}, #{params[:reviews_from]}, #{params[:reviews_to]}"

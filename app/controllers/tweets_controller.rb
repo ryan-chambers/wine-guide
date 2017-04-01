@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_filter :authenticate, :except => [:bottle]
+  before_action :authenticate, :except => [:bottle]
 
   class_attribute :app_config
   self.app_config = WineGuide::Application.config
