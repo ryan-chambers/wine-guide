@@ -25,7 +25,7 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_drank_this_day
-    Wine.joins(:bottles).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
+    Wine.joins(:bottles).includes(:bottles, :grapes, :wines_grapes, :winery).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
   end
 
   def self.search_for_wine(search_term, review_from, review_to)
@@ -34,7 +34,7 @@ class Wine < ActiveRecord::Base
     else
       results = Wine.joins(:winery, :grapes, :bottles)
     end
-    results = results.includes(:winery, :grapes)
+    results = results.includes(:winery, :grapes, :wines_grapes)
 
     limit = 5
 
@@ -67,7 +67,7 @@ class Wine < ActiveRecord::Base
     logger.info "Filtering by grapes #{grapes}, country #{country}"
     if ! grapes.empty?
       grapes_like = "%".concat(grapes.downcase.concat("%"))
-      results = Wine.joins(:grapes).includes(:grapes, :winery).where("lower(grapes.name) like ?", grapes_like)
+      results = Wine.joins(:grapes).includes(:grapes, :winery, :wines_grapes).where("lower(grapes.name) like ?", grapes_like)
     else
       results = Wine.includes(:grapes, :winery)
     end
@@ -90,7 +90,7 @@ class Wine < ActiveRecord::Base
   def self.find_favourites(score_filter)
     logger.info "Filtering for favourites scored #{score_filter} and higher"
     score = score_filter || 90
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery).where('bottles.score >= :score', {:score => score}).distinct
+    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :wines_grapes).where('bottles.score >= :score', {:score => score}).distinct
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)
