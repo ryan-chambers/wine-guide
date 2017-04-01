@@ -9,7 +9,7 @@ describe Wine do
 
     [:year, :country].each do |attr|
       it "must have #{attr}" do
-        expect(@wine.errors.get(attr)).not_to be_nil
+        expect(@wine.errors[:attr]).not_to be_nil
       end
     end
   end

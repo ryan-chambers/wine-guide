@@ -8,7 +8,7 @@ describe Bottle do
     end
 
     it "must have a price" do
-      expect(@bottle.errors.get(:price)).not_to be_nil
+      expect(@bottle.errors[:price]).not_to be_nil
     end
 
     it "may have a to date before the from date" do
@@ -17,7 +17,7 @@ describe Bottle do
 
       expect(@bottle).not_to be_valid
 
-      expect(@bottle.errors.get(:drink_from)).to be_empty
+      expect(@bottle.errors[:drink_from]).to be_empty
     end
 
     it "must have a to date after the from date" do
@@ -26,7 +26,7 @@ describe Bottle do
 
       expect(@bottle).not_to be_valid
 
-      expect(@bottle.errors.get(:drink_from)).not_to be_nil
+      expect(@bottle.errors[:drink_from]).not_to be_nil
     end
   end
 
@@ -42,7 +42,7 @@ describe Bottle do
       @bottle.in_fridge = true
       @bottle.reviewdate = '1 Jan 2009'
       @bottle.save
-      expect(@bottle.errors.get(:reviewdate)).not_to be_nil
+      expect(@bottle.errors[:reviewdate]).not_to be_nil
     end
   end
 
