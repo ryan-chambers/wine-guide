@@ -9,7 +9,7 @@ describe Grape do
     it "fails validation without name" do
       grape = Grape.new
       grape.save
-      expect(grape.errors.get(:name)).not_to be_nil
+      expect(grape.errors[:name]).not_to be_nil
     end
 
     it { is_expected.to validate_uniqueness_of(:name) }
