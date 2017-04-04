@@ -24,7 +24,7 @@ describe WinesController do
       w1 = create(:alvento_sauvignonblanc)
       w2 = create(:vineland_sauvignonblanc)
 
-      get :index, :term => 'Alv'
+      get :index, params: {:term => 'Alv'}
       expect(assigns[:wines]).to eq([w1])
     end
 
@@ -32,7 +32,7 @@ describe WinesController do
       w1 = create(:alvento_sauvignonblanc)
       w2 = create(:vineland_sauvignonblanc)
 
-      get :index, :term => '98765432'
+      get :index, params: {:term => '98765432'}
       expect(assigns[:wines]).to eq([w2])
     end
   end
@@ -63,13 +63,13 @@ describe WinesController do
       end
 
       it "redirects to wine page" do
-        post :create, @wine_params
+        post :create, params: @wine_params
         assert_redirected_to wine_path(assigns(:wine))
       end
 
       it "creates a wine record" do
         expect {
-          post :create, @wine_params
+          post :create, params: @wine_params
         }.to change(Wine, :count).by(1)
       end
     end
@@ -81,15 +81,15 @@ describe WinesController do
       end
 
       it "re-renders the 'new' template" do
-        post :create, @wine_params
+        post :create, params: @wine_params
         expect(response).to render_template('new')
       end
 
       it "should not create a wine record" do
-        post :create, @wine_params
+        post :create, params: @wine_params
         expect(response).to render_template('new')
         expect {
-          post :create, @wine_params
+          post :create, params: @wine_params
         }.not_to change(Wine, :count)
       end
     end

@@ -5,7 +5,7 @@ describe Winery do
     it "fails validation without name" do
       winery = Winery.new
       winery.save
-      expect(winery.errors.get(:name)).not_to be_nil
+      expect(winery.errors[:name]).not_to be_nil
     end
 
     it do

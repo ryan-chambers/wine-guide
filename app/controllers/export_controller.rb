@@ -1,5 +1,5 @@
 class ExportController < ApplicationController
-  before_filter :authenticate
+  before_action :authenticate
 
   def export
     send_data WineScoreExporter.new.export_db,

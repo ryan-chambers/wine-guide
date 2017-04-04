@@ -27,7 +27,7 @@ describe ReportsController do
       s2 = create(:vineland_sauvignonblanc_bottle_in_cellar_later)
       s3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
 
-      get 'cellar', :term => 'soon'
+      get 'cellar', params: {:term => 'soon'}
       expect(assigns[:wines]).to eq([s3.wine])
     end
   end

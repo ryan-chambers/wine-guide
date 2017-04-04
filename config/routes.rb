@@ -1,4 +1,4 @@
-WineGuide::Application.routes.draw do
+Rails.application.routes.draw do
   get "tweets/bottle"
   post "tweets/tweet_bottle"
 

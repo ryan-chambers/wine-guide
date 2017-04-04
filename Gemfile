@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '= 4.2.7.1'
+gem 'rails', '5.0.0'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5.2'
@@ -17,6 +17,7 @@ group :test do
   gem 'database_cleaner', '~> 1.5.0'
   gem 'minitest'
   gem 'shoulda-matchers', '3.1.1'
+  gem 'rails-controller-testing'    # rails 5.0.0
 end
 
 group :production do
