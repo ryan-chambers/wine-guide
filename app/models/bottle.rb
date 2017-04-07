@@ -89,7 +89,7 @@ class Bottle < ActiveRecord::Base
 
   def drink_from_before_drink_to
 #    p "drink_from is #{drink_from} and drink_to is #{drink_to}"
-    errors.add(:drink_from, "must be after drink to") if drink_from and drink_to and (drink_from.to_i >= drink_to.to_i)
+    errors.add(:drink_from, "must be after drink to") if drink_from and drink_to and (drink_from.to_i > drink_to.to_i)
   end
 
   def wine_price
