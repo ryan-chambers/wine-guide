@@ -9,3 +9,6 @@ rails generate grape_creator "Name of Grape"
 
 -- new grapes
 rake db:migrate
+
+-- drop & re-create database
+rake db:drop db:create db:migrate
