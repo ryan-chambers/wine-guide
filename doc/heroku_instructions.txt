@@ -8,11 +8,14 @@ heroku run bash
 	-- Parsing wine file
 	./script/run_importer_main.sh https://dl.dropbox.com/u/13326771/wines.txt
 
--- To precompile assets
-bundle exec rake assets:precompile
-
 -- To Drop DB:
 heroku pg:reset DATABASE_URL
 
 -- To set Heroku environment variables:
 heroku config:set GITHUB_USERNAME=joesmith
+
+-- tail logs
+heroku logs
+
+-- To precompile assets (run locally)
+RAILS_ENV=production bundle exec rake assets:precompile
