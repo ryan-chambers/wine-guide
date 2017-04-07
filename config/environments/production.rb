@@ -66,4 +66,6 @@ WineGuide::Application.configure do
       config.access_token = ENV['TWITTER_OAUTH_TOKEN']
       config.access_token_secret = ENV['TWITTER_OAUTH_TOKEN_SECRET']
   end
+
+  config.enable_dependency_loading = true  # because of Rails 5 error see https://github.com/drapergem/draper/issues/773
 end
