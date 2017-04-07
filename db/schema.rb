@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -27,14 +26,13 @@ ActiveRecord::Schema.define(version: 20161103003929) do
     t.integer  "drink_to"
     t.integer  "drink_from"
     t.boolean  "in_fridge"
-    t.string   "bought",             limit: 255
-    t.string   "review_day_of_year", limit: 255
+    t.string   "bought"
+    t.string   "review_day_of_year"
+    t.index ["wine_id"], name: "index_bottles_on_wine_id", using: :btree
   end
 
-  add_index "bottles", ["wine_id"], name: "index_bottles_on_wine_id", using: :btree
-
   create_table "grapes", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -45,18 +43,18 @@ ActiveRecord::Schema.define(version: 20161103003929) do
   end
 
   create_table "wineries", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "wines", force: :cascade do |t|
-    t.string   "region",     limit: 255
-    t.string   "country",    limit: 255
-    t.string   "other",      limit: 255
+    t.string   "region"
+    t.string   "country"
+    t.string   "other"
     t.integer  "year"
     t.integer  "winery_id"
-    t.string   "lcbo_code",  limit: 255
+    t.string   "lcbo_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

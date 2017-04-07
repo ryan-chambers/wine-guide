@@ -9,7 +9,7 @@ group :development, :test do
   gem 'bullet', '5.4.2'   # notify n+1 queries
 end
 
-gem 'pg', '0.19.0'
+gem 'pg'
 
 group :test do
   gem 'factory_girl_rails', '~> 4.7.0'
