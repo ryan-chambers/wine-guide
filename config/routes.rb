@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "reports/favourite_wines"
 
   get "wineries/search"
+  get "wineries/show"
 
   get "home/index"
 
@@ -36,7 +37,7 @@ Rails.application.routes.draw do
     resources :bottles
   end
 
-  resources :bottles, :countries
+  resources :bottles, :countries, :wineries
 
   # Sample resource route with options:
   #   resources :products do

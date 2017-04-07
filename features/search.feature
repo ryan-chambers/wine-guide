@@ -12,6 +12,12 @@ Feature: Search for wines
 		When I press "Search"
 		Then I should see the search results for Vineland
 
+	Scenario: See winery page
+		Given some bottles of wine in the cellar
+		And I am on the home page
+		When I click "Vineland"
+		Then I should see the winery report for Vineland
+
 	Scenario: Search by LCBO code
 		Given some wine reviews
 		And I am on the home page

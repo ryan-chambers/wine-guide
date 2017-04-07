@@ -22,17 +22,16 @@
       <th>Wine</th>
       <th>Country</th>
       <th>Region</th>
-      <th>
-      	Grapes
-      </th>
+      <th>Grapes</th>
       <th>Year</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
   	<% @wines.each do |wine| %>
     <tr>
       <td>
-      	<%= wine.winery.name %>
+        <%= link_to(wine.winery) do %><%= wine.winery.name %><% end %>
       	<% if wine.other %>
       		<br /> <small class="text-muted"><%= wine.other %></small>
       	<% end%>

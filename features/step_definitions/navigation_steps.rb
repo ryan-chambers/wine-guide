@@ -10,6 +10,7 @@ Given /^some wine reviews$/ do
   FactoryGirl.create(:alvento_sauvignonblanc_bottle_drank)
   FactoryGirl.create(:kenwood_merlot_drank)
   FactoryGirl.create(:vineland_sauvignonblanc_drank)
+  FactoryGirl.create(:vineland_sauvignonblanc_bottle_in_cellar_later)
 end
 
 Given /^some wine reviews over the years$/ do
@@ -100,4 +101,9 @@ Then /I should see the favourite wines report/ do
   expect(page).to_not have_content('86')
   expect(page).to have_content('Kenwood')
   expect(page).to have_content('93')
+end
+
+Then /I should see the winery report for Vineland/ do
+  expect(page).to have_content('Vineland Estates')
+  expect(page).to have_content('Sauvignon Blanc') # first bottle
 end

@@ -4,4 +4,13 @@ class WineriesController < ApplicationController
 
     render :json => wineries.map { |w| w.name }
   end
+
+  def show
+    @winery = Winery.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.json { render :json => @wine}
+    end
+  end
 end

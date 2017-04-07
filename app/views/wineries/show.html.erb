@@ -1,0 +1,22 @@
+<h3><%= @winery.name %> - <%= @winery.wines[0].country %></h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Wine</th>
+      <th>Region</th>
+      <th>Grapes</th>
+      <th>Year</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @winery.wines.each do |wine| %>
+    <tr>
+      <td><%= wine.other %></td>
+      <td><%= wine.region %></td>
+      <td><%= wine.list_grape_names.join(', ') %></td>
+      <td><%= wine.year %></td>
+      <td><%= link_to 'Show', wine %></td>
+    <% end %>
+   </tbody>
+</table>
