@@ -20,7 +20,7 @@ class WinesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => @wines}
+      format.json { render :json => @wines, :include => { :winery  => {:only => :name}}}
     end
   end
 
