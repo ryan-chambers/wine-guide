@@ -44,6 +44,12 @@ describe Wine do
   end
 
   describe "finders" do
+    it "finds by id with winery" do
+      wine = create(:alvento_sauvignonblanc)
+
+      expect(Wine.find(wine.id).winery.name).to eq('Alvento')
+    end
+
     it "finds all wines with scores greater than 90" do
       b1 = create(:alvento_sauvignonblanc_bottle_drank)
       b2 = create(:kenwood_merlot_drank)
@@ -57,7 +63,7 @@ describe Wine do
       b3 = create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
       b4 = create(:imocali_vernaccia_bottle_now)
 
-#      p "b2 drink_from: #{b2.drink_from}"
+#      p "b2 drink_from: #{b2.drink_from} wine: #{b2.wine.id}"
 #      p "b3 drink_from: #{b3.drink_from}"
 #      p "b4 drink_from: #{b4.drink_from}"
 

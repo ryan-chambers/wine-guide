@@ -18,7 +18,7 @@ WineGuide::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.quiet = true
 
   config.after_initialize do
     Bullet.enable = true

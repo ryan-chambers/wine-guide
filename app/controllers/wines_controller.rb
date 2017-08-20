@@ -27,6 +27,7 @@ class WinesController < ApplicationController
   def show
     @wine = Wine.find(params[:id])
 
+    logger.info "got winery #{@wine}"
     respond_to do |format|
       format.html
       format.json { render :json => @wine}
