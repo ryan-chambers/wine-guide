@@ -18,11 +18,21 @@ class Country
   AUSTRIA = Country.new('Austria', ['Burgenland'])
   BRAZIL = Country.new('Brazil')
   BULGARIA = Country.new('Bulgaria')
-  CANADA = Country.new('Canada', ['VQA Beamsville Bench', 'VQA British Columbia', 
-    'VQA Niagara Lakeshore', 'VQA Niagara Peninsula', 
-      'VQA Niagara On The Lake', 'VQA Okanagan Valley', 'VQA Niagara River', 'VQA Creek Shores', 
-      'VQA Lake Erie North Shore', 'VQA Lincoln Lakeshore', 'VQA Prince Edward County', 
-      'VQA St David''s Bench', 'VQA Twenty Mile Bench', 'VQA Vinemount Ridge'])
+  CANADA = Country.new('Canada', [
+    # from https://en.wikipedia.org/wiki/Vintners_Quality_Alliance
+    # BC
+    'VQA British Columbia', 
+      'VQA Okanagan Valley', 
+    # ON
+    'VQA Lake Erie North Shore', 
+    'VQA Prince Edward County', 
+    'VQA Niagara Peninsula', 
+      'VQA Short Hills Bench', 'VQA Twenty Mile Bench', 'VQA Beamsville Bench', 
+    'VQA Niagara On The Lake', 
+      'VQA Niagara River', 'VQA Niagara Lakeshore', 'VQA Four Mile Creek', 'VQA St David''s Bench', 
+    'VQA Creek Shores', 
+    'VQA Lincoln Lakeshore',
+    'VQA Vinemount Ridge'])
   CHILE = Country.new('Chile', ['Aconcagua Valley', 'Casablanca Valley', 'Central Valley', 'Colchagua Valley', 'Elqui Valley', 'Limari Valley', 'Lolol Valley', 
     'Maipo Valley', 'Maule Valley', 'Rapel Valley'])
   CROATIA = Country.new('Croatia', ['Kalnik'])
