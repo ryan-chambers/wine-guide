@@ -63,12 +63,12 @@
 
   wines.enableGrapePicker($grape_name_field);
  
-  $country_field.on('change', function(a) {
+  $country_field.on('change', () => {
     $('#wine_region').typeahead({
       name: 'regions-' + $country_field.val(),
       remote: '/countries.json?country=' + $country_field.val() + '&region_partial=%QUERY',
       items: 'all'
-    });
+    }).val('');
   });
 
   $('#winery_name').typeahead({
