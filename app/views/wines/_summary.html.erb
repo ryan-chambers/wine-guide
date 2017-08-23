@@ -1,6 +1,6 @@
 <h2>
   <%= wine.winery.name %> <%= wine.grapes_to_s %> <%= wine.year %>
-  (<% if ! wine.region.empty?%><%= wine.region %>, <% end %><%= wine.country %>)
+  (<% if wine.region %><%= wine.region %>, <% end %><%= wine.country %>)
 <% if ! wine.other? %>
    <%= wine.other %>
 <% end %>
