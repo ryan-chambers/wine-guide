@@ -47,7 +47,7 @@
   <div class="form-group">
     <%= f.label :region, class: 'col-lg-2 control-label' %>
  	<div class="col-lg-3">
-	    <%= select("wine", "region", @regions, {}, { :class => "form-control" }) %>
+      <input type="text" id="wine_region" size="168" class="form-control" />
 	</div>
   </div>
   <div class="form-group">
@@ -58,9 +58,18 @@
 <% end %>
 
 <script type="text/javascript">
-  var $grape_name_field = $('#grape_name'); 
+  var $grape_name_field = $('#grape_name');
+  var $country_field = $('#wine_country');
+
   wines.enableGrapePicker($grape_name_field);
-  wines.enableRegionPicker();
+ 
+  $country_field.on('change', function(a) {
+    $('#wine_region').typeahead({
+      name: 'regions-' + $country_field.val(),
+      remote: '/countries.json?country=' + $country_field.val() + '&region_partial=%QUERY',
+      items: 'all'
+    });
+  });
 
   $('#winery_name').typeahead({
   	name: "wineries",

@@ -46,26 +46,6 @@ var wines = function() {
 	    });
 	}
 
-	function enableRegionPicker() {
-	    var $region_select = $('#wine_region'),
-	        $country_select = $('#wine_country');
-	
-	    $country_select.change(function(e) {
-	        var country_name = $country_select.find('option:selected').text();
-	        $.ajax({
-	            url: '/countries.json?country=' + country_name,
-	            context: document.body
-	        }).done(function (regions) {
-	            var select = document.getElementById('wine_region');
-	            select.options.length = 0;
-	            select.options.add(new Option('', ''));
-	            regions.forEach(function (region) {
-	               select.options.add(new Option(region, region));
-	            });
-	        });
-	    });
-	}
-
 	function enableBottleTweeting(modal_id) {
 		$modal_reference = $(modal_id);
 		$modal_reference.modal({show: false});
@@ -81,7 +61,6 @@ var wines = function() {
 
 	return {
 		enableGrapePicker: enableGrapePicker,
-		enableRegionPicker: enableRegionPicker,
 		enableBottleTweeting: enableBottleTweeting,
 		generateTweet: generateTweet
 	};
