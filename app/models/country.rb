@@ -32,7 +32,8 @@ class Country
       'VQA Niagara River', 'VQA Niagara Lakeshore', 'VQA Four Mile Creek', 'VQA St David''s Bench', 
     'VQA Creek Shores', 
     'VQA Lincoln Lakeshore',
-    'VQA Vinemount Ridge'])
+    'VQA Vinemount Ridge',
+    'VQA Pelee Island'])
   CHILE = Country.new('Chile', ['Aconcagua Valley', 'Casablanca Valley', 'Central Valley', 'Colchagua Valley', 'Elqui Valley', 'Limari Valley', 'Lolol Valley', 
     'Maipo Valley', 'Maule Valley', 'Rapel Valley'])
   CROATIA = Country.new('Croatia', ['Kalnik'])
