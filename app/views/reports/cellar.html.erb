@@ -33,11 +33,10 @@
   	<% @wines.each do |wine| %>
     <tr class="js-<%= wine.cellar_bottles[0].recommended_storage %>">
       <td>
-      	<%= wine.winery.name %>
-      	<% if wine.other%>
-	      	<br /> 
-	      	<span class="text-muted"><%= wine.other %></span>
-      	<% end %> 
+        <%= link_to(wine.winery) do %><%= wine.winery.name %><% end %>
+        <% if wine.other %>
+          <br /> <small class="text-muted"><%= wine.other %></small>
+        <% end%>
       </td>
       <td><%= wine.country %></td>
       <td><%= wine.region %></td>
