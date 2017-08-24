@@ -237,7 +237,7 @@ GEM
       simple_oauth (~> 0.3.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
-    uglifier (3.0.4)
+    uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
@@ -275,7 +275,7 @@ DEPENDENCIES
   shoulda-matchers (= 3.1.2)
   thin (~> 1.7.0)
   twitter (= 5.16.0)
-  uglifier (~> 3.0.0)
+  uglifier (~> 3.2.0)
   will_paginate (~> 3.1.6)
   will_paginate-bootstrap
 
