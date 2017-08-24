@@ -39,7 +39,7 @@ gem 'jquery-rails', '~> 4.2.0'
 gem 'twitter', '5.16.0'
 
 group :development do
-  gem 'better_errors', '2.1.1'
+  gem 'better_errors', '~> 2.3.0'
   gem 'binding_of_caller', '0.7.2'
   gem 'meta_request', '~> 0.4.3'  # used for rails chrome extension
 end

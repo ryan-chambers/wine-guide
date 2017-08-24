@@ -43,9 +43,9 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (6.7.7.1)
       execjs
-    better_errors (2.1.1)
+    better_errors (2.3.0)
       coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
+      erubi (>= 1.0.0)
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -92,7 +92,6 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.10)
     erubi (1.6.1)
-    erubis (2.7.0)
     eventmachine (1.2.3)
     execjs (2.7.0)
     factory_girl (4.7.0)
@@ -257,7 +256,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors (= 2.1.1)
+  better_errors (~> 2.3.0)
   binding_of_caller (= 0.7.2)
   bootstrap-sass (~> 3.3.7)
   bullet (= 5.5.1)
