@@ -14,42 +14,42 @@
     <%= f.label :reviewdate, "Review Date *", class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
 	    <%= f.text_field :reviewdate, :class => 'datepicker form-control', :value => Time.new.strftime('%d-%m-%Y') %>
-	</div>
+	  </div>
   </div>
   <div id="score-container" class="form-group">
     <%= f.label :score, 'Score *', class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
 	    <%= f.text_field :score, :class => 'form-control' %>
-	</div>
+  	</div>
   </div>
   <div id="comments-container" class="form-group">
     <%= f.label :comments, 'Comments *', class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
 	    <%= f.text_area :comments, :rows => 4, :class => 'form-control' %>
-	</div>
-  </div>
-  <div class="form-group">
-    <%= f.label :drink_to, class: 'col-lg-2 control-label' %>
-    <div class="col-lg-3">
-	    <%= f.text_field :drink_to, :class => 'form-control' %>
-	</div>
+    </div>
   </div>
   <div class="form-group">
     <%= f.label :drink_from, class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
 	    <%= f.text_field :drink_from, :class => 'form-control' %>
-	</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :drink_to, class: 'col-lg-2 control-label' %>
+    <div class="col-lg-3">
+      <%= f.text_field :drink_to, :class => 'form-control' %>
+    </div>
   </div>
   <div class="form-group">
     <%= f.label :bought, class: 'col-lg-2 control-label' %>
     <div class="col-lg-3">
 	    <%= f.text_field :bought, :class => 'form-control' %>
-	</div>
+	  </div>
   </div>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-	  <button type="submit" class="btn">Submit</button>
-	</div>
+	    <button type="submit" class="btn">Submit</button>
+	  </div>
   </div>
 
 <script type="text/javascript">
