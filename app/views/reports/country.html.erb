@@ -21,5 +21,13 @@
 	  		<td><%= number_with_precision(report.avg_price.to_f / report.avg_score, :precision => 3) %></td>
   		</tr>
   	<% end%>
+      <tr>
+        <td>Average</td>
+        <td><%= @average.total_bottles %></td>
+        <td><%= number_with_precision(@average.avg_score, :precision => 1) %></td>
+        <td><%= number_to_currency(@average.avg_price) %></td>
+        <td><%= number_with_precision(@average.avg_score.to_f / @average.avg_price, :precision => 2) %></td>
+        <td><%= number_with_precision(@average.avg_price.to_f / @average.avg_score, :precision => 3) %></td>
+      </tr>
   </tbody>
 </table>

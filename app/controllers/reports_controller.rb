@@ -27,6 +27,31 @@ class ReportsController < ApplicationController
 
   def country
     @country_summaries = Bottle.generate_country_report
+    @average = calculate_average @country_summaries
+  end
+
+  def calculate_average(summaries)
+    @bottles = 0
+    @score = 0
+    @price = 0
+
+    summaries.map { |s| 
+      @bottles += s.total_bottles
+      @score += s.avg_score * s.total_bottles
+      @price += s.avg_price * s.total_bottles
+    }
+
+    AverageVO.new :total_bottles => @bottles, :avg_score => (@score / @bottles), :avg_price => @price / @bottles
+  end
+
+  class AverageVO
+    attr_reader :avg_score, :total_bottles, :avg_price    
+
+    def initialize args
+      args.each do |k,v|
+        instance_variable_set("@#{k}", v) unless v.nil?
+      end
+    end
   end
 
   def yearly
