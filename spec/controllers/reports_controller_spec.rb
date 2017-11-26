@@ -64,11 +64,15 @@ describe ReportsController do
 
   describe "GET 'country'" do
     it "returns http succcess" do
+      b1 = create(:alvento_sauvignonblanc_bottle_drank)
+
       get 'country'
       expect(response).to be_success
     end
 
     it "renders the 'country' template" do
+      b1 = create(:alvento_sauvignonblanc_bottle_drank)
+
       get 'country'
       expect(response).to render_template('country')
     end
@@ -86,6 +90,8 @@ describe ReportsController do
 
   describe "GET 'yearly'" do
     it "returns http succcess" do
+      b1 = create(:alvento_sauvignonblanc_bottle_drank)
+
       get 'country'
       expect(response).to be_success
     end
