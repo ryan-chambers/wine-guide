@@ -1,3 +1,5 @@
+require 'report_vo'
+
 class Bottle < ActiveRecord::Base
   FRIDGE = 'Fridge'
   CELLAR = 'Cellar'
@@ -48,6 +50,17 @@ class Bottle < ActiveRecord::Base
   end
 
   def self.generate_summary_for_year(year)
+    y = year.to_s
+    Bottle.find_by_sql("select count(score) as total_bottles,
+       avg(score) as avg_score,
+       avg(price) as avg_price
+       from bottles bottles, 
+       where reviewdate >= '" + y + "-01-01' and reviewdate <= '" + y + "-12-31'").collect { |s|
+        YearReportVO.new :year => year, :avg_score => Float(s[:avg_score]), :total_bottles => Integer(s[:total_bottles]), :avg_price => Float(s[:avg_price])
+    }[0]
+  end
+
+  def self.generate_grape_report(grape_id)
     y = year.to_s
     Bottle.find_by_sql("select count(score) as total_bottles,
        avg(score) as avg_score,
@@ -145,14 +158,6 @@ class Bottle < ActiveRecord::Base
       end
     else
       'none'
-    end
-  end
-end
-
-class ReportVO
-  def initialize args
-    args.each do |k,v|
-      instance_variable_set("@#{k}", v) unless v.nil?
     end
   end
 end

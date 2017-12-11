@@ -1,3 +1,5 @@
+require 'report_vo'
+
 class Grape < ActiveRecord::Base
   validates :name, :presence => true, uniqueness: true
 
@@ -20,5 +22,13 @@ class Grape < ActiveRecord::Base
 
   def to_s
     name
+  end
+end
+
+class GrapeReportVO < ReportVO
+  attr_reader :avg_score, :avg_price, :total_bottles
+
+  def to_s
+    [avg_score, total_bottles, avg_price].join(', ')
   end
 end
