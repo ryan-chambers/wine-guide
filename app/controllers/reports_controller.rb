@@ -46,7 +46,7 @@ class ReportsController < ApplicationController
 
   def grapes
     @grape = Grape.search_by_name params[:grape_filter]
-    p "#{params[:grape_filter]}"
+#    p "#{params[:grape_filter]}"
     @grape_report = Grape.generate_grape_report @grape.ids[0]
 #    p "#{@grape_report}"
   end

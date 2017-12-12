@@ -160,9 +160,10 @@ describe ReportsController do
     it "returns http success" do
       create(:kenwood_merlot_drank)
 
-      get 'grapes'
+      get 'grapes', params: {:grape_filter => 'merlot'}
 
       expect(response).to be_success
+      expect(assigns[:grape_report]).not_to be_nil
     end
   end
 end
