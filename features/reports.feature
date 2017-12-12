@@ -35,3 +35,11 @@ Feature: Cellar Report
 		And I am on the home page
 		When I click "Favourite Wines"
 		Then I should see the favourite wines report
+
+	Scenario: Shows the grape report
+		Given some wine reviews
+		And I am on the home page
+		And I click "Grape Report"
+		And I fill in "grape_filter" with "Merlot"
+		When I submit the form "grape-form"
+		Then I should see the grape report

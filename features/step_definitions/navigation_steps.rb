@@ -107,3 +107,7 @@ Then /I should see the winery report for Vineland/ do
   expect(page).to have_content('Vineland Estates')
   expect(page).to have_content('Sauvignon Blanc') # first bottle
 end
+
+Then /I should see the grape report/ do
+  expect(page).to have_content('Merlot')
+end
