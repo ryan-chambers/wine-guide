@@ -51,16 +51,6 @@ class ReportsController < ApplicationController
 #    p "#{@grape_report}"
   end
 
-  class AverageVO
-    attr_reader :avg_score, :total_bottles, :avg_price    
-
-    def initialize args
-      args.each do |k,v|
-        instance_variable_set("@#{k}", v) unless v.nil?
-      end
-    end
-  end
-
   def yearly
     @yearly_summaries = Bottle.generate_yearly_report
   end
@@ -71,5 +61,15 @@ class ReportsController < ApplicationController
 
   def favourite_wines
     @wines = Wine.find_favourites params[:score_filter]
+  end
+
+  class AverageVO
+    attr_reader :avg_score, :total_bottles, :avg_price    
+
+    def initialize args
+      args.each do |k,v|
+        instance_variable_set("@#{k}", v) unless v.nil?
+      end
+    end
   end
 end

@@ -93,6 +93,7 @@ describe ReportsController do
       b1 = create(:alvento_sauvignonblanc_bottle_drank)
 
       get 'country'
+
       expect(response).to be_success
     end
 
@@ -152,6 +153,16 @@ describe ReportsController do
       get 'favourite_wines'
 
       expect(assigns[:wines]).not_to be_nil
+    end
+  end
+
+  describe "GET 'grapes'" do
+    it "returns http success" do
+      create(:kenwood_merlot_drank)
+
+      get 'grapes'
+
+      expect(response).to be_success
     end
   end
 end
