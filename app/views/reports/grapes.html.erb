@@ -1,0 +1,36 @@
+<h3>Grapes</h3>
+<form id="grape-form" class="form-inline" action="/reports/grapes" role='search'>
+  <div class="form-group">
+    <input type="hidden" name="utf8" value="✓" />
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="grape_filter" autocomplete="off" placeholder="All Grapes" name="grape_filter">
+  </div>
+  <button class="btn btn-default" type="submit">Generate Report</button>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Grape</th>
+      <th>Number of bottles</th>
+      <th>Average Score (Points)</th>
+      <th>Average Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= params[:grape_filter] %></td>
+      <td><%= @grape_report.total_bottles %></td>
+      <td><%= number_with_precision(@grape_report.avg_score, :precision => 1) %></td>
+      <td><%= number_to_currency(@grape_report.avg_price) %></td>
+    </tr>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $('#grape_filter').typeahead({
+    name: "grapes",
+    remote : "/grapes/search?term=%QUERY"
+  });
+</script>

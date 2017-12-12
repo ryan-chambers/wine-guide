@@ -44,6 +44,13 @@ class ReportsController < ApplicationController
     AverageVO.new :total_bottles => @bottles, :avg_score => (@score / @bottles), :avg_price => @price / @bottles
   end
 
+  def grapes
+    @grape = Grape.search_by_name params[:grape_filter]
+    p "#{params[:grape_filter]}"
+    @grape_report = Grape.generate_grape_report @grape.ids[0]
+#    p "#{@grape_report}"
+  end
+
   class AverageVO
     attr_reader :avg_score, :total_bottles, :avg_price    
 
