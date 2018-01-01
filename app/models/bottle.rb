@@ -56,7 +56,10 @@ class Bottle < ActiveRecord::Base
        avg(price) as avg_price
        from bottles bottles
        where reviewdate >= '" + y + "-01-01' and reviewdate <= '" + y + "-12-31'").collect { |s|
-        YearReportVO.new :year => year, :avg_score => Float(s[:avg_score]), :total_bottles => Integer(s[:total_bottles]), :avg_price => Float(s[:avg_price])
+        YearReportVO.new :year => year, 
+          :avg_score => Float(s[:avg_score] || 0), 
+          :total_bottles => Integer(s[:total_bottles] || 0), 
+          :avg_price => Float(s[:avg_price] || 0)
     }[0]
   end
 
