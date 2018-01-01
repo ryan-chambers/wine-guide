@@ -6,6 +6,7 @@
       <th>Number of bottles</th>
       <th>Average Score (Points)</th>
       <th>Average Price</th>
+      <th>Total Amount Spent</th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
 	  		<td><%= report.total_bottles %></td>
 	  		<td><%= number_with_precision(report.avg_score, :precision => 1) %></td>
 	  		<td><%= number_to_currency(report.avg_price) %></td>
+        <td><%= number_to_currency(report.amount_spent) %></td>
   		</tr>
   	<% end %>
   </tbody>
