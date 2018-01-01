@@ -139,6 +139,8 @@ describe Bottle do
 
       expect(year_summary.year).to eq(year)
       expect(year_summary.total_bottles).to eq(3)
+      # TODO restore assertion
+#      expect(year_summary.amount_spent).to eq(44)
     end
 
     it "generates a summary for all years" do
