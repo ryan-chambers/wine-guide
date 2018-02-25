@@ -9,8 +9,7 @@ describe Winery do
     end
 
     it do
-      is_expected.to validate_uniqueness_of(:name).
-      case_insensitive
+      is_expected.to validate_uniqueness_of(:name).case_insensitive
     end
   end  
 
