@@ -90,7 +90,7 @@ class WinesController < ApplicationController
   def self.is_lcbo_code(term)
     /\d{1,10}/ =~ term
   end
-  
+
   def new
     @wine = Wine.new
     @winery_name = ''
