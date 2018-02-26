@@ -6,6 +6,7 @@
       <th>Region</th>
       <th>Grapes</th>
       <th>Year</th>
+      <th>Scores</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +17,12 @@
       <td><%= wine.region %></td>
       <td><%= wine.list_grape_names.join(', ') %></td>
       <td><%= wine.year %></td>
+      <td>
+        <% wine.bottles.each do |b| %>
+          <%= b.reviewdate %>: <%= b.score %> <%= b.comments %>
+          <br />
+        <% end %>
+      </td>
       <td><%= link_to 'Show', wine %></td>
     <% end %>
    </tbody>
