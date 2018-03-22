@@ -40,6 +40,6 @@ gem 'twitter', '6.1.0'
 
 group :development do
   gem 'better_errors', '~> 2.4.0'
-  gem 'binding_of_caller', '0.7.2'
+  gem 'binding_of_caller', '0.8.0'
   gem 'meta_request', '~> 0.4.3'  # used for rails chrome extension
 end
