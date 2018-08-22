@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
-gem 'rails', '5.1.5'
+gem 'rails', '5.2.1'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.8.0'
