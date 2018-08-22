@@ -14,7 +14,7 @@ gem 'pg'
 group :test do
   gem 'factory_bot_rails', '~> 4.11.0'
   gem 'cucumber-rails', '1.6.0', :require => false
-  gem 'database_cleaner', '~> 1.6.0'
+  gem 'database_cleaner', '~> 1.7.0'
   gem 'minitest'
   gem 'shoulda-matchers', '3.1.2'
   gem 'rails-controller-testing', '1.0.2'    # rails 5.0.0
@@ -42,5 +42,5 @@ gem 'twitter', '6.2.0'
 group :development do
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller', '0.8.0'
-  gem 'meta_request', '~> 0.5.0'  # used for rails chrome extension
+  gem 'meta_request', '~> 0.6.0'  # used for rails chrome extension
 end
