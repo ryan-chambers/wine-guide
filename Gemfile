@@ -18,6 +18,7 @@ group :test do
   gem 'minitest'
   gem 'shoulda-matchers', '3.1.2'
   gem 'rails-controller-testing', '1.0.2'    # rails 5.0.0
+  gem 'simplecov', :require => false
 end
 
 group :production do
