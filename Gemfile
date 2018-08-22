@@ -35,7 +35,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'uglifier', '~> 4.1.0'
 
-gem 'jquery-rails', '~> 4.3.0'
+gem 'jquery-rails', '~> 4.3.3'
 
 gem 'twitter', '6.2.0'
 
