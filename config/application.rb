@@ -53,7 +53,7 @@ module WineGuide
     config.autoload_paths += %W(#{config.root}/lib)
  
     config.generators do |g|
-      g.fixture_replacement :factory_girl
+      g.fixture_replacement :factory_bot
     end
 
     config.i18n.enforce_available_locales = true

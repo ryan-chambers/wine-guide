@@ -1,22 +1,22 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
 Given /^some bottles of wine in the cellar$/ do
-  FactoryGirl.create(:vineland_sauvignonblanc_bottle_in_cellar_later)
-  FactoryGirl.create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
-  FactoryGirl.create(:imocali_vernaccia_bottle_now)
+  FactoryBot.create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+  FactoryBot.create(:cavesprings_sauvignonblanc_bottle_in_cellar_sooner)
+  FactoryBot.create(:imocali_vernaccia_bottle_now)
 end
 
 Given /^some wine reviews$/ do
-  FactoryGirl.create(:alvento_sauvignonblanc_bottle_drank)
-  FactoryGirl.create(:kenwood_merlot_drank)
-  FactoryGirl.create(:vineland_sauvignonblanc_drank)
-  FactoryGirl.create(:vineland_sauvignonblanc_bottle_in_cellar_later)
+  FactoryBot.create(:alvento_sauvignonblanc_bottle_drank)
+  FactoryBot.create(:kenwood_merlot_drank)
+  FactoryBot.create(:vineland_sauvignonblanc_drank)
+  FactoryBot.create(:vineland_sauvignonblanc_bottle_in_cellar_later)
 end
 
 Given /^some wine reviews over the years$/ do
-  FactoryGirl.create(:alvento_sauvignonblanc_bottle_drank)
-  FactoryGirl.create(:kenwood_merlot_drank)
-  FactoryGirl.create(:imocali_vernaccia_bottle_drank_last_year)
+  FactoryBot.create(:alvento_sauvignonblanc_bottle_drank)
+  FactoryBot.create(:kenwood_merlot_drank)
+  FactoryBot.create(:imocali_vernaccia_bottle_drank_last_year)
 end
 
 Given /^I am on (.+)$/ do | page_name |

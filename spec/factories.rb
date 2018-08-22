@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :alvento, class: Winery do
     name 'Alvento'
     initialize_with { Winery.find_or_create_by(name: name)}
