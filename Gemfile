@@ -6,7 +6,7 @@ gem 'rails', '5.1.5'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.7.0'
-  gem 'bullet', '~> 5.7.0'   # notify n+1 queries
+  gem 'bullet', '~> 5.7.6'   # notify n+1 queries
 end
 
 gem 'pg'
@@ -35,7 +35,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'uglifier', '~> 4.1.0'
 
-gem 'jquery-rails', '~> 4.3.3'
+gem 'jquery-rails', '~> 4.3.0'
 
 gem 'twitter', '6.2.0'
 
