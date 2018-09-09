@@ -1,52 +1,52 @@
 FactoryBot.define do
   factory :alvento, class: Winery do
-    name 'Alvento'
+    name { 'Alvento' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :vineland, class: Winery do
-    name 'Vineland Estates'
+    name { 'Vineland Estates' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :cavesprings, class: Winery do
-    name 'Cave Springs'
+    name { 'Cave Springs' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :lailey, class: Winery do
-    name 'Lailey'
+    name { 'Lailey' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :imocali, class: Winery do
-    name 'I Mocali'
+    name { 'I Mocali' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
 
   factory :kenwood, class: Winery do
-    name 'Kenwood'
+    name { 'Kenwood' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
   
   factory :sauvignonblanc, class: Grape do
-    name 'Sauvignon Blanc'
+    name { 'Sauvignon Blanc' }
     initialize_with { Grape.find_or_create_by(name: name)}
   end
 
   factory :vernaccia, class: Grape do
-    name 'Vernaccia'
+    name { 'Vernaccia' }
     initialize_with { Grape.find_or_create_by(name: name)}
   end
 
   factory :merlot, class: Grape do
-    name 'Merlot'
+    name { 'Merlot' }
     initialize_with { Grape.find_or_create_by(name: name)}
   end
 
   factory :wine do
-    year 2011
-    other 'Reserve'
+    year { 2011 }
+    other { 'Reserve' }
 
     factory :alvento_sauvignonblanc, parent: :wine do
       before(:create) do |wine|
@@ -104,7 +104,7 @@ FactoryBot.define do
   end
 
   factory :bottle do
-    price 19.95
+    price { 19.95 }
 
     factory :alvento_sauvignonblanc_bottle_drank, parent: :bottle do
       before(:create) do |bottle|
