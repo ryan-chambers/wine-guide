@@ -5,7 +5,7 @@ describe ReportsController do
   describe "GET 'cellar'" do
     it "returns http success" do
       get 'cellar'
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "renders the 'cellar' template" do
@@ -40,7 +40,7 @@ describe ReportsController do
 
       get 'maturity_profile'
 
-      expect(response).to be_success
+      expect(response).to be_successful
 
       expect(assigns[:labels]).not_to be_nil
       expect(assigns[:bottles]).not_to be_nil
@@ -55,7 +55,7 @@ describe ReportsController do
 
       get 'score_breakdown'
 
-      expect(response).to be_success
+      expect(response).to be_successful
 
       expect(assigns[:scores]).not_to be_nil
       expect(assigns[:score_counts]).not_to be_nil
@@ -67,7 +67,7 @@ describe ReportsController do
       b1 = create(:alvento_sauvignonblanc_bottle_drank)
 
       get 'country'
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "renders the 'country' template" do
@@ -94,7 +94,7 @@ describe ReportsController do
 
       get 'country'
 
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "renders the 'yearly' template" do
@@ -119,7 +119,7 @@ describe ReportsController do
   describe "GET 'this_day_in_wine'" do
     it "returns http success" do
       get 'this_day_in_wine'
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "renders the 'this_day_in_wine' template" do
@@ -139,7 +139,7 @@ describe ReportsController do
   describe "GET 'favourite_wines'" do
     it "returns http success" do
       get 'favourite_wines'
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "renders the 'favourite_wines' template" do
@@ -162,7 +162,7 @@ describe ReportsController do
 
       get 'grapes', params: {:grape_filter => 'merlot'}
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(assigns[:grape_report]).not_to be_nil
     end
   end

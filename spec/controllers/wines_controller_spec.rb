@@ -4,7 +4,7 @@ describe WinesController do
   describe "get 'index'" do
     it "should be successful" do
       get 'index'
-      expect(response).to be_success
+      expect(response).to be_successful
     end
 
     it "renders the 'index' template" do
@@ -40,13 +40,13 @@ describe WinesController do
   describe "get 'new'" do
     it "fails without validation" do
       get 'new'
-      expect(response).not_to be_success
+      expect(response).not_to be_successful
     end
 
     it "succeeds with validation" do
       authenticate_with_http_digest
       get 'new'
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(assigns[:wine]).not_to be_nil
     end
   end

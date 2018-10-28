@@ -9,7 +9,7 @@ describe ExportController do
   describe "GET 'export'" do
     it "returns http success" do
       get 'export'
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 end

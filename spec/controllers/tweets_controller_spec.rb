@@ -9,7 +9,7 @@ describe TweetsController do
 
 #      puts response.body
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response.body).to include(bottle.wine.year.to_s)
       expect(response.header['Content-Type']).to include 'application/json'
     end
@@ -19,7 +19,7 @@ describe TweetsController do
 
       get :bottle, params: {:bottle_id => bottle.id}, :format => :json
 
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response.body).not_to include(bottle.wine.year.to_s)
       expect(response.header['Content-Type']).to include 'application/json'
     end

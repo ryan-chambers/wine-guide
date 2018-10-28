@@ -9,7 +9,7 @@ describe WineriesController do
   	it "should be successful" do
       w1 = create(:vineland)
       get 'show', params: {id: w1.id}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 end
