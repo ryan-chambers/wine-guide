@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103003929) do
+ActiveRecord::Schema.define(version: 2019_05_15_010521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bottles", force: :cascade do |t|
-    t.date     "reviewdate"
-    t.float    "score"
-    t.text     "comments"
-    t.integer  "wine_id"
-    t.float    "price"
+  create_table "bottles", id: :serial, force: :cascade do |t|
+    t.date "reviewdate"
+    t.float "score"
+    t.text "comments"
+    t.integer "wine_id"
+    t.float "price"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "drink_to"
-    t.integer  "drink_from"
-    t.boolean  "in_fridge"
-    t.string   "bought"
-    t.string   "review_day_of_year"
-    t.index ["wine_id"], name: "index_bottles_on_wine_id", using: :btree
+    t.integer "drink_to"
+    t.integer "drink_from"
+    t.boolean "in_fridge"
+    t.string "bought"
+    t.string "review_day_of_year"
+    t.index ["wine_id"], name: "index_bottles_on_wine_id"
   end
 
-  create_table "grapes", force: :cascade do |t|
-    t.string   "name"
+  create_table "grapes", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,19 +42,19 @@ ActiveRecord::Schema.define(version: 20161103003929) do
     t.integer "wine_id"
   end
 
-  create_table "wineries", force: :cascade do |t|
-    t.string   "name"
+  create_table "wineries", id: :serial, force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "wines", force: :cascade do |t|
-    t.string   "region"
-    t.string   "country"
-    t.string   "other"
-    t.integer  "year"
-    t.integer  "winery_id"
-    t.string   "lcbo_code"
+  create_table "wines", id: :serial, force: :cascade do |t|
+    t.string "region"
+    t.string "country"
+    t.string "other"
+    t.integer "year"
+    t.integer "winery_id"
+    t.string "lcbo_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
