@@ -4,13 +4,11 @@ module ReportsHelper
   end
 
   def determine_max_year(wines)
-    max = wines.reduce(this_year) { | m, wine |
+    wines.reduce(this_year) { | m, wine |
       drink_to = wine.cellar_bottles[0].drink_to
       m = drink_to if ! drink_to.nil? and m < drink_to
       m
     }
-
-    max
   end
 
   def determine_bottles_per_year(year_range, wines)
@@ -21,16 +19,23 @@ module ReportsHelper
 
     scores = wines.reduce(scores) { | s, wine |
       b = wine.cellar_bottles[0]
-#      p "#{b}"
+#      p "Calculating for wine #{wine}"
       number_of_bottles = wine.cellar_bottles.length
-        year_start = this_year
+
+      year_start = this_year
       if ! b.drink_from.nil?
         year_start = b.drink_from unless b.drink_from < year_start
       end
+
       year_end = b.drink_to || year_range.last
+
       ctr = year_start
-      bottles_per_year = number_of_bottles.to_f / (year_end - year_start + 1)
+
+      bottles_per_year = 0  # default is zero unless drink to or from year is set
+      bottles_per_year = number_of_bottles.to_f / (year_end - year_start + 1) unless b.drink_to.nil? and b.drink_from.nil?
+
 #      p "#{bottles_per_year} bpy from #{year_start} to #{year_end}"
+
       until ctr > year_end
 #        p "Adding #{bottles_per_year} bpy to existing amount of #{s[ctr]} for year #{ctr}"
         s[ctr] += bottles_per_year
