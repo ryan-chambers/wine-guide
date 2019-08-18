@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "reports/this_day_in_wine"
   get "reports/favourite_wines"
   get "reports/grapes"
+  get "reports/recent_good_bottles"
 
   get "wineries/search"
   get "wineries/show"

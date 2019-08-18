@@ -87,10 +87,13 @@ class Wine < ActiveRecord::Base
     end
   end
 
-  def self.find_favourites(score_filter)
-    logger.info "Filtering for favourites scored #{score_filter} and higher"
+  def self.find_favourites(score_filter, date=Date.new(2009, 1, 1))
+    # p "Filtering for favourites scored #{score_filter} and higher from #{date} and after"
     score = score_filter || 90
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :wines_grapes).where('bottles.score >= :score', {:score => score}).distinct
+    Wine.joins(:bottles)
+      .includes(:grapes, :bottles, :winery, :wines_grapes)
+      .where('bottles.score >= :score and bottles.reviewdate >= :date', {:score => score, :date => date})
+      .distinct
   end
 
   def self.find_by_winery_year_lcbo_code(winery_id, year, lcbo_code)

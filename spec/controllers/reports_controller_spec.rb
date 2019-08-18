@@ -156,6 +156,23 @@ describe ReportsController do
     end
   end
 
+  describe "GET 'recent_good_bottles'" do
+    it "returns http success" do
+      get 'recent_good_bottles'
+      expect(response).to be_successful
+    end
+
+    it "only assigns > 87 bottles for recently drank wines to @wines" do
+      create(:kenwood_merlot_drank)
+      create(:alvento_sauvignonblanc_bottle_drank)
+
+      get 'favourite_wines'
+
+      expect(assigns[:wines]).not_to be_nil
+      expect(assigns(:wines).count).to eq 1
+    end
+  end
+
   describe "GET 'grapes'" do
     it "returns http success" do
       create(:kenwood_merlot_drank)

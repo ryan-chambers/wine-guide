@@ -36,6 +36,12 @@ Feature: Cellar Report
 		When I click "Favourite Wines"
 		Then I should see the favourite wines report
 
+	Scenario: Shows the recent good bottles report
+		Given some wine reviews
+		And I am on the home page
+		When I click "Recent Good Bottles"
+		Then I should see the recent good bottles report
+
 	Scenario: Shows the grape report
 		Given some wine reviews
 		And I am on the home page

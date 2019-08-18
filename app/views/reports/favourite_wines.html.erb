@@ -11,42 +11,11 @@
 		<option selected="selected">90</option>
 	</select>
 </form>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Wine</th>
-      <th>Country</th>
-      <th>Region</th>
-      <th>Grapes</th>
-      <th>Vintage</th>
-      <th>Price</th>
-      <th>Score</th>
-      <th>Review Date</th>
-    </tr>
-  </thead>
-  <tbody>
-  	<% @wines.each do |wine| %>
-    <tr>
-      <td>
-      	<%= wine.winery.name %>
-      	<% if wine.other%>
-	      	<br /> 
-	      	<span class="text-muted"><%= wine.other %></span>
-      	<% end %> 
-      </td>
-      <td><%= wine.country %></td>
-      <td><%= wine.region %></td>
-      <td><%= wine.list_grape_names.join(', ') %></td>
-      <td><%= wine.year %> </td>
-      <td><%= number_to_currency(wine.favourite_bottles[0].price) %></td>
-      <td><%= wine.favourite_bottles[0].score.to_i %></td>
-      <td><%= wine.favourite_bottles[0].reviewdate.strftime('%d %b %Y') %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<%= render "reports/wines_list", :wines => @wines %>
+
 <script type="text/javascript">
-	$('#score_filter').change(function() {
+	$('#score_filter').focusout(function() {
 		$('#score_filter_form').submit();
 	});
 </script>

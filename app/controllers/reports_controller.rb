@@ -63,6 +63,10 @@ class ReportsController < ApplicationController
     @wines = Wine.find_favourites params[:score_filter]
   end
 
+  def recent_good_bottles
+    @wines = Wine.find_favourites(88, Date.today.prev_month)
+  end
+
   class AverageVO
     attr_reader :avg_score, :total_bottles, :avg_price    
 
