@@ -142,7 +142,7 @@ class Wine < ActiveRecord::Base
   end
 
   def favourite_bottles
-    bottles.select {|bottle| bottle.score >= 90 }
+    bottles.select {|bottle| bottle.score >= 88 }
   end
 
   def drank_this_day_bottles
