@@ -42,3 +42,5 @@ rails g migration CreateGrapeTrebbianoDiLugano
 rails g migration RemoveNiagaraPeninsulaRegion
 
 rails g migration RemoveGrapeGrenacheNoir
+
+rails g migration RemoveGrapeTintoRoriz
