@@ -39,11 +39,6 @@ When /^I press "([^\"]*)"$/ do |button|
   click_button(button)
 end
 
-When /^I submit the form "([^\"]*)"$/ do |form_id|
-    element = find_by_id(form_id)
-    Capybara::RackTest::Form.new(page.driver, element.native).submit :name => nil
-end
-
 Then /I should see the cellar report/ do
   expect(page).to have_content('Vineland Estates')
   expect(page).to have_content('Sauvignon Blanc')
