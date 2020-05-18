@@ -311,7 +311,7 @@ DEPENDENCIES
   thin (~> 1.7.0)
   twitter (= 6.2.0)
   uglifier (~> 4.1.0)
-  will_paginate (~> 3.1.6)
+  will_paginate (~> 3.1.8)
   will_paginate-bootstrap
 
 RUBY VERSION
