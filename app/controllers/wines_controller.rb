@@ -16,7 +16,7 @@ class WinesController < ApplicationController
       @wines = Wine.filter_paginate(params[:grape_filter] || '', params[:country_filter] || '', :page => params[:page])
     end
 
-#    logger.info "got wines #{@wines}"
+#    logger.info "got #{@wines}.length() wines"
 
     respond_to do |format|
       format.html
