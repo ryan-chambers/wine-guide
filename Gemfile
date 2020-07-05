@@ -6,7 +6,7 @@ gem 'rails', '5.2.4.3'
 
 group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
-  gem 'bullet', '~> 5.7.6'   # notify n+1 queries
+  gem 'bullet', '~> 6.1.0'   # notify n+1 queries
 end
 
 gem 'pg'
