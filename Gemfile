@@ -33,7 +33,7 @@ gem 'thin', '~> 1.7.0'
 gem 'sass-rails',   '~> 5.0.0'
 gem 'bootstrap-sass', '~> 3.4.1'
 
-gem 'uglifier', '~> 4.1.0'
+gem 'uglifier', '~> 4.2.0'
 
 gem 'jquery-rails', '~> 4.4.0'
 
