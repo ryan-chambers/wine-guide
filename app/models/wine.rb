@@ -109,6 +109,10 @@ class Wine < ActiveRecord::Base
     [other, grapes_to_s, region, year, lcbo_code, grapes.to_s, bottles.to_s].join(', ')
   end
 
+  def title
+    [winery.name, grapes_to_s, year].join(' ')
+  end
+
   def list_grape_names
     i = 0
     grape_names = []
