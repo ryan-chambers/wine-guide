@@ -13,7 +13,7 @@ gem 'pg'
 
 group :test do
   gem 'factory_bot_rails', '~> 6.0.0'
-  gem 'cucumber-rails', '1.8.0', :require => false
+  gem 'cucumber-rails', '2.1.0', :require => false
   gem 'database_cleaner', '~> 1.8.0'
   gem 'minitest'
   gem 'shoulda-matchers', '4.3.0'
