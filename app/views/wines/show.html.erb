@@ -1,3 +1,5 @@
+<% @title = @wine.winery.name %>
+
 <%= render "wines/summary", :wine => @wine %>
 
 <% if ! @wine.lcbo_code.empty? %>
