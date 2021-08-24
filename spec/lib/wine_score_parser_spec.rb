@@ -8,8 +8,16 @@ describe 'Wine Score Parser' do
     s = parse_wine_bottle_line('a', 'Canada')
   end
 
-  describe 'parsing the winery sentence' do
-    it 'identifies all parts' do
+  describe '#parse_wine_bottle_line' do
+    it 'should parse wine and bottle' do
+      wb = parse_wine_bottle_line('Creekside, Syrah, 2015, Broken Press, VQA St Davids Bench. $55.0. 92/100. Outstanding leg of lamb wine.. Bought Dec 2017. From 2018. To 2026. [21 Jun 2020].', 'Canada')
+      p "#{wb.to_s}"
+      expect(wb[:bottles][0].score).to eq(92)
+    end
+  end
+
+  describe '#make_wine' do
+    it 'parses the wine' do
       w = make_wine('Château Lajarre, Cuvée Eléonore, Red Blend, 2010,'\
       ' Ac Bordeaux Supérieur, Bordeaux, LCBO# 307017', 'France')
 #      p "#{w.to_s}"
@@ -22,7 +30,7 @@ describe 'Wine Score Parser' do
     end
   end
 
-  describe 'parsing the bottle info' do
+  describe '#make_bottles' do
     it 'identifies bought date' do
       b = make_bottles(['Bought Mar 2012'])
       expect(b[0].bought).to eq('Mar 2012') 
