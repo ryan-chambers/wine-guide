@@ -1,4 +1,4 @@
-class CreateGrapesWinesJoin < ActiveRecord::Migration
+class CreateGrapesWinesJoin < ActiveRecord::Migration[4.2]
   def up
     create_table 'grapes_wines', :id => false do |t|
       t.column 'grape_id', :integer

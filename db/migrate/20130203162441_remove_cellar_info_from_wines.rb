@@ -1,4 +1,4 @@
-class RemoveCellarInfoFromWines < ActiveRecord::Migration
+class RemoveCellarInfoFromWines < ActiveRecord::Migration[4.2]
   def up
     remove_column :wines, :in_cellar
     remove_column :wines, :drink_from

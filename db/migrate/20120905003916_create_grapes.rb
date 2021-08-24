@@ -1,4 +1,4 @@
-class CreateGrapes < ActiveRecord::Migration
+class CreateGrapes < ActiveRecord::Migration[4.2]
   def up
     create_table :grapes do |t|
       t.string :name

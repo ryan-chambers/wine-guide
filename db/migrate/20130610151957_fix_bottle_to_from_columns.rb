@@ -1,4 +1,4 @@
-class FixBottleToFromColumns < ActiveRecord::Migration
+class FixBottleToFromColumns < ActiveRecord::Migration[4.2]
   def up
     rename_column(:bottles, :to, :drink_to)
     rename_column(:bottles, :from, :drink_from)

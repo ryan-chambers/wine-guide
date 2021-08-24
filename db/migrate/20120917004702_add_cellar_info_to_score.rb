@@ -1,4 +1,4 @@
-class AddCellarInfoToScore < ActiveRecord::Migration
+class AddCellarInfoToScore < ActiveRecord::Migration[4.2]
   def change
     add_column :scores, :to, :integer
     add_column :scores, :from, :integer
