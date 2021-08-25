@@ -26,6 +26,7 @@ describe 'Wine Score Parser' do
       bottles = wb[:bottles]
       expect(bottles.length).to be(1)
       bottle1 = bottles[0];
+      expect(bottle1.in_fridge).to eq(false)
       expect(bottle1.comments).to eq(['Outstanding leg of lamb wine'])
       expect(bottle1.date).to eq('21 Jun 2020')
       expect(bottle1.price).to eq('55.0')
@@ -50,6 +51,7 @@ describe 'Wine Score Parser' do
       bottles = wb[:bottles]
       expect(bottles.length).to be(1)
       bottle1 = bottles[0];
+      expect(bottle1.in_fridge).to eq(false)
       expect(bottle1.comments).to eq(['Pretty good steak wine'])
       expect(bottle1.date).to eq('12 Jun 2021')
       expect(bottle1.price).to eq('19.95')
@@ -59,10 +61,33 @@ describe 'Wine Score Parser' do
       expect(bottle1.bought).to be_nil()
 
     end
-    # two bottles
 
-    # in cellar; no from, to
-    # in cellar; from, to
+# multiple bottles. from, to, no other
+
+    it 'should parse wine in cellar with no from, to' do
+       wb = parse_wine_bottle_line('Leaning Post, Chardonnay, 2018, Wismer - Foxcroft Vineyard, VQA Twenty Mile Bench. $40.0. 0/100. . Bought Jul 2021. To 2025. In fridge.', 'Canada')
+#      p "#{wb.to_s}"
+
+      wine = wb[:wine]
+      expect(wine.country).to eq('Canada')
+      expect(wine.region).to eq('VQA Twenty Mile Bench')
+      expect(wine.winery_name).to eq('Leaning Post')
+      expect(wine.year).to eq('2018')
+      expect(wine.other).to eq(['Chardonnay', 'Wismer - Foxcroft Vineyard'])
+
+      bottles = wb[:bottles]
+      expect(bottles.length).to be(1)
+      bottle1 = bottles[0];
+      expect(bottle1.in_fridge).to eq(true)
+      expect(bottle1.comments).to eq([])
+      expect(bottle1.date).to be_nil()
+      expect(bottle1.price).to eq('40.0')
+      expect(bottle1.score).to eq(0)
+      expect(bottle1.drink_from).to be_nil()
+      expect(bottle1.drink_to).to eq('2025')
+      expect(bottle1.bought).to eq('Jul 2021')
+
+    end
   end
 
   describe '#make_wine' do
