@@ -205,7 +205,7 @@ def make_bottles(bottle_info)
 #      p "Found bought date #{part}"
       bottle.bought = part.sub('Bought ', '')
     else
-      bottle.comments << part unless part.empty?
+      bottle.comments << part unless (part.empty? or part.eql? 'Bought')
       last_was_price = false
 #      "Found comment #{part}"
     end
