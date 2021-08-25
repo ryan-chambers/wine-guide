@@ -12,6 +12,17 @@ describe 'Wine Score Parser' do
     it 'should parse wine and bottle' do
       wb = parse_wine_bottle_line('Creekside, Syrah, 2015, Broken Press, VQA St Davids Bench. $55.0. 92/100. Outstanding leg of lamb wine.. Bought Dec 2017. From 2018. To 2026. [21 Jun 2020].', 'Canada')
 #      p "#{wb.to_s}"
+
+      wine = wb[:wine]
+      expect(wine.country).to eq('Canada')
+      expect(wine.region).to eq('VQA St Davids Bench')
+      expect(wine.winery_name).to eq('Creekside')
+      expect(wine.year).to eq('2015')
+
+      # because of no db connection, can't query DB for syrah grape
+      expect(wine.other).to eq(['Syrah', 'Broken Press'])
+      expect(wine.grapes).to eq([])
+
       bottles = wb[:bottles]
       expect(bottles.length).to be(1)
       bottle1 = bottles[0];
