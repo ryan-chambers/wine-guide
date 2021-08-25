@@ -62,7 +62,34 @@ describe 'Wine Score Parser' do
 
     end
 
-# multiple bottles. from, to, no other
+    it 'should parse wine with multiple bottles' do
+      wb = parse_wine_bottle_line('M Chapoutier, Grenache, Syrah, 2017, Mathilde, Ap Languedoc, LCBO# 644468. $14.95. 88/100. Good. . Bought . [13 Oct 2020]. $14.95. 88/100. Reliably good.. Bought . [27 Oct 2020].', 'France')
+
+      wine = wb[:wine]
+      expect(wine.country).to eq('France')
+      expect(wine.region).to eq('Ap Languedoc')
+      expect(wine.winery_name).to eq('M Chapoutier')
+      expect(wine.year).to eq('2017')
+      expect(wine.other).to eq(['Grenache', 'Syrah', 'Mathilde'])
+      expect(wine.lcbo).to eq('644468')
+
+      bottles = wb[:bottles]
+      expect(bottles.length).to be(2)
+      bottle1 = bottles[0];
+      expect(bottle1.in_fridge).to eq(false)
+      expect(bottle1.comments).to eq(['Good'])
+      expect(bottle1.date).to eq('13 Oct 2020')
+      expect(bottle1.price).to eq('14.95')
+      expect(bottle1.score).to eq(88)
+
+      bottle2 = bottles[1];
+      expect(bottle2.in_fridge).to eq(false)
+      expect(bottle2.comments).to eq(['Reliably good'])
+      expect(bottle2.date).to eq('27 Oct 2020')
+      expect(bottle2.price).to eq('14.95')
+      expect(bottle2.score).to eq(88)
+
+    end
 
     it 'should parse wine in cellar with no from, to' do
        wb = parse_wine_bottle_line('Leaning Post, Chardonnay, 2018, Wismer - Foxcroft Vineyard, VQA Twenty Mile Bench. $40.0. 0/100. . Bought Jul 2021. To 2025. In fridge.', 'Canada')
