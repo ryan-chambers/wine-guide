@@ -12,7 +12,9 @@ describe 'Wine Score Parser' do
     it 'should parse wine and bottle' do
       wb = parse_wine_bottle_line('Creekside, Syrah, 2015, Broken Press, VQA St Davids Bench. $55.0. 92/100. Outstanding leg of lamb wine.. Bought Dec 2017. From 2018. To 2026. [21 Jun 2020].', 'Canada')
 #      p "#{wb.to_s}"
-      bottle1 = wb[:bottles][0];
+      bottles = wb[:bottles]
+      expect(bottles.length).to be(1)
+      bottle1 = bottles[0];
       expect(bottle1.comments).to eq(['Outstanding leg of lamb wine'])
       expect(bottle1.date).to eq('21 Jun 2020')
       expect(bottle1.price).to eq('55.0')
