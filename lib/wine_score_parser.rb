@@ -160,7 +160,7 @@ def make_bottles(bottle_info)
       finished_bottle = false
     end
 
-#    p "matching #{part}"
+#    p "Parsing part #{part}"
 
     if /\d\/100/.match(part)
 #      p "Found bottle score part #{part}"
@@ -179,12 +179,14 @@ def make_bottles(bottle_info)
       bottle.in_fridge = true
       finished_bottle = true
     elsif /^\$\d*$/.match(part)
+#      p "found price part #{part}"
       bottle.price = part.sub('$', '')
       last_was_price = true
 #      p "Found part of price #{bottle.price}"
-    elsif /^\d{2}$/.match(part) && last_was_price
+    elsif /^\d{1,2}$/.match(part) && last_was_price
+#      p "Found rest of price part #{part}"
       dollar_amt = bottle.price
-      bottle.price = "#{dollar_amt}.#{part}".to_f
+      bottle.price = "#{dollar_amt}.#{part}"
 #      p "Found rest of price #{bottle.price}"
     elsif /To 2\d{3}/.match(part)
       last_was_price = false
@@ -203,7 +205,7 @@ def make_bottles(bottle_info)
 #      p "Found bought date #{part}"
       bottle.bought = part.sub('Bought ', '')
     else
-      bottle.comments << part
+      bottle.comments << part unless part.empty?
       last_was_price = false
 #      "Found comment #{part}"
     end
