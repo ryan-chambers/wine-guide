@@ -163,8 +163,9 @@ def make_bottles(bottle_info)
 #    p "matching #{part}"
 
     if /\d\/100/.match(part)
-      p "Found bottle #{part}"
-      bottle.score = part.split('/')[0]
+#      p "Found bottle score part #{part}"
+      bottle.score = part.split('/')[0].to_i
+#      p "Found bottle score #{bottle.score}"
       last_was_price = false
     elsif /\[.*\]/.match(part)
       bottle.date = part.sub('[', '').sub(']', '')
@@ -188,12 +189,14 @@ def make_bottles(bottle_info)
     elsif /To 2\d{3}/.match(part)
       last_was_price = false
       bottle.drink_to = part.sub('To ', '')
-      bottle.score = 0
+#      p "Has to..., score = 0"
+#      bottle.score = 0
 #      p "Got to #{bottle.drink_to}"
     elsif /From 2\d{3}/.match(part)
       last_was_price = false
       bottle.drink_from = part.sub('From ', '')
-      bottle.score = 0
+#      p "Has from..., score = 0"
+#      bottle.score = 0
 #      p "Got from #{bottle.drink_from}"
     elsif /Bought [A-Z][a-z]{2} \d{4}/.match(part)
       last_was_price = false
