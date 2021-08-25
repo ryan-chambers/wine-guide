@@ -163,7 +163,7 @@ def make_bottles(bottle_info)
 #    p "matching #{part}"
 
     if /\d\/100/.match(part)
-#      p "Found bottle #{part}"
+      p "Found bottle #{part}"
       bottle.score = part.split('/')[0]
       last_was_price = false
     elsif /\[.*\]/.match(part)
