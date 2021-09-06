@@ -13,7 +13,13 @@ select min(reviewdate) from bottles
 --left join wines w2 on w.id = w2.winery_id
 --where w2.id is null)
 
---select w2.id 
---from wines w2
---left join bottles b on w2.id = b.wine_id
---where b.id is null
+select w2.id 
+from wines w2
+left join bottles b on w2.id = b.wine_id
+where b.id is null
+
+-- find/delete bottles with no wines
+delete from bottles where id in (select b.id 
+from bottles b
+left join wines w2 on b.wine_id = w2.id
+where w2.id is null)
