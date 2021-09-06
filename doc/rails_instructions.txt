@@ -13,3 +13,6 @@ rake db:migrate
 -- drop & re-create database
 bin/rails db:environment:set RAILS_ENV=development
 rake db:drop db:create db:migrate
+
+-- import data
+./scripts/run_wine_importer.sh /path/to/file
