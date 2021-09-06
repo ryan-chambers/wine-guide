@@ -6,3 +6,14 @@
 --select * from bottles order by reviewdate
 --update bottles set reviewdate = '2013-06-10' where id = 815
 select min(reviewdate) from bottles
+
+-- find/delete wineries with no wines
+--delete from wineries where id in (select w.id 
+--from wineries w
+--left join wines w2 on w.id = w2.winery_id
+--where w2.id is null)
+
+--select w2.id 
+--from wines w2
+--left join bottles b on w2.id = b.wine_id
+--where b.id is null
