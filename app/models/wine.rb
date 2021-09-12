@@ -16,16 +16,16 @@ class Wine < ActiveRecord::Base
   end
 
   def self.find_in_cellar
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :wines_grapes).where(:bottles => {:in_fridge => true}).order('bottles.drink_from')
+    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :grapes_wines).where(:bottles => {:in_fridge => true}).order('bottles.drink_from')
   end
 
   def self.find_in_cellar_ready_to_drink
     from = Time.new.strftime('%Y').to_i
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :wines_grapes).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true).order('bottles.drink_from')
+    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :grapes_wines).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true).order('bottles.drink_from')
   end
 
   def self.find_drank_this_day
-    Wine.joins(:bottles).includes(:bottles, :grapes, :wines_grapes, :winery).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
+    Wine.joins(:bottles).includes(:bottles, :grapes, :grapes_wines, :winery).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
   end
 
   def self.search_for_wine(search_term, review_from, review_to)
@@ -34,7 +34,7 @@ class Wine < ActiveRecord::Base
     else
       results = Wine.joins(:winery, :grapes, :bottles)
     end
-    results = results.includes(:winery, :grapes, :wines_grapes)
+    results = results.includes(:winery, :grapes, :grapes_wines)
 
     limit = 5
 
@@ -67,7 +67,7 @@ class Wine < ActiveRecord::Base
     logger.info "Filtering by grapes #{grapes}, country #{country}"
     if ! grapes.empty?
       grapes_like = "%".concat(grapes.downcase.concat("%"))
-      results = Wine.joins(:grapes).includes(:grapes, :winery, :wines_grapes).where("lower(grapes.name) like ?", grapes_like)
+      results = Wine.joins(:grapes).includes(:grapes, :winery, :grapes_wines).where("lower(grapes.name) like ?", grapes_like)
     else
       results = Wine.includes(:grapes, :winery)
     end
@@ -91,7 +91,7 @@ class Wine < ActiveRecord::Base
     # p "Filtering for favourites scored #{score_filter} and higher from #{date} and after"
     score = score_filter || 90
     Wine.joins(:bottles)
-      .includes(:grapes, :bottles, :winery, :wines_grapes)
+      .includes(:grapes, :bottles, :winery, :grapes_wines)
       .where('bottles.score >= :score and bottles.reviewdate >= :date', {:score => score, :date => date})
       .distinct
   end
