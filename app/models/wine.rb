@@ -1,7 +1,7 @@
 class Wine < ActiveRecord::Base
   validate :year_after_1800
 
-  validates :winery_id, :year, :country, :grapes_id, :presence => true
+  validates :winery_id, :year, :country, :grapes, :presence => true
 
   validates :year, :numericality => true
 
@@ -65,7 +65,12 @@ class Wine < ActiveRecord::Base
 
   def self.filter_by_country(country)
     logger.info "Filtering by country #{country}"
-    results = Wine.includes(:winery).where(:wines => {:country => country})
+
+    results = Wine.includes(:grapes, :winery)
+
+    if ! country.empty?
+      results = results.where(:wines => {:country => country})
+    end
 
     results
   end
