@@ -64,11 +64,10 @@ class Wine < ActiveRecord::Base
   end
 
   def self.filter_by_country(country)
-    logger.info "Filtering by country #{country}"
-
     results = Wine.includes(:grapes, :winery)
 
     if ! country.empty?
+      logger.info "Filtering by country #{country}"
       results = results.where(:wines => {:country => country})
     end
 
