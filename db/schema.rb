@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 2022_01_01_161947) do
     t.string "lcbo_code"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.bigint "grapes_id"
-    t.index ["grapes_id"], name: "index_wines_on_grapes_id"
+    t.bigint "grape_id"
+    t.index ["grape_id"], name: "index_wines_on_grape_id"
   end
 
-  add_foreign_key "wines", "grapes", column: "grapes_id"
+  add_foreign_key "wines", "grapes"
 end

@@ -43,7 +43,7 @@ class WinesController < ApplicationController
     @winery = Winery.find_by_name(@winery_name)
 
     # logger.info "grape name is '#{@grape_name}'"
-    @wine.grapes_id = Grape.find_by_name(@grape_name).id
+    @wine.grape_id = Grape.find_by_name(@grape_name).id
 
     # FIXME is this a hack too? According to Efficient Rails TDD on youtube it is
     if @winery
