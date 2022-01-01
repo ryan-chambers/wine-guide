@@ -129,7 +129,7 @@ class Wine < ActiveRecord::Base
       p "Have grape id #{grape_id}"
       if grape_id
         g = Grape.find_by_id(grape_id)
-        g.name
+        g.name + ' (* migrated)'
       end
     else
       grape_names = grapes.reduce([]) { |out, g|
