@@ -123,9 +123,14 @@ class Wine < ActiveRecord::Base
     grape_names.sort!
   end
 
+  # TODO-3 wine grape names return single grape
   def grapes_to_s(separator=", ")
     if grapes.empty?
-      ''
+      p "Have grape id #{grape_id}"
+      if grape_id
+        g = Grape.find_by_id(grape_id)
+        g.name
+      end
     else
       grape_names = grapes.reduce([]) { |out, g|
 #        p "Adding #{g.name} to #{out}"
