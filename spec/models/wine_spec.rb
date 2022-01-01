@@ -160,34 +160,13 @@ describe Wine do
   end
 
   describe "filters" do
-    it "filters by grape type" do
-      create(:alvento_sauvignonblanc)
-      w = create(:imocali_vernaccia)
-
-      found = Wine.filter_by_grapes_country('Vernaccia', '')
-      expect(found[0]).to eq(w)
-      expect(found.length).to eq(1)
-    end
-
     it "filters by country" do
       create(:alvento_sauvignonblanc)
       w = create(:imocali_vernaccia)
 
-      found = Wine.filter_by_grapes_country('', 'Italy')
+      found = Wine.filter_by_country('Italy')
       expect(found[0]).to eq(w)
       expect(found.length).to eq(1)
-    end
-
-    it "filters by grape type and country" do
-      create(:vineland_sauvignonblanc)
-      # create(:kenwood_merlot)
-      create(:imocali_vernaccia)
-      w = create(:lailey_merlot)
-
-      # FIXME figure out why nothing gets returned
-      found = Wine.filter_by_grapes_country('Merlot', 'Canada')
-      # expect(found.length).to eq(1)
-      # expect(found[0]).to eq(w)
     end
   end
 end
