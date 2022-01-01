@@ -13,7 +13,7 @@ class WinesController < ApplicationController
         @wines = Wine.search_for_wine params[:term] || '', params[:reviews_from] || '', params[:reviews_to] || ''
       end
     else
-      @wines = Wine.filter_paginate(params[:grape_filter] || '', params[:country_filter] || '', :page => params[:page])
+      @wines = Wine.filter_paginate(params[:country_filter] || '', :page => params[:page])
     end
 
 #    logger.info "got #{@wines}.length() wines"

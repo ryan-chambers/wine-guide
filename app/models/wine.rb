@@ -1,7 +1,7 @@
 class Wine < ActiveRecord::Base
   validate :year_after_1800
 
-  validates :winery_id, :year, :country, :grapes, :presence => true
+  validates :winery_id, :year, :country, :grapes_id, :presence => true
 
   validates :year, :numericality => true
 
@@ -63,25 +63,16 @@ class Wine < ActiveRecord::Base
     results
   end
 
-  def self.filter_by_grapes_country(grapes, country)
-    logger.info "Filtering by grapes #{grapes}, country #{country}"
-    if ! grapes.empty?
-      grapes_like = "%".concat(grapes.downcase.concat("%"))
-      results = Wine.joins(:grapes).includes(:grapes, :winery, :grapes_wines).where("lower(grapes.name) like ?", grapes_like)
-    else
-      results = Wine.includes(:grapes, :winery)
-    end
-
-    if ! country.empty?
-      results = results.where(:wines => {:country => country})
-    end
+  def self.filter_by_country(country)
+    logger.info "Filtering by country #{country}"
+    results = Wine.includes(:winery).where(:wines => {:country => country})
 
     results
   end
 
-  def self.filter_paginate(grape_filter, country_filter, page)
-    if(grape_filter || country_filter)
-      filter_by_grapes_country(grape_filter, country_filter).paginate(page)
+  def self.filter_paginate(country_filter, page)
+    if(country_filter)
+      filter_by_country(country_filter).paginate(page)
     else
       Wine.joins(:winery).includes(:grapes, :winery).paginate(page).order('wineries.name asc')
     end
@@ -160,7 +151,7 @@ class Wine < ActiveRecord::Base
   private
 
   def year_after_1800
-      errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
+    errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
   end
 
   def self.day_of_year 
