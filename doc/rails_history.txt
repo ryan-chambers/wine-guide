@@ -44,3 +44,6 @@ rails g migration RemoveNiagaraPeninsulaRegion
 rails g migration RemoveGrapeGrenacheNoir
 
 rails g migration RemoveGrapeTintoRoriz
+
+# note: later manually updates to be change reference
+rails g migration AddGrapeIdToWines grape_id:integer
