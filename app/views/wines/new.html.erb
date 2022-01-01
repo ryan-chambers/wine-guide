@@ -20,16 +20,9 @@
 	</div>
   </div>
   <div class="form-group">
-    <%= f.label 'Grapes', class: 'col-lg-2 control-label' %>
+    <%= f.label 'Grape', class: 'col-lg-2 control-label' %>
    	<div class="col-lg-3">
-   		<input type="text" id="grape_name" size="168" class="form-control" />
-	    <input id="grape_ids" type="hidden" name="grape_ids" value="<%= @grape_ids %> " />
-	</div>
-  </div>
-  <div class="form-group">
-  	<label class="col-lg-2 control-label"></label>
-  	<div class="col-lg-3">
-	    <ul id="grape_list"></ul>
+   		<input type="text" name="grape_name" id="grape_name" value="<%= @grape_name %>" size="168" class="form-control" />
   	</div>
   </div>
   <div class="form-group">
@@ -61,7 +54,7 @@
   var $grape_name_field = $('#grape_name');
   var $country_field = $('#wine_country');
 
-  wines.enableGrapePicker($grape_name_field);
+//  wines.enableGrapePicker($grape_name_field);
  
   $country_field.on('change', () => {
     $('#wine_region').typeahead({
