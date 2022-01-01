@@ -54,8 +54,6 @@
   var $grape_name_field = $('#grape_name');
   var $country_field = $('#wine_country');
 
-//  wines.enableGrapePicker($grape_name_field);
- 
   $country_field.on('change', () => {
     $('#wine_region').typeahead({
       name: 'regions-' + $country_field.val(),
