@@ -15,6 +15,10 @@ class Wine < ActiveRecord::Base
     Wine.where(grape_id: nil).count
   end
 
+  def self.find_wines_to_migrate(limit)
+    Wine.where(grape_id: nil).includes(:grapes, :grapes_wines).limit(limit)
+  end
+
   def self.find_all_by_lcbo_code(lcbo_code)
     Wine.where(lcbo_code: lcbo_code)
   end
