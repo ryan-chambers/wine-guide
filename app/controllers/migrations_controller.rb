@@ -2,10 +2,14 @@ class MigrationsController < ApplicationController
 
   def kickoff
     logger.info "In migrations controller"
-    a = 1
+
+    @count = Wine.count_missing_wine
+
+    logger.info "There are #{@count} records to be migrated"
 
     respond_to do |format|
-      format.json { render :json => a}
+      # not JSON but who cares
+      format.json { render :json => @count}
     end
   end
 end
