@@ -56,10 +56,9 @@ describe WinesController do
       before do
         authenticate_with_http_digest
         grape = create(:sauvignonblanc)
-        @grape_id = grape.id
         @wine_params = {:wine => {:country => 'Canada', :year => '2012'}, 
           :winery_name => 'Alvento', 
-          :grape_ids => @grape_id}
+          :grape_name => grape.name}
       end
 
       it "redirects to wine page" do
