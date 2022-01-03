@@ -1,4 +1,4 @@
-"Alfrocheiro"
+"Alfrocheiro" (red)
 "Agiorgitiko"
 "Aglianico"
 "Almansa" -> none
@@ -9,62 +9,62 @@
 "Barbera"
 "Bonarda"
 "Barolo" -> not a grape
-"Braucol"
+"Braucol" -> two bottles
 "Cabernet Franc"
 "Cabernet Sauvignon"
 "Carmenere"
 "Carignan"
 "Cava" -> not a grape
-"Chambourcin"
+"Chambourcin" -> 3 bottles
 "Cinsault"
 "Cortese" -> mapped to nebbiolo
-"Corvina"
+"Corvina" -> 4 bottles
 "Dolcetto"
 "Gaggliopo" -> one wine
 "Gamay"
 "Grenache"
-"Foch"
+"Foch" -> 3 bottles
 "Lacrima" -> one wine
 "Malbec"
-"Mazuelo"
+"Mazuelo" -> one bottle
 "Mencia"
 "Merlot"
 "Montepulciano"
 "Mourvedre"
 "Nebbiolo"
 "Nero D'Avola"
-"Nerello Cappuccio"
-"Nerello Mascalese"
-"Nero Di Troia"
-"Negroamaro"
-"Perricone"
+"Nerello Cappuccio" -> 2
+"Nerello Mascalese" -> 2
+"Nero Di Troia" -> 4
+"Negroamaro" -> 5
+"Perricone" -> 1
 "Petit Verdot"
 "Petite Syrah"
 "Pinot Noir"
 "Pinot Meunier"
 "Pinotage"
 "Primitivo"
-"Prosecco"
-"Raboso"
+"Prosecco" -> 2
+"Raboso" -> 1
 "Red Blend"
 "Rondinella"
-"Saperavi"
+"Saperavi" -> 2
 "Sangiovese"
 "Syrah"
 "Tempranillo"
-"Touriga Franca"
+"Touriga Franca" -> 5
 "Touriga Nacional"
-"Trincadeira"
+"Trincadeira" -> 4
 "Xinomavro"
 "Zinfandel"
 "Zweigelt"
 "Other Red"
-"Rose"
+"Rose" -> 2
 "Albarino"
-"Altesse"
+"Altesse" -> 2
 "Aligote"
 "Chardonnay"
-"Chasselas"
+"Chasselas" -> 1
 "Chenin Blanc"
 "Garganega"
 "Gros Manseng"
@@ -72,40 +72,40 @@
 "Gewurztraminer"
 "Grasevina"
 "Gruner Veltliner"
-"Inzolia"
+"Inzolia" -> 1
 "Melon De Bourgogne"
 "Malvasia"
 "Moschofilero"
 "Muscat"
 "Pecorino"
-"Nuragus"
+"Nuragus" -> 1
 "Picpoul De Pinet"
 "Pinot Blanc"
 "Pinot Grigio"
 "Riesling"
 "Sauvignon Blanc"
 "Other White"
-"Rizling"
+"Rizling" -> 1
 "Roussanne"
 "Semillon"
 "Torrontes"
 "Trebbiano"
 "Vidal"
 "Viognier"
-"Viura"
-"Viuria"
+"Viura" -> 8
+"Viuria" -> error
 "Verdejo"
 "Vernaccia"
 "Vermentino"
 "White Blend"
 "Trebbiano Di Lugano"
-"Pascale Di Cagliari"
+"Pascale Di Cagliari" -> 1
 "Malaga"
-"Monica Cagnulari"
-"Canaiolo"
-"Molinara"
-"Graciano"
-"Colombard"
+"Monica Cagnulari" -> 1
+"Canaiolo" -> 2
+"Molinara" -> 1
+"Graciano" -> 4
+"Colombard" -> 2
 "Marsanne"
 "Tannat"
-"Fiano"
+"Fiano" -> 2
