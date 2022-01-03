@@ -1,111 +1,115 @@
-"Alfrocheiro" (red)
 "Agiorgitiko"
 "Aglianico"
+"Albarino"
+"Alfrocheiro" (red). 4 in red blend
+"Aligote"
 "Almansa" -> none
-"Amarone" -> not a grape
+"Altesse" -> 2. white
+"Amarone" -> not a grape. 1
 "Baco Noir"
-"Baga" -> one wine
-"Barbaresco" -> not a grape
+"Baga" -> one wine. red blend
 "Barbera"
 "Bonarda"
-"Barolo" -> not a grape
-"Braucol" -> two bottles
+"Braucol" -> two bottles. red
 "Cabernet Franc"
 "Cabernet Sauvignon"
-"Carmenere"
+"Canaiolo" -> 2. blend
 "Carignan"
+"Carmenere"
 "Cava" -> not a grape
-"Chambourcin" -> 3 bottles
+"Chambourcin" -> 3 bottles. red
+"Chardonnay"
+"Chasselas" -> 1. white
+"Chenin Blanc"
 "Cinsault"
+"Colombard" -> 2. white
 "Cortese" -> mapped to nebbiolo
 "Corvina" -> 4 bottles
 "Dolcetto"
-"Gaggliopo" -> one wine
+"Fiano" -> 2. white
+"Foch" -> 3 bottles. red
+"Gaggliopo" -> one wine. red
 "Gamay"
-"Grenache"
-"Foch" -> 3 bottles
-"Lacrima" -> one wine
-"Malbec"
-"Mazuelo" -> one bottle
-"Mencia"
-"Merlot"
-"Montepulciano"
-"Mourvedre"
-"Nebbiolo"
-"Nero D'Avola"
-"Nerello Cappuccio" -> 2
-"Nerello Mascalese" -> 2
-"Nero Di Troia" -> 4
-"Negroamaro" -> 5
-"Perricone" -> 1
-"Petit Verdot"
-"Petite Syrah"
-"Pinot Noir"
-"Pinot Meunier"
-"Pinotage"
-"Primitivo"
-"Prosecco" -> 2
-"Raboso" -> 1
-"Red Blend"
-"Rondinella"
-"Saperavi" -> 2
-"Sangiovese"
-"Syrah"
-"Tempranillo"
-"Touriga Franca" -> 5
-"Touriga Nacional"
-"Trincadeira" -> 4
-"Xinomavro"
-"Zinfandel"
-"Zweigelt"
-"Other Red"
-"Rose" -> 2
-"Albarino"
-"Altesse" -> 2
-"Aligote"
-"Chardonnay"
-"Chasselas" -> 1
-"Chenin Blanc"
 "Garganega"
+"Gewurztraminer"
+"Graciano" -> 4
+"Grasevina"
+"Grenache"
 "Gros Manseng"
 "Grenache Blanc"
-"Gewurztraminer"
-"Grasevina"
 "Gruner Veltliner"
-"Inzolia" -> 1
-"Melon De Bourgogne"
+"Inzolia" -> 1. white
+"Lacrima" -> one wine. red
+"Malaga" -> 1. mixed with other rare ones in red blend
+"Malbec"
 "Malvasia"
+"Marsanne"
+"Mazuelo" -> one bottle. Actually is carignan
+"Melon De Bourgogne"
+"Mencia"
+"Merlot"
+"Molinara" -> 1 -> red blend
+"Monica Cagnulari" -> 1 -> red blend
+"Montepulciano"
 "Moschofilero"
+"Mourvedre"
 "Muscat"
+"Nebbiolo"
+"Negroamaro" -> 5
+"Nerello Cappuccio" -> 2
+"Nerello Mascalese" -> 2
+"Nero D'Avola"
+"Nero Di Troia" -> 4
+"Nuragus" -> 1 -> white
+"Other Red"
+"Other White"
+"Pascale Di Cagliari" -> 1 -> red blend
 "Pecorino"
-"Nuragus" -> 1
+"Perricone" -> 1 -> red
+"Petite Syrah"
+"Petit Verdot"
 "Picpoul De Pinet"
+"Pinotage"
 "Pinot Blanc"
 "Pinot Grigio"
+"Pinot Meunier"
+"Pinot Noir"
+"Primitivo"
+"Prosecco" -> 2
+"Raboso" -> 1 -> red
+"Red Blend"
 "Riesling"
-"Sauvignon Blanc"
-"Other White"
-"Rizling" -> 1
+"Rizling" -> 1 -> white
+"Rondinella" -> 5 -> blend
+"Rose" -> 2 -> remove
 "Roussanne"
+"Sangiovese"
+"Sauvignon Blanc"
+"Saperavi" -> 2
 "Semillon"
+"Syrah"
+"Tannat"
+"Tempranillo"
 "Torrontes"
+"Touriga Franca" -> 5
+"Touriga Nacional"
 "Trebbiano"
+"Trebbiano Di Lugano"
+"Trincadeira" -> 4
+"Verdejo"
+"Vermentino"
+"Vernaccia"
 "Vidal"
 "Viognier"
-"Viura" -> 8
-"Viuria" -> error
-"Verdejo"
-"Vernaccia"
-"Vermentino"
+"Viura" -> 8. keep
 "White Blend"
-"Trebbiano Di Lugano"
-"Pascale Di Cagliari" -> 1
-"Malaga"
-"Monica Cagnulari" -> 1
-"Canaiolo" -> 2
-"Molinara" -> 1
-"Graciano" -> 4
-"Colombard" -> 2
-"Marsanne"
-"Tannat"
-"Fiano" -> 2
+"Xinomavro"
+"Zweigelt"
+
+grapes to drop: (can be done after migration)
+- 
+
+"Barbaresco" -> not a grape. Somehow still in migration
+"Barolo" -> not a grape. Somehow still in migration
+"Viuria" -> not a grape. Somehow still in migration
+"Zinfandel" -> should be primitivo. Somehow still in migration
