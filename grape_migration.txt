@@ -19,43 +19,43 @@ X "Baga" id 7. -> one wine. red blend
 X "Braucol" id 12. -> two bottles. red
 "Cabernet Franc"
 "Cabernet Sauvignon"
-"Canaiolo" -> 2. blend
+X "Canaiolo" id 107. -> 2. always in blend. other red
 "Carignan"
 "Carmenere"
-"Cava" -> not a grape
-"Chambourcin" -> 3 bottles. red
+X "Cava" -> not a grape
+X "Chambourcin" id 18 -> 3 bottles. red
 "Chardonnay"
-"Chasselas" -> 1. white
+X "Chasselas" -> 1. white
 "Chenin Blanc"
 "Cinsault"
-"Colombard" -> 2. white
-"Cortese" -> mapped to nebbiolo
-"Corvina" -> 4 bottles
+X "Colombard" id 110 -> 2. white
+"Cortese" -> white wine. keep it
+X "Corvina" id 20 -> 4 bottles. all in red blend
 "Dolcetto"
-"Fiano" -> 2. white
-"Foch" -> 3 bottles. red
-"Gaggliopo" -> one wine. red
+X "Fiano" -> id 113 -> 2. white
+X "Foch" id 25 -> 3 bottles. red
+X "Gaggliopo" id 96 -> one wine. red
 "Gamay"
 "Garganega"
 "Gewurztraminer"
-"Graciano" -> 4
+X "Graciano" id 109 -> 4
 "Grasevina"
 "Grenache"
 "Gros Manseng"
 "Grenache Blanc"
 "Gruner Veltliner"
-"Inzolia" -> 1. white
-"Lacrima" -> one wine. red
-"Malaga" -> 1. mixed with other rare ones in red blend
+X "Inzolia" id 70 -> 1. white
+X "Lacrima" -> one wine. red
+X "Malaga" -> 1. mixed with other rare ones in red blend
 "Malbec"
 "Malvasia"
 "Marsanne"
-"Mazuelo" -> one bottle. Is another name for carignan
+X "Mazuelo" -> one bottle. Is another name for carignan
 "Melon De Bourgogne"
 "Mencia"
 "Merlot"
-"Molinara" -> 1 -> red blend
-"Monica Cagnulari" -> 1 -> red blend
+X "Molinara" -> 1 -> red blend
+X "Monica Cagnulari" -> 1 -> red blend
 "Montepulciano"
 "Moschofilero"
 "Mourvedre"
@@ -66,12 +66,12 @@ X "Braucol" id 12. -> two bottles. red
 "Nerello Mascalese" -> 2
 "Nero D'Avola"
 "Nero Di Troia" -> 4
-"Nuragus" -> 1 -> white
+X "Nuragus" -> 1 -> white
 "Other Red"
 "Other White"
-"Pascale Di Cagliari" -> 1 -> red blend
+X "Pascale Di Cagliari" -> 1 -> red blend
 "Pecorino"
-"Perricone" -> 1 -> red
+X "Perricone" id 37 -> 1 -> red
 "Petite Syrah"
 "Petit Verdot"
 "Picpoul De Pinet"
@@ -82,12 +82,12 @@ X "Braucol" id 12. -> two bottles. red
 "Pinot Noir"
 "Primitivo"
 "Prosecco" -> 2
-"Raboso" -> 1 -> red
+X "Raboso" -> 1 -> red
 "Red Blend"
 "Riesling"
-"Rizling" -> 1 -> white
+X "Rizling" -> 1 -> white
 "Rondinella" -> 5 -> blend
-"Rose" -> 2 -> remove
+X "Rose" -> 2 -> remove
 "Roussanne"
 "Sangiovese"
 "Sauvignon Blanc"
@@ -112,14 +112,39 @@ X "Braucol" id 12. -> two bottles. red
 "Xinomavro"
 "Zweigelt"
 
-grapes to drop: (can be done after migration)
-- Almansa
-- Amarone
-- Altesse
-- Baga
-- Braucol
+grapes in rails  migrations but deleted manually from prod db:
 
 "Barbaresco" -> not a grape. Somehow still in migration
 "Barolo" -> not a grape. Somehow still in migration
 "Viuria" -> not a grape. Somehow still in migration
 "Zinfandel" -> should be primitivo. Somehow still in migration
+
+grapes to drop: (can be done after migration)
+- Alfrocheiro
+- Almansa
+- Amarone
+- Altesse
+- Baga
+- Braucol
+- Canaiolo
+- Cava
+- Chambourcin
+- Chasselas
+- Colombard
+- Corvina
+- Fiano
+- Foch
+- Gaggliopo
+- Graciano
+- Inzolia
+- Lacrima
+- Malaga
+- Mazuelo
+- Molinara
+- Monica Cagnulari
+- Nuragus
+- Pascale Di Cagliari
+- Perricone
+- Raboso
+- Rizling
+- Rose
