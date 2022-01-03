@@ -1,3 +1,9 @@
+Heroku db
+Other Red - 58
+Red blend - 46
+white blend - 94
+Other White - 81
+
 "Agiorgitiko"
 "Aglianico"
 "Albarino"
