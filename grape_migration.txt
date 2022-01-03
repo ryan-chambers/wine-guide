@@ -10,13 +10,13 @@ Other White - 81
 "Alfrocheiro" (red). 4 in red blend
 "Aligote"
 "Almansa" -> none
-"Altesse" -> 2. white
-"Amarone" -> not a grape. 1
+X "Altesse" -> 2. white
+X "Amarone" -> not a grape. 1
 "Baco Noir"
-"Baga" -> one wine. red blend
+X "Baga" id 7. -> one wine. red blend
 "Barbera"
 "Bonarda"
-"Braucol" -> two bottles. red
+X "Braucol" id 12. -> two bottles. red
 "Cabernet Franc"
 "Cabernet Sauvignon"
 "Canaiolo" -> 2. blend
@@ -50,7 +50,7 @@ Other White - 81
 "Malbec"
 "Malvasia"
 "Marsanne"
-"Mazuelo" -> one bottle. Actually is carignan
+"Mazuelo" -> one bottle. Is another name for carignan
 "Melon De Bourgogne"
 "Mencia"
 "Merlot"
@@ -107,13 +107,17 @@ Other White - 81
 "Vernaccia"
 "Vidal"
 "Viognier"
-"Viura" -> 8. keep
+"Viura" -> 8. keep the grape
 "White Blend"
 "Xinomavro"
 "Zweigelt"
 
 grapes to drop: (can be done after migration)
-- 
+- Almansa
+- Amarone
+- Altesse
+- Baga
+- Braucol
 
 "Barbaresco" -> not a grape. Somehow still in migration
 "Barolo" -> not a grape. Somehow still in migration
