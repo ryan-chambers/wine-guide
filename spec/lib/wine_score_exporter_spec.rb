@@ -42,5 +42,10 @@ describe 'Wine Score Exporter' do
       expect(sentence).to include(wine.year.to_s)
       expect(sentence).to include(wine.lcbo_code)
     end
+
+    it 'should also handle migratd grape' do
+      # TODO implement
+      fail      
+    end
   end
 end
