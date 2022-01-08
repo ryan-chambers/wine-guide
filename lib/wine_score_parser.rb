@@ -1,5 +1,3 @@
-# coding: utf-8
-
 require 'open-uri'
 require 'grape.rb'
 require 'country.rb'

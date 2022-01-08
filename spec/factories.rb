@@ -28,7 +28,12 @@ FactoryBot.define do
     name { 'Kenwood' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
-  
+
+  factory :poggio_antico, class: Winery do
+    name { 'Poggio Antico'}
+    initialize_with { Winery.find_or_create_by(name: name)}
+  end
+
   factory :sauvignonblanc, class: Grape do
     name { 'Sauvignon Blanc' }
     initialize_with { Grape.find_or_create_by(name: name)}
@@ -41,6 +46,11 @@ FactoryBot.define do
 
   factory :merlot, class: Grape do
     name { 'Merlot' }
+    initialize_with { Grape.find_or_create_by(name: name)}
+  end
+
+  factory :red_blend, class: Grape do
+    name { 'Red Blend' }
     initialize_with { Grape.find_or_create_by(name: name)}
   end
 
@@ -105,6 +115,17 @@ FactoryBot.define do
         wine.winery = create(:lailey)
         wine.grapes << build(:merlot)
         wine.grape_id = create(:merlot).id
+      end
+    end
+
+    # for testing with a grape_id
+    factory :poggio_antico_red_blend, parent: :wine do
+      before(:create) do |wine|
+        wine.country = 'Italy'
+        wine.winery = create(:poggio_antico)
+        wine.grape_id = create(:red_blend).id
+        wine.region = 'Brunello di Montalcino'
+        wine.lcbo_code = ''
       end
     end
   end

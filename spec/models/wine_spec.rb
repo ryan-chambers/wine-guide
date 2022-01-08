@@ -19,11 +19,6 @@ describe Wine do
       w = create(:kenwood_merlot)
       expect(w.grapes_to_s).to include('Merlot')
     end
-
-    it "must ..." do
-      # TODO add scenario for when grape_id is set
-      fail
-    end
   end
 
   describe "bottles" do

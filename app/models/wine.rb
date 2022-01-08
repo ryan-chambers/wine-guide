@@ -126,7 +126,7 @@ class Wine < ActiveRecord::Base
   # TODO-3 wine grape names return single grape
   def grapes_to_s(separator=", ")
     if grapes.empty?
-      p "Have grape id #{grape_id}"
+#      p "Have grape id #{grape_id}"
       if grape_id
         g = Grape.find_by_id(grape_id)
         g.name + ' (* migrated)'
