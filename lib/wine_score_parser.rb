@@ -4,6 +4,8 @@ require 'country.rb'
 require 'wine.rb'
 require 'bottle.rb'
 
+include MigrationHelper
+
 class WineVO
   def initialize
     @grapes = []
@@ -119,6 +121,7 @@ def make_wine(wine_info, country)
     if /^\d{4}$/.match(part)
 #      p "Found year #{part}"
       wine.year = part
+    #elsif part == 'Other Red' or part == 'Grenache' or part == 'Syrah'  # testing only
     elsif not Grape.where(:name => part).empty?
 #      p "Found grape variety #{part}"
       wine.grapes << part
@@ -220,6 +223,14 @@ def parse_wine_bottle_line(line, country)
   wine_info = parts.shift
 
   wine = make_wine(wine_info, country)
+
+  grapes = wine.grapes
+  wine.grapes = []
+  g = grape_name(grapes)
+  @grape = Grape.find_by_name(@grape_name)
+  if (@grape)
+    wine.grape_id = @grape.id
+  end
 
 #  wine = wine.store
 

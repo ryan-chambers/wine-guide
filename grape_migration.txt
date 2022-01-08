@@ -1,0 +1,150 @@
+Heroku db
+Other Red - 58
+Red blend - 46
+white blend - 94
+Other White - 81
+
+"Agiorgitiko"
+"Aglianico"
+"Albarino"
+"Alfrocheiro" (red). 4 in red blend
+"Aligote"
+"Almansa" -> none
+X "Altesse" -> 2. white
+X "Amarone" -> not a grape. 1
+"Baco Noir"
+X "Baga" id 7. -> one wine. red blend
+"Barbera"
+"Bonarda"
+X "Braucol" id 12. -> two bottles. red
+"Cabernet Franc"
+"Cabernet Sauvignon"
+X "Canaiolo" id 107. -> 2. always in blend. other red
+"Carignan"
+"Carmenere"
+X "Cava" -> not a grape
+X "Chambourcin" id 18 -> 3 bottles. red
+"Chardonnay"
+X "Chasselas" -> 1. white
+"Chenin Blanc"
+"Cinsault"
+X "Colombard" id 110 -> 2. white
+"Cortese" -> white wine. keep it
+X "Corvina" id 20 -> 4 bottles. all in red blend
+"Dolcetto"
+X "Fiano" -> id 113 -> 2. white
+X "Foch" id 25 -> 3 bottles. red
+X "Gaggliopo" id 96 -> one wine. red
+"Gamay"
+"Garganega"
+"Gewurztraminer"
+X "Graciano" id 109 -> 4
+"Grasevina"
+"Grenache"
+"Gros Manseng"
+"Grenache Blanc"
+"Gruner Veltliner"
+X "Inzolia" id 70 -> 1. white
+X "Lacrima" -> one wine. red
+X "Malaga" -> 1. mixed with other rare ones in red blend
+"Malbec"
+"Malvasia"
+"Marsanne"
+X "Mazuelo" -> one bottle. Is another name for carignan
+"Melon De Bourgogne"
+"Mencia"
+"Merlot"
+X "Molinara" -> 1 -> red blend
+X "Monica Cagnulari" -> 1 -> red blend
+"Montepulciano"
+"Moschofilero"
+"Mourvedre"
+"Muscat"
+"Nebbiolo"
+"Negroamaro" -> 5
+"Nerello Cappuccio" -> 2
+"Nerello Mascalese" -> 2
+"Nero D'Avola"
+"Nero Di Troia" -> 4
+X "Nuragus" -> 1 -> white
+"Other Red"
+"Other White"
+X "Pascale Di Cagliari" -> 1 -> red blend
+"Pecorino"
+X "Perricone" id 37 -> 1 -> red
+"Petite Syrah"
+"Petit Verdot"
+"Picpoul De Pinet"
+"Pinotage"
+"Pinot Blanc"
+"Pinot Grigio"
+"Pinot Meunier"
+"Pinot Noir"
+"Primitivo"
+"Prosecco" -> 2
+X "Raboso" -> 1 -> red
+"Red Blend"
+"Riesling"
+X "Rizling" -> 1 -> white
+"Rondinella" -> 5 -> blend
+X "Rose" -> 2 -> remove
+"Roussanne"
+"Sangiovese"
+"Sauvignon Blanc"
+"Saperavi" -> 2
+"Semillon"
+"Syrah"
+"Tannat"
+"Tempranillo"
+"Torrontes"
+"Touriga Franca" -> 5
+"Touriga Nacional"
+"Trebbiano"
+"Trebbiano Di Lugano"
+"Trincadeira" -> 4
+"Verdejo"
+"Vermentino"
+"Vernaccia"
+"Vidal"
+"Viognier"
+"Viura" -> 8. keep the grape
+"White Blend"
+"Xinomavro"
+"Zweigelt"
+
+grapes in rails  migrations but deleted manually from prod db:
+
+"Barbaresco" -> not a grape. Somehow still in migration
+"Barolo" -> not a grape. Somehow still in migration
+"Viuria" -> not a grape. Somehow still in migration
+"Zinfandel" -> should be primitivo. Somehow still in migration
+
+grapes to drop: (can be done after migration)
+- Alfrocheiro
+- Almansa
+- Amarone
+- Altesse
+- Baga
+- Braucol
+- Canaiolo
+- Cava
+- Chambourcin
+- Chasselas
+- Colombard
+- Corvina
+- Fiano
+- Foch
+- Gaggliopo
+- Graciano
+- Inzolia
+- Lacrima
+- Malaga
+- Mazuelo
+- Molinara
+- Monica Cagnulari
+- Nuragus
+- Pascale Di Cagliari
+- Perricone
+- Raboso
+- Rizling
+- Rose

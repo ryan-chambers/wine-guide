@@ -114,7 +114,7 @@ describe 'Wine Score Parser' do
 
     it 'should parse migrated wines' do
       wb = parse_wine_bottle_line('Ryan, Other Red, 2020, test, Melbourne. $19.0. 0/100. . Bought . In fridge.', 'Australia')
-      p "#{wb.to_s}"
+#      p "#{wb.to_s}"
 
       wine = wb[:wine]
       expect(wine.country).to eq('Australia')
