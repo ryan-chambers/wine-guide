@@ -1,5 +1,3 @@
-# coding: utf-8
-
 require 'rails_helper'
 require 'wine_score_parser'
 
