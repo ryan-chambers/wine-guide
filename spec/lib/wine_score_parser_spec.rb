@@ -59,7 +59,6 @@ describe 'Wine Score Parser' do
       expect(bottle1.drink_from).to be_nil()
       expect(bottle1.drink_to).to be_nil()
       expect(bottle1.bought).to be_nil()
-
     end
 
     it 'should parse wine with multiple bottles' do
@@ -70,6 +69,7 @@ describe 'Wine Score Parser' do
       expect(wine.region).to eq('Ap Languedoc')
       expect(wine.winery_name).to eq('M Chapoutier')
       expect(wine.year).to eq('2017')
+      # TODO should be red blend
       expect(wine.other).to eq(['Grenache', 'Syrah', 'Mathilde'])
       expect(wine.lcbo).to eq('644468')
 
@@ -88,11 +88,10 @@ describe 'Wine Score Parser' do
       expect(bottle2.date).to eq('27 Oct 2020')
       expect(bottle2.price).to eq('14.95')
       expect(bottle2.score).to eq(88)
-
     end
 
     it 'should parse wine in cellar with no from, to' do
-       wb = parse_wine_bottle_line('Leaning Post, Chardonnay, 2018, Wismer - Foxcroft Vineyard, VQA Twenty Mile Bench. $40.0. 0/100. . Bought Jul 2021. To 2025. In fridge.', 'Canada')
+      wb = parse_wine_bottle_line('Leaning Post, Chardonnay, 2018, Wismer - Foxcroft Vineyard, VQA Twenty Mile Bench. $40.0. 0/100. . Bought Jul 2021. To 2025. In fridge.', 'Canada')
 #      p "#{wb.to_s}"
 
       wine = wb[:wine]
@@ -113,7 +112,27 @@ describe 'Wine Score Parser' do
       expect(bottle1.drink_from).to be_nil()
       expect(bottle1.drink_to).to eq('2025')
       expect(bottle1.bought).to eq('Jul 2021')
+    end
 
+    it 'should parse migrated wines' do
+      wb = parse_wine_bottle_line('Ryan, Other Red, 2020, test, Melbourne. $19.0. 0/100. . Bought . In fridge.', 'Australia')
+      p "#{wb.to_s}"
+
+      wine = wb[:wine]
+      expect(wine.country).to eq('Australia')
+      expect(wine.winery_name).to eq('Ryan')
+      expect(wine.year).to eq('2020')
+      expect(wine.other).to eq(['Other Red', 'test', 'Melbourne'])
+
+      bottles = wb[:bottles]
+      expect(bottles.length).to be(1)
+      bottle1 = bottles[0];
+      expect(bottle1.in_fridge).to eq(true)
+      expect(bottle1.comments).to eq([])
+      expect(bottle1.date).to be_nil()
+      expect(bottle1.price).to eq('19.0')
+      expect(bottle1.score).to eq(0)
+      expect(bottle1.drink_from).to be_nil()
     end
   end
 
