@@ -2,17 +2,21 @@ class MigrationsController < ApplicationController
   include MigrationHelper
 
   def kickoff
-    logger.info "In migrations controller"
+    logger.info "In migrations controller, got migration count #{params[:count]}"
 
-    @count = Wine.count_missing_wine
+    @count = params[:count].to_i
 
-    logger.info "There are #{@count} records to be migrated"
+    @toMigrate = @count > 0 && @count <= 100 ? @count : 5
 
-    Wine.find_wines_to_migrate(5).map { |w| migrate_wine w}
+    @remaining = Wine.count_missing_wine
+
+    logger.info "There are #{@remaining} records to be migrated"
+
+    Wine.find_wines_to_migrate(@toMigrate).map { |w| migrate_wine w}
 
     respond_to do |format|
       # not JSON but who cares
-      format.json { render :json => @count}
+      format.json { render :json => @remaining}
     end
   end
 

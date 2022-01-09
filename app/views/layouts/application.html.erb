@@ -51,7 +51,7 @@
 		  			<button type="submit" class="btn btn-default">Search</button>
 			  	<% end %>
 			  	<ul class="nav navbar-nav navbar-right">
-			  		<li><button id="migrate-button" class="btn btn-default">Migrate</button></li>
+			  		<li><input type="number" id="count" /><button id="migrate-button" class="btn btn-default">Migrate</button></li>
 				  	<li><%= link_to "Export", { :controller => 'export', :action => 'export' } %></li>
 			  	</ul>
 			</div>
@@ -68,9 +68,10 @@
 		});
 
 		$(document).on('click', '#migrate-button', function(e) {
-				console.log(`here`);
+				const count = document.getElementById('count').value;
+				console.log(`here; count = ${count}`);
 				$.ajax({
-					url: '/migrations/kickoff',
+					url: '/migrations/kickoff?count=' + count,
 					method: 'POST'
         }).done(function(data) {
 				console.log(`done: ${JSON.stringify(data)}`);
