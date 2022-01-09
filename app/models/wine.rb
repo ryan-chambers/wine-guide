@@ -131,10 +131,10 @@ class Wine < ActiveRecord::Base
     grape_names.sort!
   end
 
-  # TODO-3 wine grape names return single grape
+  # TODO-3 wine grape names return single grape and remove grapes_to_s_2
   def grapes_to_s(separator=", ")
     if grapes.empty?
-      p "Have grape id #{grape_id}"
+#      p "Have grape id #{grape_id}"
       if grape_id
         g = Grape.find_by_id(grape_id)
         g.name + ' (* migrated)'
@@ -145,6 +145,21 @@ class Wine < ActiveRecord::Base
         out << g.name
       }
       grape_names.join(separator)
+    end
+  end
+
+  def grapes_to_s_2
+    if grapes.empty?
+      if grape_id
+        g = Grape.find_by_id(grape_id)
+        g.name
+      end
+    else
+      grape_names = grapes.reduce([]) { |out, g|
+#        p "Adding #{g.name} to #{out}"
+        out << g.name
+      }
+      grape_names.join(', ')
     end
   end
 

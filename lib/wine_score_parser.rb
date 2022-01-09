@@ -1,10 +1,10 @@
-# coding: utf-8
-
 require 'open-uri'
 require 'grape.rb'
 require 'country.rb'
 require 'wine.rb'
 require 'bottle.rb'
+
+include MigrationHelper
 
 class WineVO
   def initialize
@@ -25,8 +25,17 @@ class WineVO
     wine.region = @region
     wine.year = @year
     wine.other = @other.sort!.join(', ')
-    @grapes.each do | grape |
-      wine.grapes << Grape.where(:name => grape)
+
+#    @grapes.each do | grape |
+#      wine.grapes << Grape.where(:name => grape)
+#    end
+
+#    grapes = wine.grapes
+    wine.grapes = []
+    g = grape_name(grapes)
+    grape = Grape.find_by_name(g)
+    if (grape)
+      wine.grape_id = grape.id
     end
 
     wine.save!
@@ -121,6 +130,7 @@ def make_wine(wine_info, country)
     if /^\d{4}$/.match(part)
 #      p "Found year #{part}"
       wine.year = part
+    #elsif part == 'Other Red' or part == 'Grenache' or part == 'Syrah'  # testing only
     elsif not Grape.where(:name => part).empty?
 #      p "Found grape variety #{part}"
       wine.grapes << part
