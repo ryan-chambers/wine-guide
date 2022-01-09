@@ -15,7 +15,7 @@ class WineVO
     @country
   end
 
-  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country, :grapes
+  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
 
   def create_wine_from_values(winery)
     wine = Wine.new
@@ -26,11 +26,6 @@ class WineVO
     wine.year = @year
     wine.other = @other.sort!.join(', ')
 
-#    @grapes.each do | grape |
-#      wine.grapes << Grape.where(:name => grape)
-#    end
-
-#    grapes = wine.grapes
     wine.grapes = []
     g = grape_name(grapes)
     grape = Grape.find_by_name(g)
@@ -232,8 +227,6 @@ def parse_wine_bottle_line(line, country)
   wine_info = parts.shift
 
   wine = make_wine(wine_info, country)
-
-#  wine = wine.store
 
   if(wine)
     bottles = make_bottles parts

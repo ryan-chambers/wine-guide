@@ -1,4 +1,5 @@
 class MigrationsController < ApplicationController
+  include MigrationHelper
 
   def kickoff
     logger.info "In migrations controller"
@@ -19,5 +20,19 @@ class MigrationsController < ApplicationController
     @grape_names = wine.grapes.map { |g| g.name}
 
     logger.info "Will migrate wine with grapes #{@grape_names}"
+
+    wine.grapes = []
+    g = grape_name(@grape_names)
+
+    grape = Grape.find_by_name(g)
+
+    logger.info "Migrating to grape #{grape.name} with id #{grape.id}"
+
+    if (grape)
+      wine.grape_id = grape.id
+      wine.save!
+    elsif
+      logger.info "Oops, no grape found!"
+    end
   end
 end
