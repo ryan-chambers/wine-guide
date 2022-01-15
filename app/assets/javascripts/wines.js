@@ -1,51 +1,6 @@
 var wines = function() {
 	var $modal_reference;
 
-	function enableGrapePicker(grape_name_field) {
-	    var $grape_name = grape_name_field;
-	    var $selected_grape_ids = $('#grape_ids');
-	    var $grape_list = $('#grape_list');
-	    var counter = 0;
-
-	    function addGrapeToList(grape_id, grape_name) {
-	        $grape_list.append('<li class="grape_ctr_' + counter + '" data-id="' + grape_id + '">' + grape_name + '&nbsp;<a href="#" class="remove_grape">Remove</a></li>');
-	        counter++;
-	    }
-
-	    // create grape list if grape_ids already populated
-	    $selected_grape_ids.val().split('|').forEach(function (grape_id) {
-	        grape_id = $.trim(grape_id);
-	        if(grape_id === '') {
-	            return;
-	        }
-	        var grape_name = $grape_name.find('option[value="' + grape_id + '"]').text();
-	        if(grape_name !== '') {
-	            addGrapeToList(grape_id, grape_name);
-	        }
-	    });
-
-	    $grape_name.on('typeahead:selected', function(e, selected_grape) {
-	        $selected_grape_ids.val($selected_grape_ids.val() + '|' + selected_grape.id);
-	        // FIXME filter out duplicate grapes
-	        addGrapeToList(selected_grape.id, selected_grape.name);
-	        $grape_name_field.typeahead('setQuery', '');
-	    });
-
-	    $(document).on('click', '.remove_grape', function(e) {
-	        var $selected = $(e.currentTarget).parent();
-	        var class_to_remove = $selected.attr('class');
-	        var id = $selected.data('id') + '';
-	
-	        $('.' + class_to_remove).remove();
-	
-	        var kept_ids = $selected_grape_ids.val().split('|').filter(function(item) {
-	            var result = item.length > 0 && item !== id && item !== ' ';
-	            return result;
-	        });
-	        $selected_grape_ids.val(kept_ids.join('|'));
-	    });
-	}
-
 	function enableBottleTweeting(modal_id) {
 		$modal_reference = $(modal_id);
 		$modal_reference.modal({show: false});
@@ -60,7 +15,6 @@ var wines = function() {
 	}
 
 	return {
-		enableGrapePicker: enableGrapePicker,
 		enableBottleTweeting: enableBottleTweeting,
 		generateTweet: generateTweet
 	};

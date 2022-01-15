@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get "home/index"
 
+  post "migrations/kickoff"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

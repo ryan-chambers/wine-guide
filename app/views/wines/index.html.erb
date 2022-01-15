@@ -4,9 +4,6 @@
 		<input type="hidden" name="utf8" value="✓" />
 	</div>
 	<div class="form-group">
-		<input type="text" class="form-control" id="grape_filter" autocomplete="off" placeholder="All Grapes" name="grape_filter">
-	</div>
-	<div class="form-group">
 		<select id="country_filter" name="country_filter" class="col-md-3 form-control">
 			<option value="">Choose Country</option>
 			<% Country::COUNTRY_LIST.each do |country| %>
@@ -48,9 +45,3 @@
 <% if ! params[:term] and ! params[:reviews_from] and ! params[:reviews_to] %>
 	<%= will_paginate @wines, renderer: BootstrapPagination::Rails %>
 <% end %>
-<script type="text/javascript">
-  $('#grape_filter').typeahead({
-  	name: "grapes",
-  	remote : "/grapes/search?term=%QUERY"
-  });
-</script>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_184218) do
+ActiveRecord::Schema.define(version: 2022_01_01_161947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,9 @@ ActiveRecord::Schema.define(version: 2021_09_11_184218) do
     t.string "lcbo_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.bigint "grape_id"
+    t.index ["grape_id"], name: "index_wines_on_grape_id"
   end
 
+  add_foreign_key "wines", "grapes"
 end

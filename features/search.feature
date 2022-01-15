@@ -25,13 +25,6 @@ Feature: Search for wines
 		When I press "Search"
 		Then I should see the search results for Alvento
 
-	Scenario: Filter by grape
-		Given some bottles of wine in the cellar
-		And I am on the home page
-		And I fill in "grape_filter" with "Vernaccia"
-		When I press "Filter"
-		Then I should see the search results for Vernaccia
-
 	Scenario: Filter by country
 		Given some bottles of wine in the cellar
 		And I am on the home page

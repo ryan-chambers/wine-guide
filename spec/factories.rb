@@ -28,7 +28,12 @@ FactoryBot.define do
     name { 'Kenwood' }
     initialize_with { Winery.find_or_create_by(name: name)}
   end
-  
+
+  factory :poggio_antico, class: Winery do
+    name { 'Poggio Antico'}
+    initialize_with { Winery.find_or_create_by(name: name)}
+  end
+
   factory :sauvignonblanc, class: Grape do
     name { 'Sauvignon Blanc' }
     initialize_with { Grape.find_or_create_by(name: name)}
@@ -44,6 +49,11 @@ FactoryBot.define do
     initialize_with { Grape.find_or_create_by(name: name)}
   end
 
+  factory :red_blend, class: Grape do
+    name { 'Red Blend' }
+    initialize_with { Grape.find_or_create_by(name: name)}
+  end
+
   factory :wine do
     year { 2011 }
     other { 'Reserve' }
@@ -54,6 +64,7 @@ FactoryBot.define do
         wine.region = 'VQA Niagara'
         wine.winery = create(:alvento)
         wine.grapes << create(:sauvignonblanc)
+        wine.grape_id = create(:sauvignonblanc).id
         wine.lcbo_code = '123456'
         wine.other = 'Reserve'
       end
@@ -65,6 +76,7 @@ FactoryBot.define do
         wine.region = 'VQA Niagara'
         wine.winery = create(:vineland)
         wine.grapes << build(:sauvignonblanc)
+        wine.grape_id = create(:sauvignonblanc).id
         wine.lcbo_code = '98765432'
       end
     end
@@ -75,6 +87,7 @@ FactoryBot.define do
         wine.region = 'VQA Niagara'
         wine.winery = create(:cavesprings)
         wine.grapes << build(:sauvignonblanc)
+        wine.grape_id = create(:sauvignonblanc).id
       end
     end
 
@@ -83,6 +96,7 @@ FactoryBot.define do
         wine.country = 'Italy'
         wine.winery = create(:imocali)
         wine.grapes << build(:vernaccia)
+        wine.grape_id = create(:vernaccia).id
       end
     end
 
@@ -91,6 +105,7 @@ FactoryBot.define do
         wine.country = 'USA'
         wine.winery = create(:kenwood)
         wine.grapes << build(:merlot)
+        wine.grape_id = create(:merlot).id
       end
     end
 
@@ -99,6 +114,18 @@ FactoryBot.define do
         wine.country = 'Canada'
         wine.winery = create(:lailey)
         wine.grapes << build(:merlot)
+        wine.grape_id = create(:merlot).id
+      end
+    end
+
+    # for testing with a grape_id
+    factory :poggio_antico_red_blend, parent: :wine do
+      before(:create) do |wine|
+        wine.country = 'Italy'
+        wine.winery = create(:poggio_antico)
+        wine.grape_id = create(:red_blend).id
+        wine.region = 'Brunello di Montalcino'
+        wine.lcbo_code = ''
       end
     end
   end

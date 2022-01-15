@@ -1,7 +1,7 @@
 class Wine < ActiveRecord::Base
   validate :year_after_1800
 
-  validates :winery_id, :year, :country, :grapes, :presence => true
+  validates :winery_id, :year, :country, :grape_id, :presence => true
 
   validates :year, :numericality => true
 
@@ -29,12 +29,16 @@ class Wine < ActiveRecord::Base
   end
 
   def self.search_for_wine(search_term, review_from, review_to)
+    # TODO-1 restore grapes in search results
     if review_from.empty? and review_to.empty?
-      results = Wine.joins(:winery, :grapes)
+#      results = Wine.joins(:winery, :grapes)
+      results = Wine.joins(:winery)
     else
-      results = Wine.joins(:winery, :grapes, :bottles)
+#      results = Wine.joins(:winery, :grapes, :bottles)
+      results = Wine.joins(:winery, :bottles)
     end
-    results = results.includes(:winery, :grapes, :grapes_wines)
+#    results = results.includes(:winery, :grapes)
+    results = results.includes(:winery)
 
     limit = 5
 
@@ -63,25 +67,20 @@ class Wine < ActiveRecord::Base
     results
   end
 
-  def self.filter_by_grapes_country(grapes, country)
-    logger.info "Filtering by grapes #{grapes}, country #{country}"
-    if ! grapes.empty?
-      grapes_like = "%".concat(grapes.downcase.concat("%"))
-      results = Wine.joins(:grapes).includes(:grapes, :winery, :grapes_wines).where("lower(grapes.name) like ?", grapes_like)
-    else
-      results = Wine.includes(:grapes, :winery)
-    end
+  def self.filter_by_country(country)
+    results = Wine.includes(:grapes, :winery)
 
     if ! country.empty?
+      logger.info "Filtering by country #{country}"
       results = results.where(:wines => {:country => country})
     end
 
     results
   end
 
-  def self.filter_paginate(grape_filter, country_filter, page)
-    if(grape_filter || country_filter)
-      filter_by_grapes_country(grape_filter, country_filter).paginate(page)
+  def self.filter_paginate(country_filter, page)
+    if(country_filter)
+      filter_by_country(country_filter).paginate(page)
     else
       Wine.joins(:winery).includes(:grapes, :winery).paginate(page).order('wineries.name asc')
     end
@@ -113,6 +112,7 @@ class Wine < ActiveRecord::Base
     [winery.name, grapes_to_s, year].join(' ')
   end
 
+  # TODO-2 implement for single grape
   def list_grape_names
     i = 0
     grape_names = []
@@ -123,15 +123,35 @@ class Wine < ActiveRecord::Base
     grape_names.sort!
   end
 
+  # TODO-3 wine grape names return single grape and remove grapes_to_s_2
   def grapes_to_s(separator=", ")
     if grapes.empty?
-      ''
+#      p "Have grape id #{grape_id}"
+      if grape_id
+        g = Grape.find_by_id(grape_id)
+        g.name + ' (* migrated)'
+      end
     else
       grape_names = grapes.reduce([]) { |out, g|
 #        p "Adding #{g.name} to #{out}"
         out << g.name
       }
       grape_names.join(separator)
+    end
+  end
+
+  def grapes_to_s_2
+    if grapes.empty?
+      if grape_id
+        g = Grape.find_by_id(grape_id)
+        g.name
+      end
+    else
+      grape_names = grapes.reduce([]) { |out, g|
+#        p "Adding #{g.name} to #{out}"
+        out << g.name
+      }
+      grape_names.join(', ')
     end
   end
 
@@ -160,7 +180,7 @@ class Wine < ActiveRecord::Base
   private
 
   def year_after_1800
-      errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
+    errors.add(:year, "must be after 1800.") if ! year.nil? and year < 1800
   end
 
   def self.day_of_year 

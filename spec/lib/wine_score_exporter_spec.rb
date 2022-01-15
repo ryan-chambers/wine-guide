@@ -42,5 +42,18 @@ describe 'Wine Score Exporter' do
       expect(sentence).to include(wine.year.to_s)
       expect(sentence).to include(wine.lcbo_code)
     end
+
+    it 'should also handle migrated grapes' do
+      wine = create(:poggio_antico_red_blend)
+      wine.other = 'Reserva' # for testing
+      sentence = @fixture.create_wine_sentence(wine, wine.winery)
+#      puts "#{sentence}"
+      expect(sentence).to include('Poggio Antico')
+      expect(sentence).to include('Red Blend')
+      expect(sentence).to include('Reserva')
+      expect(sentence).to include(wine.region)
+      expect(sentence).to include(wine.year.to_s)
+      expect(sentence).to include(wine.lcbo_code)      
+    end
   end
 end

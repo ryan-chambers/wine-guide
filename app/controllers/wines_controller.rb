@@ -13,7 +13,7 @@ class WinesController < ApplicationController
         @wines = Wine.search_for_wine params[:term] || '', params[:reviews_from] || '', params[:reviews_to] || ''
       end
     else
-      @wines = Wine.filter_paginate(params[:grape_filter] || '', params[:country_filter] || '', :page => params[:page])
+      @wines = Wine.filter_paginate(params[:country_filter] || '', :page => params[:page])
     end
 
 #    logger.info "got #{@wines}.length() wines"
@@ -38,20 +38,14 @@ class WinesController < ApplicationController
     @wine = Wine.new(wine_params)
 
     @winery_name = params[:winery_name]
-    @grape_ids = params[:grape_ids]
+    @grape_name = params[:grape_name]
 
     @winery = Winery.find_by_name(@winery_name)
 
-    # FIXME this is a hack. Need to figure out how to embed grapes in wine form; search for how to model many-to-many for REST
-    if(@grape_ids)
-      @grape_ids.split('|').each do |grape_id|
-        grape_id = grape_id.strip
-        if ! grape_id.empty? and grape_id != ' '
-          logger.info "Found grape_id <#{grape_id}>"
-  
-          @wine.grapes << Grape.find(grape_id)
-        end
-      end
+    logger.info "grape name is '#{@grape_name}'"
+    @grape = Grape.find_by_name(@grape_name)
+    if (@grape)
+      @wine.grape_id = @grape.id
     end
 
     # FIXME is this a hack too? According to Efficient Rails TDD on youtube it is
