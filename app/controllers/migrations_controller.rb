@@ -23,7 +23,7 @@ class MigrationsController < ApplicationController
   def migrate_wine(wine)
     @grape_names = wine.grapes.map { |g| g.name}
 
-    logger.info "Will migrate wine with grapes #{@grape_names}"
+    logger.info "Will migrate wine #{wine.id} with grapes #{@grape_names}"
 
     wine.grapes = []
     g = grape_name(@grape_names)
