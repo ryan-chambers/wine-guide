@@ -30,16 +30,4 @@ describe Grape do
       expect(Grape.findAll).to eq([g1, @grape])
     end
   end
-
-  describe "reports" do
-    it "generates a grape report" do
-      @bottle = create(:alvento_sauvignonblanc_bottle_drank)
-
-      gr = Grape.generate_grape_report(@bottle.wine.grapes[0].id)
-      expect(gr.total_bottles).to eq(1)
-      expect(gr.avg_price).to eq(19.95)
-      expect(gr.avg_score).to eq(86.0)
-#      p "#{gr}"
-    end
-  end
 end
