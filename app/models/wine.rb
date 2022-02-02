@@ -109,44 +109,11 @@ class Wine < ActiveRecord::Base
   end
 
   def to_s
-    [other, grapes_to_s, region, year, lcbo_code, grapes.to_s, bottles.to_s].join(', ')
+    [other, grape.name, region, year, lcbo_code, bottles.to_s].join(', ')
   end
 
   def title
-    [winery.name, grapes_to_s, year].join(' ')
-  end
-
-  # TODO-3 wine grape names return single grape and remove grapes_to_s_2
-  def grapes_to_s(separator=", ")
-    if grapes.empty?
-#      p "Have grape id #{grape_id}"
-      if grape_id
-        g = Grape.find_by_id(grape_id)
-        g.name + ' (* migrated)'
-      end
-    else
-      grape_names = grapes.reduce([]) { |out, g|
-#        p "Adding #{g.name} to #{out}"
-        out << g.name
-      }
-      grape_names.join(separator)
-    end
-  end
-
-  # TODO-4 remove
-  def grapes_to_s_2
-    if grapes.empty?
-      if grape_id
-        g = Grape.find_by_id(grape_id)
-        g.name
-      end
-    else
-      grape_names = grapes.reduce([]) { |out, g|
-#        p "Adding #{g.name} to #{out}"
-        out << g.name
-      }
-      grape_names.join(', ')
-    end
+    [winery.name, grape.name, year].join(' ')
   end
 
   def drunk_bottles
