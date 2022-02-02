@@ -7,33 +7,33 @@ class Wine < ActiveRecord::Base
 
   belongs_to :winery
 
-  has_many :bottles
+  belongs_to :grape
 
-  has_and_belongs_to_many :grapes
+  has_many :bottles
 
   def self.count_missing_wine
     Wine.where(grape_id: nil).count
   end
 
-  def self.find_wines_to_migrate(limit)
-    Wine.where(grape_id: nil).includes(:grapes, :grapes_wines).limit(limit)
-  end
+#  def self.find_wines_to_migrate(limit)
+#    Wine.where(grape_id: nil).includes(:grapes, :grapes_wines).limit(limit)
+#  end
 
   def self.find_all_by_lcbo_code(lcbo_code)
     Wine.where(lcbo_code: lcbo_code)
   end
 
   def self.find_in_cellar
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :grapes_wines).where(:bottles => {:in_fridge => true}).order('bottles.drink_from')
+    Wine.joins(:bottles).includes(:grape, :bottles, :winery).where(:bottles => {:in_fridge => true}).order('bottles.drink_from')
   end
 
   def self.find_in_cellar_ready_to_drink
     from = Time.new.strftime('%Y').to_i
-    Wine.joins(:bottles).includes(:grapes, :bottles, :winery, :grapes_wines).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true).order('bottles.drink_from')
+    Wine.joins(:bottles).includes(:grape, :bottles, :winery).where('(bottles.drink_from is null or bottles.drink_from <= ?) and bottles.in_fridge = ?', from, true).order('bottles.drink_from')
   end
 
   def self.find_drank_this_day
-    Wine.joins(:bottles).includes(:bottles, :grapes, :grapes_wines, :winery).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
+    Wine.joins(:bottles).includes(:bottles, :grape, :winery).where(:bottles => {:in_fridge => false, :review_day_of_year => day_of_year}).order('bottles.reviewdate')
   end
 
   def self.search_for_wine(search_term, review_from, review_to)
@@ -76,7 +76,7 @@ class Wine < ActiveRecord::Base
   end
 
   def self.filter_by_country(country)
-    results = Wine.includes(:grapes, :winery)
+    results = Wine.includes(:grape, :winery)
 
     if ! country.empty?
       logger.info "Filtering by country #{country}"
@@ -90,7 +90,7 @@ class Wine < ActiveRecord::Base
     if(country_filter)
       filter_by_country(country_filter).paginate(page)
     else
-      Wine.joins(:winery).includes(:grapes, :winery).paginate(page).order('wineries.name asc')
+      Wine.joins(:winery).includes(:grape, :winery).paginate(page).order('wineries.name asc')
     end
   end
 
@@ -98,7 +98,7 @@ class Wine < ActiveRecord::Base
     # p "Filtering for favourites scored #{score_filter} and higher from #{date} and after"
     score = score_filter || 90
     Wine.joins(:bottles)
-      .includes(:grapes, :bottles, :winery, :grapes_wines)
+      .includes(:grape, :bottles, :winery)
       .where('bottles.score >= :score and bottles.reviewdate >= :date', {:score => score, :date => date})
       .distinct
   end

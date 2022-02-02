@@ -47,3 +47,6 @@ rails g migration RemoveGrapeTintoRoriz
 
 # note: later manually updates to be change reference
 rails g migration AddGrapeIdToWines grape_id:integer
+
+# had to manually insert drop statement
+rails g migration DropTableGrapesWines

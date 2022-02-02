@@ -3,10 +3,6 @@ require 'report_vo'
 class Grape < ActiveRecord::Base
   validates :name, :presence => true, uniqueness: true
 
-  has_and_belongs_to_many :wines
-
-  belongs_to :wines
-
   before_save { |grape| grape.name = grape.name.split(/(\W)/).map(&:capitalize).join }
 
   def self.search_by_name(name)
