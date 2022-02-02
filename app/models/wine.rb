@@ -37,16 +37,12 @@ class Wine < ActiveRecord::Base
   end
 
   def self.search_for_wine(search_term, review_from, review_to)
-    # TODO-1 restore grapes in search results
     if review_from.empty? and review_to.empty?
-#      results = Wine.joins(:winery, :grapes)
       results = Wine.joins(:winery)
     else
-#      results = Wine.joins(:winery, :grapes, :bottles)
       results = Wine.joins(:winery, :bottles)
     end
-#    results = results.includes(:winery, :grapes)
-    results = results.includes(:winery)
+    results = results.includes(:winery, :grape)
 
     limit = 5
 
