@@ -120,17 +120,6 @@ class Wine < ActiveRecord::Base
     [winery.name, grapes_to_s, year].join(' ')
   end
 
-  # TODO-2 implement for single grape
-  def list_grape_names
-    i = 0
-    grape_names = []
-    until i >= grapes.length
-      grape_names << grapes[i].name
-      i += 1
-    end
-    grape_names.sort!
-  end
-
   # TODO-3 wine grape names return single grape and remove grapes_to_s_2
   def grapes_to_s(separator=", ")
     if grapes.empty?
@@ -148,6 +137,7 @@ class Wine < ActiveRecord::Base
     end
   end
 
+  # TODO-4 remove
   def grapes_to_s_2
     if grapes.empty?
       if grape_id
