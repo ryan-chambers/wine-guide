@@ -15,7 +15,7 @@
     <tr>
       <td><%= wine.other %></td>
       <td><%= wine.region %></td>
-      <td><%= wine.list_grape_names.join(', ') %></td>
+      <td><%= wine.grape.name %></td>
       <td><%= wine.year %></td>
       <td>
         <% wine.bottles.each do |b| %>

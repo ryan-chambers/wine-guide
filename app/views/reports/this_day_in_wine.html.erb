@@ -24,7 +24,7 @@
       </td>
       <td><%= wine.country %></td>
       <td><%= wine.region %></td>
-      <td><%= wine.list_grape_names.join(', ') %></td>
+      <td><%= wine.grape.name %></td>
       <td><%= wine.year %> </td>
       <td><%= number_to_currency(wine.drank_this_day_bottles[0].price) %></td>
       <td><%= wine.drank_this_day_bottles[0].score.to_i %></td>
