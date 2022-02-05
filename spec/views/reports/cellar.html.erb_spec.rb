@@ -12,7 +12,7 @@ describe "/reports/cellar" do
     expect(rendered).to include(b1.wine.winery.name)
     expect(rendered).to include(b1.wine.other)
     expect(rendered).to include(b1.wine.country)
-    expect(rendered).to include(b1.wine.grapes[0].name)
+    expect(rendered).to include(b1.wine.grape.name)
     expect(rendered).to include(b1.price.to_s)
     expect(rendered).to include(b1.bought)
     expect(rendered).to include(b1.wine.year.to_s)
