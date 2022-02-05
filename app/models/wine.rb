@@ -109,7 +109,7 @@ class Wine < ActiveRecord::Base
   end
 
   def to_s
-    [other, grape.name, region, year, lcbo_code, bottles.to_s].join(', ')
+    [other, (grape ? grape.name : ''), region, year, lcbo_code, bottles.to_s].join(', ')
   end
 
   def title
