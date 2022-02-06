@@ -41,7 +41,7 @@ class WineScoreExporter
       l << NEW_LINE
 
       # load all wines for country
-      wines = Wine.where("country = ?", country).order('winery_id asc')
+      wines = Wine.includes(:grape, :bottles).where("country = ?", country).order('winery_id asc')
 
       wines.each do |wine|
         # look up winery
