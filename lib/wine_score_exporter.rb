@@ -6,7 +6,7 @@ class WineScoreExporter
 
   def create_wine_sentence(wine, winery)
     # p "create sentence for wine #{wine}"
-    s = [winery.name.gsub('.', ''), wine.grapes_to_s_2(), wine.year]
+    s = [winery.name.gsub('.', ''), wine.grape.name, wine.year]
     s << wine.other.gsub('.', '') unless wine.other.nil? or wine.other.empty?
     s << wine.region unless wine.region.nil? or wine.region.empty?
     s << "LCBO# " + wine.lcbo_code unless wine.lcbo_code.empty?

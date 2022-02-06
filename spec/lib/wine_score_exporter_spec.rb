@@ -36,7 +36,7 @@ describe 'Wine Score Exporter' do
       sentence = @fixture.create_wine_sentence(wine, wine.winery)
 #      puts "#{sentence}"
       expect(sentence).to include('St Vincent')
-      expect(sentence).to include(wine.grapes[0].name)
+      expect(sentence).to include(wine.grape.name)
       expect(sentence).to include('St George Vineyard')
       expect(sentence).to include(wine.region)
       expect(sentence).to include(wine.year.to_s)
