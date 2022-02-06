@@ -5,6 +5,10 @@ describe MigrationHelper do
     expect(grape_name ['Zweigelt']).to eq('Zweigelt')
   end
 
+  it 'should map Nebbiolo to itself' do
+    expect(grape_name ['Nebbiolo']).to eq('Nebbiolo')
+  end
+
   it 'should map single white grape to itself' do
     expect(grape_name ['Chardonnay']).to eq('Chardonnay')
   end
