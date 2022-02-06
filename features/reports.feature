@@ -41,11 +41,3 @@ Feature: Cellar Report
 		And I am on the home page
 		When I click "Recent Good Bottles"
 		Then I should see the recent good bottles report
-
-	Scenario: Shows the grape report
-		Given some wine reviews
-		And I am on the home page
-		And I click "Grape Report"
-		And I fill in "grape_filter" with "Merlot"
-		When I press "Generate Report"
-		Then I should see the grape report
