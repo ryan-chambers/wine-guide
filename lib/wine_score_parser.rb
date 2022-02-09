@@ -4,8 +4,6 @@ require 'country.rb'
 require 'wine.rb'
 require 'bottle.rb'
 
-include MigrationHelper
-
 class WineVO
   def initialize
     @grape = ''
@@ -26,7 +24,6 @@ class WineVO
     wine.year = @year
     wine.other = @other.sort!.join(', ')
 
-#    g = grape_name(grapes)
     g = Grape.find_by_name(grape)
     if (grape)
       wine.grape_id = g.id
