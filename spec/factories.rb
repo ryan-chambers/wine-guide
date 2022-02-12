@@ -63,7 +63,6 @@ FactoryBot.define do
         wine.country = 'Canada'
         wine.region = 'VQA Niagara'
         wine.winery = create(:alvento)
-        wine.grapes << create(:sauvignonblanc)
         wine.grape_id = create(:sauvignonblanc).id
         wine.lcbo_code = '123456'
         wine.other = 'Reserve'
@@ -75,7 +74,6 @@ FactoryBot.define do
         wine.country = 'Canada'
         wine.region = 'VQA Niagara'
         wine.winery = create(:vineland)
-        wine.grapes << build(:sauvignonblanc)
         wine.grape_id = create(:sauvignonblanc).id
         wine.lcbo_code = '98765432'
       end
@@ -86,7 +84,6 @@ FactoryBot.define do
         wine.country = 'Canada'
         wine.region = 'VQA Niagara'
         wine.winery = create(:cavesprings)
-        wine.grapes << build(:sauvignonblanc)
         wine.grape_id = create(:sauvignonblanc).id
       end
     end
@@ -95,7 +92,6 @@ FactoryBot.define do
       before(:create) do |wine|
         wine.country = 'Italy'
         wine.winery = create(:imocali)
-        wine.grapes << build(:vernaccia)
         wine.grape_id = create(:vernaccia).id
       end
     end
@@ -104,7 +100,6 @@ FactoryBot.define do
       before(:create) do |wine|
         wine.country = 'USA'
         wine.winery = create(:kenwood)
-        wine.grapes << build(:merlot)
         wine.grape_id = create(:merlot).id
       end
     end
@@ -113,12 +108,10 @@ FactoryBot.define do
       before(:create) do |wine|
         wine.country = 'Canada'
         wine.winery = create(:lailey)
-        wine.grapes << build(:merlot)
         wine.grape_id = create(:merlot).id
       end
     end
 
-    # for testing with a grape_id
     factory :poggio_antico_red_blend, parent: :wine do
       before(:create) do |wine|
         wine.country = 'Italy'

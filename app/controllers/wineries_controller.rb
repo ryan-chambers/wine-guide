@@ -6,7 +6,7 @@ class WineriesController < ApplicationController
   end
 
   def show
-    @winery = Winery.includes(:wines, wines: [:bottles, :grapes]).find(params[:id])
+    @winery = Winery.includes(:wines, wines: [:bottles, :grape]).find(params[:id])
 
     respond_to do |format|
       format.html

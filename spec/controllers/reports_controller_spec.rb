@@ -172,15 +172,4 @@ describe ReportsController do
       expect(assigns(:wines).count).to eq 1
     end
   end
-
-  describe "GET 'grapes'" do
-    it "returns http success" do
-      create(:kenwood_merlot_drank)
-
-      get 'grapes', params: {:grape_filter => 'merlot'}
-
-      expect(response).to be_successful
-      expect(assigns[:grape_report]).not_to be_nil
-    end
-  end
 end

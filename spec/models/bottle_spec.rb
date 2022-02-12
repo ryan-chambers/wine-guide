@@ -56,7 +56,6 @@ describe Bottle do
 #      p "#{tweet}"
       expect(tweet).not_to be_nil
       expect(tweet).to include(@bottle.wine.winery.name)
-      expect(tweet).to include(@bottle.wine.grapes[0].name)
       expect(tweet).to include(@bottle.wine.other)
       expect(tweet).to include(@bottle.wine.year.to_s)
       expect(tweet).to include(@bottle.comments)
@@ -73,7 +72,6 @@ describe Bottle do
 #      p "#{tweet}"
       expect(tweet).not_to be_nil
       expect(tweet).to include(@bottle.wine.winery.name)
-      expect(tweet).to include(@bottle.wine.grapes[0].name)
       expect(tweet).to include(@bottle.wine.other)
       expect(tweet).to include(@bottle.wine.year.to_s)
       expect(tweet.length).to be <= 140

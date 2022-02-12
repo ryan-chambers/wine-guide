@@ -19,7 +19,7 @@ describe 'Wine Score Parser' do
 
       # because of no db connection, can't query DB for syrah grape
       expect(wine.other).to eq(['Syrah', 'Broken Press'])
-      expect(wine.grapes).to eq([])
+      expect(wine.grape).to eq('')
 
       bottles = wb[:bottles]
       expect(bottles.length).to be(1)

@@ -4,18 +4,16 @@ require 'country.rb'
 require 'wine.rb'
 require 'bottle.rb'
 
-include MigrationHelper
-
 class WineVO
   def initialize
-    @grapes = []
+    @grape = ''
     @other = []
     @region = ''
     @lcbo = ''
     @country
   end
 
-  attr_accessor :winery_name, :other, :year, :region, :grapes, :lcbo, :country
+  attr_accessor :winery_name, :other, :year, :region, :grape, :lcbo, :country
 
   def create_wine_from_values(winery)
     wine = Wine.new
@@ -26,11 +24,9 @@ class WineVO
     wine.year = @year
     wine.other = @other.sort!.join(', ')
 
-    wine.grapes = []
-    g = grape_name(grapes)
-    grape = Grape.find_by_name(g)
+    g = Grape.find_by_name(grape)
     if (grape)
-      wine.grape_id = grape.id
+      wine.grape_id = g.id
     end
 
     wine.save!
@@ -62,7 +58,7 @@ class WineVO
         
         # p "Other match #{other_match}"
 
-        grapes_match = w.list_grape_names == @grapes.sort!.uniq
+        grapes_match = w.grape.name == @grape
 
         # p "Grapes match #{grapes_match}"
 
@@ -128,7 +124,7 @@ def make_wine(wine_info, country)
     #elsif part == 'Other Red' or part == 'Grenache' or part == 'Syrah'  # testing only
     elsif not Grape.where(:name => part).empty?
 #      p "Found grape variety #{part}"
-      wine.grapes << part
+      wine.grape = part
     elsif Region.is_region?(country, part)
 #      p "Found region #{part}"
       wine.region = part

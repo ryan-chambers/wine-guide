@@ -14,13 +14,6 @@ describe Wine do
     end
   end
 
-  describe "grapes" do
-    it "must be able to output its list of grapes as a string" do
-      w = create(:kenwood_merlot)
-      expect(w.grapes_to_s).to include('Merlot')
-    end
-  end
-
   describe "bottles" do
     it "knows its favourite bottles don't have scores less than 90" do
       b1 = create(:alvento_sauvignonblanc_bottle_drank)

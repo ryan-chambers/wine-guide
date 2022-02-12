@@ -13,15 +13,12 @@ Rails.application.routes.draw do
   get "reports/yearly"
   get "reports/this_day_in_wine"
   get "reports/favourite_wines"
-  get "reports/grapes"
   get "reports/recent_good_bottles"
 
   get "wineries/search"
   get "wineries/show"
 
   get "home/index"
-
-  post "migrations/kickoff"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
